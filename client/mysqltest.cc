@@ -2229,7 +2229,8 @@ static void check_result() {
   char cmd[FN_REFLEN];
   strcpy(cmd, "sed -i '/gcda:Merge mismatch for function/d' ");
   std::strcat(cmd, log_file.file_name());
-  system(cmd);
+  int system_result = system(cmd);
+  (void)system_result;  // Suppress unused variable warning
 #endif
 
   switch (compare_files(log_file.file_name(), result_file_name)) {

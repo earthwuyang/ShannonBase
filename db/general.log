@@ -22,3 +22,789 @@ Time                 Id Command    Argument
 `IS_FULL` TINYINT NOT NULL COMMENT '1 iff file has no free space inside.',
 `CONSUMER_LEVEL` INT NOT NULL COMMENT 'All redo log consumers registered on smaller levels than this value, have already consumed this file.'
 )engine = 'performance_schema'
+/home/wuy/DB/ShannonBase/cmake_build/runtime_output_directory/mysqld, Version: 8.4.3 (Source distribution). started with:
+Tcp port: 3307  Unix socket: /tmp/mysql.sock
+Time                 Id Command    Argument
+2025-10-21T06:52:24.954550Z	    0 Execute	CREATE TABLE performance_schema.innodb_redo_log_files(
+`FILE_ID` BIGINT NOT NULL COMMENT 'Id of the file.',
+`FILE_NAME` VARCHAR(2000) NOT NULL COMMENT 'Path to the file.',
+`START_LSN` BIGINT NOT NULL COMMENT 'LSN of the first block in the file.',
+`END_LSN` BIGINT NOT NULL COMMENT 'LSN after the last block in the file.',
+`SIZE_IN_BYTES` BIGINT NOT NULL COMMENT 'Size of the file (in bytes).',
+`IS_FULL` TINYINT NOT NULL COMMENT '1 iff file has no free space inside.',
+`CONSUMER_LEVEL` INT NOT NULL COMMENT 'All redo log consumers registered on smaller levels than this value, have already consumed this file.'
+)engine = 'performance_schema'
+2025-10-21T06:52:47.747958Z	    8 Connect	root@localhost on  using SSL/TLS
+2025-10-21T06:52:47.748456Z	    8 Query	select @@version_comment limit 1
+2025-10-21T06:52:47.748901Z	    8 Query	SELECT 'MySQL is running in recovery mode' as Status
+2025-10-21T06:52:47.749168Z	    8 Quit	
+2025-10-21T06:53:01.525800Z	    9 Connect	root@localhost on  using SSL/TLS
+2025-10-21T06:53:01.526096Z	    9 Query	select @@version_comment limit 1
+2025-10-21T06:53:01.526293Z	    9 Query	DROP DATABASE IF EXISTS Airline
+2025-10-21T06:53:03.890115Z	    9 Query	SHOW DATABASES
+2025-10-21T06:53:03.903863Z	    9 Quit	
+2025-10-21T06:53:16.558995Z	   10 Connect	root@localhost on  using SSL/TLS
+2025-10-21T06:53:16.559284Z	   10 Query	select @@version_comment limit 1
+2025-10-21T06:53:16.559482Z	   10 Query	SHUTDOWN
+2025-10-21T06:53:16.559560Z	   10 Query	
+/home/wuy/DB/ShannonBase/cmake_build/runtime_output_directory/mysqld, Version: 8.4.3 (Source distribution). started with:
+Tcp port: 3307  Unix socket: /tmp/mysql.sock
+Time                 Id Command    Argument
+2025-10-21T06:53:48.395745Z	    0 Execute	CREATE TABLE performance_schema.innodb_redo_log_files(
+`FILE_ID` BIGINT NOT NULL COMMENT 'Id of the file.',
+`FILE_NAME` VARCHAR(2000) NOT NULL COMMENT 'Path to the file.',
+`START_LSN` BIGINT NOT NULL COMMENT 'LSN of the first block in the file.',
+`END_LSN` BIGINT NOT NULL COMMENT 'LSN after the last block in the file.',
+`SIZE_IN_BYTES` BIGINT NOT NULL COMMENT 'Size of the file (in bytes).',
+`IS_FULL` TINYINT NOT NULL COMMENT '1 iff file has no free space inside.',
+`CONSUMER_LEVEL` INT NOT NULL COMMENT 'All redo log consumers registered on smaller levels than this value, have already consumed this file.'
+)engine = 'performance_schema'
+2025-10-21T06:54:08.875905Z	    8 Connect	root@localhost on  using SSL/TLS
+2025-10-21T06:54:08.876449Z	    8 Query	select @@version_comment limit 1
+2025-10-21T06:54:08.876905Z	    8 Query	SELECT VERSION() as MySQL_Version
+2025-10-21T06:54:08.877174Z	    8 Query	SELECT 'Connection successful!' as Status
+2025-10-21T06:54:08.877429Z	    8 Query	SHOW VARIABLES LIKE 'port'
+2025-10-21T06:54:08.891103Z	    8 Quit	
+2025-10-21T06:58:40.967016Z	    9 Connect	root@localhost on  using SSL/TLS
+2025-10-21T06:58:40.967323Z	    9 Query	select @@version_comment limit 1
+2025-10-21T06:58:40.967525Z	    9 Query	SHUTDOWN
+2025-10-21T06:58:40.967639Z	    9 Query	
+/home/wuy/DB/ShannonBase/cmake_build/bin/mysqld, Version: 8.4.3 (Source distribution). started with:
+Tcp port: 3307  Unix socket: /tmp/mysql.sock
+Time                 Id Command    Argument
+2025-10-21T06:58:47.948593Z	    0 Execute	CREATE TABLE performance_schema.innodb_redo_log_files(
+`FILE_ID` BIGINT NOT NULL COMMENT 'Id of the file.',
+`FILE_NAME` VARCHAR(2000) NOT NULL COMMENT 'Path to the file.',
+`START_LSN` BIGINT NOT NULL COMMENT 'LSN of the first block in the file.',
+`END_LSN` BIGINT NOT NULL COMMENT 'LSN after the last block in the file.',
+`SIZE_IN_BYTES` BIGINT NOT NULL COMMENT 'Size of the file (in bytes).',
+`IS_FULL` TINYINT NOT NULL COMMENT '1 iff file has no free space inside.',
+`CONSUMER_LEVEL` INT NOT NULL COMMENT 'All redo log consumers registered on smaller levels than this value, have already consumed this file.'
+)engine = 'performance_schema'
+2025-10-21T06:58:49.495219Z	    8 Connect	root@localhost on  using SSL/TLS
+2025-10-21T06:58:49.495594Z	    8 Query	select @@version_comment limit 1
+2025-10-21T06:58:49.495980Z	    8 Query	SELECT 1
+2025-10-21T06:58:49.496202Z	    8 Quit	
+2025-10-21T06:58:56.265516Z	    9 Connect	root@localhost on  using SSL/TLS
+2025-10-21T06:58:56.265871Z	    9 Query	select @@version_comment limit 1
+2025-10-21T06:58:59.650421Z	    9 Query	show databases
+2025-10-21T06:59:03.935837Z	    9 Query	drop database Credit
+2025-10-21T06:59:03.964900Z	    9 Query	SELECT DATABASE()
+2025-10-21T06:59:08.187400Z	    9 Query	drop database tpcds_sf1
+2025-10-21T06:59:08.594820Z	    9 Query	SELECT DATABASE()
+2025-10-21T06:59:12.447838Z	    9 Query	drop database tpch_sf1
+2025-10-21T06:59:12.552047Z	    9 Query	SELECT DATABASE()
+2025-10-21T06:59:18.563914Z	   10 Connect	root@localhost on  using SSL/TLS
+2025-10-21T06:59:18.564229Z	   10 Quit	
+2025-10-21T06:59:18.621907Z	   11 Connect	root@localhost on  using SSL/TLS
+2025-10-21T06:59:18.622276Z	   11 Query	select @@version_comment limit 1
+2025-10-21T06:59:18.622517Z	   11 Query	SET GLOBAL local_infile = 1
+2025-10-21T06:59:18.622639Z	   11 Quit	
+2025-10-21T06:59:18.858929Z	   12 Connect	root@localhost on  using SSL/TLS
+2025-10-21T06:59:18.859310Z	   12 Query	select @@version_comment limit 1
+2025-10-21T06:59:18.859603Z	   12 Query	CREATE DATABASE IF NOT EXISTS `tpch_sf1` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
+2025-10-21T06:59:18.869985Z	   12 Quit	
+2025-10-21T06:59:18.921729Z	   13 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T06:59:18.922392Z	   13 Query	select @@version_comment limit 1
+2025-10-21T06:59:18.922666Z	   13 Query	CREATE TABLE IF NOT EXISTS nation (
+    n_nationkey INT NOT NULL,
+    n_name CHAR(25) NOT NULL,
+    n_regionkey INT NOT NULL,
+    n_comment VARCHAR(152),
+    PRIMARY KEY (n_nationkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T06:59:18.968449Z	   13 Query	CREATE TABLE IF NOT EXISTS region (
+    r_regionkey INT NOT NULL,
+    r_name CHAR(25) NOT NULL,
+    r_comment VARCHAR(152),
+    PRIMARY KEY (r_regionkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T06:59:18.991188Z	   13 Query	CREATE TABLE IF NOT EXISTS part (
+    p_partkey INT NOT NULL,
+    p_name VARCHAR(55) NOT NULL,
+    p_mfgr CHAR(25) NOT NULL,
+    p_brand CHAR(10) NOT NULL,
+    p_type VARCHAR(25) NOT NULL,
+    p_size INT NOT NULL,
+    p_container CHAR(10) NOT NULL,
+    p_retailprice DECIMAL(15,2) NOT NULL,
+    p_comment VARCHAR(23) NOT NULL,
+    PRIMARY KEY (p_partkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T06:59:19.022979Z	   13 Query	CREATE TABLE IF NOT EXISTS supplier (
+    s_suppkey INT NOT NULL,
+    s_name CHAR(25) NOT NULL,
+    s_address VARCHAR(40) NOT NULL,
+    s_nationkey INT NOT NULL,
+    s_phone CHAR(15) NOT NULL,
+    s_acctbal DECIMAL(15,2) NOT NULL,
+    s_comment VARCHAR(101) NOT NULL,
+    PRIMARY KEY (s_suppkey),
+    KEY idx_supplier_nation (s_nationkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T06:59:19.067734Z	   13 Query	CREATE TABLE IF NOT EXISTS partsupp (
+    ps_partkey INT NOT NULL,
+    ps_suppkey INT NOT NULL,
+    ps_availqty INT NOT NULL,
+    ps_supplycost DECIMAL(15,2) NOT NULL,
+    ps_comment VARCHAR(199) NOT NULL,
+    PRIMARY KEY (ps_partkey, ps_suppkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T06:59:19.097772Z	   13 Query	CREATE TABLE IF NOT EXISTS customer (
+    c_custkey INT NOT NULL,
+    c_name VARCHAR(25) NOT NULL,
+    c_address VARCHAR(40) NOT NULL,
+    c_nationkey INT NOT NULL,
+    c_phone CHAR(15) NOT NULL,
+    c_acctbal DECIMAL(15,2) NOT NULL,
+    c_mktsegment CHAR(10) NOT NULL,
+    c_comment VARCHAR(117) NOT NULL,
+    PRIMARY KEY (c_custkey),
+    KEY idx_customer_nation (c_nationkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T06:59:19.132163Z	   13 Query	CREATE TABLE IF NOT EXISTS orders (
+    o_orderkey INT NOT NULL,
+    o_custkey INT NOT NULL,
+    o_orderstatus CHAR(1) NOT NULL,
+    o_totalprice DECIMAL(15,2) NOT NULL,
+    o_orderdate DATE NOT NULL,
+    o_orderpriority CHAR(15) NOT NULL,
+    o_clerk CHAR(15) NOT NULL,
+    o_shippriority INT NOT NULL,
+    o_comment VARCHAR(79) NOT NULL,
+    PRIMARY KEY (o_orderkey),
+    KEY idx_orders_cust (o_custkey),
+    KEY idx_orders_date (o_orderdate)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T06:59:19.168228Z	   13 Query	CREATE TABLE IF NOT EXISTS lineitem (
+    l_orderkey INT NOT NULL,
+    l_partkey INT NOT NULL,
+    l_suppkey INT NOT NULL,
+    l_linenumber INT NOT NULL,
+    l_quantity DECIMAL(15,2) NOT NULL,
+    l_extendedprice DECIMAL(15,2) NOT NULL,
+    l_discount DECIMAL(15,2) NOT NULL,
+    l_tax DECIMAL(15,2) NOT NULL,
+    l_returnflag CHAR(1) NOT NULL,
+    l_linestatus CHAR(1) NOT NULL,
+    l_shipdate DATE NOT NULL,
+    l_commitdate DATE NOT NULL,
+    l_receiptdate DATE NOT NULL,
+    l_shipinstruct CHAR(25) NOT NULL,
+    l_shipmode CHAR(10) NOT NULL,
+    l_comment VARCHAR(44) NOT NULL,
+    KEY idx_lineitem_order (l_orderkey),
+    KEY idx_lineitem_part_supp (l_partkey, l_suppkey),
+    KEY idx_lineitem_shipdate (l_shipdate)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T06:59:19.214554Z	   13 Query	CREATE INDEX idx_nation_region ON nation(n_regionkey)
+2025-10-21T06:59:19.250405Z	   13 Quit	
+2025-10-21T06:59:19.313120Z	   14 Connect	root@localhost on information_schema using SSL/TLS
+2025-10-21T06:59:19.313488Z	   14 Query	select @@version_comment limit 1
+2025-10-21T06:59:19.313800Z	   14 Query	SELECT COUNT(*) FROM information_schema.tables WHERE table_schema='tpch_sf1' AND table_name='lineitem'
+2025-10-21T06:59:19.321382Z	   14 Quit	
+2025-10-21T06:59:19.375529Z	   15 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T06:59:19.375870Z	   15 Query	select @@version_comment limit 1
+2025-10-21T06:59:19.376076Z	   15 Query	SELECT COUNT(*) FROM `lineitem` LIMIT 1
+2025-10-21T06:59:19.381780Z	   15 Quit	
+2025-10-21T06:59:19.432800Z	   16 Connect	root@localhost on information_schema using SSL/TLS
+2025-10-21T06:59:19.433097Z	   16 Query	select @@version_comment limit 1
+2025-10-21T06:59:19.433367Z	   16 Query	SELECT COUNT(*) FROM information_schema.tables WHERE table_schema='tpch_sf1' AND table_name='region'
+2025-10-21T06:59:19.436196Z	   16 Quit	
+2025-10-21T06:59:19.486302Z	   17 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T06:59:19.486623Z	   17 Query	select @@version_comment limit 1
+2025-10-21T06:59:19.486840Z	   17 Query	SELECT COUNT(*) FROM `region` LIMIT 1
+2025-10-21T06:59:19.490809Z	   17 Quit	
+2025-10-21T06:59:19.546158Z	   18 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T06:59:19.546497Z	   18 Query	select @@version_comment limit 1
+2025-10-21T06:59:19.546718Z	   18 Query	LOAD DATA LOCAL INFILE '/home/wuy/DB/ShannonBase/preprocessing/tpch-dbgen/region.tbl' REPLACE INTO TABLE `region` FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n'
+2025-10-21T06:59:19.551807Z	   18 Quit	
+2025-10-21T06:59:19.602194Z	   19 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T06:59:19.602550Z	   19 Query	select @@version_comment limit 1
+2025-10-21T06:59:19.602779Z	   19 Query	SELECT COUNT(*) FROM `region`
+2025-10-21T06:59:19.603801Z	   19 Quit	
+2025-10-21T06:59:19.654938Z	   20 Connect	root@localhost on information_schema using SSL/TLS
+2025-10-21T06:59:19.655275Z	   20 Query	select @@version_comment limit 1
+2025-10-21T06:59:19.655529Z	   20 Query	SELECT COUNT(*) FROM information_schema.tables WHERE table_schema='tpch_sf1' AND table_name='nation'
+2025-10-21T06:59:19.659437Z	   20 Quit	
+2025-10-21T06:59:19.709730Z	   21 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T06:59:19.710108Z	   21 Query	select @@version_comment limit 1
+2025-10-21T06:59:19.710348Z	   21 Query	SELECT COUNT(*) FROM `nation` LIMIT 1
+2025-10-21T06:59:19.710744Z	   21 Quit	
+2025-10-21T06:59:19.769201Z	   22 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T06:59:19.769633Z	   22 Query	select @@version_comment limit 1
+2025-10-21T06:59:19.769909Z	   22 Query	LOAD DATA LOCAL INFILE '/home/wuy/DB/ShannonBase/preprocessing/tpch-dbgen/nation.tbl' REPLACE INTO TABLE `nation` FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n'
+2025-10-21T06:59:19.770436Z	   22 Quit	
+2025-10-21T07:00:32.293589Z	   23 Connect	root@localhost on  using SSL/TLS
+2025-10-21T07:00:32.293880Z	   23 Quit	
+2025-10-21T07:00:32.371557Z	   24 Connect	root@localhost on  using SSL/TLS
+2025-10-21T07:00:32.371858Z	   24 Query	select @@version_comment limit 1
+2025-10-21T07:00:32.372101Z	   24 Query	SET GLOBAL local_infile = 1
+2025-10-21T07:00:32.372263Z	   24 Quit	
+2025-10-21T07:00:32.624428Z	   25 Connect	root@localhost on  using SSL/TLS
+2025-10-21T07:00:32.624798Z	   25 Query	select @@version_comment limit 1
+2025-10-21T07:00:32.625085Z	   25 Query	CREATE DATABASE IF NOT EXISTS `tpch_sf1` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
+2025-10-21T07:00:32.630420Z	   25 Quit	
+2025-10-21T07:00:32.681025Z	   26 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:00:32.681411Z	   26 Query	select @@version_comment limit 1
+2025-10-21T07:00:32.681756Z	   26 Query	CREATE TABLE IF NOT EXISTS nation (
+    n_nationkey INT NOT NULL,
+    n_name CHAR(25) NOT NULL,
+    n_regionkey INT NOT NULL,
+    n_comment VARCHAR(152),
+    PRIMARY KEY (n_nationkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T07:00:32.685228Z	   26 Query	CREATE TABLE IF NOT EXISTS region (
+    r_regionkey INT NOT NULL,
+    r_name CHAR(25) NOT NULL,
+    r_comment VARCHAR(152),
+    PRIMARY KEY (r_regionkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T07:00:32.688626Z	   26 Query	CREATE TABLE IF NOT EXISTS part (
+    p_partkey INT NOT NULL,
+    p_name VARCHAR(55) NOT NULL,
+    p_mfgr CHAR(25) NOT NULL,
+    p_brand CHAR(10) NOT NULL,
+    p_type VARCHAR(25) NOT NULL,
+    p_size INT NOT NULL,
+    p_container CHAR(10) NOT NULL,
+    p_retailprice DECIMAL(15,2) NOT NULL,
+    p_comment VARCHAR(23) NOT NULL,
+    PRIMARY KEY (p_partkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T07:00:32.695926Z	   26 Query	CREATE TABLE IF NOT EXISTS supplier (
+    s_suppkey INT NOT NULL,
+    s_name CHAR(25) NOT NULL,
+    s_address VARCHAR(40) NOT NULL,
+    s_nationkey INT NOT NULL,
+    s_phone CHAR(15) NOT NULL,
+    s_acctbal DECIMAL(15,2) NOT NULL,
+    s_comment VARCHAR(101) NOT NULL,
+    PRIMARY KEY (s_suppkey),
+    KEY idx_supplier_nation (s_nationkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T07:00:32.700478Z	   26 Query	CREATE TABLE IF NOT EXISTS partsupp (
+    ps_partkey INT NOT NULL,
+    ps_suppkey INT NOT NULL,
+    ps_availqty INT NOT NULL,
+    ps_supplycost DECIMAL(15,2) NOT NULL,
+    ps_comment VARCHAR(199) NOT NULL,
+    PRIMARY KEY (ps_partkey, ps_suppkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T07:00:32.705212Z	   26 Query	CREATE TABLE IF NOT EXISTS customer (
+    c_custkey INT NOT NULL,
+    c_name VARCHAR(25) NOT NULL,
+    c_address VARCHAR(40) NOT NULL,
+    c_nationkey INT NOT NULL,
+    c_phone CHAR(15) NOT NULL,
+    c_acctbal DECIMAL(15,2) NOT NULL,
+    c_mktsegment CHAR(10) NOT NULL,
+    c_comment VARCHAR(117) NOT NULL,
+    PRIMARY KEY (c_custkey),
+    KEY idx_customer_nation (c_nationkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T07:00:32.710177Z	   26 Query	CREATE TABLE IF NOT EXISTS orders (
+    o_orderkey INT NOT NULL,
+    o_custkey INT NOT NULL,
+    o_orderstatus CHAR(1) NOT NULL,
+    o_totalprice DECIMAL(15,2) NOT NULL,
+    o_orderdate DATE NOT NULL,
+    o_orderpriority CHAR(15) NOT NULL,
+    o_clerk CHAR(15) NOT NULL,
+    o_shippriority INT NOT NULL,
+    o_comment VARCHAR(79) NOT NULL,
+    PRIMARY KEY (o_orderkey),
+    KEY idx_orders_cust (o_custkey),
+    KEY idx_orders_date (o_orderdate)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T07:00:32.716286Z	   26 Query	CREATE TABLE IF NOT EXISTS lineitem (
+    l_orderkey INT NOT NULL,
+    l_partkey INT NOT NULL,
+    l_suppkey INT NOT NULL,
+    l_linenumber INT NOT NULL,
+    l_quantity DECIMAL(15,2) NOT NULL,
+    l_extendedprice DECIMAL(15,2) NOT NULL,
+    l_discount DECIMAL(15,2) NOT NULL,
+    l_tax DECIMAL(15,2) NOT NULL,
+    l_returnflag CHAR(1) NOT NULL,
+    l_linestatus CHAR(1) NOT NULL,
+    l_shipdate DATE NOT NULL,
+    l_commitdate DATE NOT NULL,
+    l_receiptdate DATE NOT NULL,
+    l_shipinstruct CHAR(25) NOT NULL,
+    l_shipmode CHAR(10) NOT NULL,
+    l_comment VARCHAR(44) NOT NULL,
+    KEY idx_lineitem_order (l_orderkey),
+    KEY idx_lineitem_part_supp (l_partkey, l_suppkey),
+    KEY idx_lineitem_shipdate (l_shipdate)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T07:00:32.719286Z	   26 Query	CREATE INDEX idx_nation_region ON nation(n_regionkey)
+2025-10-21T07:00:32.720363Z	   26 Quit	
+2025-10-21T07:00:41.298319Z	    9 Query	show databases
+2025-10-21T07:00:45.452878Z	    9 Query	drop database tpch_sf1
+2025-10-21T07:00:45.541565Z	    9 Query	SELECT DATABASE()
+2025-10-21T07:04:35.426671Z	   27 Connect	root@localhost on  using SSL/TLS
+2025-10-21T07:04:35.427045Z	   27 Query	select @@version_comment limit 1
+2025-10-21T07:04:35.427328Z	   27 Query	SELECT 'MySQL connection test successful' AS status
+2025-10-21T07:04:35.427482Z	   27 Quit	
+2025-10-21T07:05:05.113067Z	   28 Connect	root@localhost on  using SSL/TLS
+2025-10-21T07:05:05.113445Z	   28 Query	select @@version_comment limit 1
+2025-10-21T07:05:05.113703Z	   28 Query	CREATE DATABASE IF NOT EXISTS tpch_sf1
+2025-10-21T07:05:05.122865Z	   28 Query	SELECT DATABASE()
+2025-10-21T07:05:05.123372Z	   28 Init DB	tpch_sf1
+2025-10-21T07:05:05.123707Z	   28 Query	CREATE TABLE IF NOT EXISTS nation (
+    n_nationkey INT NOT NULL,
+    n_name CHAR(25) NOT NULL,
+    n_regionkey INT NOT NULL,
+    n_comment VARCHAR(152),
+    PRIMARY KEY (n_nationkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T07:05:05.168934Z	   28 Query	SET @index_exists = (
+    SELECT COUNT(*) 
+    FROM information_schema.statistics 
+    WHERE table_schema = 'tpch_sf1' 
+    AND table_name = 'nation' 
+    AND index_name = 'idx_nation_region'
+)
+2025-10-21T07:05:05.173062Z	   28 Query	SET @sql = IF(@index_exists = 0, 
+    'CREATE INDEX idx_nation_region ON nation(n_regionkey)', 
+    'SELECT "Index idx_nation_region already exists, skipping" AS message'
+)
+2025-10-21T07:05:05.173305Z	   28 Query	PREPARE stmt FROM @sql
+2025-10-21T07:05:05.175367Z	   28 Prepare	CREATE INDEX idx_nation_region ON nation(n_regionkey)
+2025-10-21T07:05:05.175609Z	   28 Query	EXECUTE stmt
+2025-10-21T07:05:05.175643Z	   28 Execute	CREATE INDEX idx_nation_region ON nation(n_regionkey)
+2025-10-21T07:05:05.207271Z	   28 Query	DEALLOCATE PREPARE stmt
+2025-10-21T07:05:05.207501Z	   28 Query	SELECT 'Checking index status:' AS info
+2025-10-21T07:05:05.207838Z	   28 Query	SELECT index_name, column_name 
+FROM information_schema.statistics 
+WHERE table_schema = 'tpch_sf1' 
+AND table_name = 'nation' 
+AND index_name = 'idx_nation_region'
+2025-10-21T07:05:05.210212Z	   28 Quit	
+2025-10-21T07:05:23.322364Z	   29 Connect	root@localhost on  using SSL/TLS
+2025-10-21T07:05:23.322678Z	   29 Query	select @@version_comment limit 1
+2025-10-21T07:05:23.322926Z	   29 Query	CREATE DATABASE IF NOT EXISTS tpch_sf1
+2025-10-21T07:05:23.326985Z	   29 Query	SELECT DATABASE()
+2025-10-21T07:05:23.327261Z	   29 Init DB	tpch_sf1
+2025-10-21T07:05:23.327522Z	   29 Query	CREATE TABLE IF NOT EXISTS nation (
+    n_nationkey INT NOT NULL,
+    n_name CHAR(25) NOT NULL,
+    n_regionkey INT NOT NULL,
+    n_comment VARCHAR(152),
+    PRIMARY KEY (n_nationkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T07:05:23.332585Z	   29 Query	SET @index_exists = (
+    SELECT COUNT(*) 
+    FROM information_schema.statistics 
+    WHERE table_schema = 'tpch_sf1' 
+    AND table_name = 'nation' 
+    AND index_name = 'idx_nation_region'
+)
+2025-10-21T07:05:23.335176Z	   29 Query	SET @sql = IF(@index_exists = 0, 
+    'CREATE INDEX idx_nation_region ON nation(n_regionkey)', 
+    'SELECT "Index idx_nation_region already exists, skipping" AS message'
+)
+2025-10-21T07:05:23.335405Z	   29 Query	PREPARE stmt FROM @sql
+2025-10-21T07:05:23.335478Z	   29 Prepare	SELECT "Index idx_nation_region already exists, skipping" AS message
+2025-10-21T07:05:23.335620Z	   29 Query	EXECUTE stmt
+2025-10-21T07:05:23.335642Z	   29 Execute	SELECT "Index idx_nation_region already exists, skipping" AS message
+2025-10-21T07:05:23.335831Z	   29 Query	DEALLOCATE PREPARE stmt
+2025-10-21T07:05:23.335954Z	   29 Query	SELECT 'Checking index status:' AS info
+2025-10-21T07:05:23.336154Z	   29 Query	SELECT index_name, column_name 
+FROM information_schema.statistics 
+WHERE table_schema = 'tpch_sf1' 
+AND table_name = 'nation' 
+AND index_name = 'idx_nation_region'
+2025-10-21T07:05:23.338215Z	   29 Quit	
+2025-10-21T07:06:06.884085Z	   30 Connect	root@localhost on  using SSL/TLS
+2025-10-21T07:06:06.884364Z	   30 Quit	
+2025-10-21T07:06:06.934030Z	   31 Connect	root@localhost on  using SSL/TLS
+2025-10-21T07:06:06.934362Z	   31 Query	select @@version_comment limit 1
+2025-10-21T07:06:06.934593Z	   31 Query	SET GLOBAL local_infile = 1
+2025-10-21T07:06:06.934722Z	   31 Quit	
+2025-10-21T07:06:07.137045Z	   32 Connect	root@localhost on  using SSL/TLS
+2025-10-21T07:06:07.137345Z	   32 Query	select @@version_comment limit 1
+2025-10-21T07:06:07.137563Z	   32 Query	CREATE DATABASE IF NOT EXISTS `tpch_sf1` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
+2025-10-21T07:06:07.142952Z	   32 Quit	
+2025-10-21T07:06:07.196209Z	   33 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:07.196550Z	   33 Query	select @@version_comment limit 1
+2025-10-21T07:06:07.196864Z	   33 Query	CREATE TABLE IF NOT EXISTS nation (
+    n_nationkey INT NOT NULL,
+    n_name CHAR(25) NOT NULL,
+    n_regionkey INT NOT NULL,
+    n_comment VARCHAR(152),
+    PRIMARY KEY (n_nationkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T07:06:07.204242Z	   33 Query	CREATE TABLE IF NOT EXISTS region (
+    r_regionkey INT NOT NULL,
+    r_name CHAR(25) NOT NULL,
+    r_comment VARCHAR(152),
+    PRIMARY KEY (r_regionkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T07:06:07.245385Z	   33 Query	CREATE TABLE IF NOT EXISTS part (
+    p_partkey INT NOT NULL,
+    p_name VARCHAR(55) NOT NULL,
+    p_mfgr CHAR(25) NOT NULL,
+    p_brand CHAR(10) NOT NULL,
+    p_type VARCHAR(25) NOT NULL,
+    p_size INT NOT NULL,
+    p_container CHAR(10) NOT NULL,
+    p_retailprice DECIMAL(15,2) NOT NULL,
+    p_comment VARCHAR(23) NOT NULL,
+    PRIMARY KEY (p_partkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T07:06:07.302402Z	   33 Query	CREATE TABLE IF NOT EXISTS supplier (
+    s_suppkey INT NOT NULL,
+    s_name CHAR(25) NOT NULL,
+    s_address VARCHAR(40) NOT NULL,
+    s_nationkey INT NOT NULL,
+    s_phone CHAR(15) NOT NULL,
+    s_acctbal DECIMAL(15,2) NOT NULL,
+    s_comment VARCHAR(101) NOT NULL,
+    PRIMARY KEY (s_suppkey),
+    KEY idx_supplier_nation (s_nationkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T07:06:07.347535Z	   33 Query	CREATE TABLE IF NOT EXISTS partsupp (
+    ps_partkey INT NOT NULL,
+    ps_suppkey INT NOT NULL,
+    ps_availqty INT NOT NULL,
+    ps_supplycost DECIMAL(15,2) NOT NULL,
+    ps_comment VARCHAR(199) NOT NULL,
+    PRIMARY KEY (ps_partkey, ps_suppkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T07:06:07.378246Z	   33 Query	CREATE TABLE IF NOT EXISTS customer (
+    c_custkey INT NOT NULL,
+    c_name VARCHAR(25) NOT NULL,
+    c_address VARCHAR(40) NOT NULL,
+    c_nationkey INT NOT NULL,
+    c_phone CHAR(15) NOT NULL,
+    c_acctbal DECIMAL(15,2) NOT NULL,
+    c_mktsegment CHAR(10) NOT NULL,
+    c_comment VARCHAR(117) NOT NULL,
+    PRIMARY KEY (c_custkey),
+    KEY idx_customer_nation (c_nationkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T07:06:07.430338Z	   33 Query	CREATE TABLE IF NOT EXISTS orders (
+    o_orderkey INT NOT NULL,
+    o_custkey INT NOT NULL,
+    o_orderstatus CHAR(1) NOT NULL,
+    o_totalprice DECIMAL(15,2) NOT NULL,
+    o_orderdate DATE NOT NULL,
+    o_orderpriority CHAR(15) NOT NULL,
+    o_clerk CHAR(15) NOT NULL,
+    o_shippriority INT NOT NULL,
+    o_comment VARCHAR(79) NOT NULL,
+    PRIMARY KEY (o_orderkey),
+    KEY idx_orders_cust (o_custkey),
+    KEY idx_orders_date (o_orderdate)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T07:06:07.475870Z	   33 Query	CREATE TABLE IF NOT EXISTS lineitem (
+    l_orderkey INT NOT NULL,
+    l_partkey INT NOT NULL,
+    l_suppkey INT NOT NULL,
+    l_linenumber INT NOT NULL,
+    l_quantity DECIMAL(15,2) NOT NULL,
+    l_extendedprice DECIMAL(15,2) NOT NULL,
+    l_discount DECIMAL(15,2) NOT NULL,
+    l_tax DECIMAL(15,2) NOT NULL,
+    l_returnflag CHAR(1) NOT NULL,
+    l_linestatus CHAR(1) NOT NULL,
+    l_shipdate DATE NOT NULL,
+    l_commitdate DATE NOT NULL,
+    l_receiptdate DATE NOT NULL,
+    l_shipinstruct CHAR(25) NOT NULL,
+    l_shipmode CHAR(10) NOT NULL,
+    l_comment VARCHAR(44) NOT NULL,
+    KEY idx_lineitem_order (l_orderkey),
+    KEY idx_lineitem_part_supp (l_partkey, l_suppkey),
+    KEY idx_lineitem_shipdate (l_shipdate)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-10-21T07:06:07.524945Z	   33 Query	SET @index_exists = (
+    SELECT COUNT(*) 
+    FROM information_schema.statistics 
+    WHERE table_schema = 'tpch_sf1' 
+    AND table_name = 'nation' 
+    AND index_name = 'idx_nation_region'
+)
+2025-10-21T07:06:07.527393Z	   33 Query	SET @sql = IF(@index_exists = 0, 
+    'CREATE INDEX idx_nation_region ON nation(n_regionkey)', 
+    'SELECT "Index idx_nation_region already exists, skipping" AS message'
+)
+2025-10-21T07:06:07.527592Z	   33 Query	PREPARE stmt FROM @sql
+2025-10-21T07:06:07.527670Z	   33 Prepare	SELECT "Index idx_nation_region already exists, skipping" AS message
+2025-10-21T07:06:07.527808Z	   33 Query	EXECUTE stmt
+2025-10-21T07:06:07.527830Z	   33 Execute	SELECT "Index idx_nation_region already exists, skipping" AS message
+2025-10-21T07:06:07.528038Z	   33 Query	DEALLOCATE PREPARE stmt
+2025-10-21T07:06:07.528198Z	   33 Quit	
+2025-10-21T07:06:07.602178Z	   34 Connect	root@localhost on information_schema using SSL/TLS
+2025-10-21T07:06:07.602491Z	   34 Query	select @@version_comment limit 1
+2025-10-21T07:06:07.602733Z	   34 Query	SELECT COUNT(*) FROM information_schema.tables WHERE table_schema='tpch_sf1' AND table_name='lineitem'
+2025-10-21T07:06:07.606100Z	   34 Quit	
+2025-10-21T07:06:07.696928Z	   35 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:07.697357Z	   35 Query	select @@version_comment limit 1
+2025-10-21T07:06:07.697640Z	   35 Query	SELECT COUNT(*) FROM `lineitem` LIMIT 1
+2025-10-21T07:06:07.703403Z	   35 Quit	
+2025-10-21T07:06:07.794446Z	   36 Connect	root@localhost on information_schema using SSL/TLS
+2025-10-21T07:06:07.794788Z	   36 Query	select @@version_comment limit 1
+2025-10-21T07:06:07.795062Z	   36 Query	SELECT COUNT(*) FROM information_schema.tables WHERE table_schema='tpch_sf1' AND table_name='region'
+2025-10-21T07:06:07.797398Z	   36 Quit	
+2025-10-21T07:06:07.849646Z	   37 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:07.850016Z	   37 Query	select @@version_comment limit 1
+2025-10-21T07:06:07.850270Z	   37 Query	SELECT COUNT(*) FROM `region` LIMIT 1
+2025-10-21T07:06:07.855454Z	   37 Quit	
+2025-10-21T07:06:07.914711Z	   38 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:07.915023Z	   38 Query	select @@version_comment limit 1
+2025-10-21T07:06:07.915249Z	   38 Query	LOAD DATA LOCAL INFILE '/home/wuy/DB/ShannonBase/preprocessing/tpch-dbgen/region.tbl' REPLACE INTO TABLE `region` FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n'
+2025-10-21T07:06:07.918485Z	   38 Quit	
+2025-10-21T07:06:07.972500Z	   39 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:07.972829Z	   39 Query	select @@version_comment limit 1
+2025-10-21T07:06:07.973030Z	   39 Query	SELECT COUNT(*) FROM `region`
+2025-10-21T07:06:07.973931Z	   39 Quit	
+2025-10-21T07:06:08.034691Z	   40 Connect	root@localhost on information_schema using SSL/TLS
+2025-10-21T07:06:08.034985Z	   40 Query	select @@version_comment limit 1
+2025-10-21T07:06:08.035240Z	   40 Query	SELECT COUNT(*) FROM information_schema.tables WHERE table_schema='tpch_sf1' AND table_name='nation'
+2025-10-21T07:06:08.038946Z	   40 Quit	
+2025-10-21T07:06:08.091808Z	   41 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:08.092120Z	   41 Query	select @@version_comment limit 1
+2025-10-21T07:06:08.092331Z	   41 Query	SELECT COUNT(*) FROM `nation` LIMIT 1
+2025-10-21T07:06:08.092750Z	   41 Quit	
+2025-10-21T07:06:08.145751Z	   42 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:08.146062Z	   42 Query	select @@version_comment limit 1
+2025-10-21T07:06:08.146299Z	   42 Query	LOAD DATA LOCAL INFILE '/home/wuy/DB/ShannonBase/preprocessing/tpch-dbgen/nation.tbl' REPLACE INTO TABLE `nation` FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n'
+2025-10-21T07:06:08.151964Z	   42 Quit	
+2025-10-21T07:06:08.205880Z	   43 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:08.206333Z	   43 Query	select @@version_comment limit 1
+2025-10-21T07:06:08.206636Z	   43 Query	SELECT COUNT(*) FROM `nation`
+2025-10-21T07:06:08.207219Z	   43 Quit	
+2025-10-21T07:06:08.271165Z	   44 Connect	root@localhost on information_schema using SSL/TLS
+2025-10-21T07:06:08.271545Z	   44 Query	select @@version_comment limit 1
+2025-10-21T07:06:08.271855Z	   44 Query	SELECT COUNT(*) FROM information_schema.tables WHERE table_schema='tpch_sf1' AND table_name='part'
+2025-10-21T07:06:08.274417Z	   44 Quit	
+2025-10-21T07:06:08.279502Z	   45 Connect	root@localhost on information_schema using SSL/TLS
+2025-10-21T07:06:08.279923Z	   45 Query	select @@version_comment limit 1
+2025-10-21T07:06:08.280358Z	   45 Query	SELECT COUNT(*) FROM information_schema.tables WHERE table_schema='tpch_sf1' AND table_name='supplier'
+2025-10-21T07:06:08.283857Z	   45 Quit	
+2025-10-21T07:06:08.291779Z	   48 Connect	root@localhost on information_schema using SSL/TLS
+2025-10-21T07:06:08.292252Z	   48 Query	select @@version_comment limit 1
+2025-10-21T07:06:08.292674Z	   48 Query	SELECT COUNT(*) FROM information_schema.tables WHERE table_schema='tpch_sf1' AND table_name='orders'
+2025-10-21T07:06:08.295903Z	   48 Quit	
+2025-10-21T07:06:08.297523Z	   47 Connect	root@localhost on information_schema using SSL/TLS
+2025-10-21T07:06:08.297922Z	   47 Query	select @@version_comment limit 1
+2025-10-21T07:06:08.298266Z	   47 Query	SELECT COUNT(*) FROM information_schema.tables WHERE table_schema='tpch_sf1' AND table_name='customer'
+2025-10-21T07:06:08.302052Z	   47 Quit	
+2025-10-21T07:06:08.303094Z	   46 Connect	root@localhost on information_schema using SSL/TLS
+2025-10-21T07:06:08.303578Z	   46 Query	select @@version_comment limit 1
+2025-10-21T07:06:08.303905Z	   46 Query	SELECT COUNT(*) FROM information_schema.tables WHERE table_schema='tpch_sf1' AND table_name='partsupp'
+2025-10-21T07:06:08.306874Z	   46 Quit	
+2025-10-21T07:06:08.354288Z	   49 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:08.354701Z	   49 Query	select @@version_comment limit 1
+2025-10-21T07:06:08.354983Z	   49 Query	SELECT COUNT(*) FROM `part` LIMIT 1
+2025-10-21T07:06:08.357746Z	   49 Quit	
+2025-10-21T07:06:08.361455Z	   50 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:08.361782Z	   50 Query	select @@version_comment limit 1
+2025-10-21T07:06:08.361997Z	   50 Query	SELECT COUNT(*) FROM `supplier` LIMIT 1
+2025-10-21T07:06:08.366058Z	   50 Quit	
+2025-10-21T07:06:08.368881Z	   51 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:08.369247Z	   51 Query	select @@version_comment limit 1
+2025-10-21T07:06:08.369514Z	   51 Query	SELECT COUNT(*) FROM `orders` LIMIT 1
+2025-10-21T07:06:08.372295Z	   51 Quit	
+2025-10-21T07:06:08.380172Z	   52 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:08.380596Z	   52 Query	select @@version_comment limit 1
+2025-10-21T07:06:08.380885Z	   52 Query	SELECT COUNT(*) FROM `customer` LIMIT 1
+2025-10-21T07:06:08.385402Z	   53 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:08.385625Z	   52 Quit	
+2025-10-21T07:06:08.385803Z	   53 Query	select @@version_comment limit 1
+2025-10-21T07:06:08.386116Z	   53 Query	SELECT COUNT(*) FROM `partsupp` LIMIT 1
+2025-10-21T07:06:08.388782Z	   53 Quit	
+2025-10-21T07:06:08.434953Z	   55 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:08.435465Z	   55 Query	select @@version_comment limit 1
+2025-10-21T07:06:08.435778Z	   55 Query	LOAD DATA LOCAL INFILE '/home/wuy/DB/ShannonBase/preprocessing/tpch-dbgen/supplier.tbl' REPLACE INTO TABLE `supplier` FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n'
+2025-10-21T07:06:08.441768Z	   56 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:08.442196Z	   56 Query	select @@version_comment limit 1
+2025-10-21T07:06:08.442508Z	   54 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:08.442523Z	   56 Query	LOAD DATA LOCAL INFILE '/home/wuy/DB/ShannonBase/preprocessing/tpch-dbgen/orders.tbl' REPLACE INTO TABLE `orders` FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n'
+2025-10-21T07:06:08.442799Z	   54 Query	select @@version_comment limit 1
+2025-10-21T07:06:08.443002Z	   54 Query	LOAD DATA LOCAL INFILE '/home/wuy/DB/ShannonBase/preprocessing/tpch-dbgen/part.tbl' REPLACE INTO TABLE `part` FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n'
+2025-10-21T07:06:08.449054Z	   58 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:08.449440Z	   58 Query	select @@version_comment limit 1
+2025-10-21T07:06:08.449712Z	   58 Query	LOAD DATA LOCAL INFILE '/home/wuy/DB/ShannonBase/preprocessing/tpch-dbgen/partsupp.tbl' REPLACE INTO TABLE `partsupp` FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n'
+2025-10-21T07:06:08.467979Z	   57 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:08.468351Z	   57 Query	select @@version_comment limit 1
+2025-10-21T07:06:08.468645Z	   57 Query	LOAD DATA LOCAL INFILE '/home/wuy/DB/ShannonBase/preprocessing/tpch-dbgen/customer.tbl' REPLACE INTO TABLE `customer` FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n'
+2025-10-21T07:06:09.857690Z	   55 Quit	
+2025-10-21T07:06:09.911545Z	   59 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:09.911879Z	   59 Query	select @@version_comment limit 1
+2025-10-21T07:06:09.912107Z	   59 Query	SELECT COUNT(*) FROM `supplier`
+2025-10-21T07:06:09.927402Z	   59 Quit	
+2025-10-21T07:06:23.883926Z	   60 Connect	root@localhost on  using SSL/TLS
+2025-10-21T07:06:23.884415Z	   60 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_0900_ai_ci'
+2025-10-21T07:06:23.884695Z	   60 Query	set autocommit=0
+2025-10-21T07:06:23.885239Z	   60 Query	SHOW DATABASES LIKE 'Airline'
+2025-10-21T07:06:23.888213Z	   60 Query	CREATE DATABASE `Airline` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
+2025-10-21T07:06:23.907293Z	   60 Query	SET GLOBAL local_infile = 1
+2025-10-21T07:06:23.907477Z	   60 Quit	
+2025-10-21T07:06:25.712274Z	   61 Connect	root@localhost on Airline using SSL/TLS
+2025-10-21T07:06:25.712980Z	   61 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_0900_ai_ci'
+2025-10-21T07:06:25.713241Z	   61 Query	set autocommit=0
+2025-10-21T07:06:25.713606Z	   61 Query	SET FOREIGN_KEY_CHECKS = 0
+2025-10-21T07:06:25.713828Z	   61 Query	DROP TABLE IF EXISTS `L_AIRLINE_ID`
+2025-10-21T07:06:25.719066Z	   61 Query	CREATE TABLE `L_AIRLINE_ID` (
+  `Code` int(11) NOT NULL,
+  `Description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Code`),
+  UNIQUE KEY `L_AIRLINE_ID_Code_key` (`Code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci
+2025-10-21T07:06:25.766466Z	   61 Query	SET FOREIGN_KEY_CHECKS = 1
+2025-10-21T07:06:25.766697Z	   61 Query	commit
+2025-10-21T07:06:25.766809Z	   61 Quit	
+2025-10-21T07:06:26.808549Z	   57 Quit	
+2025-10-21T07:06:26.889697Z	   62 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:26.890195Z	   62 Query	select @@version_comment limit 1
+2025-10-21T07:06:26.890554Z	   62 Query	SELECT COUNT(*) FROM `customer`
+2025-10-21T07:06:26.964522Z	   54 Quit	
+2025-10-21T07:06:27.016050Z	   63 Connect	root@localhost on tpch_sf1 using SSL/TLS
+2025-10-21T07:06:27.016387Z	   63 Query	select @@version_comment limit 1
+2025-10-21T07:06:27.016607Z	   63 Query	SELECT COUNT(*) FROM `part`
+2025-10-21T07:06:27.234312Z	   63 Quit	
+2025-10-21T07:06:27.578540Z	   64 Connect	root@localhost on Airline using SSL/TLS
+2025-10-21T07:06:27.578931Z	   64 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_0900_ai_ci'
+2025-10-21T07:06:27.579116Z	   64 Query	set autocommit=0
+2025-10-21T07:06:27.579416Z	   64 Query	SET FOREIGN_KEY_CHECKS = 0
+2025-10-21T07:06:27.579568Z	   64 Query	DROP TABLE IF EXISTS `L_AIRPORT`
+2025-10-21T07:06:27.584167Z	   64 Query	CREATE TABLE `L_AIRPORT` (
+  `Code` char(3) NOT NULL,
+  `Description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Code`),
+  UNIQUE KEY `L_AIRPORT_Code_key` (`Code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci
+2025-10-21T07:06:27.635798Z	   64 Query	SET FOREIGN_KEY_CHECKS = 1
+2025-10-21T07:06:27.636021Z	   64 Query	commit
+2025-10-21T07:06:27.636163Z	   64 Quit	
+2025-10-21T07:06:29.368241Z	   65 Connect	root@localhost on Airline using SSL/TLS
+2025-10-21T07:06:29.368770Z	   65 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_0900_ai_ci'
+2025-10-21T07:06:29.369013Z	   65 Query	set autocommit=0
+2025-10-21T07:06:29.369429Z	   65 Query	SET FOREIGN_KEY_CHECKS = 0
+2025-10-21T07:06:29.369646Z	   65 Query	DROP TABLE IF EXISTS `L_AIRPORT_ID`
+2025-10-21T07:06:29.374496Z	   65 Query	CREATE TABLE `L_AIRPORT_ID` (
+  `Code` int(11) NOT NULL,
+  `Description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Code`),
+  UNIQUE KEY `L_AIRPORT_ID_Code_key` (`Code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci
+2025-10-21T07:06:29.416273Z	   65 Query	SET FOREIGN_KEY_CHECKS = 1
+2025-10-21T07:06:29.416471Z	   65 Query	commit
+2025-10-21T07:06:29.416591Z	   65 Quit	
+2025-10-21T07:06:30.062024Z	   62 Quit	
+2025-10-21T07:06:31.134524Z	   66 Connect	root@localhost on Airline using SSL/TLS
+2025-10-21T07:06:31.134947Z	   66 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_0900_ai_ci'
+2025-10-21T07:06:31.135148Z	   66 Query	set autocommit=0
+2025-10-21T07:06:31.135448Z	   66 Query	SET FOREIGN_KEY_CHECKS = 0
+2025-10-21T07:06:31.135592Z	   66 Query	DROP TABLE IF EXISTS `L_AIRPORT_SEQ_ID`
+2025-10-21T07:06:31.140635Z	   66 Query	CREATE TABLE `L_AIRPORT_SEQ_ID` (
+  `Code` int(11) NOT NULL,
+  `Description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Code`),
+  UNIQUE KEY `L_AIRPORT_SEQ_ID_Code_key` (`Code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci
+2025-10-21T07:06:31.219666Z	   66 Query	SET FOREIGN_KEY_CHECKS = 1
+2025-10-21T07:06:31.219996Z	   66 Query	commit
+2025-10-21T07:06:31.220144Z	   66 Quit	
+2025-10-21T07:06:33.028484Z	   67 Connect	root@localhost on Airline using SSL/TLS
+2025-10-21T07:06:33.028953Z	   67 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_0900_ai_ci'
+2025-10-21T07:06:33.029198Z	   67 Query	set autocommit=0
+2025-10-21T07:06:33.029529Z	   67 Query	SET FOREIGN_KEY_CHECKS = 0
+2025-10-21T07:06:33.029709Z	   67 Query	DROP TABLE IF EXISTS `L_CANCELLATION`
+2025-10-21T07:06:33.034735Z	   67 Query	CREATE TABLE `L_CANCELLATION` (
+  `Code` char(1) NOT NULL,
+  `Description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Code`),
+  UNIQUE KEY `L_CANCELLATION_Code_key` (`Code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci
+2025-10-21T07:06:33.083218Z	   67 Query	SET FOREIGN_KEY_CHECKS = 1
+2025-10-21T07:06:33.083415Z	   67 Query	commit
+2025-10-21T07:06:33.083543Z	   67 Quit	
+2025-10-21T07:06:34.824372Z	   68 Connect	root@localhost on Airline using SSL/TLS
+2025-10-21T07:06:34.824850Z	   68 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_0900_ai_ci'
+2025-10-21T07:06:34.825095Z	   68 Query	set autocommit=0
+2025-10-21T07:06:34.825446Z	   68 Query	SET FOREIGN_KEY_CHECKS = 0
+2025-10-21T07:06:34.825631Z	   68 Query	DROP TABLE IF EXISTS `L_CITY_MARKET_ID`
+2025-10-21T07:06:34.830970Z	   68 Query	CREATE TABLE `L_CITY_MARKET_ID` (
+  `Code` int(11) NOT NULL,
+  `Description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Code`),
+  UNIQUE KEY `L_CITY_MARKET_ID_Code_key` (`Code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci
+2025-10-21T07:06:34.883484Z	   68 Query	SET FOREIGN_KEY_CHECKS = 1
+2025-10-21T07:06:34.883749Z	   68 Query	commit
+2025-10-21T07:06:34.883880Z	   68 Quit	
+2025-10-21T07:06:36.632684Z	   69 Connect	root@localhost on Airline using SSL/TLS
+2025-10-21T07:06:36.633125Z	   69 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_0900_ai_ci'
+2025-10-21T07:06:36.633399Z	   69 Query	set autocommit=0
+2025-10-21T07:06:36.633710Z	   69 Query	SET FOREIGN_KEY_CHECKS = 0
+2025-10-21T07:06:36.633850Z	   69 Query	DROP TABLE IF EXISTS `L_DEPARRBLK`
+2025-10-21T07:06:36.639205Z	   69 Query	CREATE TABLE `L_DEPARRBLK` (
+  `Code` char(9) NOT NULL,
+  `Description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Code`),
+  UNIQUE KEY `L_DEPARRBLK_Code_key` (`Code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci
+2025-10-21T07:06:36.681884Z	   69 Query	SET FOREIGN_KEY_CHECKS = 1
+2025-10-21T07:06:36.682157Z	   69 Query	commit
+2025-10-21T07:06:36.682350Z	   69 Quit	
+2025-10-21T07:06:38.389797Z	   70 Connect	root@localhost on Airline using SSL/TLS
+2025-10-21T07:06:38.390285Z	   70 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_0900_ai_ci'
+2025-10-21T07:06:38.390594Z	   70 Query	set autocommit=0
+2025-10-21T07:06:38.390931Z	   70 Query	SET FOREIGN_KEY_CHECKS = 0
+2025-10-21T07:06:38.391124Z	   70 Query	DROP TABLE IF EXISTS `L_DISTANCE_GROUP_250`
+2025-10-21T07:06:38.405078Z	   70 Query	CREATE TABLE `L_DISTANCE_GROUP_250` (
+  `Code` int(11) NOT NULL,
+  `Description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Code`),
+  UNIQUE KEY `L_DISTANCE_GROUP_250_Code_key` (`Code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci
+2025-10-21T07:06:38.456828Z	   70 Query	SET FOREIGN_KEY_CHECKS = 1
+2025-10-21T07:06:38.457092Z	   70 Query	commit
+2025-10-21T07:06:38.457239Z	   70 Quit	
+2025-10-21T07:06:40.228234Z	   71 Connect	root@localhost on Airline using SSL/TLS
+2025-10-21T07:06:40.228709Z	   71 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_0900_ai_ci'
+2025-10-21T07:06:40.228934Z	   71 Query	set autocommit=0
+2025-10-21T07:06:40.229290Z	   71 Query	SET FOREIGN_KEY_CHECKS = 0
+2025-10-21T07:06:40.229463Z	   71 Query	DROP TABLE IF EXISTS `L_DIVERSIONS`
+2025-10-21T07:06:40.237859Z	   71 Query	CREATE TABLE `L_DIVERSIONS` (
+  `Code` int(11) NOT NULL,
+  `Description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Code`),
+  UNIQUE KEY `L_DIVERSIONS_Code_key` (`Code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci
+2025-10-21T07:06:40.295529Z	   71 Query	SET FOREIGN_KEY_CHECKS = 1
+2025-10-21T07:06:40.295754Z	   71 Query	commit
+2025-10-21T07:06:40.296542Z	   71 Quit	
+2025-10-21T07:06:42.125315Z	   72 Connect	root@localhost on Airline using SSL/TLS
+2025-10-21T07:06:42.125808Z	   72 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_0900_ai_ci'
+2025-10-21T07:06:42.126028Z	   72 Query	set autocommit=0
+2025-10-21T07:06:42.126381Z	   72 Query	SET FOREIGN_KEY_CHECKS = 0
+2025-10-21T07:06:42.126553Z	   72 Query	DROP TABLE IF EXISTS `L_MONTHS`
+2025-10-21T07:06:42.133614Z	   72 Query	CREATE TABLE `L_MONTHS` (
+  `Code` int(11) NOT NULL,
+  `Description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Code`),
+  UNIQUE KEY `L_MONTHS_Code_key` (`Code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci
+2025-10-21T07:06:42.182534Z	   72 Query	SET FOREIGN_KEY_CHECKS = 1
+2025-10-21T07:06:42.182753Z	   72 Query	commit
+2025-10-21T07:06:42.182893Z	   72 Quit	
+2025-10-21T07:06:44.578724Z	   73 Connect	root@localhost on Airline using SSL/TLS
+2025-10-21T07:06:44.579245Z	   73 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_0900_ai_ci'
+2025-10-21T07:06:44.579500Z	   73 Query	set autocommit=0
+2025-10-21T07:06:44.579862Z	   73 Query	SET FOREIGN_KEY_CHECKS = 0
+2025-10-21T07:06:44.580062Z	   73 Query	DROP TABLE IF EXISTS `L_ONTIME_DELAY_GROUPS`
+2025-10-21T07:06:44.585652Z	   73 Query	CREATE TABLE `L_ONTIME_DELAY_GROUPS` (
+  `Code` int(11) NOT NULL,
+  `Description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Code`),
+  UNIQUE KEY `L_ONTIME_DELAY_GROUPS_Code_key` (`Code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci
+2025-10-21T07:06:44.629657Z	   73 Query	SET FOREIGN_KEY_CHECKS = 1
+2025-10-21T07:06:44.629898Z	   73 Query	commit
+2025-10-21T07:06:44.630049Z	   73 Quit	

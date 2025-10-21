@@ -318,8 +318,24 @@ CREATE TABLE IF NOT EXISTS lineitem (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Add indexes that weren't created in table definitions
--- nation table doesn't have this index in its CREATE TABLE statement
-CREATE INDEX idx_nation_region ON nation(n_regionkey);
+-- Check if index exists before creating to avoid duplicate key error
+SET @index_exists = (
+    SELECT COUNT(*) 
+    FROM information_schema.statistics 
+    WHERE table_schema = 'tpch_sf1' 
+    AND table_name = 'nation' 
+    AND index_name = 'idx_nation_region'
+);
+
+SET @sql = IF(@index_exists = 0, 
+    'CREATE INDEX idx_nation_region ON nation(n_regionkey)', 
+    'SELECT "Index idx_nation_region already exists, skipping" AS message'
+);
+
+PREPARE stmt FROM @sql;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
+
 -- Note: idx_supplier_nation is already defined in supplier CREATE TABLE, no need to add it again
 EOF
 

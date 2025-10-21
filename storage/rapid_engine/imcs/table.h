@@ -334,7 +334,10 @@ class PartTable : public RapidTable {
   virtual int build_partitions(const Rapid_load_context *context) final;
 
   // rollback a modified record.
-  virtual int rollback_changes_by_trxid(Transaction::ID) final { assert(false); }
+  virtual int rollback_changes_by_trxid(Transaction::ID) final { 
+    assert(false); 
+    return -1;  // Return error code since this should never be called
+  }
 
   // gets the # of physical rows.
   virtual row_id_t rows(const Rapid_context *) final { return m_stats.prows.load(); }
