@@ -27,6 +27,7 @@
 #define __SHANNONBASE_CONST_H__
 #include <chrono>
 #include <cmath>
+#include <string>
 #include <vector>
 #include "my_inttypes.h"
 #include "rapid_arch_inf.h"

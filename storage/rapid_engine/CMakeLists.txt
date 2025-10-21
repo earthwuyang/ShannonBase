@@ -177,6 +177,7 @@ SET(SHANNON_RAPID_SOURCES
 # --- Compress library ---
 ADD_LIBRARY(rapid_compress STATIC ${SHANNON_RAPID_COMPRESS_SOURCES})
 ADD_DEPENDENCIES(rapid_compress GenError)
+TARGET_LINK_LIBRARIES(rapid_compress PRIVATE ext::zlib)
 
 # Configure compress library includes
 # Note: UNIV_NO_ERR_MSGS is defined to reduce binary size

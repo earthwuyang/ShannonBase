@@ -1039,7 +1039,7 @@ SET(TOKENIZER_FFI_LIB
 
 ADD_LIBRARY(sql_ml STATIC ${ML_SOURCES})
 #gomp required by lightgbm
-TARGET_LINK_LIBRARIES(sql_ml PUBLIC extra::rapidjson _lightgbm gomp ${ONNXRUNTIME_LIBRARIES} ${TOKENIZER_FFI_LIB})
+TARGET_LINK_LIBRARIES(sql_ml PUBLIC extra::rapidjson _lightgbm gomp ext::zlib ${ONNXRUNTIME_LIBRARIES} ${TOKENIZER_FFI_LIB})
 TARGET_INCLUDE_DIRECTORIES(sql_ml PUBLIC 
                            ${CMAKE_SOURCE_DIR}/extra/unordered_dense/unordered_dense-4.4.0/include
                            ${CMAKE_SOURCE_DIR}/extra/lightgbm/include
