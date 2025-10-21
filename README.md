@@ -71,8 +71,12 @@ if no git ssh key configured, you can use ssh
 ```
 git config --global url."https://github.com/".insteadOf git@github.com:
 git config --global url."https://".insteadOf git://
-git clone --recursive git@github.com:Shannon-Data/ShannonBase.git
 
+git clone --recursive git@github.com:Shannon-Data/ShannonBase.git
+```
+
+```
+git submodule update --init --recursive
 ```
 
 ```
@@ -83,61 +87,9 @@ cd ../../
 
 #### 2: Make a directory where we build the source code from.
 ```
-cd ShannonBase && mkdir cmake_build && cd cmake_build
-```
-
-#### 3: Run cmake and start compilation and installation.
-```
- cmake ../ \
-  -DWITH_BOOST=/path-to-boost-include-files/ \
-  -DCMAKE_BUILD_TYPE=Debug  \
-  -DCMAKE_INSTALL_PREFIX=/path-to-shannon-bin \
-  -DMYSQL_DATADIR=/home/path-to-shannon-bin/data \
-  -DSYSCONFDIR=. \
-  -DMYSQL_UNIX_ADDR=/home/path-to-shannon-bin/tmp/mysql.sock \
-  -DWITH_EMBEDDED_SERVER=OFF \
-  -DWITH_MYISAM_STORAGE_ENGINE=1 \
-  -DWITH_INNOBASE_STORAGE_ENGINE=1 \
-  -DWITH_PARTITION_STORAGE_ENGINE=1 \
-  -DMYSQL_TCP_PORT=3306 \
-  -DENABLED_LOCAL_INFILE=1 \
-  -DEXTRA_CHARSETS=all \
-  -DWITH_PROTOBUF=bundled \
-  -DWITH_SSL_PATH=/path-to-open-ssl/ \
-  -DDEFAULT_SET=community \
-  -DWITH_UNIT_TESTS=OFF \
-  -DENABLE_GCOV=1 \ 
-  -DWITH_ASAN=1 \     
-  -DCOMPILATION_COMMENT="MySQL Community Server, and Shannon Data AI Alpha V.- (GPL)" 
-```
-
-
-```
- cmake ../ \
-  -DWITH_BOOST=/path-to-boost-include-files/ \
-  -DCMAKE_BUILD_TYPE=[Release|Debug]  \
-  -DCMAKE_INSTALL_PREFIX=/path-to-shannon-bin \
-  -DMYSQL_DATADIR=/home/path-to-shannon-bin/data \
-  -DSYSCONFDIR=. \
-  -DMYSQL_UNIX_ADDR=/home/path-to-shannon-bin/tmp/mysql.sock \
-  -DWITH_EMBEDDED_SERVER=OFF \
-  -DWITH_MYISAM_STORAGE_ENGINE=1 \
-  -DWITH_INNOBASE_STORAGE_ENGINE=1 \
-  -DWITH_PARTITION_STORAGE_ENGINE=1 \
-  -DMYSQL_TCP_PORT=3306 \
-  -DENABLED_LOCAL_INFILE=1 \
-  -DEXTRA_CHARSETS=all \
-  -DWITH_PROTOBUF=bundled \
-  -DWITH_SSL_PATH=/path-to-open-ssl/ \
-  -DDEFAULT_SET=community \
-  -DWITH_UNIT_TESTS=OFF \
-  [-DENABLE_GCOV=1 \ |
-  -DWITH_ASAN=1 \    | 
-  ]
-  -DCOMPILATION_COMMENT="MySQL Community Server, and Shannon Data AI Alpha V.- (GPL)" 
-
-make -j5 && make install
-
+cd ShannonBase && mkdir cmake_build -p
+bash run_cmake.sh
+make -j$(nproc) && make install
 ```
 PS: in `[]`, it's an optional compilation params, which is to enable coverage collection and ASAN check. And, boost asio 
 files are needed, you should install boost asio library at first.
