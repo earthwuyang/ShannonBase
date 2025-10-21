@@ -47,6 +47,7 @@ references/
 training_workloads/
 
 # Preprocessing data and generated files (large datasets)
+preprocessing/training_data/
 preprocessing/ctu_data/
 preprocessing/tpcds_data/
 preprocessing/tpch-dbgen/
@@ -65,5 +66,6 @@ preprocessing/cross_db_benchmark/datasets/*/*.dat
 preprocessing/cross_db_benchmark/datasets/*/*.tbl
 
 db/data/
+db/*.log
 
 cmake_build/

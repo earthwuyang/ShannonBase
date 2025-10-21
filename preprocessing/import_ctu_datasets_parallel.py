@@ -175,7 +175,12 @@ def export_table_to_csv(args):
         return {'table': table, 'status': 'error', 'error': str(e)}
 
 def create_table_if_not_exists(database, table, create_sql):
-    """Create table in local database"""
+    """Create table in local database with SECONDARY_ENGINE=Rapid
+    
+    To avoid DDL errors, we:
+    1. Create table WITHOUT SECONDARY_ENGINE (even if indexes are present)
+    2. Add SECONDARY_ENGINE after table is created
+    """
     try:
         # Add timeout to prevent hanging
         conn = connect_local_mysql(database)
@@ -185,7 +190,17 @@ def create_table_if_not_exists(database, table, create_sql):
         cursor.execute("SET FOREIGN_KEY_CHECKS = 0")
         
         cursor.execute(f"DROP TABLE IF EXISTS `{table}`")
-        cursor.execute(create_sql)
+        
+        # Remove SECONDARY_ENGINE from create_sql if present (to avoid DDL errors)
+        # We'll add it separately after table creation
+        create_sql_clean = create_sql.replace('SECONDARY_ENGINE=Rapid', '').replace('SECONDARY_ENGINE = Rapid', '')
+        create_sql_clean = create_sql_clean.rstrip(';').rstrip() + ';'
+        
+        # Create table without SECONDARY_ENGINE
+        cursor.execute(create_sql_clean)
+        
+        # Now add SECONDARY_ENGINE=Rapid separately (after all DDL in CREATE TABLE)
+        cursor.execute(f"ALTER TABLE `{table}` SECONDARY_ENGINE=Rapid")
         
         # Re-enable foreign key checks
         cursor.execute("SET FOREIGN_KEY_CHECKS = 1")
@@ -411,6 +426,24 @@ def process_database(database, force=False, workers=MAX_WORKERS):
                     pbar.update(1)
     
     print(f"\n  ✅ Successfully imported {database}: {total_rows:,} total rows")
+    
+    # Phase 4: Load data into Rapid engine
+    print(f"\n  🚀 Phase 4: Loading tables into Rapid engine...")
+    conn = connect_local_mysql(database)
+    cursor = conn.cursor()
+    
+    for i, table in enumerate(tables, 1):
+        print(f"    [{i}/{len(tables)}] Loading {table} into Rapid...", end='', flush=True)
+        try:
+            cursor.execute(f"ALTER TABLE `{table}` SECONDARY_LOAD")
+            print(" ✓")
+        except Exception as e:
+            print(f" ⚠ Warning: {e}")
+    
+    cursor.close()
+    conn.close()
+    
+    print(f"\n  ✅ All tables loaded into Rapid engine!")
     return True
 
 def main():

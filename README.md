@@ -98,11 +98,18 @@ To activate support for the Lakehouse feature, which allows ShannonBase to read 
 
 #### 4: Initialize the database and run ShannonBase
 ```
- /path-to-shannbase-bin/bin/mysqld --defaults-file=/path-to-shannonbase-bin/my.cnf --initialize  --user=xxx
+/home/wuy/ShannonBase/bin/mysqld --defaults-file=/home/wuy/ShannonBase/db/my.cnf --initialize  --user=root
 
-  /path-to-shannbase-bin/bin//mysqld --defaults-file=/path-to-shannonbase-bin/my.cnf   --user=xxx & 
+/home/wuy/ShannonBase/bin/mysqld --defaults-file=/home/wuy/ShannonBase/db/my.cnf    --user=root & 
 ```
 PS: you should use your own `my.cnf`.
+
+
+Start and stop mysql by:
+```
+start_mysql.sh
+stop_mysql.sh
+```
 
 ### HTAP routing
 #### Import Data
@@ -110,6 +117,13 @@ PS: you should use your own `my.cnf`.
 python preprocessing/import_ctu_datasets.py
 bash setup_tpc_benchmarks.sh
 ```
+
+#### Generate workloads
+```
+python generate_training_workload_advanced.py
+```
+
+#### Collect dual-execution data
 
 
 ### Basic Usage
