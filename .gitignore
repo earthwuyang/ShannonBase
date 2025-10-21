@@ -65,5 +65,6 @@ preprocessing/cross_db_benchmark/datasets/*/*.dat
 preprocessing/cross_db_benchmark/datasets/*/*.tbl
 
 db/data/
+db/*.log
 
 cmake_build/
