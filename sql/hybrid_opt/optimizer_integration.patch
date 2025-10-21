@@ -1,0 +1,93 @@
+--- a/sql/sql_optimizer.cc
++++ b/sql/sql_optimizer.cc
+@@ -92,6 +92,7 @@
+ #include "sql/opt_explain.h"  // join_type_str
+ #include "sql/opt_hints.h"    // hint_table_state
+ #include "sql/opt_trace.h"    // Opt_trace_object
++#include "sql/hybrid_opt/feature_extractor.h"
+ #include "sql/opt_trace_context.h"
+ #include "sql/parse_tree_node_base.h"
+ #include "sql/parser_yystype.h"
+@@ -720,6 +721,21 @@ bool JOIN::optimize(bool finalize_access_paths) {
+ 
+   THD_STAGE_INFO(thd, stage_statistics);
+   if (make_join_plan()) {
++    // Extract features for hybrid optimizer
++    if (thd->opt_trace.is_started() && thd->variables.optimizer_trace_features) {
++      static std::vector<int> feature_indices = 
++          hybrid_opt::FeatureExtractor::LoadFeatureIndices(
++              "/usr/local/mysql/data/top_feature_indices.txt");
++      
++      std::vector<float> selected_features;
++      if (hybrid_opt::FeatureExtractor::ExtractSelectedFeatures(
++              this, feature_indices, selected_features, &thd->opt_trace)) {
++        Opt_trace_object hybrid_opt_trace(&thd->opt_trace, 
++                                         "hybrid_optimizer_analysis");
++        hybrid_opt_trace.add("feature_extraction", "success");
++        hybrid_opt_trace.add("num_features", static_cast<int>(selected_features.size()));
++      }
++    }
++    
+     if (thd->killed) thd->send_kill_message();
+     DBUG_PRINT("error", ("Error: JOIN::make_join_plan() failed"));
+     return true;
+@@ -5350,6 +5363,19 @@ bool JOIN::estimate_rowcount() {
+ 
+ bool JOIN::make_join_plan() {
+   DBUG_TRACE;
++  
++  // Extract full feature set for hybrid optimizer training
++  if (thd->variables.optimizer_trace_features && thd->opt_trace.is_started()) {
++    std::array<float, hybrid_opt::NUM_FEATURES> features;
++    if (hybrid_opt::FeatureExtractor::ExtractFeatures(this, features, 
++                                                      &thd->opt_trace)) {
++      // Features will be added to optimizer trace
++      Opt_trace_object plan_features(&thd->opt_trace, "join_plan_features");
++      plan_features.add("extraction_point", "make_join_plan_start");
++      plan_features.add("total_features", hybrid_opt::NUM_FEATURES);
++    }
++  }
++
+ 
+   SARGABLE_PARAM *sargables = nullptr;
+ 
+--- a/sql/CMakeLists.txt
++++ b/sql/CMakeLists.txt
+@@ -1087,6 +1087,8 @@ SET(SQL_SHARED_SOURCES
+   xa.cc
+   rpl_gtid_cached_binlog_event.cc
+   sql_mode.cc
++  hybrid_opt/feature_extractor.cc
++  hybrid_opt/feature_extractor.h
+ )
+ 
+ SET(SQL_HEADER
+
+--- a/sql/system_variables.h
++++ b/sql/system_variables.h
+@@ -577,6 +577,7 @@ struct System_variables {
+   ulonglong optimizer_trace;           ///< bitmap to tune optimizer tracing
+   ulonglong optimizer_trace_offset;
+   ulonglong optimizer_trace_limit;
++  bool optimizer_trace_features;       ///< Enable feature extraction in trace
+   ulonglong optimizer_trace_max_mem_size;  ///< in bytes
+   /*
+     Bitmap of which protocols are optional and disabled.
+
+--- a/sql/sys_vars.cc
++++ b/sql/sys_vars.cc
+@@ -3422,6 +3422,14 @@ static Sys_var_ulong Sys_optimizer_trace_limit(
+     DEFAULT(1), NO_MUTEX_GUARD, NOT_IN_BINLOG, ON_CHECK(nullptr),
+     ON_UPDATE(nullptr), sys_var::PARSE_EARLY);
+ 
++static Sys_var_bool Sys_optimizer_trace_features(
++    "optimizer_trace_features",
++    "Extract and include optimizer features in trace for hybrid optimizer",
++    SESSION_VAR(optimizer_trace_features), CMD_LINE(OPT_ARG),
++    DEFAULT(false), NO_MUTEX_GUARD, NOT_IN_BINLOG,
++    ON_CHECK(nullptr),
++    ON_UPDATE(nullptr));
++
+ static Sys_var_ulonglong Sys_optimizer_trace_max_mem_size(
+     "optimizer_trace_max_mem_size",
+     "Maximum allowed size of an optimizer trace",

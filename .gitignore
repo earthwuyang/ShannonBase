@@ -39,3 +39,31 @@ scalability_jobs_*
 /extra/jerryscript/*
 /extra/jemalloc/*
 !/extra/jemalloc/CMakeLists.txt
+
+
+
+references/
+
+training_workloads/
+
+# Preprocessing data and generated files (large datasets)
+preprocessing/ctu_data/
+preprocessing/tpcds_data/
+preprocessing/tpch-dbgen/
+preprocessing/test_workloads/
+preprocessing/training_workloads/
+preprocessing/databricks-tpcds/
+preprocessing/__pycache__/
+preprocessing/*.pyc
+preprocessing/.pytest_cache/
+preprocessing/hybrid_optimizer_training/
+
+# Cross DB benchmark - ignore data files but keep code
+preprocessing/cross_db_benchmark/datasets/*/dataset_documentation/*.csv
+preprocessing/cross_db_benchmark/datasets/*/*.csv
+preprocessing/cross_db_benchmark/datasets/*/*.dat
+preprocessing/cross_db_benchmark/datasets/*/*.tbl
+
+db/data/
+
+cmake_build/

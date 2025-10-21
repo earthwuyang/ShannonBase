@@ -1,0 +1,18 @@
+cd cmake_build &&  cmake ../ \
+  -DWITH_BOOST=/path-to-boost-include-files/ \
+  -DCMAKE_BUILD_TYPE=Debug  \
+  -DCMAKE_INSTALL_PREFIX=/path-to-shannon-bin \
+  -DMYSQL_DATADIR=/home/path-to-shannon-bin/data \
+  -DSYSCONFDIR=. \
+  -DMYSQL_UNIX_ADDR=/home/path-to-shannon-bin/tmp/mysql.sock \
+  -DWITH_EMBEDDED_SERVER=OFF \
+  -DWITH_MYISAM_STORAGE_ENGINE=1 \
+  -DWITH_INNOBASE_STORAGE_ENGINE=1 \
+  -DWITH_PARTITION_STORAGE_ENGINE=1 \
+  -DMYSQL_TCP_PORT=3306 \
+  -DENABLED_LOCAL_INFILE=1 \
+  -DEXTRA_CHARSETS=all \
+  -DWITH_PROTOBUF=bundled \
+  -DWITH_SSL_PATH=/path-to-open-ssl/ \
+  -DDEFAULT_SET=community \
+  -DWITH_UNIT_TESTS=OFF

@@ -23,6 +23,41 @@ Fourthly, By leveraging embedding algorithms and vector data type, ShannonBase b
 At last, ShannonBase Multilingual Engine Component. ShannonBase includes a lightweight JavaScript engine, JerryScript, allowing users to write stored procedures in either SQL or JavaScript.
 
 
+## prerequisites
+see: https://github.com/Shannon-Data/ShannonBase/wiki/Practices
+
+```
+apt-get install -y g++
+apt-get install -y libbison-dev
+apt-get install -y flex
+apt-get install -y clang-format
+apt-get install -y lcov
+apt-get install -y pkg-config
+
+apt-get install -y cmake
+
+apt-get install -y git
+apt-get install -y wget
+apt-get install -y tar
+apt-get install -y bzip2
+apt-get install -y unzip
+
+apt-get install -y libssl-dev
+apt-get install -y libncurses-dev
+apt-get install -y  libudev-dev
+apt-get install -y libgsasl-dev
+apt-get install -y libldap-dev
+
+apt-get install libtirpc-dev
+```
+
+```
+wget https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
+tar -xvf boost_1_77_0.tar.bz2 && cd boost_1_77_0 && ./bootstrap.sh && ./b2  && ./b2 install
+```
+
+if above command has trouble, use `wget https://sourceforge.net/projects/boost/files/boost/1.77.0/boost_1_77_0.tar.bz2/download -O boost_1_77_0.tar.bz2`
+
 ## Getting Started with ShannonBase:
 ### Compilation, Installation and Start ShannonBase
 #### 1: Fork or clone the repo.
@@ -31,12 +66,52 @@ git clone --recursive git@github.com:Shannon-Data/ShannonBase.git
 ```
 PS: You should ensure that your prerequisite development environment is properly set up.
 
+
+if no git ssh key configured, you can use ssh
+```
+git config --global url."https://github.com/".insteadOf git@github.com:
+git config --global url."https://".insteadOf git://
+git clone --recursive git@github.com:Shannon-Data/ShannonBase.git
+
+```
+
+```
+cd extra/jerryscript
+python tools/build.py --lto=OFF --error-messages=ON --profile=es.next
+cd ../../
+```
+
 #### 2: Make a directory where we build the source code from.
 ```
 cd ShannonBase && mkdir cmake_build && cd cmake_build
 ```
 
 #### 3: Run cmake and start compilation and installation.
+```
+ cmake ../ \
+  -DWITH_BOOST=/path-to-boost-include-files/ \
+  -DCMAKE_BUILD_TYPE=Debug  \
+  -DCMAKE_INSTALL_PREFIX=/path-to-shannon-bin \
+  -DMYSQL_DATADIR=/home/path-to-shannon-bin/data \
+  -DSYSCONFDIR=. \
+  -DMYSQL_UNIX_ADDR=/home/path-to-shannon-bin/tmp/mysql.sock \
+  -DWITH_EMBEDDED_SERVER=OFF \
+  -DWITH_MYISAM_STORAGE_ENGINE=1 \
+  -DWITH_INNOBASE_STORAGE_ENGINE=1 \
+  -DWITH_PARTITION_STORAGE_ENGINE=1 \
+  -DMYSQL_TCP_PORT=3306 \
+  -DENABLED_LOCAL_INFILE=1 \
+  -DEXTRA_CHARSETS=all \
+  -DWITH_PROTOBUF=bundled \
+  -DWITH_SSL_PATH=/path-to-open-ssl/ \
+  -DDEFAULT_SET=community \
+  -DWITH_UNIT_TESTS=OFF \
+  -DENABLE_GCOV=1 \ 
+  -DWITH_ASAN=1 \     
+  -DCOMPILATION_COMMENT="MySQL Community Server, and Shannon Data AI Alpha V.- (GPL)" 
+```
+
+
 ```
  cmake ../ \
   -DWITH_BOOST=/path-to-boost-include-files/ \
@@ -76,6 +151,14 @@ To activate support for the Lakehouse feature, which allows ShannonBase to read 
   /path-to-shannbase-bin/bin//mysqld --defaults-file=/path-to-shannonbase-bin/my.cnf   --user=xxx & 
 ```
 PS: you should use your own `my.cnf`.
+
+### HTAP routing
+#### Import Data
+```
+python preprocessing/import_ctu_datasets.py
+bash setup_tpc_benchmarks.sh
+```
+
 
 ### Basic Usage
 #### 1: Rapid Engine Usage.
@@ -207,3 +290,5 @@ SELECT is_even(3);
 
 For more information, please refer to https://github.com/Shannon-Data/ShannonBase/wiki
 for details.
+
+# mysql password: shannonbase
