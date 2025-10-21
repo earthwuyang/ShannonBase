@@ -166,6 +166,13 @@ python preprocessing/import_ctu_datasets.py
 bash setup_tpc_benchmarks.sh
 ```
 
+#### Generate workloads
+```
+python generate_training_workload_advanced.py
+```
+
+#### Collect dual-execution data
+
 
 ### Basic Usage
 #### 1: Rapid Engine Usage.

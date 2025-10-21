@@ -68,7 +68,7 @@ BENCHMARK_DIR = BASE_DIR / 'advanced_benchmark_queries'
 CROSS_DB_DIR = BASE_DIR / 'cross_db_benchmark'
 
 # Available datasets (use actual database names - case-sensitive on Linux)
-AVAILABLE_DATASETS = ['tpcds_sf1', 'Airline', 'Credit']
+AVAILABLE_DATASETS = ['tpcds_sf1', 'tpch_sf1', 'Airline', 'Credit', 'Carcinogenesis', 'Hepatitis_std', 'employee', 'financial', 'geneea']
 
 class Operator(Enum):
     EQ = '='
@@ -119,6 +119,12 @@ class QueryType(Enum):
     AP_UNION_COMPLEX = 'ap_union_complex'    # UNION with aggregations
     AP_FULL_SCAN = 'ap_full_scan'            # Full table scan with complex filters
     AP_OLAP_CUBE = 'ap_olap_cube'            # ROLLUP/CUBE operations
+    
+    # Aliases for backward compatibility with existing generator methods
+    WINDOW = 'ap_window'                     # Alias for AP_WINDOW
+    SUBQUERY = 'ap_subquery'                 # Alias for AP_SUBQUERY
+    CTE = 'ap_cte_recursive'                 # Alias for AP_CTE_RECURSIVE
+    UNION = 'ap_union_complex'               # Alias for AP_UNION_COMPLEX
 
 class AdvancedWorkloadGenerator:
     def __init__(self, database='tpch_sf1', config=None):
@@ -594,7 +600,7 @@ class AdvancedWorkloadGenerator:
                        if any(t in c['type'].lower() for t in ['int', 'numeric', 'decimal', 'float'])]
         
         if not numeric_cols:
-            return self.generate_aggregation_query()  # Fallback
+            return self.generate_ap_aggregation()  # Fallback
             
         # Select columns
         select_list = []
@@ -669,11 +675,13 @@ class AdvancedWorkloadGenerator:
             query = f"SELECT * FROM {main_table} WHERE EXISTS ({subquery})"
             
         else:  # scalar
-            agg_col = random.choice([c for c in sub_cols if 'int' in c['type'].lower() or 'numeric' in c['type'].lower()])
-            if agg_col:
+            numeric_sub_cols = [c for c in sub_cols if 'int' in c['type'].lower() or 'numeric' in c['type'].lower()]
+            if numeric_sub_cols:
+                agg_col = random.choice(numeric_sub_cols)
                 subquery = f"SELECT AVG({sub_table}.{agg_col['name']}) FROM {sub_table}"
-                main_col = random.choice([c for c in main_cols if 'int' in c['type'].lower() or 'numeric' in c['type'].lower()])
-                if main_col:
+                numeric_main_cols = [c for c in main_cols if 'int' in c['type'].lower() or 'numeric' in c['type'].lower()]
+                if numeric_main_cols:
+                    main_col = random.choice(numeric_main_cols)
                     query = f"SELECT * FROM {main_table} WHERE {main_table}.{main_col['name']} > ({subquery})"
                 else:
                     query = f"SELECT *, ({subquery}) as avg_val FROM {main_table}"

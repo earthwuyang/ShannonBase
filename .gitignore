@@ -47,6 +47,7 @@ references/
 training_workloads/
 
 # Preprocessing data and generated files (large datasets)
+preprocessing/training_data/
 preprocessing/ctu_data/
 preprocessing/tpcds_data/
 preprocessing/tpch-dbgen/

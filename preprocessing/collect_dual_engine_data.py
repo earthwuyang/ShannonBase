@@ -1,7 +1,17 @@
 #!/usr/bin/env python3
 """
 Dual Engine Data Collection for Hybrid Optimizer
-Collects query execution data from both MySQL row store and ShannonBase column engine
+
+Collects query execution data from both engines:
+1. Primary Engine (InnoDB) - Row-based storage, optimized for OLTP
+2. Secondary Engine (Rapid) - Column-based storage, optimized for OLAP
+
+Engine selection is controlled by use_secondary_engine variable:
+  - OFF (0): Use primary engine only (InnoDB)
+  - ON (1): Optimizer chooses based on cost
+  - FORCED (2): Force use of secondary engine (Rapid) when eligible
+
+This script forces each engine to collect accurate comparative data.
 """
 
 import os
@@ -19,9 +29,12 @@ import concurrent.futures
 import hashlib
 
 # Configuration
+# Note: Both connections use ShannonBase (port 3307) with different engine settings
+# - MYSQL_CONFIG: ShannonBase with primary engine (InnoDB) forced
+# - SHANNONBASE_CONFIG: ShannonBase with secondary engine (Rapid) forced
 MYSQL_CONFIG = {
     'host': '127.0.0.1',
-    'port': 3306,
+    'port': 3307,  # Changed to 3307 - use ShannonBase for both
     'user': 'root',
     'password': 'shannonbase',
     'database': 'tpch_sf1'
@@ -38,10 +51,10 @@ SHANNONBASE_CONFIG = {
 # Feature collection settings
 OPTIMIZER_TRACE_SETTINGS = {
     'optimizer_trace': 'enabled=on,one_line=off',
-    'optimizer_trace_features': 1,
+    'optimizer_trace_features': 'greedy_search=on,range_optimizer=on,dynamic_range=on,repeated_subselect=on',
     'optimizer_trace_limit': 5,
     'optimizer_trace_offset': -5,
-    'optimizer_trace_max_mem_size': 65536
+    'optimizer_trace_max_mem_size': 1048576
 }
 
 class DualEngineCollector:
@@ -66,32 +79,61 @@ class DualEngineCollector:
         )
         return logging.getLogger(__name__)
     
-    def connect_mysql(self):
-        """Connect to MySQL row store"""
+    def connect_mysql(self, database=None):
+        """Connect to MySQL row store (primary engine - InnoDB)"""
         try:
-            conn = mysql.connector.connect(**MYSQL_CONFIG)
+            config = MYSQL_CONFIG.copy()
+            if database:
+                config['database'] = database
+            conn = mysql.connector.connect(**config)
             cursor = conn.cursor()
             # Enable optimizer trace
             for setting, value in OPTIMIZER_TRACE_SETTINGS.items():
-                cursor.execute(f"SET {setting} = '{value}'")
+                # Use quotes only for string values, not for integers
+                if isinstance(value, str):
+                    cursor.execute(f"SET {setting} = '{value}'")
+                else:
+                    cursor.execute(f"SET {setting} = {value}")
+                # Consume any result to avoid "Unread result found" error
+                try:
+                    cursor.fetchall()
+                except:
+                    pass
+            # Force use of primary engine (InnoDB) - disable secondary engine
+            cursor.execute("SET SESSION use_secondary_engine = OFF")
+            cursor.fetchall()  # Consume result
             return conn, cursor
         except Exception as e:
-            self.logger.error(f"Failed to connect to MySQL: {e}")
+            self.logger.error(f"Failed to connect to MySQL/InnoDB: {e}")
             raise
     
-    def connect_shannonbase(self):
-        """Connect to ShannonBase column engine"""
+    def connect_shannonbase(self, database=None):
+        """Connect to ShannonBase rapid/column engine (secondary engine)"""
         try:
-            conn = mysql.connector.connect(**SHANNONBASE_CONFIG)
+            config = SHANNONBASE_CONFIG.copy()
+            if database:
+                config['database'] = database
+            conn = mysql.connector.connect(**config)
             cursor = conn.cursor()
             # Enable optimizer trace
             for setting, value in OPTIMIZER_TRACE_SETTINGS.items():
-                cursor.execute(f"SET {setting} = '{value}'")
-            # Enable column store execution
-            cursor.execute("SET use_column_engine = 1")
+                # Use quotes only for string values, not for integers
+                if isinstance(value, str):
+                    cursor.execute(f"SET {setting} = '{value}'")
+                else:
+                    cursor.execute(f"SET {setting} = {value}")
+                # Consume any result to avoid "Unread result found" error
+                try:
+                    cursor.fetchall()
+                except:
+                    pass
+            # Force use of secondary engine (Rapid/Column Store)
+            # FORCED means queries will always use secondary engine if eligible
+            cursor.execute("SET SESSION use_secondary_engine = FORCED")
+            cursor.fetchall()  # Consume result
             return conn, cursor
         except Exception as e:
-            self.logger.error(f"Failed to connect to ShannonBase: {e}")
+            self.logger.error(f"Failed to connect to ShannonBase Rapid Engine: {e}")
             raise
     
     def execute_with_timing(self, cursor, query, warmup=3, runs=5):
@@ -120,6 +162,17 @@ class DualEngineCollector:
             'all_runs': latencies
         }
     
+    def verify_engine_used(self, cursor):
+        """Verify which engine is actually being used"""
+        try:
+            cursor.execute("SHOW SESSION VARIABLES LIKE 'use_secondary_engine'")
+            result = cursor.fetchone()
+            if result:
+                return result[1]  # Returns 'OFF', 'ON', or 'FORCED'
+        except Exception as e:
+            self.logger.warning(f"Failed to verify engine: {e}")
+        return None
+    
     def extract_features_from_trace(self, cursor):
         """Extract optimizer features from trace"""
         cursor.execute("SELECT TRACE FROM information_schema.OPTIMIZER_TRACE")
@@ -146,17 +199,22 @@ class DualEngineCollector:
             
         return None
     
-    def collect_query_data(self, query, query_id):
+    def collect_query_data(self, query, query_id, database=None):
         """Collect features and latencies for a single query"""
         results = {
             'query_id': query_id,
             'query_hash': hashlib.md5(query.encode()).hexdigest(),
-            'timestamp': datetime.now().isoformat()
+            'timestamp': datetime.now().isoformat(),
+            'database': database
         }
         
-        # Collect from MySQL (row store)
+        # Collect from MySQL (row store - primary engine)
         try:
-            mysql_conn, mysql_cursor = self.connect_mysql()
+            mysql_conn, mysql_cursor = self.connect_mysql(database)
+            
+            # Verify engine setting
+            engine_mode = self.verify_engine_used(mysql_cursor)
+            self.logger.debug(f"MySQL engine mode: {engine_mode} (expected: OFF)")
             
             # Get features
             mysql_cursor.execute(query)
@@ -168,18 +226,24 @@ class DualEngineCollector:
             
             results['mysql'] = {
                 'features': features,
-                'latency': mysql_latency
+                'latency': mysql_latency,
+                'engine_mode': engine_mode,
+                'engine_type': 'InnoDB (Primary/Row Store)'
             }
             
             mysql_conn.close()
             
         except Exception as e:
-            self.logger.error(f"MySQL execution failed for query {query_id}: {e}")
+            self.logger.error(f"MySQL/InnoDB execution failed for query {query_id}: {e}")
             results['mysql'] = {'error': str(e)}
         
-        # Collect from ShannonBase (column store)
+        # Collect from ShannonBase (column store - secondary engine)
         try:
-            shannon_conn, shannon_cursor = self.connect_shannonbase()
+            shannon_conn, shannon_cursor = self.connect_shannonbase(database)
+            
+            # Verify engine setting
+            engine_mode = self.verify_engine_used(shannon_cursor)
+            self.logger.debug(f"ShannonBase engine mode: {engine_mode} (expected: FORCED)")
             
             # Get features (should be same as MySQL)
             shannon_cursor.execute(query)
@@ -191,13 +255,15 @@ class DualEngineCollector:
             
             results['shannonbase'] = {
                 'features': shannon_features,
-                'latency': shannon_latency
+                'latency': shannon_latency,
+                'engine_mode': engine_mode,
+                'engine_type': 'Rapid (Secondary/Column Store)'
             }
             
             shannon_conn.close()
             
         except Exception as e:
-            self.logger.error(f"ShannonBase execution failed for query {query_id}: {e}")
+            self.logger.error(f"ShannonBase Rapid execution failed for query {query_id}: {e}")
             results['shannonbase'] = {'error': str(e)}
         
         # Save results
@@ -251,6 +317,13 @@ class DualEngineCollector:
         """Collect data from a workload file (SQL or JSON format)"""
         workload_path = Path(workload_file)
         queries = []
+        
+        # Extract database name from filename (e.g., training_workload_tpch_sf1.sql -> tpch_sf1)
+        database_name = None
+        if 'training_workload_' in workload_path.name:
+            parts = workload_path.stem.replace('training_workload_', '')
+            database_name = parts
+            self.logger.info(f"Detected database: {database_name}")
         
         # Load queries based on file format
         if workload_path.suffix == '.json':
@@ -349,7 +422,7 @@ class DualEngineCollector:
             query_id = query_info['id']
             self.logger.info(f"Processing {query_info['category']} query {query_id} ({idx+1}/{len(queries)}) - Type: {query_info['type']}")
             
-            result = self.collect_query_data(query_info['query'], query_id)
+            result = self.collect_query_data(query_info['query'], query_id, database=database_name)
             result['metadata'] = {
                 'type': query_info['type'],
                 'category': query_info['category']
@@ -492,27 +565,111 @@ class DualEngineCollector:
             self.logger.info(f"Class distribution: Column better: {col_better}, Row better: {row_better}")
 
 
+def discover_workload_files(workload_dir='../training_workloads', pattern='training_workload_*.sql'):
+    """Discover all generated workload files"""
+    workload_path = Path(__file__).parent / workload_dir
+    if not workload_path.exists():
+        return []
+    
+    workload_files = list(workload_path.glob(pattern))
+    return sorted(workload_files)
+
+
 def main():
-    parser = argparse.ArgumentParser(description='Collect dual engine execution data for AP and TP queries')
-    parser.add_argument('--workload', type=str, required=True,
-                       help='Path to workload file (SQL or JSON format from generate_training_workload_advanced.py)')
+    parser = argparse.ArgumentParser(
+        description='Collect dual engine execution data for AP and TP queries',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  # Auto-discover and process all workloads
+  python3 collect_dual_engine_data.py --workload auto
+  
+  # Process specific workload
+  python3 collect_dual_engine_data.py --workload ../training_workloads/training_workload_tpch_sf1.sql
+  
+  # Process multiple workloads
+  python3 collect_dual_engine_data.py --workload ../training_workloads/training_workload_tpch*.sql
+  
+  # Auto-discover with dataset generation
+  python3 collect_dual_engine_data.py --workload auto --generate-dataset
+        """)
+    parser.add_argument('--workload', type=str, default='auto',
+                       help='Path to workload file, glob pattern, or "auto" to discover all workloads (default: auto)')
     parser.add_argument('--output', type=str, default='./training_data',
-                       help='Output directory for collected data')
+                       help='Output directory for collected data (default: ./training_data)')
     parser.add_argument('--generate-dataset', action='store_true',
                        help='Generate LightGBM dataset after collection')
+    parser.add_argument('--database', type=str, default=None,
+                       help='Filter to specific database when using auto-discovery (e.g., tpch_sf1)')
     
     args = parser.parse_args()
     
-    collector = DualEngineCollector(output_dir=args.output)
+    # Determine which workload files to process
+    workload_files = []
     
-    # Collect data from workload
-    results = collector.collect_from_workload(args.workload)
+    if args.workload == 'auto':
+        # Auto-discover workload files
+        print("Auto-discovering workload files...")
+        workload_files = discover_workload_files()
+        
+        # Filter by database if specified
+        if args.database:
+            workload_files = [f for f in workload_files if args.database in f.name]
+            print(f"Filtered to database: {args.database}")
+        
+        if not workload_files:
+            print("No workload files found. Please generate workloads first using:")
+            print("  python3 generate_training_workload_advanced.py --all-datasets")
+            return
+        
+        print(f"Found {len(workload_files)} workload files:")
+        for f in workload_files:
+            print(f"  - {f.name}")
+    
+    elif '*' in args.workload or '?' in args.workload:
+        # Glob pattern
+        from glob import glob
+        workload_files = [Path(f) for f in glob(args.workload)]
+        if not workload_files:
+            print(f"No workload files matching pattern: {args.workload}")
+            return
+        print(f"Found {len(workload_files)} workload files matching pattern")
+    
+    else:
+        # Single file
+        workload_files = [Path(args.workload)]
+        if not workload_files[0].exists():
+            print(f"Error: Workload file not found: {args.workload}")
+            return
+    
+    # Process each workload file
+    collector = DualEngineCollector(output_dir=args.output)
+    all_results = []
+    
+    for idx, workload_file in enumerate(workload_files, 1):
+        print(f"\n{'='*60}")
+        print(f"Processing workload {idx}/{len(workload_files)}: {workload_file.name}")
+        print(f"{'='*60}")
+        
+        try:
+            results = collector.collect_from_workload(str(workload_file))
+            all_results.extend(results)
+        except Exception as e:
+            print(f"Error processing {workload_file.name}: {e}")
+            import traceback
+            traceback.print_exc()
     
     # Generate LightGBM dataset if requested
-    if args.generate_dataset:
+    if args.generate_dataset and all_results:
+        print(f"\n{'='*60}")
+        print("Generating LightGBM dataset from all collected data")
+        print(f"{'='*60}")
         collector.generate_lightgbm_dataset()
     
-    print(f"Data collection complete. Results saved to {args.output}")
+    print(f"\nData collection complete!")
+    print(f"  Total workloads processed: {len(workload_files)}")
+    print(f"  Total queries collected: {len(all_results)}")
+    print(f"  Results saved to: {args.output}")
 
 
 if __name__ == "__main__":
