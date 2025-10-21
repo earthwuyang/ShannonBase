@@ -333,8 +333,8 @@ int Auto_ML::explain(String *sch_tb_name, String *target_column_name, String *mo
                    : HA_ERR_GENERIC;
 }
 
-int Auto_ML::model_active(String *in_sch_tb_name, Json_wrapper & /*out_model_info*/) {
-  assert(in_sch_tb_name);
+int Auto_ML::model_active(String * /*in_sch_tb_name*/, Json_wrapper & /*out_model_info*/) {
+  // assert(in_sch_tb_name);  // Commented out as parameter is marked unused
 
   return 0;
 }

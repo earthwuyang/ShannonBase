@@ -2,7 +2,69 @@
 
 ## Common Issues and Solutions
 
-### Issue 1: Permission Denied When Cleaning Data Files
+### Issue 1: CREATE INDEX IF NOT EXISTS Syntax Error
+
+#### Symptom
+```bash
+ERROR 1064 (42000) at line 100: You have an error in your SQL syntax; 
+check the manual that corresponds to your MySQL server version for the 
+right syntax to use near 'IF NOT EXISTS idx_nation_region ON nation(n_regionkey)' at line 1
+```
+
+#### Root Cause
+MySQL does not support the `IF NOT EXISTS` clause for `CREATE INDEX` statements. This syntax is only valid for `CREATE TABLE`.
+
+```sql
+-- ❌ WRONG - Not supported in MySQL
+CREATE INDEX IF NOT EXISTS idx_name ON table(column);
+
+-- ✅ CORRECT - Valid MySQL syntax
+CREATE INDEX idx_name ON table(column);
+
+-- ✅ ALTERNATIVE - Use ALTER TABLE (MySQL 8.0+)
+ALTER TABLE table ADD INDEX IF NOT EXISTS idx_name (column);
+```
+
+#### Solution 1: Use Updated Scripts (Recommended)
+
+The scripts have been fixed to use correct MySQL syntax:
+
+```bash
+# Both scripts now use correct syntax
+./setup_tpc_benchmarks.sh
+# or
+./setup_tpc_benchmarks_parallel.sh
+```
+
+#### Solution 2: Workaround for Existing Scripts
+
+If you encounter this error with old scripts:
+
+```bash
+# Method 1: Manually drop and recreate indexes
+mysql -h 127.0.0.1 -P 3307 -u root -pshannonbase tpch_sf1 -e "
+DROP INDEX IF EXISTS idx_nation_region ON nation;
+CREATE INDEX idx_nation_region ON nation(n_regionkey);
+"
+
+# Method 2: Use ALTER TABLE instead
+mysql -h 127.0.0.1 -P 3307 -u root -pshannonbase tpch_sf1 -e "
+ALTER TABLE nation ADD INDEX idx_nation_region (n_regionkey);
+"
+```
+
+#### Solution 3: Continue Without Indexes
+
+If indexes are causing issues, you can skip them (performance will be worse):
+
+```bash
+# Load data without indexes, add them later
+# (The scripts create indexes after tables are created)
+```
+
+---
+
+### Issue 2: Permission Denied When Cleaning Data Files
 
 #### Symptom
 ```bash

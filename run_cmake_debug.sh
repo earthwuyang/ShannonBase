@@ -1,17 +1,17 @@
 #!/bin/bash
-# ShannonBase CMake configuration script
+# ShannonBase CMake configuration script - DEBUG BUILD
 # Updated paths for local environment
 
 # Base directory (where ShannonBase is located)
 SHANNON_BASE_DIR="/home/wuy/DB/ShannonBase"
-SHANNON_INSTALL_DIR="${SHANNON_BASE_DIR}/shannon_bin"
+SHANNON_INSTALL_DIR="${SHANNON_BASE_DIR}/shannon_bin_debug"
 
-# Create cmake_build directory if it doesn't exist
-mkdir -p cmake_build
+# Create cmake_build_debug directory if it doesn't exist
+mkdir -p cmake_build_debug
 
-cd cmake_build && cmake ../ \
+cd cmake_build_debug && cmake ../ \
   -DWITH_BOOST=/home/wuy/software/boost_1_77_0 \
-  -DCMAKE_BUILD_TYPE=RELEASE \
+  -DCMAKE_BUILD_TYPE=DEBUG \
   -DCMAKE_INSTALL_PREFIX=${SHANNON_INSTALL_DIR} \
   -DMYSQL_DATADIR=${SHANNON_BASE_DIR}/db/data \
   -DSYSCONFDIR=${SHANNON_BASE_DIR}/db \
@@ -27,12 +27,8 @@ cd cmake_build && cmake ../ \
   -DWITH_SSL=system \
   -DDEFAULT_SET=community \
   -DWITH_UNIT_TESTS=OFF \
-  -DWITH_DEBUG=0
+  -DWITH_DEBUG=1
 
-# Note: Using system SSL instead of custom path since OpenSSL is installed system-wide
-# To use custom OpenSSL, replace -DWITH_SSL=system with:
-# -DWITH_SSL_PATH=/path/to/openssl
-# 
-# For debug build, change:
-# -DCMAKE_BUILD_TYPE=DEBUG
-# -DWITH_DEBUG=1
+echo ""
+echo "Debug build configured in cmake_build_debug/"
+echo "To build: cd cmake_build_debug && make -j$(nproc)"

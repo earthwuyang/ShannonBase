@@ -317,7 +317,10 @@ CREATE TABLE IF NOT EXISTS lineitem (
     KEY idx_lineitem_shipdate (l_shipdate)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE INDEX IF NOT EXISTS idx_nation_region ON nation(n_regionkey);
+-- Add indexes that weren't created in table definitions
+-- nation table doesn't have this index in its CREATE TABLE statement
+CREATE INDEX idx_nation_region ON nation(n_regionkey);
+-- Note: idx_supplier_nation is already defined in supplier CREATE TABLE, no need to add it again
 EOF
 
     cd "${SCRIPT_DIR}/tpch-dbgen"

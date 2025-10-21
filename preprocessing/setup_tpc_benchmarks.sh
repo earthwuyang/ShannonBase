@@ -341,7 +341,10 @@ CREATE TABLE lineitem (
     KEY idx_lineitem_shipdate (l_shipdate)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- Add indexes that weren't created in table definitions
+-- nation table doesn't have this index in its CREATE TABLE statement
 CREATE INDEX idx_nation_region ON nation(n_regionkey);
+-- Note: idx_supplier_nation is already defined in supplier CREATE TABLE, no need to add it again
 EOF
 
     LINEITEM_COUNT=$(mysql_scalar tpch_sf1 "SELECT COUNT(*) FROM lineitem;") || true

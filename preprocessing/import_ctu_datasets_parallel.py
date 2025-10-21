@@ -66,6 +66,8 @@ def connect_local_mysql(database=None):
     config = LOCAL_MYSQL_CONFIG.copy()
     if database:
         config['database'] = database
+    # Add connection timeout to prevent hanging
+    config['connection_timeout'] = 30
     return mysql.connector.connect(**config)
 
 def connect_source_mysql(database=None):
@@ -175,10 +177,19 @@ def export_table_to_csv(args):
 def create_table_if_not_exists(database, table, create_sql):
     """Create table in local database"""
     try:
+        # Add timeout to prevent hanging
         conn = connect_local_mysql(database)
         cursor = conn.cursor()
+        
+        # Disable foreign key checks to avoid constraint issues during creation
+        cursor.execute("SET FOREIGN_KEY_CHECKS = 0")
+        
         cursor.execute(f"DROP TABLE IF EXISTS `{table}`")
         cursor.execute(create_sql)
+        
+        # Re-enable foreign key checks
+        cursor.execute("SET FOREIGN_KEY_CHECKS = 1")
+        
         conn.commit()
         cursor.close()
         conn.close()
@@ -359,12 +370,16 @@ def process_database(database, force=False, workers=MAX_WORKERS):
     
     # Phase 2: Create tables
     print(f"\n  📋 Phase 2: Creating tables...")
-    for table in tables:
+    for i, table in enumerate(tables, 1):
+        print(f"    [{i}/{len(tables)}] Creating {table}...", end='', flush=True)
         create_sql = get_table_schema(database, table)
         if create_sql:
-            create_table_if_not_exists(database, table, create_sql)
+            if create_table_if_not_exists(database, table, create_sql):
+                print(f" ✓")
+            else:
+                print(f" ✗ Failed")
         else:
-            print(f"    ✗ Could not get schema for {table}")
+            print(f" ✗ Could not get schema")
     
     # Phase 3: Parallel import
     print(f"\n  📥 Phase 3: Importing data (parallel with INSERT IGNORE)...")
