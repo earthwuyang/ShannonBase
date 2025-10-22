@@ -15,6 +15,8 @@ import csv
 import json
 import os
 import sys
+import shutil
+import subprocess
 from datetime import datetime
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
@@ -233,11 +235,13 @@ def export_table_to_csv(args):
         return {'table': table, 'status': 'error', 'error': str(e)}
 
 def create_table_if_not_exists(database, table, create_sql):
-    """Create table in local database with SECONDARY_ENGINE=Rapid
+    """Create table in local database WITHOUT SECONDARY_ENGINE
     
-    To avoid DDL errors, we:
-    1. Create table WITHOUT SECONDARY_ENGINE (even if indexes are present)
-    2. Add SECONDARY_ENGINE after table is created
+    SECONDARY_ENGINE will be added later in Phase 4 (before SECONDARY_LOAD)
+    to avoid DDL errors during data import (Phase 3).
+    
+    MySQL Error 3890: DDLs on a table with a secondary engine defined are not allowed.
+    This includes ALTER TABLE ... DISABLE/ENABLE KEYS used during import.
     """
     try:
         # Add timeout to prevent hanging
@@ -249,16 +253,13 @@ def create_table_if_not_exists(database, table, create_sql):
         
         cursor.execute(f"DROP TABLE IF EXISTS `{table}`")
         
-        # Remove SECONDARY_ENGINE from create_sql if present (to avoid DDL errors)
-        # We'll add it separately after table creation
+        # Remove SECONDARY_ENGINE from create_sql if present
+        # We'll add it in Phase 4, AFTER data import
         create_sql_clean = create_sql.replace('SECONDARY_ENGINE=Rapid', '').replace('SECONDARY_ENGINE = Rapid', '')
         create_sql_clean = create_sql_clean.rstrip(';').rstrip() + ';'
         
-        # Create table without SECONDARY_ENGINE
+        # Create table WITHOUT SECONDARY_ENGINE (to allow DDL operations during import)
         cursor.execute(create_sql_clean)
-        
-        # Now add SECONDARY_ENGINE=Rapid separately (after all DDL in CREATE TABLE)
-        cursor.execute(f"ALTER TABLE `{table}` SECONDARY_ENGINE=Rapid")
         
         # Re-enable foreign key checks
         cursor.execute("SET FOREIGN_KEY_CHECKS = 1")
@@ -273,6 +274,10 @@ def create_table_if_not_exists(database, table, create_sql):
 
 def load_tables_to_rapid(database, tables):
     """Load all tables into Rapid secondary engine with retry logic
+    
+    This function:
+    1. Adds SECONDARY_ENGINE=Rapid to each table (if not already set)
+    2. Runs ALTER TABLE ... SECONDARY_LOAD to load data into Rapid
     
     Args:
         database: Database name
@@ -296,6 +301,20 @@ def load_tables_to_rapid(database, tables):
             try:
                 conn = connect_local_mysql(database)
                 cursor = conn.cursor()
+                
+                # First, ensure SECONDARY_ENGINE is set (needed before SECONDARY_LOAD)
+                # Check if already set to avoid unnecessary ALTER
+                cursor.execute(f"""
+                    SELECT CREATE_OPTIONS 
+                    FROM information_schema.tables 
+                    WHERE table_schema = %s AND table_name = %s
+                """, (database, table))
+                
+                result = cursor.fetchone()
+                has_secondary = result and 'SECONDARY_ENGINE' in (result[0] or '')
+                
+                if not has_secondary:
+                    cursor.execute(f"ALTER TABLE `{table}` SECONDARY_ENGINE=Rapid")
                 
                 # Disable FK checks for SECONDARY_LOAD
                 cursor.execute("SET SESSION FOREIGN_KEY_CHECKS=0")
@@ -526,10 +545,52 @@ def process_database(database, force=False, workers=MAX_WORKERS):
             cursor.execute(f"DROP DATABASE `{database}`")
         
         if not exists or force:
-            cursor.execute(
-                f"CREATE DATABASE `{database}` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci"
-            )
-            print(f"    ✓ Created database: {database}")
+            try:
+                cursor.execute(
+                    f"CREATE DATABASE `{database}` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci"
+                )
+                print(f"    ✓ Created database: {database}")
+            except MySQLError as create_err:
+                # Handle Error 3678: Schema directory already exists
+                if '3678' in str(create_err) or 'already exists' in str(create_err).lower():
+                    print(f"    ⚠ Schema directory exists on disk but not in MySQL catalog")
+                    print(f"    Attempting to clean up orphaned directory...")
+                    
+                    # Close connection, stop MySQL, clean directory, restart
+                    cursor.close()
+                    conn.close()
+                    
+                    # Import subprocess for safe execution
+                    import subprocess
+                    
+                    # Stop MySQL
+                    print(f"      Stopping MySQL...")
+                    subprocess.run(['/home/wuy/ShannonBase/stop_mysql.sh'], 
+                                 stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                    time.sleep(3)
+                    
+                    # Remove orphaned directory
+                    import shutil
+                    orphaned_dir = Path(f'/home/wuy/ShannonBase/db/data/{database}')
+                    if orphaned_dir.exists():
+                        print(f"      Removing orphaned directory: {orphaned_dir}")
+                        shutil.rmtree(orphaned_dir)
+                    
+                    # Restart MySQL
+                    print(f"      Restarting MySQL...")
+                    subprocess.run(['/home/wuy/ShannonBase/start_mysql.sh'],
+                                 stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                    time.sleep(10)  # Wait for MySQL to start
+                    
+                    # Reconnect and create database
+                    conn = connect_local_mysql()
+                    cursor = conn.cursor()
+                    cursor.execute(
+                        f"CREATE DATABASE `{database}` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci"
+                    )
+                    print(f"    ✓ Created database after cleanup: {database}")
+                else:
+                    raise create_err
         else:
             print(f"    Database '{database}' already exists")
         

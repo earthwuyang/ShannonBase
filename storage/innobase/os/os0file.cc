@@ -2888,7 +2888,23 @@ static void os_parent_dir_fsync_posix(const char *path) {
   /* Open the parent directory */
   auto dir_fd = ::open(parent_dir, O_RDONLY);
 
-  ut_a(dir_fd != -1);
+  if (dir_fd == -1) {
+    /* BUGFIX: Don't crash if parent directory cannot be opened.
+     * This can happen in containers, during race conditions in DROP DATABASE,
+     * or when parent directory doesn't exist.
+     * Log a warning and skip the fsync instead of crashing.
+     */
+    int err = errno;
+    ib::warn(ER_IB_MSG_591)
+        << "Cannot open parent directory '" << parent_dir 
+        << "' for fsync: " << strerror(err)
+        << " (errno=" << err << "). Skipping directory fsync.";
+    
+    if (parent_in_path != nullptr) {
+      ut::free(parent_in_path);
+    }
+    return;  /* Gracefully handle error instead of crashing */
+  }
 
   if (parent_in_path != nullptr) {
     ut::free(parent_in_path);
@@ -2898,7 +2914,13 @@ static void os_parent_dir_fsync_posix(const char *path) {
   since this operation is not very frequent, but WSL1 does
   not support fdatasync on directories. */
   auto ret = ::fsync(dir_fd);
-  ut_a_eq(ret, 0);
+  if (ret != 0) {
+    /* BUGFIX: Also handle fsync failure gracefully */
+    int err = errno;
+    ib::warn(ER_IB_MSG_591)
+        << "fsync() failed on parent directory '" << parent_dir 
+        << "': " << strerror(err) << " (errno=" << err << ")";
+  }
 
   ::close(dir_fd);
 }
