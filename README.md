@@ -89,7 +89,7 @@ cd ../../
 ```
 cd ShannonBase && mkdir cmake_build -p
 bash run_cmake.sh
-make -j$(nproc) && make install
+cd cmake_build && make -j$(nproc) && make install
 ```
 PS: in `[]`, it's an optional compilation params, which is to enable coverage collection and ASAN check. And, boost asio 
 files are needed, you should install boost asio library at first.
