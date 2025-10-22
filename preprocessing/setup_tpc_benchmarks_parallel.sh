@@ -128,6 +128,89 @@ get_table_row_count() {
     mysql_scalar "$db" "SELECT COUNT(*) FROM \`${table}\`;" 2>/dev/null || echo "0"
 }
 
+database_exists() {
+    local db="$1"
+    local count
+    count=$(mysql_scalar information_schema "SELECT COUNT(*) FROM information_schema.schemata WHERE schema_name='${db}';" 2>/dev/null || echo "0")
+    [ "${count:-0}" -gt 0 ]
+}
+
+check_tpch_data_complete() {
+    # Check if TPC-H database exists with expected data
+    if ! database_exists tpch_sf1; then
+        return 1
+    fi
+    
+    # Expected approximate row counts for SF1 (Scale Factor 1 = 1GB)
+    local expected_rows=(
+        "region:5"
+        "nation:25"
+        "part:200000"
+        "supplier:10000"
+        "partsupp:800000"
+        "customer:150000"
+        "orders:1500000"
+        "lineitem:6000000"  # Approximate, actual is ~6001215
+    )
+    
+    local all_match=1
+    for entry in "${expected_rows[@]}"; do
+        IFS=':' read -r table min_rows <<< "$entry"
+        if ! table_exists tpch_sf1 "$table"; then
+            all_match=0
+            break
+        fi
+        local actual_rows
+        actual_rows=$(get_table_row_count tpch_sf1 "$table")
+        # Allow some variance for lineitem (within 1% of 6M)
+        if [ "$table" = "lineitem" ]; then
+            if [ "${actual_rows:-0}" -lt 5900000 ]; then
+                all_match=0
+                break
+            fi
+        else
+            if [ "${actual_rows:-0}" -lt "$min_rows" ]; then
+                all_match=0
+                break
+            fi
+        fi
+    done
+    
+    return $((1 - all_match))
+}
+
+check_tpcds_data_complete() {
+    # Check if TPC-DS database exists with all tables having data
+    if ! database_exists tpcds_sf1; then
+        return 1
+    fi
+    
+    # List of all TPC-DS tables
+    local tables=(call_center catalog_page catalog_returns catalog_sales customer customer_address 
+                  customer_demographics date_dim dbgen_version household_demographics income_band 
+                  inventory item promotion reason ship_mode store store_returns store_sales 
+                  time_dim warehouse web_page web_returns web_sales web_site)
+    
+    local all_exist=1
+    for table in "${tables[@]}"; do
+        if ! table_exists tpcds_sf1 "$table"; then
+            all_exist=0
+            break
+        fi
+        # Check that table has at least some data (skip dbgen_version which may be empty)
+        if [ "$table" != "dbgen_version" ]; then
+            local row_count
+            row_count=$(get_table_row_count tpcds_sf1 "$table")
+            if [ "${row_count:-0}" -eq 0 ]; then
+                all_exist=0
+                break
+            fi
+        fi
+    done
+    
+    return $((1 - all_exist))
+}
+
 check_mysql() {
     if ! "${MYSQLADMIN_CMD[@]}" ping >/dev/null 2>&1; then
         print_error "MySQL is not reachable"
@@ -221,12 +304,46 @@ setup_tpch() {
 load_tpch_parallel() {
     print_status "Loading TPC-H data with parallel processing..."
 
-    # Drop database completely to ensure no FK metadata from previous runs
-    print_status "Dropping existing tpch_sf1 database (if exists) to ensure clean state..."
-    mysql_exec "DROP DATABASE IF EXISTS \`tpch_sf1\`;" || true
-    
-    # Create fresh database
-    mysql_exec "CREATE DATABASE \`tpch_sf1\` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+    # Check if data already exists with correct row counts
+    if check_tpch_data_complete; then
+        print_status "✓ TPC-H data already exists with expected row counts, skipping data load..."
+        mysql_stream_db tpch_sf1 <<'EOF'
+SELECT 'TPC-H Existing Data Summary' AS info;
+SELECT 'customer' AS table_name, COUNT(*) AS row_count FROM customer
+UNION ALL SELECT 'lineitem', COUNT(*) FROM lineitem
+UNION ALL SELECT 'nation', COUNT(*) FROM nation
+UNION ALL SELECT 'orders', COUNT(*) FROM orders
+UNION ALL SELECT 'part', COUNT(*) FROM part
+UNION ALL SELECT 'partsupp', COUNT(*) FROM partsupp
+UNION ALL SELECT 'region', COUNT(*) FROM region
+UNION ALL SELECT 'supplier', COUNT(*) FROM supplier
+ORDER BY table_name;
+EOF
+        # Jump directly to SECONDARY_LOAD step
+        print_status "Proceeding to SECONDARY_LOAD step..."
+        
+        # Ensure SECONDARY_ENGINE is set on all tables
+        print_status "Verifying SECONDARY_ENGINE configuration..."
+        for table in nation region part supplier partsupp customer orders lineitem; do
+            has_secondary=$(mysql_scalar tpch_sf1 "SELECT CREATE_OPTIONS FROM information_schema.tables WHERE table_schema='tpch_sf1' AND table_name='$table'" 2>/dev/null | grep -q "SECONDARY_ENGINE" && echo "1" || echo "0")
+            
+            if [ "$has_secondary" = "0" ]; then
+                print_status "  Adding SECONDARY_ENGINE to $table..."
+                mysql_exec_db tpch_sf1 "ALTER TABLE \`$table\` SECONDARY_ENGINE=Rapid;" || print_warning "Failed to add SECONDARY_ENGINE to $table"
+            fi
+        done
+        
+        # Continue to SECONDARY_LOAD at the end of function
+    else
+        # Data doesn't exist or is incomplete, proceed with full load
+        print_status "TPC-H data not found or incomplete, proceeding with full data load..."
+        
+        # Drop database completely to ensure no FK metadata from previous runs
+        print_status "Dropping existing tpch_sf1 database (if exists) to ensure clean state..."
+        mysql_exec "DROP DATABASE IF EXISTS \`tpch_sf1\`;" || true
+        
+        # Create fresh database
+        mysql_exec "CREATE DATABASE \`tpch_sf1\` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
     
     # Disable foreign key checks globally
     mysql_exec "SET GLOBAL FOREIGN_KEY_CHECKS=0;" || true
@@ -360,9 +477,9 @@ EOF
     print_status "Configuring SECONDARY_ENGINE for TPC-H tables..."
     for table in nation region part supplier partsupp customer orders lineitem; do
         # Check if table already has SECONDARY_ENGINE
-        has_secondary=$(mysql_scalar tpch_sf1 "SELECT CREATE_OPTIONS FROM information_schema.tables WHERE table_schema='tpch_sf1' AND table_name='$table'" 2>/dev/null | grep -c "SECONDARY_ENGINE" || echo "0")
+        has_secondary=$(mysql_scalar tpch_sf1 "SELECT CREATE_OPTIONS FROM information_schema.tables WHERE table_schema='tpch_sf1' AND table_name='$table'" 2>/dev/null | grep -q "SECONDARY_ENGINE" && echo "1" || echo "0")
         
-        if [ "$has_secondary" -eq 0 ]; then
+        if [ "$has_secondary" = "0" ]; then
             print_status "  Adding SECONDARY_ENGINE to $table..."
             mysql_exec_db tpch_sf1 "ALTER TABLE \`$table\` SECONDARY_ENGINE=Rapid;" || print_warning "Failed to add SECONDARY_ENGINE to $table"
         else
@@ -443,8 +560,8 @@ EOF
         fi
     fi
     
-    print_status "Verifying TPC-H data load..."
-    mysql_stream_db tpch_sf1 <<'EOF'
+        print_status "Verifying TPC-H data load..."
+        mysql_stream_db tpch_sf1 <<'EOF'
 SELECT 'TPC-H Data Load Summary' AS info;
 SELECT 'customer' AS table_name, COUNT(*) AS row_count FROM customer
 UNION ALL SELECT 'lineitem', COUNT(*) FROM lineitem
@@ -456,48 +573,71 @@ UNION ALL SELECT 'region', COUNT(*) FROM region
 UNION ALL SELECT 'supplier', COUNT(*) FROM supplier
 ORDER BY table_name;
 EOF
-
-    print_status "Loading TPC-H data into Rapid engine (with error handling)..."
+    fi  # End of data load check
+    
+    # SECONDARY_LOAD applies whether data was loaded or already existed
+    print_status "Loading TPC-H data into Rapid engine (with error handling and retry)..."
     # Disable FK checks before SECONDARY_LOAD
     mysql_exec_db tpch_sf1 "SET SESSION FOREIGN_KEY_CHECKS=0;"
-    mysql_exec_db tpch_sf1 "SET GLOBAL FOREIGN_KEY_CHECKS=0;"
+    mysql_exec_db tpch_sf1 "SET GLOBAL FOREIGN_KEY_CHECKS=0;" 2>/dev/null || true
     
-    # Load all tables into the secondary engine (Rapid) with individual error handling
+    # Load all tables into the secondary engine (Rapid) with individual error handling and retry
     RAPID_LOADED=0
     RAPID_FAILED=0
+    declare -a FAILED_TABLES
+    MAX_RETRIES=2
     
     for table in customer lineitem nation orders part partsupp region supplier; do
         print_status "Loading $table into Rapid..."
         
-        # Try to load with timeout to detect crashes - capture error
-        ERROR_MSG=$(timeout 60 mysql_exec_db tpch_sf1 "SET SESSION FOREIGN_KEY_CHECKS=0; ALTER TABLE \`$table\` SECONDARY_LOAD;" 2>&1)
-        if [ $? -eq 0 ]; then
-            print_status "  ✓ $table loaded into Rapid"
-            RAPID_LOADED=$((RAPID_LOADED + 1))
-        else
-            # Check if MySQL is still alive
-            if ! "${MYSQLADMIN_CMD[@]}" ping >/dev/null 2>&1; then
-                print_error "MySQL crashed during SECONDARY_LOAD of $table!"
-                print_error "Error: $ERROR_MSG"
-                return 1
+        SUCCESS=0
+        for attempt in $(seq 1 $MAX_RETRIES); do
+            # Try to load with timeout to detect crashes - capture error
+            ERROR_MSG=$(timeout 120 mysql_exec_db tpch_sf1 "SET SESSION FOREIGN_KEY_CHECKS=0; ALTER TABLE \`$table\` SECONDARY_LOAD;" 2>&1)
+            if [ $? -eq 0 ]; then
+                print_status "  ✓ $table loaded into Rapid (attempt $attempt)"
+                RAPID_LOADED=$((RAPID_LOADED + 1))
+                SUCCESS=1
+                break
+            else
+                # Check if MySQL is still alive
+                if ! "${MYSQLADMIN_CMD[@]}" ping >/dev/null 2>&1; then
+                    print_error "MySQL crashed during SECONDARY_LOAD of $table!"
+                    print_error "Error: $ERROR_MSG"
+                    return 1
+                fi
+                
+                # Check if table is already loaded (error 3877 means not loaded, other errors may mean already loaded)
+                if echo "$ERROR_MSG" | grep -qi "already loaded\|SECONDARY_LOAD_STATUS"; then
+                    print_status "  ✓ $table was already loaded"
+                    RAPID_LOADED=$((RAPID_LOADED + 1))
+                    SUCCESS=1
+                    break
+                fi
+                
+                if [ $attempt -lt $MAX_RETRIES ]; then
+                    print_warning "  ⚠ $table attempt $attempt failed, retrying..."
+                    sleep 2
+                fi
             fi
-            print_warning "  ✗ $table FAILED to load into Rapid: ${ERROR_MSG}"
+        done
+        
+        if [ $SUCCESS -eq 0 ]; then
+            print_warning "  ✗ $table FAILED after $MAX_RETRIES attempts: ${ERROR_MSG}"
             RAPID_FAILED=$((RAPID_FAILED + 1))
-            
-            # Only show first error in detail to avoid spam
-            if [ "$RAPID_FAILED" -eq 1 ]; then
-                print_warning "  First error details: $ERROR_MSG"
-            fi
+            FAILED_TABLES+=("$table")
         fi
         
-        # Small delay
+        # Small delay between tables
         sleep 1
     done
     
-    print_status "TPC-H Rapid loading complete: $RAPID_LOADED loaded, $RAPID_FAILED failed"
+    print_status "TPC-H Rapid loading complete: $RAPID_LOADED/$((RAPID_LOADED + RAPID_FAILED)) loaded"
     if [ "$RAPID_FAILED" -gt 0 ]; then
-        print_warning "Some tables failed to load into Rapid (likely FK metadata issues)"
-        print_warning "Failed tables will still work in InnoDB, just not in Rapid engine"
+        print_warning "Failed tables: ${FAILED_TABLES[*]}"
+        print_warning "These tables will still work in InnoDB, just not in Rapid engine"
+    else
+        print_status "✅ All TPC-H tables successfully loaded into Rapid!"
     fi
 
     cd "$SCRIPT_DIR"
@@ -556,12 +696,41 @@ setup_tpcds() {
 load_tpcds_parallel() {
     print_status "Loading TPC-DS data with parallel processing..."
 
-    # Drop database completely to ensure no FK metadata from previous runs
-    print_status "Dropping existing tpcds_sf1 database (if exists) to ensure clean state..."
-    mysql_exec "DROP DATABASE IF EXISTS \`tpcds_sf1\`;" || true
-    
-    # Create fresh database
-    mysql_exec "CREATE DATABASE \`tpcds_sf1\` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+    # Check if data already exists with all tables populated
+    if check_tpcds_data_complete; then
+        print_status "✓ TPC-DS data already exists with all tables populated, skipping data load..."
+        mysql_stream_db tpcds_sf1 <<'EOF'
+SELECT 'TPC-DS Existing Data Summary' AS info;
+SELECT table_name, table_rows
+FROM information_schema.tables
+WHERE table_schema = 'tpcds_sf1'
+ORDER BY table_name;
+EOF
+        # Jump directly to SECONDARY_LOAD step
+        print_status "Proceeding to SECONDARY_LOAD step..."
+        
+        # Ensure SECONDARY_ENGINE is set on all tables
+        print_status "Verifying SECONDARY_ENGINE configuration..."
+        for table in call_center catalog_page catalog_returns catalog_sales customer customer_address customer_demographics date_dim dbgen_version household_demographics income_band inventory item promotion reason ship_mode store store_returns store_sales time_dim warehouse web_page web_returns web_sales web_site; do
+            has_secondary=$(mysql_scalar tpcds_sf1 "SELECT CREATE_OPTIONS FROM information_schema.tables WHERE table_schema='tpcds_sf1' AND table_name='$table'" 2>/dev/null | grep -q "SECONDARY_ENGINE" && echo "1" || echo "0")
+            
+            if [ "$has_secondary" = "0" ]; then
+                print_status "  Adding SECONDARY_ENGINE to $table..."
+                mysql_exec_db tpcds_sf1 "ALTER TABLE \`$table\` SECONDARY_ENGINE=Rapid;" || print_warning "Failed to add SECONDARY_ENGINE to $table"
+            fi
+        done
+        
+        # Continue to SECONDARY_LOAD at the end of function
+    else
+        # Data doesn't exist or is incomplete, proceed with full load
+        print_status "TPC-DS data not found or incomplete, proceeding with full data load..."
+        
+        # Drop database completely to ensure no FK metadata from previous runs
+        print_status "Dropping existing tpcds_sf1 database (if exists) to ensure clean state..."
+        mysql_exec "DROP DATABASE IF EXISTS \`tpcds_sf1\`;" || true
+        
+        # Create fresh database
+        mysql_exec "CREATE DATABASE \`tpcds_sf1\` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
     
     # Disable FK checks globally
     mysql_exec "SET GLOBAL FOREIGN_KEY_CHECKS=0;" || true
@@ -1107,57 +1276,79 @@ EOF
         wait
     fi
     
-    print_status "Verifying TPC-DS data load..."
-    mysql_stream_db tpcds_sf1 <<'EOF'
+        print_status "Verifying TPC-DS data load..."
+        mysql_stream_db tpcds_sf1 <<'EOF'
 SELECT 'TPC-DS Data Load Summary' AS info;
 SELECT table_name, table_rows
 FROM information_schema.tables
 WHERE table_schema = 'tpcds_sf1'
 ORDER BY table_name;
 EOF
-
-    print_status "Loading TPC-DS data into Rapid engine (with error handling)..."
+    fi  # End of data load check
+    
+    # SECONDARY_LOAD applies whether data was loaded or already existed
+    print_status "Loading TPC-DS data into Rapid engine (with error handling and retry)..."
     # Ensure FK checks are disabled before SECONDARY_LOAD
     mysql_exec_db tpcds_sf1 "SET SESSION FOREIGN_KEY_CHECKS=0;"
-    mysql_exec_db tpcds_sf1 "SET GLOBAL FOREIGN_KEY_CHECKS=0;"
+    mysql_exec_db tpcds_sf1 "SET GLOBAL FOREIGN_KEY_CHECKS=0;" 2>/dev/null || true
     
-    # Load all tables into the secondary engine (Rapid) with individual error handling
-    # Some tables may fail if they have FK metadata issues - continue anyway
+    # Load all tables into the secondary engine (Rapid) with individual error handling and retry
     RAPID_LOADED=0
     RAPID_FAILED=0
+    declare -a FAILED_TABLES
+    MAX_RETRIES=2
     
     for table in call_center catalog_page catalog_returns catalog_sales customer customer_address customer_demographics date_dim dbgen_version household_demographics income_band inventory item promotion reason ship_mode store store_returns store_sales time_dim warehouse web_page web_returns web_sales web_site; do
         print_status "Loading $table into Rapid..."
         
-        # Try to load with timeout to detect crashes - capture error
-        ERROR_MSG=$(timeout 60 mysql_exec_db tpcds_sf1 "SET SESSION FOREIGN_KEY_CHECKS=0; ALTER TABLE \`$table\` SECONDARY_LOAD;" 2>&1)
-        if [ $? -eq 0 ]; then
-            print_status "  ✓ $table loaded into Rapid"
-            RAPID_LOADED=$((RAPID_LOADED + 1))
-        else
-            # Check if MySQL is still alive
-            if ! "${MYSQLADMIN_CMD[@]}" ping >/dev/null 2>&1; then
-                print_error "MySQL crashed during SECONDARY_LOAD of $table!"
-                print_error "Error: $ERROR_MSG"
-                return 1
+        SUCCESS=0
+        for attempt in $(seq 1 $MAX_RETRIES); do
+            # Try to load with timeout to detect crashes - capture error
+            ERROR_MSG=$(timeout 120 mysql_exec_db tpcds_sf1 "SET SESSION FOREIGN_KEY_CHECKS=0; ALTER TABLE \`$table\` SECONDARY_LOAD;" 2>&1)
+            if [ $? -eq 0 ]; then
+                print_status "  ✓ $table loaded into Rapid (attempt $attempt)"
+                RAPID_LOADED=$((RAPID_LOADED + 1))
+                SUCCESS=1
+                break
+            else
+                # Check if MySQL is still alive
+                if ! "${MYSQLADMIN_CMD[@]}" ping >/dev/null 2>&1; then
+                    print_error "MySQL crashed during SECONDARY_LOAD of $table!"
+                    print_error "Error: $ERROR_MSG"
+                    return 1
+                fi
+                
+                # Check if table is already loaded
+                if echo "$ERROR_MSG" | grep -qi "already loaded\|SECONDARY_LOAD_STATUS"; then
+                    print_status "  ✓ $table was already loaded"
+                    RAPID_LOADED=$((RAPID_LOADED + 1))
+                    SUCCESS=1
+                    break
+                fi
+                
+                if [ $attempt -lt $MAX_RETRIES ]; then
+                    print_warning "  ⚠ $table attempt $attempt failed, retrying..."
+                    sleep 2
+                fi
             fi
-            print_warning "  ✗ $table FAILED to load into Rapid: ${ERROR_MSG}"
+        done
+        
+        if [ $SUCCESS -eq 0 ]; then
+            print_warning "  ✗ $table FAILED after $MAX_RETRIES attempts: ${ERROR_MSG}"
             RAPID_FAILED=$((RAPID_FAILED + 1))
-            
-            # Only show first error in detail to avoid spam
-            if [ "$RAPID_FAILED" -eq 1 ]; then
-                print_warning "  First error details: $ERROR_MSG"
-            fi
+            FAILED_TABLES+=("$table")
         fi
         
-        # Small delay to avoid overwhelming MySQL
+        # Small delay between tables
         sleep 1
     done
     
-    print_status "TPC-DS Rapid loading complete: $RAPID_LOADED loaded, $RAPID_FAILED failed"
+    print_status "TPC-DS Rapid loading complete: $RAPID_LOADED/$((RAPID_LOADED + RAPID_FAILED)) loaded"
     if [ "$RAPID_FAILED" -gt 0 ]; then
-        print_warning "Some tables failed to load into Rapid (likely FK metadata issues)"
-        print_warning "Failed tables will still work in InnoDB, just not in Rapid engine"
+        print_warning "Failed tables: ${FAILED_TABLES[*]}"
+        print_warning "These tables will still work in InnoDB, just not in Rapid engine"
+    else
+        print_status "✅ All TPC-DS tables successfully loaded into Rapid!"
     fi
 
     cd "$SCRIPT_DIR"

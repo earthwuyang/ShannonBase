@@ -77,6 +77,64 @@ def connect_source_mysql(database=None):
         config['database'] = database
     return mysql.connector.connect(**config)
 
+def check_database_exists(database):
+    """Check if database exists in local MySQL"""
+    try:
+        conn = connect_local_mysql()
+        cursor = conn.cursor()
+        cursor.execute("SHOW DATABASES LIKE %s", (database,))
+        exists = cursor.fetchone() is not None
+        cursor.close()
+        conn.close()
+        return exists
+    except Exception:
+        return False
+
+def check_database_complete(database, expected_tables):
+    """Check if all tables exist and have data
+    
+    Args:
+        database: Database name
+        expected_tables: List of expected table names
+        
+    Returns:
+        bool: True if all tables exist with data, False otherwise
+    """
+    if not check_database_exists(database):
+        return False
+    
+    try:
+        conn = connect_local_mysql(database)
+        cursor = conn.cursor()
+        
+        # Check each table
+        for table in expected_tables:
+            # Check if table exists
+            cursor.execute(f"""
+                SELECT COUNT(*) 
+                FROM information_schema.tables 
+                WHERE table_schema = %s AND table_name = %s
+            """, (database, table))
+            
+            if cursor.fetchone()[0] == 0:
+                cursor.close()
+                conn.close()
+                return False
+            
+            # Check if table has data
+            cursor.execute(f"SELECT COUNT(*) FROM `{table}` LIMIT 1")
+            if cursor.fetchone()[0] == 0:
+                cursor.close()
+                conn.close()
+                return False
+        
+        cursor.close()
+        conn.close()
+        return True
+        
+    except Exception:
+        return False
+
 def get_table_schema(database, table):
     """Get table schema from source"""
     conn = connect_source_mysql(database)
@@ -213,6 +271,80 @@ def create_table_if_not_exists(database, table, create_sql):
         print(f"    ✗ Failed to create table {table}: {e}")
         return False
 
+def load_tables_to_rapid(database, tables):
+    """Load all tables into Rapid secondary engine with retry logic
+    
+    Args:
+        database: Database name
+        tables: List of table names
+        
+    Returns:
+        bool: True if successful (even with some failures), False if critical error
+    """
+    rapid_loaded = 0
+    rapid_failed = 0
+    failed_tables = []
+    max_retries = 2
+    
+    for i, table in enumerate(tables, 1):
+        print(f"    [{i}/{len(tables)}] Loading {table} into Rapid...", end='', flush=True)
+        
+        success = False
+        last_error = None
+        
+        for attempt in range(1, max_retries + 1):
+            try:
+                conn = connect_local_mysql(database)
+                cursor = conn.cursor()
+                
+                # Disable FK checks for SECONDARY_LOAD
+                cursor.execute("SET SESSION FOREIGN_KEY_CHECKS=0")
+                cursor.execute(f"ALTER TABLE `{table}` SECONDARY_LOAD")
+                
+                cursor.close()
+                conn.close()
+                
+                if attempt > 1:
+                    print(f" ✓ (attempt {attempt})")
+                else:
+                    print(" ✓")
+                rapid_loaded += 1
+                success = True
+                break
+                
+            except Exception as e:
+                last_error = str(e)
+                
+                # Check if already loaded
+                if 'already loaded' in last_error.lower() or 'SECONDARY_LOAD_STATUS' in last_error:
+                    print(" ✓ (already loaded)")
+                    rapid_loaded += 1
+                    success = True
+                    break
+                
+                # Retry on transient errors
+                if attempt < max_retries:
+                    print(f" ⚠ (attempt {attempt} failed, retrying...)", end='', flush=True)
+                    time.sleep(2)
+                    continue
+                else:
+                    print(f" ✗ Failed: {last_error[:50]}")
+                    rapid_failed += 1
+                    failed_tables.append(table)
+                    break
+        
+        # Brief delay between tables
+        time.sleep(0.5)
+    
+    print(f"\n  📊 Rapid loading summary: {rapid_loaded}/{rapid_loaded + rapid_failed} tables loaded")
+    if rapid_failed > 0:
+        print(f"  ⚠ Failed tables: {', '.join(failed_tables)}")
+        print(f"  ℹ Failed tables will still work in InnoDB, just not in Rapid engine")
+    else:
+        print(f"  ✅ All tables successfully loaded into Rapid engine!")
+    
+    return True
+
 def import_table_batch(args):
     """Import table data using batch INSERT IGNORE (worker function)"""
     database, table, csv_path = args
@@ -321,6 +453,66 @@ def process_database(database, force=False, workers=MAX_WORKERS):
         print(f"  ✗ Failed to get tables: {e}")
         return False
     
+    # Check if data already exists (unless force=True)
+    if not force and check_database_complete(database, tables):
+        print(f"  ✅ Database '{database}' already exists with all {len(tables)} tables populated")
+        print(f"  📊 Skipping data load, proceeding to SECONDARY_LOAD verification...")
+        
+        # Show existing data summary
+        try:
+            conn = connect_local_mysql(database)
+            cursor = conn.cursor()
+            print(f"\n  📋 Existing Data Summary:")
+            for table in sorted(tables):
+                cursor.execute(f"SELECT COUNT(*) FROM `{table}`")
+                count = cursor.fetchone()[0]
+                print(f"    • {table}: {count:,} rows")
+            cursor.close()
+            conn.close()
+        except Exception as e:
+            print(f"  ⚠ Could not get row counts: {e}")
+        
+        # Jump to SECONDARY_LOAD verification
+        print(f"\n  🚀 Verifying SECONDARY_ENGINE configuration and loading into Rapid...")
+        
+        # Ensure SECONDARY_ENGINE is set on all tables
+        conn = connect_local_mysql(database)
+        cursor = conn.cursor()
+        
+        for table in tables:
+            try:
+                # Check if SECONDARY_ENGINE is set
+                cursor.execute(f"""
+                    SELECT CREATE_OPTIONS 
+                    FROM information_schema.tables 
+                    WHERE table_schema = %s AND table_name = %s
+                """, (database, table))
+                
+                result = cursor.fetchone()
+                has_secondary = result and 'SECONDARY_ENGINE' in (result[0] or '')
+                
+                if not has_secondary:
+                    print(f"    Adding SECONDARY_ENGINE to {table}...")
+                    cursor.execute(f"ALTER TABLE `{table}` SECONDARY_ENGINE=Rapid")
+                    conn.commit()
+            except Exception as e:
+                print(f"    ⚠ Warning: Could not configure {table}: {e}")
+        
+        cursor.close()
+        conn.close()
+        
+        # Now proceed to SECONDARY_LOAD (will be handled at the end)
+        print(f"\n  🚀 Phase 4: Loading tables into Rapid engine (with retry)...")
+        
+        # Jump to SECONDARY_LOAD step directly
+        return load_tables_to_rapid(database, tables)
+    
+    # If force=True or data incomplete, proceed with full load
+    if force:
+        print(f"  🔄 Force mode enabled, proceeding with full reload...")
+    else:
+        print(f"  📥 Data incomplete or missing, proceeding with full load...")
+    
     # Create database if not exists
     try:
         conn = connect_local_mysql()
@@ -427,24 +619,9 @@ def process_database(database, force=False, workers=MAX_WORKERS):
     
     print(f"\n  ✅ Successfully imported {database}: {total_rows:,} total rows")
     
-    # Phase 4: Load data into Rapid engine
-    print(f"\n  🚀 Phase 4: Loading tables into Rapid engine...")
-    conn = connect_local_mysql(database)
-    cursor = conn.cursor()
-    
-    for i, table in enumerate(tables, 1):
-        print(f"    [{i}/{len(tables)}] Loading {table} into Rapid...", end='', flush=True)
-        try:
-            cursor.execute(f"ALTER TABLE `{table}` SECONDARY_LOAD")
-            print(" ✓")
-        except Exception as e:
-            print(f" ⚠ Warning: {e}")
-    
-    cursor.close()
-    conn.close()
-    
-    print(f"\n  ✅ All tables loaded into Rapid engine!")
-    return True
+    # Phase 4: Load data into Rapid engine with retry logic
+    print(f"\n  🚀 Phase 4: Loading tables into Rapid engine (with retry)...")
+    return load_tables_to_rapid(database, tables)
 
 def main():
     parser = argparse.ArgumentParser(
