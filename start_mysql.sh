@@ -36,18 +36,31 @@ echo "Log file: ${LOG_FILE}"
 # Wait for MySQL to be ready
 echo -n "Waiting for MySQL to start"
 for i in {1..30}; do
-    if mysql --socket=/home/wuy/ShannonBase/db/mysql.sock -u root -pshannonbase -e "SELECT 1" 2>/dev/null > /dev/null; then
+    if mysql --socket=/home/wuy/ShannonBase/db/mysql.sock -u root --skip-password -e "SELECT 1" 2>/dev/null > /dev/null; then
         echo ""
         echo "✅ MySQL started successfully!"
+        
+        # Set root password to empty
+        echo "Configuring root user without password..."
+        mysql --socket=/home/wuy/ShannonBase/db/mysql.sock -u root --skip-password <<EOF 2>/dev/null
+ALTER USER 'root'@'localhost' IDENTIFIED BY '';
+CREATE USER IF NOT EXISTS 'root'@'%' IDENTIFIED BY '';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+CREATE USER IF NOT EXISTS 'root'@'127.0.0.1' IDENTIFIED BY '';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'127.0.0.1' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+EOF
+        
         echo ""
         echo "Connection info:"
         echo "  Host: 127.0.0.1"
         echo "  Port: 3307"
         echo "  User: root"
-        echo "  Password: shannonbase"
+        echo "  Password: (none)"
         echo ""
         echo "Connect with:"
-        echo "  mysql --socket=/home/wuy/ShannonBase/db/mysql.sock -u root -pshannonbase"
+        echo "  mysql --socket=/home/wuy/ShannonBase/db/mysql.sock -u root"
+        echo "  mysql -u root -P3307 -h127.0.0.1"
         echo ""
         exit 0
     fi

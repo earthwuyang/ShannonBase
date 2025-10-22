@@ -40,7 +40,7 @@ LOCAL_MYSQL_CONFIG = {
     'host': os.environ.get('LOCAL_MYSQL_HOST', '127.0.0.1'),
     'port': int(os.environ.get('LOCAL_MYSQL_PORT', '3307')),
     'user': os.environ.get('LOCAL_MYSQL_USER', 'root'),
-    'password': os.environ.get('LOCAL_MYSQL_PASSWORD', 'shannonbase'),
+    'password': os.environ.get('LOCAL_MYSQL_PASSWORD', ''),
     'allow_local_infile': True
 }
 
@@ -58,10 +58,10 @@ SELECTED_DATABASES = [
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / 'ctu_data'
 
-# Performance tuning
-BATCH_SIZE = 5000  # Rows per batch insert
-MAX_WORKERS = min(cpu_count() * 2, 5)  # Max parallel workers
-EXPORT_CHUNK_SIZE = 10000  # Rows to fetch at once during export
+# Performance tuning - reduced to prevent OOM
+BATCH_SIZE = 500  # Rows per batch insert
+MAX_WORKERS = min(cpu_count() // 2, 4)  # Reduced: Max parallel workers (half cores, max 4)
+EXPORT_CHUNK_SIZE = 5000  # Reduced: Rows to fetch at once during export
 
 def connect_local_mysql(database=None):
     """Connect to local MySQL"""
@@ -364,16 +364,12 @@ def load_tables_to_rapid(database, tables):
     
     return True
 
-def import_table_batch(args):
-    """Import table data using batch INSERT IGNORE (worker function)"""
+def import_table_load_data(args):
+    """Import table data using LOAD DATA LOCAL INFILE (much faster and less memory)"""
     database, table, csv_path = args
     
     try:
-        # Get column info
-        columns_info = get_column_info(database, table)
-        columns = [c['name'] for c in columns_info]
-        
-        # Open CSV
+        # Open CSV to check if it exists and has data
         if not Path(csv_path).exists():
             return {'table': table, 'status': 'no_csv', 'rows': 0}
         
@@ -383,44 +379,24 @@ def import_table_batch(args):
         # Disable keys for faster bulk insert
         cursor.execute(f"ALTER TABLE `{table}` DISABLE KEYS")
         
-        total_rows = 0
-        batch = []
+        # Use LOAD DATA LOCAL INFILE - much faster and uses almost no memory
+        # REPLACE handles duplicates (updates existing rows)
+        csv_path_abs = str(Path(csv_path).absolute())
+        load_sql = f"""
+            LOAD DATA LOCAL INFILE '{csv_path_abs}'
+            REPLACE INTO TABLE `{table}`
+            FIELDS TERMINATED BY ','
+            ENCLOSED BY '"'
+            LINES TERMINATED BY '\\n'
+            IGNORE 1 LINES
+        """
         
-        with open(csv_path, 'r', encoding='utf-8') as csvfile:
-            reader = csv.reader(csvfile)
-            next(reader)  # Skip header
-            
-            for row in reader:
-                # Convert empty strings to NULL
-                processed_row = []
-                for i, val in enumerate(row):
-                    if val == '' and columns_info[i]['nullable']:
-                        processed_row.append(None)
-                    else:
-                        processed_row.append(val if val != '' else None)
-                
-                batch.append(tuple(processed_row))
-                
-                if len(batch) >= BATCH_SIZE:
-                    # Batch INSERT IGNORE
-                    placeholders = ', '.join(['%s'] * len(columns))
-                    col_names = ', '.join([f"`{c}`" for c in columns])
-                    insert_sql = f"INSERT IGNORE INTO `{table}` ({col_names}) VALUES ({placeholders})"
-                    
-                    cursor.executemany(insert_sql, batch)
-                    conn.commit()
-                    total_rows += len(batch)
-                    batch = []
-            
-            # Insert remaining batch
-            if batch:
-                placeholders = ', '.join(['%s'] * len(columns))
-                col_names = ', '.join([f"`{c}`" for c in columns])
-                insert_sql = f"INSERT IGNORE INTO `{table}` ({col_names}) VALUES ({placeholders})"
-                
-                cursor.executemany(insert_sql, batch)
-                conn.commit()
-                total_rows += len(batch)
+        cursor.execute(load_sql)
+        conn.commit()
+        
+        # Get row count
+        cursor.execute(f"SELECT COUNT(*) FROM `{table}`")
+        total_rows = cursor.fetchone()[0]
         
         # Re-enable keys
         cursor.execute(f"ALTER TABLE `{table}` ENABLE KEYS")
@@ -649,8 +625,9 @@ def process_database(database, force=False, workers=MAX_WORKERS):
         else:
             print(f" ✗ Could not get schema")
     
-    # Phase 3: Parallel import
-    print(f"\n  📥 Phase 3: Importing data (parallel with INSERT IGNORE)...")
+    # Phase 3: Sequential import with LOAD DATA (faster, uses minimal memory)
+    print(f"\n  📥 Phase 3: Importing data (sequential with LOAD DATA LOCAL INFILE)...")
+    print(f"      Note: Using sequential import to prevent memory exhaustion")
     import_tasks = []
     for table in tables:
         csv_path = data_dir / f"{table}.csv"
@@ -658,25 +635,20 @@ def process_database(database, force=False, workers=MAX_WORKERS):
             import_tasks.append((database, table, str(csv_path)))
     
     total_rows = 0
-    with ProcessPoolExecutor(max_workers=workers) as executor:
-        futures = {executor.submit(import_table_batch, task): task[1] for task in import_tasks}
-        
-        with tqdm(total=len(import_tasks), desc="    Importing", unit="table") as pbar:
-            for future in as_completed(futures):
-                table = futures[future]
-                try:
-                    result = future.result()
-                    
-                    if result['status'] == 'success':
-                        pbar.write(f"      ✓ {table}: {result['rows']:,} rows")
-                        total_rows += result['rows']
-                    elif result['status'] == 'error':
-                        pbar.write(f"      ✗ {table}: {result['error']}")
-                    
-                    pbar.update(1)
-                except Exception as e:
-                    pbar.write(f"      ✗ {table}: {e}")
-                    pbar.update(1)
+    # Sequential processing to avoid memory issues
+    for i, task in enumerate(import_tasks, 1):
+        table = task[1]
+        print(f"    [{i}/{len(import_tasks)}] Importing {table}...", end='', flush=True)
+        try:
+            result = import_table_load_data(task)
+            
+            if result['status'] == 'success':
+                print(f" ✓ {result['rows']:,} rows")
+                total_rows += result['rows']
+            elif result['status'] == 'error':
+                print(f" ✗ {result['error']}")
+        except Exception as e:
+            print(f" ✗ {e}")
     
     print(f"\n  ✅ Successfully imported {database}: {total_rows:,} total rows")
     

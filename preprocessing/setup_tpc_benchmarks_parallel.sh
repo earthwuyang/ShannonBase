@@ -15,14 +15,14 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SCALE=1
 
 # Parallelization settings
-MAX_PARALLEL=${MAX_PARALLEL:-5}  # Default to number of CPUs
+MAX_PARALLEL=${MAX_PARALLEL:-16}  # Default to number of CPUs
 BATCH_SIZE=${BATCH_SIZE:-1000000}       # Rows per split file for large tables
 
 # MySQL configuration
 MYSQL_HOST="${MYSQL_HOST:-127.0.0.1}"
 MYSQL_PORT="${MYSQL_PORT:-3307}"
 MYSQL_USER="${MYSQL_USER:-root}"
-MYSQL_PASSWORD="${MYSQL_PASSWORD:-shannonbase}"
+MYSQL_PASSWORD="${MYSQL_PASSWORD:-}"
 
 if [ -n "$MYSQL_PASSWORD" ]; then
     export MYSQL_PWD="$MYSQL_PASSWORD"
@@ -288,14 +288,14 @@ setup_tpch() {
         ./dbgen -vf -s ${SCALE}
         
         print_status "Cleaning data files..."
-        # Fix permissions first (dbgen may create read-only files)
-        chmod u+w *.tbl 2>/dev/null || true
+        # Fix permissions first (dbgen may create files with incorrect permissions)
+        chmod 664 *.tbl 2>/dev/null || true
         
         for file in *.tbl; do
-            if [ -f "$file" ] && [ -w "$file" ]; then
+            if [ -f "$file" ] && [ -r "$file" ] && [ -w "$file" ]; then
                 sed -i 's/|$//' "$file"
             else
-                print_warning "Cannot write to $file, skipping cleanup"
+                print_warning "Cannot read/write $file, skipping cleanup"
             fi
         done
     fi
@@ -592,9 +592,14 @@ EOF
         
         SUCCESS=0
         for attempt in $(seq 1 $MAX_RETRIES); do
-            # Try to load with timeout to detect crashes - capture error
-            ERROR_MSG=$(timeout 120 mysql_exec_db tpch_sf1 "SET SESSION FOREIGN_KEY_CHECKS=0; ALTER TABLE \`$table\` SECONDARY_LOAD;" 2>&1)
-            if [ $? -eq 0 ]; then
+            # Try to load - no timeout, let it run as long as needed
+            TMP_ERR=$(mktemp)
+            mysql --local-infile=1 -h "$MYSQL_HOST" -P "$MYSQL_PORT" -u "$MYSQL_USER" --default-character-set=utf8mb4 tpch_sf1 -e "SET SESSION FOREIGN_KEY_CHECKS=0; ALTER TABLE \`$table\` SECONDARY_LOAD;" 2>"$TMP_ERR"
+            EXIT_CODE=$?
+            ERROR_MSG=$(cat "$TMP_ERR")
+            rm -f "$TMP_ERR"
+            
+            if [ $EXIT_CODE -eq 0 ]; then
                 print_status "  ✓ $table loaded into Rapid (attempt $attempt)"
                 RAPID_LOADED=$((RAPID_LOADED + 1))
                 SUCCESS=1
@@ -616,7 +621,7 @@ EOF
                 fi
                 
                 if [ $attempt -lt $MAX_RETRIES ]; then
-                    print_warning "  ⚠ $table attempt $attempt failed, retrying..."
+                    print_warning "  ⚠ $table attempt $attempt failed (exit $EXIT_CODE), retrying..."
                     sleep 2
                 fi
             fi
@@ -665,19 +670,19 @@ setup_tpcds() {
         print_status "Cleaning TPC-DS data files (parallel)..."
         cd "${SCRIPT_DIR}/tpcds_data"
         
-        # Fix permissions first (dsdgen may create read-only files)
-        chmod u+w *.dat 2>/dev/null || true
+        # Fix permissions first (dsdgen may create files with incorrect permissions)
+        chmod 664 *.dat 2>/dev/null || true
         
         if command -v parallel >/dev/null 2>&1; then
-            find . -name "*.dat" -type f -writable -print0 | parallel -0 -j "$MAX_PARALLEL" \
+            find . -name "*.dat" -type f -readable -writable -print0 | parallel -0 -j "$MAX_PARALLEL" \
                 'iconv -f LATIN1 -t UTF-8//IGNORE {} | sed "s/|$//" > {}.clean && mv {}.clean {}'
         else
             for file in *.dat; do
                 if [ -f "$file" ]; then
-                    # Check if writable, try to fix if not
-                    if [ ! -w "$file" ]; then
-                        chmod u+w "$file" 2>/dev/null || {
-                            print_warning "Cannot make $file writable, skipping"
+                    # Check if readable and writable, try to fix if not
+                    if [ ! -r "$file" ] || [ ! -w "$file" ]; then
+                        chmod 664 "$file" 2>/dev/null || {
+                            print_warning "Cannot fix permissions for $file, skipping"
                             continue
                         }
                     fi
@@ -1303,9 +1308,14 @@ EOF
         
         SUCCESS=0
         for attempt in $(seq 1 $MAX_RETRIES); do
-            # Try to load with timeout to detect crashes - capture error
-            ERROR_MSG=$(timeout 120 mysql_exec_db tpcds_sf1 "SET SESSION FOREIGN_KEY_CHECKS=0; ALTER TABLE \`$table\` SECONDARY_LOAD;" 2>&1)
-            if [ $? -eq 0 ]; then
+            # Try to load - no timeout, let it run as long as needed
+            TMP_ERR=$(mktemp)
+            mysql --local-infile=1 -h "$MYSQL_HOST" -P "$MYSQL_PORT" -u "$MYSQL_USER" --default-character-set=utf8mb4 tpcds_sf1 -e "SET SESSION FOREIGN_KEY_CHECKS=0; ALTER TABLE \`$table\` SECONDARY_LOAD;" 2>"$TMP_ERR"
+            EXIT_CODE=$?
+            ERROR_MSG=$(cat "$TMP_ERR")
+            rm -f "$TMP_ERR"
+            
+            if [ $EXIT_CODE -eq 0 ]; then
                 print_status "  ✓ $table loaded into Rapid (attempt $attempt)"
                 RAPID_LOADED=$((RAPID_LOADED + 1))
                 SUCCESS=1
@@ -1327,7 +1337,7 @@ EOF
                 fi
                 
                 if [ $attempt -lt $MAX_RETRIES ]; then
-                    print_warning "  ⚠ $table attempt $attempt failed, retrying..."
+                    print_warning "  ⚠ $table attempt $attempt failed (exit $EXIT_CODE), retrying..."
                     sleep 2
                 fi
             fi
@@ -1370,16 +1380,53 @@ main() {
     echo "1. Setting up TPC-H..."
     echo "----------------------"
     setup_tpch
-    load_tpch_parallel
     
     echo
     echo "2. Setting up TPC-DS..."
     echo "-----------------------"
     setup_tpcds
-    load_tpcds_parallel
     
     echo
-    print_status "Setup complete!"
+    echo "3. Loading data in parallel..."
+    echo "-------------------------------"
+    print_status "Loading TPC-H and TPC-DS data in parallel (background jobs)..."
+    
+    # Load TPC-H in background
+    (
+        load_tpch_parallel
+    ) &
+    TPCH_PID=$!
+    
+    # Load TPC-DS in background
+    (
+        load_tpcds_parallel
+    ) &
+    TPCDS_PID=$!
+    
+    # Wait for both to complete
+    print_status "Waiting for TPC-H (PID: $TPCH_PID) and TPC-DS (PID: $TPCDS_PID) to complete..."
+    wait $TPCH_PID
+    TPCH_STATUS=$?
+    if [ $TPCH_STATUS -eq 0 ]; then
+        print_status "✓ TPC-H loading completed successfully"
+    else
+        print_error "✗ TPC-H loading failed with exit code $TPCH_STATUS"
+    fi
+    
+    wait $TPCDS_PID
+    TPCDS_STATUS=$?
+    if [ $TPCDS_STATUS -eq 0 ]; then
+        print_status "✓ TPC-DS loading completed successfully"
+    else
+        print_error "✗ TPC-DS loading failed with exit code $TPCDS_STATUS"
+    fi
+    
+    echo
+    if [ $TPCH_STATUS -eq 0 ] && [ $TPCDS_STATUS -eq 0 ]; then
+        print_status "Setup complete!"
+    else
+        print_error "Setup completed with errors!"
+    fi
     echo
     echo "Databases created:"
     echo "  - tpch_sf1  : TPC-H benchmark data (${SCALE}GB)"

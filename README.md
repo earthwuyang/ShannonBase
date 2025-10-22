@@ -98,11 +98,8 @@ To activate support for the Lakehouse feature, which allows ShannonBase to read 
 
 #### 4: Initialize the database and run ShannonBase
 ```
-/home/wuy/ShannonBase/bin/mysqld --defaults-file=/home/wuy/ShannonBase/db/my.cnf --initialize  --user=root
-
-/home/wuy/ShannonBase/bin/mysqld --defaults-file=/home/wuy/ShannonBase/db/my.cnf    --user=root & 
+bash initialize_db.sh
 ```
-PS: you should use your own `my.cnf`.
 
 
 Start and stop mysql by:
