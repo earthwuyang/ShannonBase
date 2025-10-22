@@ -58,7 +58,7 @@ DATA_DIR = BASE_DIR / 'ctu_data'
 
 # Performance tuning
 BATCH_SIZE = 5000  # Rows per batch insert
-MAX_WORKERS = min(cpu_count() * 2, 16)  # Max parallel workers
+MAX_WORKERS = min(cpu_count() * 2, 5)  # Max parallel workers
 EXPORT_CHUNK_SIZE = 10000  # Rows to fetch at once during export
 
 def connect_local_mysql(database=None):

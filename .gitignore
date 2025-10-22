@@ -40,6 +40,13 @@ scalability_jobs_*
 /extra/jemalloc/*
 !/extra/jemalloc/CMakeLists.txt
 
+# Ignore large model and library files
+*.onnx
+*.a
+extra/llm-models/*/onnx/
+extra/llm-models/*/openvino/*.xml
+extra/tokenizer-ffi/lib/
+
 
 
 references/

@@ -47,3 +47,12 @@ else
     ps aux | grep mysqld | grep -v grep
     exit 1
 fi
+
+# Clean up socket files and PID file
+echo "Cleaning up socket files..."
+rm -f /home/wuy/ShannonBase/db/mysql.sock
+rm -f /home/wuy/ShannonBase/db/mysqlx.sock
+rm -f /home/wuy/ShannonBase/db/mysql.sock.lock
+rm -f /home/wuy/ShannonBase/db/mysqlx.sock.lock
+rm -f /home/wuy/*.pid
+echo "✅ Cleanup complete"

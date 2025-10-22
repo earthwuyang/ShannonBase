@@ -15,7 +15,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SCALE=1
 
 # Parallelization settings
-MAX_PARALLEL=${MAX_PARALLEL:-$(nproc)}  # Default to number of CPUs
+MAX_PARALLEL=${MAX_PARALLEL:-5}  # Default to number of CPUs
 BATCH_SIZE=${BATCH_SIZE:-1000000}       # Rows per split file for large tables
 
 # MySQL configuration
@@ -221,10 +221,19 @@ setup_tpch() {
 load_tpch_parallel() {
     print_status "Loading TPC-H data with parallel processing..."
 
-    mysql_exec "CREATE DATABASE IF NOT EXISTS \`tpch_sf1\` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+    # Drop database completely to ensure no FK metadata from previous runs
+    print_status "Dropping existing tpch_sf1 database (if exists) to ensure clean state..."
+    mysql_exec "DROP DATABASE IF EXISTS \`tpch_sf1\`;" || true
+    
+    # Create fresh database
+    mysql_exec "CREATE DATABASE \`tpch_sf1\` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+    
+    # Disable foreign key checks globally
+    mysql_exec "SET GLOBAL FOREIGN_KEY_CHECKS=0;" || true
+    mysql_exec_db tpch_sf1 "SET FOREIGN_KEY_CHECKS=0;"
     
     # Create schema (reuse from original script - omitted for brevity, same as before)
-    print_status "Creating TPC-H schema..."
+    print_status "Creating TPC-H schema (clean database, no FK metadata)..."
     mysql_stream_db tpch_sf1 <<'EOF'
 CREATE TABLE IF NOT EXISTS nation (
     n_nationkey INT NOT NULL,
@@ -345,19 +354,22 @@ EXECUTE stmt;
 DEALLOCATE PREPARE stmt;
 
 -- Note: idx_supplier_nation is already defined in supplier CREATE TABLE, no need to add it again
-
--- Now add SECONDARY_ENGINE to all tables after indexes are created
--- This must be done after all DDL operations (indexes, constraints, etc.)
-ALTER TABLE nation SECONDARY_ENGINE=Rapid;
-ALTER TABLE region SECONDARY_ENGINE=Rapid;
-ALTER TABLE part SECONDARY_ENGINE=Rapid;
-ALTER TABLE supplier SECONDARY_ENGINE=Rapid;
-ALTER TABLE partsupp SECONDARY_ENGINE=Rapid;
-ALTER TABLE customer SECONDARY_ENGINE=Rapid;
-ALTER TABLE orders SECONDARY_ENGINE=Rapid;
-ALTER TABLE lineitem SECONDARY_ENGINE=Rapid;
 EOF
 
+    # Add SECONDARY_ENGINE to tables if not already set (outside of the main SQL block to avoid errors)
+    print_status "Configuring SECONDARY_ENGINE for TPC-H tables..."
+    for table in nation region part supplier partsupp customer orders lineitem; do
+        # Check if table already has SECONDARY_ENGINE
+        has_secondary=$(mysql_scalar tpch_sf1 "SELECT CREATE_OPTIONS FROM information_schema.tables WHERE table_schema='tpch_sf1' AND table_name='$table'" 2>/dev/null | grep -c "SECONDARY_ENGINE" || echo "0")
+        
+        if [ "$has_secondary" -eq 0 ]; then
+            print_status "  Adding SECONDARY_ENGINE to $table..."
+            mysql_exec_db tpch_sf1 "ALTER TABLE \`$table\` SECONDARY_ENGINE=Rapid;" || print_warning "Failed to add SECONDARY_ENGINE to $table"
+        else
+            print_status "  $table already has SECONDARY_ENGINE, skipping"
+        fi
+    done
+    
     cd "${SCRIPT_DIR}/tpch-dbgen"
     
     # Check if already loaded
@@ -445,14 +457,48 @@ UNION ALL SELECT 'supplier', COUNT(*) FROM supplier
 ORDER BY table_name;
 EOF
 
-    print_status "Loading TPC-H data into Rapid engine..."
-    # Load all tables into the secondary engine (Rapid)
+    print_status "Loading TPC-H data into Rapid engine (with error handling)..."
+    # Disable FK checks before SECONDARY_LOAD
+    mysql_exec_db tpch_sf1 "SET SESSION FOREIGN_KEY_CHECKS=0;"
+    mysql_exec_db tpch_sf1 "SET GLOBAL FOREIGN_KEY_CHECKS=0;"
+    
+    # Load all tables into the secondary engine (Rapid) with individual error handling
+    RAPID_LOADED=0
+    RAPID_FAILED=0
+    
     for table in customer lineitem nation orders part partsupp region supplier; do
         print_status "Loading $table into Rapid..."
-        mysql_exec_db tpch_sf1 "ALTER TABLE \`$table\` SECONDARY_LOAD;" || print_warning "Failed to load $table into Rapid"
+        
+        # Try to load with timeout to detect crashes - capture error
+        ERROR_MSG=$(timeout 60 mysql_exec_db tpch_sf1 "SET SESSION FOREIGN_KEY_CHECKS=0; ALTER TABLE \`$table\` SECONDARY_LOAD;" 2>&1)
+        if [ $? -eq 0 ]; then
+            print_status "  ✓ $table loaded into Rapid"
+            RAPID_LOADED=$((RAPID_LOADED + 1))
+        else
+            # Check if MySQL is still alive
+            if ! "${MYSQLADMIN_CMD[@]}" ping >/dev/null 2>&1; then
+                print_error "MySQL crashed during SECONDARY_LOAD of $table!"
+                print_error "Error: $ERROR_MSG"
+                return 1
+            fi
+            print_warning "  ✗ $table FAILED to load into Rapid: ${ERROR_MSG}"
+            RAPID_FAILED=$((RAPID_FAILED + 1))
+            
+            # Only show first error in detail to avoid spam
+            if [ "$RAPID_FAILED" -eq 1 ]; then
+                print_warning "  First error details: $ERROR_MSG"
+            fi
+        fi
+        
+        # Small delay
+        sleep 1
     done
     
-    print_status "TPC-H tables loaded into Rapid engine!"
+    print_status "TPC-H Rapid loading complete: $RAPID_LOADED loaded, $RAPID_FAILED failed"
+    if [ "$RAPID_FAILED" -gt 0 ]; then
+        print_warning "Some tables failed to load into Rapid (likely FK metadata issues)"
+        print_warning "Failed tables will still work in InnoDB, just not in Rapid engine"
+    fi
 
     cd "$SCRIPT_DIR"
 }
@@ -510,12 +556,18 @@ setup_tpcds() {
 load_tpcds_parallel() {
     print_status "Loading TPC-DS data with parallel processing..."
 
-    mysql_exec "CREATE DATABASE IF NOT EXISTS \`tpcds_sf1\` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
-    mysql_exec_db tpcds_sf1 "SET FOREIGN_KEY_CHECKS=0;"
-    mysql_exec_db tpcds_sf1 "DROP TABLE IF EXISTS call_center, catalog_page, catalog_returns, catalog_sales, customer, customer_address, customer_demographics, date_dim, dbgen_version, household_demographics, income_band, inventory, item, promotion, reason, ship_mode, store, store_returns, store_sales, time_dim, warehouse, web_page, web_returns, web_sales, web_site;"
-    mysql_exec_db tpcds_sf1 "SET FOREIGN_KEY_CHECKS=1;"
+    # Drop database completely to ensure no FK metadata from previous runs
+    print_status "Dropping existing tpcds_sf1 database (if exists) to ensure clean state..."
+    mysql_exec "DROP DATABASE IF EXISTS \`tpcds_sf1\`;" || true
     
-    print_status "Creating TPC-DS schema..."
+    # Create fresh database
+    mysql_exec "CREATE DATABASE \`tpcds_sf1\` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+    
+    # Disable FK checks globally
+    mysql_exec "SET GLOBAL FOREIGN_KEY_CHECKS=0;" || true
+    mysql_exec_db tpcds_sf1 "SET FOREIGN_KEY_CHECKS=0;"
+    
+    print_status "Creating TPC-DS schema (clean database, no FK metadata)..."
     mysql_stream_db tpcds_sf1 <<'EOF'
 CREATE TABLE date_dim (
     d_date_sk INT NOT NULL PRIMARY KEY,
@@ -1064,14 +1116,49 @@ WHERE table_schema = 'tpcds_sf1'
 ORDER BY table_name;
 EOF
 
-    print_status "Loading TPC-DS data into Rapid engine..."
-    # Load all tables into the secondary engine (Rapid)
+    print_status "Loading TPC-DS data into Rapid engine (with error handling)..."
+    # Ensure FK checks are disabled before SECONDARY_LOAD
+    mysql_exec_db tpcds_sf1 "SET SESSION FOREIGN_KEY_CHECKS=0;"
+    mysql_exec_db tpcds_sf1 "SET GLOBAL FOREIGN_KEY_CHECKS=0;"
+    
+    # Load all tables into the secondary engine (Rapid) with individual error handling
+    # Some tables may fail if they have FK metadata issues - continue anyway
+    RAPID_LOADED=0
+    RAPID_FAILED=0
+    
     for table in call_center catalog_page catalog_returns catalog_sales customer customer_address customer_demographics date_dim dbgen_version household_demographics income_band inventory item promotion reason ship_mode store store_returns store_sales time_dim warehouse web_page web_returns web_sales web_site; do
         print_status "Loading $table into Rapid..."
-        mysql_exec_db tpcds_sf1 "ALTER TABLE \`$table\` SECONDARY_LOAD;" || print_warning "Failed to load $table into Rapid"
+        
+        # Try to load with timeout to detect crashes - capture error
+        ERROR_MSG=$(timeout 60 mysql_exec_db tpcds_sf1 "SET SESSION FOREIGN_KEY_CHECKS=0; ALTER TABLE \`$table\` SECONDARY_LOAD;" 2>&1)
+        if [ $? -eq 0 ]; then
+            print_status "  ✓ $table loaded into Rapid"
+            RAPID_LOADED=$((RAPID_LOADED + 1))
+        else
+            # Check if MySQL is still alive
+            if ! "${MYSQLADMIN_CMD[@]}" ping >/dev/null 2>&1; then
+                print_error "MySQL crashed during SECONDARY_LOAD of $table!"
+                print_error "Error: $ERROR_MSG"
+                return 1
+            fi
+            print_warning "  ✗ $table FAILED to load into Rapid: ${ERROR_MSG}"
+            RAPID_FAILED=$((RAPID_FAILED + 1))
+            
+            # Only show first error in detail to avoid spam
+            if [ "$RAPID_FAILED" -eq 1 ]; then
+                print_warning "  First error details: $ERROR_MSG"
+            fi
+        fi
+        
+        # Small delay to avoid overwhelming MySQL
+        sleep 1
     done
     
-    print_status "TPC-DS tables loaded into Rapid engine!"
+    print_status "TPC-DS Rapid loading complete: $RAPID_LOADED loaded, $RAPID_FAILED failed"
+    if [ "$RAPID_FAILED" -gt 0 ]; then
+        print_warning "Some tables failed to load into Rapid (likely FK metadata issues)"
+        print_warning "Failed tables will still work in InnoDB, just not in Rapid engine"
+    fi
 
     cd "$SCRIPT_DIR"
 }

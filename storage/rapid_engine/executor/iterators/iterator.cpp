@@ -409,7 +409,7 @@ static bool extract_decimal_for_simd_safe(const ColumnChunk &chunk, size_t row_c
 template <>
 my_decimal ColumnChunkOper::genericSum<my_decimal>(const ColumnChunk &chunk, size_t row_count) {
   my_decimal sum;
-  int2my_decimal(E_DEC_FATAL_ERROR, 0, false, &sum);  // Initialize to 0
+  int2my_decimal(0, 0, false, &sum);  // Initialize to 0, use 0 flags to avoid THD check
 
   Field *source_field = chunk.source_field();
   for (size_t i = 0; i < row_count; ++i) {
@@ -454,7 +454,7 @@ my_decimal ColumnChunkOper::genericMin<my_decimal>(const ColumnChunk &chunk, siz
   }
 
   if (!found) {
-    int2my_decimal(E_DEC_FATAL_ERROR, 0, false, &min_val);
+    int2my_decimal(0, 0, false, &min_val);  // Use 0 flags to avoid THD check
   }
   return min_val;
 }
@@ -484,7 +484,7 @@ my_decimal ColumnChunkOper::genericMax<my_decimal>(const ColumnChunk &chunk, siz
   }
 
   if (!found) {
-    int2my_decimal(E_DEC_FATAL_ERROR, 0, false, &max_val);
+    int2my_decimal(0, 0, false, &max_val);  // Use 0 flags to avoid THD check
   }
   return max_val;
 }

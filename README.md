@@ -114,8 +114,8 @@ stop_mysql.sh
 ### HTAP routing
 #### Import Data
 ```
-python preprocessing/import_ctu_datasets.py
-bash setup_tpc_benchmarks.sh
+python preprocessing/import_ctu_datasets_parallel.py
+bash setup_tpc_benchmarks_parallel.sh
 ```
 
 #### Generate workloads

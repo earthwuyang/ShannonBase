@@ -720,13 +720,35 @@ int Imcs::load_table(const Rapid_load_context *context, const TABLE *source) {
     return HA_ERR_GENERIC;
   }
 
+  // Check if source->file is valid before casting
+  if (source->file == nullptr) {
+    std::string errmsg;
+    errmsg.append("Invalid handler for table ")
+        .append(context->m_schema_name)
+        .append(".")
+        .append(context->m_table_name);
+    my_error(ER_SECONDARY_ENGINE, MYF(0), errmsg.c_str());
+    return HA_ERR_GENERIC;
+  }
+
+  auto *innodb_handler = dynamic_cast<ha_innobase *>(source->file);
+  if (innodb_handler == nullptr) {
+    std::string errmsg;
+    errmsg.append("Handler is not InnoDB type for table ")
+        .append(context->m_schema_name)
+        .append(".")
+        .append(context->m_table_name);
+    my_error(ER_SECONDARY_ENGINE, MYF(0), errmsg.c_str());
+    return HA_ERR_GENERIC;
+  }
+
   // if the rec count is more than threshold and has primary key, it can be use parallel load, otherwise not.
-  auto parall_scan = (dynamic_cast<ha_innobase *>(source->file)->stats.records > ShannonBase::rpd_para_load_threshold &&
+  auto parall_scan = (innodb_handler->stats.records > ShannonBase::rpd_para_load_threshold &&
                       !context->m_table->s->is_missing_primary_key())
                          ? true
                          : false;
-  return !parall_scan ? load_innodb(context, dynamic_cast<ha_innobase *>(source->file))
-                      : load_innodb_parallel(context, dynamic_cast<ha_innobase *>(source->file));
+  return !parall_scan ? load_innodb(context, innodb_handler)
+                      : load_innodb_parallel(context, innodb_handler);
 }
 
 int Imcs::load_parttable(const Rapid_load_context *context, const TABLE *source) {
@@ -742,10 +764,32 @@ int Imcs::load_parttable(const Rapid_load_context *context, const TABLE *source)
     return HA_ERR_GENERIC;
   }
 
+  // Check if source->file is valid before casting
+  if (source->file == nullptr) {
+    std::string errmsg;
+    errmsg.append("Invalid handler for partitioned table ")
+        .append(context->m_schema_name)
+        .append(".")
+        .append(context->m_table_name);
+    my_error(ER_SECONDARY_ENGINE, MYF(0), errmsg.c_str());
+    return HA_ERR_GENERIC;
+  }
+
+  auto *innopart_handler = dynamic_cast<ha_innopart *>(source->file);
+  if (innopart_handler == nullptr) {
+    std::string errmsg;
+    errmsg.append("Handler is not InnoDB partition type for table ")
+        .append(context->m_schema_name)
+        .append(".")
+        .append(context->m_table_name);
+    my_error(ER_SECONDARY_ENGINE, MYF(0), errmsg.c_str());
+    return HA_ERR_GENERIC;
+  }
+
   auto ret{ShannonBase::SHANNON_SUCCESS};
   auto parall_scan = (context->m_extra_info.m_partition_infos.size() > SHANNON_PARTS_PARALLEL) ? true : false;
-  ret = parall_scan ? load_innodbpart_parallel(context, dynamic_cast<ha_innopart *>(source->file))
-                    : load_innodbpart(context, dynamic_cast<ha_innopart *>(source->file));
+  ret = parall_scan ? load_innodbpart_parallel(context, innopart_handler)
+                    : load_innodbpart(context, innopart_handler);
 
   if (ret) {
     std::string sch(source->s->db.str), table(source->s->table_name.str), errmsg;

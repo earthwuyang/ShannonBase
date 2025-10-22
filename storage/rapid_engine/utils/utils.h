@@ -112,9 +112,9 @@ class Util {
         case MYSQL_TYPE_DECIMAL:
         case MYSQL_TYPE_NEWDECIMAL: {
           my_decimal dval;
-          double v;
+          double v = 0.0;
           field->val_decimal(&dval);
-          my_decimal2double(10, &dval, &v);
+          my_decimal2double(0, &dval, &v);  // Pass 0 to avoid THD check - always succeeds
           data_val = static_cast<T>(v);
         } break;
         case MYSQL_TYPE_DATE:
@@ -182,10 +182,11 @@ class Util {
         int prec = new_filed->precision;
         int scale = new_filed->decimals();
         my_decimal dv;
-        double tdata_val;
-        auto ret = binary2my_decimal(E_DEC_FATAL_ERROR & ~E_DEC_OVERFLOW, data_ptr, &dv, prec, scale, true);
+        double tdata_val = 0.0;  // Initialize to avoid undefined behavior
+        // Use 0 flags to avoid THD check in parallel threads
+        auto ret = binary2my_decimal(0, data_ptr, &dv, prec, scale, true);
         if (ret == E_DEC_OK) {
-          my_decimal2double(E_DEC_FATAL_ERROR, &dv, &tdata_val);
+          my_decimal2double(0, &dv, &tdata_val);  // Pass 0 to avoid THD check
         }
         data_val = static_cast<T>(tdata_val);
       } break;
