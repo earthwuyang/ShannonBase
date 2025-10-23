@@ -1,0 +1,1 @@
+SELECT lineitem.l_comment, lineitem.l_partkey, SUM(lineitem.l_suppkey) OVER (PARTITION BY lineitem.l_orderkey ORDER BY lineitem.l_returnflag) AS window_result FROM lineitem LIMIT 1000

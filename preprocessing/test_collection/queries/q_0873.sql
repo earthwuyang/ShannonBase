@@ -1,0 +1,1 @@
+SELECT supplier.s_suppkey, supplier.s_name, AVG(supplier.s_acctbal) OVER (PARTITION BY supplier.s_nationkey ORDER BY supplier.s_suppkey) AS window_result FROM supplier WHERE supplier.s_suppkey < 408 LIMIT 100

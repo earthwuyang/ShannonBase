@@ -1,0 +1,1 @@
+SELECT lineitem.l_orderkey, MIN(lineitem.l_partkey) AS min_l_partkey FROM lineitem WHERE lineitem.l_shipmode LIKE '%B%' AND lineitem.l_shipinstruct = 'CPNVS' AND lineitem.l_orderkey = 59 AND lineitem.l_receiptdate >= '2016-07-04' AND lineitem.l_shipdate >= '1991-02-26' GROUP BY lineitem.l_orderkey ORDER BY lineitem.l_orderkey

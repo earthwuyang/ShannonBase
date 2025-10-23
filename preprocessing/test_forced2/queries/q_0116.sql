@@ -1,0 +1,1 @@
+SELECT orders.o_orderstatus, orders.o_shippriority, SUM(orders.o_custkey) OVER (PARTITION BY orders.o_orderstatus ORDER BY orders.o_comment) AS window_result FROM orders WHERE orders.o_orderstatus = 'VFQHU' LIMIT 1000

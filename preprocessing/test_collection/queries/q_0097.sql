@@ -1,0 +1,1 @@
+SELECT customer.c_name, customer.c_phone, customer.c_comment FROM customer UNION SELECT lineitem.l_tax, lineitem.l_discount, lineitem.l_shipinstruct FROM lineitem LIMIT 100

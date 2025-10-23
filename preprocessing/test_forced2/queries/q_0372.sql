@@ -1,0 +1,1 @@
+SELECT lineitem.l_commitdate, MIN(lineitem.l_partkey) AS min_l_partkey, MIN(lineitem.l_linenumber) AS min_l_linenumber, MAX(lineitem.l_suppkey) AS max_l_suppkey FROM lineitem WHERE lineitem.l_partkey = 266 AND lineitem.l_shipinstruct LIKE '%B%' GROUP BY lineitem.l_commitdate

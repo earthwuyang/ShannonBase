@@ -1,0 +1,1 @@
+WITH cte AS (SELECT part.p_mfgr, part.p_type, part.p_size FROM part) SELECT * FROM cte LIMIT 100

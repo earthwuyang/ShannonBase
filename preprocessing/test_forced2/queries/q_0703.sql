@@ -1,0 +1,1 @@
+WITH cte AS (SELECT orders.o_orderstatus, orders.o_totalprice, orders.o_orderpriority FROM orders) SELECT * FROM cte LIMIT 100

@@ -1,0 +1,1 @@
+SELECT supplier.s_acctbal, MIN(supplier.s_nationkey) AS min_s_nationkey, SUM(supplier.s_suppkey) AS sum_s_suppkey FROM supplier WHERE supplier.s_address = 'NDAOS' AND supplier.s_address LIKE '%C' GROUP BY supplier.s_acctbal ORDER BY supplier.s_acctbal

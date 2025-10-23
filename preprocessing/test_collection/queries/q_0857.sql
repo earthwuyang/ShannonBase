@@ -1,0 +1,1 @@
+SELECT * FROM nation WHERE nation.n_nationkey BETWEEN 7265 AND 7293 LIMIT 100

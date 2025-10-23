@@ -1,0 +1,1 @@
+SELECT lineitem.l_commitdate, COUNT(lineitem.l_suppkey) AS count_l_suppkey FROM lineitem WHERE lineitem.l_linenumber > 215 AND lineitem.l_linenumber = 307 GROUP BY lineitem.l_commitdate ORDER BY lineitem.l_commitdate

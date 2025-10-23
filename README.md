@@ -121,7 +121,7 @@ python generate_training_workload_advanced.py
 ```
 
 #### Collect dual-execution data
-
+./ensure_rapid_load.sh
 
 ### Basic Usage
 #### 1: Rapid Engine Usage.

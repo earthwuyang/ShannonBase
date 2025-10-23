@@ -1,0 +1,1 @@
+SELECT supplier.s_address, SUM(supplier.s_suppkey) AS sum_s_suppkey, AVG(supplier.s_nationkey) AS avg_s_nationkey FROM supplier WHERE supplier.s_nationkey < 938 AND supplier.s_phone = 'YAKYG' AND supplier.s_address LIKE 'A%' GROUP BY supplier.s_address HAVING COUNT(*) > 140 ORDER BY supplier.s_address

@@ -1,0 +1,1 @@
+SELECT region.r_name, COUNT(region.r_regionkey) AS count_region_r_regionkey, MIN(region.r_regionkey) AS min_region_r_regionkey, COUNT(region.r_regionkey) AS count_region_r_regionkey, COUNT(region.r_regionkey) AS count_region_r_regionkey FROM region WHERE (region.r_name LIKE 'A%') OR (region.r_name = 'DWFNX') GROUP BY region.r_name ORDER BY region.r_name

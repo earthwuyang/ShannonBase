@@ -1,0 +1,1 @@
+SELECT * FROM partsupp WHERE partsupp.ps_partkey = 64118 LIMIT 1

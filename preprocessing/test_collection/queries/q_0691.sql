@@ -1,0 +1,1 @@
+SELECT supplier.s_comment, MAX(supplier.s_nationkey) AS max_s_nationkey FROM supplier WHERE supplier.s_nationkey > 881 AND supplier.s_name = 'GUCXM' AND supplier.s_suppkey > 174 GROUP BY supplier.s_comment

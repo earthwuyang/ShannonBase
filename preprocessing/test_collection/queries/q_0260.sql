@@ -1,0 +1,1 @@
+SELECT partsupp.ps_comment, partsupp.ps_partkey, partsupp.ps_availqty FROM partsupp UNION ALL SELECT lineitem.l_shipinstruct, lineitem.l_partkey, lineitem.l_shipdate FROM lineitem WHERE lineitem.l_shipdate >= '2012-10-01' LIMIT 100

@@ -1,0 +1,1 @@
+SELECT lineitem.l_orderkey, MIN(lineitem.l_orderkey) AS min_l_orderkey, AVG(lineitem.l_orderkey) AS avg_l_orderkey FROM lineitem WHERE lineitem.l_comment = 'XKTZA' AND lineitem.l_partkey BETWEEN 136 AND 601 AND lineitem.l_comment = 'PDOXF' AND lineitem.l_linestatus LIKE 'A%' GROUP BY lineitem.l_orderkey ORDER BY lineitem.l_orderkey

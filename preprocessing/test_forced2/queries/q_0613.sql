@@ -1,0 +1,1 @@
+SELECT nation.n_name, MIN(nation.n_regionkey) AS min_n_regionkey, AVG(nation.n_regionkey) AS avg_n_regionkey, COUNT(nation.n_regionkey) AS count_n_regionkey FROM nation WHERE nation.n_regionkey BETWEEN 321 AND 387 AND nation.n_comment = 'FOUGA' AND nation.n_comment = 'KFVTO' AND nation.n_name = 'REYJP' AND nation.n_nationkey = 930 GROUP BY nation.n_name ORDER BY nation.n_name

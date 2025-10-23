@@ -1,0 +1,1 @@
+SELECT * FROM orders WHERE orders.o_custkey BETWEEN 7215 AND 7307 LIMIT 100

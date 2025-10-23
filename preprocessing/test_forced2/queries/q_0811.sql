@@ -1,0 +1,1 @@
+SELECT lineitem.l_quantity, COUNT(lineitem.l_suppkey) AS count_l_suppkey, SUM(lineitem.l_orderkey) AS sum_l_orderkey FROM lineitem WHERE lineitem.l_linestatus LIKE '%C' AND lineitem.l_linestatus = 'QTGWH' GROUP BY lineitem.l_quantity ORDER BY lineitem.l_quantity

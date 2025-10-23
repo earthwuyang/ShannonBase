@@ -1,0 +1,1 @@
+SELECT nation.n_nationkey, nation.n_comment, nation.n_regionkey FROM nation WHERE nation.n_nationkey = 587 LIMIT 10

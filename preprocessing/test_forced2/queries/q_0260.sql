@@ -1,0 +1,1 @@
+SELECT orders.o_shippriority, MIN(orders.o_custkey) AS min_o_custkey, MAX(orders.o_custkey) AS max_o_custkey FROM orders WHERE orders.o_custkey > 69 AND orders.o_orderdate >= '2023-12-06' AND orders.o_orderkey < 860 AND orders.o_comment LIKE '%C' GROUP BY orders.o_shippriority HAVING COUNT(*) > 970

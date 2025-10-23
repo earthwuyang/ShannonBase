@@ -1,0 +1,1 @@
+SELECT customer.c_mktsegment, MAX(customer.c_custkey) AS max_c_custkey FROM customer WHERE customer.c_name = 'MOKIW' AND customer.c_nationkey BETWEEN 93 AND 469 AND customer.c_mktsegment LIKE '%C' GROUP BY customer.c_mktsegment ORDER BY customer.c_mktsegment

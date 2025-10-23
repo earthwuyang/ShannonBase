@@ -1,0 +1,1 @@
+SELECT customer.c_phone, customer.c_name, MAX(customer.c_custkey) AS max_customer_c_custkey, AVG(customer.c_acctbal) AS avg_customer_c_acctbal FROM customer WHERE customer.c_custkey < 51 AND customer.c_nationkey BETWEEN 428 AND 435 AND customer.c_nationkey BETWEEN 175 AND 404 GROUP BY customer.c_phone, customer.c_name ORDER BY customer.c_phone, customer.c_name

@@ -1,0 +1,1 @@
+SELECT supplier.s_nationkey, supplier.s_suppkey, supplier.s_acctbal FROM supplier WHERE supplier.s_nationkey BETWEEN 314 AND 317 UNION ALL SELECT part.p_partkey, part.p_mfgr, part.p_brand FROM part WHERE part.p_container LIKE '%B%' LIMIT 100

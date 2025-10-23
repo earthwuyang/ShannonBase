@@ -1,0 +1,1 @@
+SELECT * FROM part WHERE part.p_size > (SELECT AVG(lineitem.l_suppkey) FROM lineitem) LIMIT 100

@@ -1,0 +1,1 @@
+SELECT nation.n_comment, nation.n_name, COUNT(nation.n_regionkey) AS count_nation_n_regionkey, AVG(nation.n_nationkey) AS avg_nation_n_nationkey FROM nation WHERE (nation.n_comment LIKE 'A%') OR (nation.n_comment LIKE '%C') GROUP BY nation.n_comment, nation.n_name ORDER BY nation.n_comment, nation.n_name

@@ -1,0 +1,1 @@
+SELECT nation.n_name, nation.n_comment, COUNT(nation.n_regionkey) AS count_nation_n_regionkey, STDDEV(nation.n_regionkey) AS stddev_nation_n_regionkey FROM nation WHERE nation.n_nationkey BETWEEN 7 AND 855 GROUP BY nation.n_name, nation.n_comment ORDER BY nation.n_comment, nation.n_name

@@ -1,0 +1,1 @@
+SELECT * FROM lineitem WHERE lineitem.l_orderkey = 98310 LIMIT 1

@@ -1,0 +1,1 @@
+SELECT partsupp.ps_partkey, partsupp.ps_availqty, ROW_NUMBER() OVER (PARTITION BY partsupp.ps_availqty ORDER BY partsupp.ps_supplycost) AS window_result FROM partsupp WHERE partsupp.ps_partkey < 75 LIMIT 100

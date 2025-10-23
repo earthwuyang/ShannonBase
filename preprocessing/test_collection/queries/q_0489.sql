@@ -1,0 +1,1 @@
+SELECT part.p_name, part.p_brand, DENSE_RANK() OVER (PARTITION BY part.p_retailprice ORDER BY part.p_container) AS window_result FROM part WHERE part.p_partkey > 837 LIMIT 100

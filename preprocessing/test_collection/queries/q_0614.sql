@@ -1,0 +1,1 @@
+SELECT partsupp.ps_availqty, SUM(partsupp.ps_partkey) AS sum_ps_partkey, SUM(partsupp.ps_suppkey) AS sum_ps_suppkey FROM partsupp WHERE partsupp.ps_availqty = 265 GROUP BY partsupp.ps_availqty ORDER BY partsupp.ps_availqty

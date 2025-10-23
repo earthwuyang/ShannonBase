@@ -1,0 +1,1 @@
+SELECT orders.o_orderkey, orders.o_custkey, orders.o_shippriority FROM orders WHERE orders.o_orderkey = 272 LIMIT 10

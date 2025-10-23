@@ -1,0 +1,1 @@
+SELECT * FROM supplier WHERE supplier.s_suppkey = 60205 LIMIT 1

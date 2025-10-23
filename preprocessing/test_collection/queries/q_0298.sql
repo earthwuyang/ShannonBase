@@ -1,0 +1,1 @@
+SELECT nation.n_nationkey, MIN(nation.n_nationkey) AS min_n_nationkey FROM nation WHERE nation.n_name = 'KOELD' AND nation.n_name = 'LFLSF' AND nation.n_nationkey > 187 AND nation.n_name = 'TWYTU' AND nation.n_regionkey < 567 GROUP BY nation.n_nationkey HAVING COUNT(*) > 252 ORDER BY nation.n_nationkey

@@ -1,0 +1,31 @@
+{
+  "query_id": "q_0042",
+  "query_hash": "5b67201f01af6cd79d1fe103f20b8c61",
+  "timestamp": "2025-10-22T20:35:01.810459",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM part WHERE part.p_partkey IN (SELECT part.p_brand FROM part) LIMIT 100",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 98.46246372908354,
+      "median_ms": 94.33927433565259,
+      "std_ms": 15.314493423922388,
+      "p95_ms": 118.31172835081816,
+      "p99_ms": 119.46752984076738,
+      "all_runs": [
+        79.99078975990415,
+        94.33927433565259,
+        119.75648021325469,
+        112.53272090107203,
+        85.69305343553424
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "error": "rapid_not_supported",
+    "error_detail": "3889 (HY000): Secondary engine operation failed. All plans were rejected by the secondary storage engine.",
+    "note": "Query pattern not supported by secondary engine"
+  }
+}

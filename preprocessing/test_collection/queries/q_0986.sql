@@ -1,0 +1,1 @@
+SELECT customer.c_nationkey, customer.c_acctbal, ROW_NUMBER() OVER (PARTITION BY customer.c_mktsegment ORDER BY customer.c_name) AS window_result FROM customer WHERE customer.c_phone LIKE '%B%' LIMIT 100

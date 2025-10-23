@@ -1,0 +1,1 @@
+SELECT orders.o_orderdate, orders.o_orderstatus, orders.o_totalprice FROM orders WHERE orders.o_orderdate = '2023-01-01' LIMIT 10

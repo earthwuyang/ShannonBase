@@ -1,0 +1,1 @@
+WITH cte AS (SELECT partsupp.ps_comment, partsupp.ps_availqty, partsupp.ps_suppkey FROM partsupp) SELECT * FROM cte LIMIT 100

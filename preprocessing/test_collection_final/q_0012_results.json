@@ -1,0 +1,45 @@
+{
+  "query_id": "q_0012",
+  "query_hash": "bc60ff6b78e2db109994d318668eb32a",
+  "timestamp": "2025-10-23T11:00:28.181101",
+  "database": "tpch_sf1",
+  "query_text": "SELECT orders.o_custkey, orders.o_shippriority, orders.o_orderpriority FROM orders WHERE orders.o_or",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.2566410228610039,
+      "median_ms": 0.24663005024194717,
+      "std_ms": 0.018172236369835528,
+      "p95_ms": 0.28202785179018974,
+      "p99_ms": 0.28422383591532707,
+      "all_runs": [
+        0.2847728319466114,
+        0.2710479311645031,
+        0.24376437067985535,
+        0.24663005024194717,
+        0.23698993027210236
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.30902596190571785,
+      "median_ms": 0.3020833246409893,
+      "std_ms": 0.009988047641376518,
+      "p95_ms": 0.3225145861506462,
+      "p99_ms": 0.32329026609659195,
+      "all_runs": [
+        0.3234841860830784,
+        0.3186361864209175,
+        0.3020833246409893,
+        0.3015948459506035,
+        0.29933126643300056
+      ]
+    },
+    "engine_mode": "ON",
+    "engine_type": "Rapid (Secondary/Column Store)"
+  }
+}

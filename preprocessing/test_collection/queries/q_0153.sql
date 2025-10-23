@@ -1,0 +1,1 @@
+WITH cte AS (SELECT customer.c_mktsegment, SUM(customer.c_custkey) as total FROM customer GROUP BY customer.c_mktsegment) SELECT * FROM cte LIMIT 100

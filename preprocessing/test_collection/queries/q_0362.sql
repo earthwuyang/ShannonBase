@@ -1,0 +1,1 @@
+SELECT partsupp.ps_supplycost, partsupp.ps_supplycost, SUM(partsupp.ps_partkey) OVER (PARTITION BY partsupp.ps_comment ORDER BY partsupp.ps_comment) AS window_result FROM partsupp LIMIT 1000

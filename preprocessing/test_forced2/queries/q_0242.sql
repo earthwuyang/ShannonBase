@@ -1,0 +1,1 @@
+SELECT partsupp.ps_suppkey, MAX(partsupp.ps_suppkey) AS max_ps_suppkey FROM partsupp WHERE partsupp.ps_availqty > 386 AND partsupp.ps_suppkey BETWEEN 14 AND 802 AND partsupp.ps_comment LIKE '%B%' AND partsupp.ps_comment = 'XRZLK' GROUP BY partsupp.ps_suppkey

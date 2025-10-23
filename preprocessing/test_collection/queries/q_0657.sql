@@ -1,0 +1,1 @@
+SELECT supplier.s_acctbal, MAX(supplier.s_suppkey) AS max_s_suppkey, COUNT(supplier.s_nationkey) AS count_s_nationkey FROM supplier WHERE supplier.s_suppkey BETWEEN 385 AND 746 AND supplier.s_phone LIKE '%C' AND supplier.s_nationkey > 918 GROUP BY supplier.s_acctbal ORDER BY supplier.s_acctbal

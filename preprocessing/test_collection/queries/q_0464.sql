@@ -1,0 +1,1 @@
+SELECT lineitem.l_extendedprice, lineitem.l_shipmode, lineitem.l_receiptdate FROM lineitem WHERE lineitem.l_comment = 'VALUE_1' LIMIT 10

@@ -1,0 +1,1 @@
+SELECT region.r_comment, AVG(region.r_regionkey) AS avg_r_regionkey, COUNT(region.r_regionkey) AS count_r_regionkey, AVG(region.r_regionkey) AS avg_r_regionkey FROM region WHERE region.r_regionkey BETWEEN 270 AND 308 AND region.r_comment = 'TVMNZ' AND region.r_regionkey < 43 GROUP BY region.r_comment HAVING COUNT(*) > 742

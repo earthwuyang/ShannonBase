@@ -1,0 +1,1 @@
+SELECT * FROM part WHERE part.p_partkey = 66270 LIMIT 1

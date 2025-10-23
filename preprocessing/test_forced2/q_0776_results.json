@@ -1,0 +1,13 @@
+{
+  "query_id": "q_0776",
+  "query_hash": "6e854afa7e185a9490695537689a2f97",
+  "timestamp": "2025-10-23T11:29:08.708777",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM customer WHERE customer.c_custkey BETWEEN 1371 AND 1422 LIMIT 100",
+  "mysql": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  },
+  "shannonbase": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  }
+}

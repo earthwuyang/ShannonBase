@@ -1,0 +1,1 @@
+SELECT lineitem.l_tax, lineitem.l_linenumber, ROW_NUMBER() OVER (PARTITION BY lineitem.l_shipmode ORDER BY lineitem.l_receiptdate) AS window_result FROM lineitem LIMIT 100

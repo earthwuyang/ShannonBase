@@ -1,0 +1,1 @@
+WITH cte AS (SELECT lineitem.l_commitdate, SUM(lineitem.l_linenumber) as total FROM lineitem GROUP BY lineitem.l_commitdate) SELECT * FROM cte CROSS JOIN orders LIMIT 1000

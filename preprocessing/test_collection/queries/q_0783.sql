@@ -1,0 +1,1 @@
+SELECT customer.c_custkey, customer.c_name, customer.c_nationkey FROM customer UNION ALL SELECT orders.o_totalprice, orders.o_orderkey, orders.o_orderstatus FROM orders LIMIT 100

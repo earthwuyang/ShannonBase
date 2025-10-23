@@ -1,0 +1,1 @@
+SELECT partsupp.ps_availqty, MAX(partsupp.ps_partkey) AS max_ps_partkey, SUM(partsupp.ps_availqty) AS sum_ps_availqty FROM partsupp WHERE partsupp.ps_comment LIKE 'A%' AND partsupp.ps_comment = 'ZZXYN' AND partsupp.ps_suppkey > 820 GROUP BY partsupp.ps_availqty HAVING COUNT(*) > 826 ORDER BY partsupp.ps_availqty

@@ -1,0 +1,1 @@
+SELECT supplier.s_suppkey, supplier.s_nationkey, supplier.s_name FROM supplier WHERE supplier.s_suppkey = 556 LIMIT 10

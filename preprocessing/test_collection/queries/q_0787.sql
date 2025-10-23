@@ -1,0 +1,1 @@
+SELECT nation.n_regionkey, nation.n_nationkey, nation.n_comment FROM nation UNION SELECT supplier.s_nationkey, supplier.s_phone, supplier.s_suppkey FROM supplier WHERE supplier.s_suppkey BETWEEN 113 AND 880 LIMIT 100

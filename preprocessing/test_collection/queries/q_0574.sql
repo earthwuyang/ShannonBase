@@ -1,0 +1,1 @@
+SELECT part.p_container, AVG(part.p_partkey) AS avg_p_partkey, AVG(part.p_size) AS avg_p_size FROM part WHERE part.p_type LIKE '%B%' AND part.p_mfgr LIKE '%C' AND part.p_container = 'GTSPJ' AND part.p_brand LIKE '%C' GROUP BY part.p_container HAVING COUNT(*) > 662 ORDER BY part.p_container

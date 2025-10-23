@@ -1,0 +1,1 @@
+SELECT part.p_container, part.p_type, STDDEV(part.p_retailprice) AS stddev_part_p_retailprice, VARIANCE(part.p_size) AS variance_part_p_size, MIN(part.p_retailprice) AS min_part_p_retailprice, MAX(part.p_size) AS max_part_p_size, STDDEV(part.p_partkey) AS stddev_part_p_partkey FROM part GROUP BY part.p_container, part.p_type ORDER BY part.p_container, part.p_type

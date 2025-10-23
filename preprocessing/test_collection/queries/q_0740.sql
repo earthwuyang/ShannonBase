@@ -1,0 +1,1 @@
+SELECT lineitem.l_extendedprice, SUM(lineitem.l_orderkey) AS sum_l_orderkey FROM lineitem WHERE lineitem.l_shipmode LIKE '%B%' AND lineitem.l_partkey = 521 GROUP BY lineitem.l_extendedprice HAVING COUNT(*) > 621 ORDER BY lineitem.l_extendedprice

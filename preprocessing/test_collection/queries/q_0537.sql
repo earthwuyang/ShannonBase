@@ -1,0 +1,1 @@
+SELECT orders.o_totalprice, orders.o_orderdate, AVG(orders.o_totalprice) OVER (PARTITION BY orders.o_orderpriority ORDER BY orders.o_totalprice) AS window_result FROM orders LIMIT 1000

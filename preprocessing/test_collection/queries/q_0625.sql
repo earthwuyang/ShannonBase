@@ -1,0 +1,1 @@
+SELECT * FROM supplier WHERE supplier.s_suppkey BETWEEN 3092 AND 3186 LIMIT 100

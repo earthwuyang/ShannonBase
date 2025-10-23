@@ -1,0 +1,13 @@
+{
+  "query_id": "q_0116",
+  "query_hash": "d0e6eb8029ddfecb6ae26dcea5a1421a",
+  "timestamp": "2025-10-23T11:29:07.996449",
+  "database": "tpch_sf1",
+  "query_text": "SELECT orders.o_orderstatus, orders.o_shippriority, SUM(orders.o_custkey) OVER (PARTITION BY orders.",
+  "mysql": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  },
+  "shannonbase": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  }
+}

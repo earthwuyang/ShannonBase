@@ -1,0 +1,1 @@
+WITH cte AS (SELECT part.p_retailprice, part.p_type, part.p_comment FROM part) SELECT * FROM cte LIMIT 100

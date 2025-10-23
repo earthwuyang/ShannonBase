@@ -1,0 +1,31 @@
+{
+  "query_id": "q_0011",
+  "query_hash": "c5a33b0e7c9a60fdaa0d65ace6ed8b68",
+  "timestamp": "2025-10-23T11:12:31.121042",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM region WHERE region.r_regionkey BETWEEN 24 AND 95 LIMIT 100",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.2882329747080803,
+      "median_ms": 0.28744013980031013,
+      "std_ms": 0.015972476133831265,
+      "p95_ms": 0.3057790920138359,
+      "p99_ms": 0.30624229460954666,
+      "all_runs": [
+        0.30635809525847435,
+        0.30346307903528214,
+        0.28744013980031013,
+        0.2815523184835911,
+        0.26235124096274376
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "error": "rapid_not_supported",
+    "error_detail": "3889 (HY000): Secondary engine operation failed. All plans were rejected by the secondary storage engine.",
+    "note": "Query pattern not supported by secondary engine"
+  }
+}

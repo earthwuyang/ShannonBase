@@ -1,0 +1,1 @@
+SELECT customer.c_address, customer.c_name, DENSE_RANK() OVER (PARTITION BY customer.c_phone ORDER BY customer.c_nationkey) AS window_result FROM customer WHERE customer.c_phone = 'UEWDK' LIMIT 1000

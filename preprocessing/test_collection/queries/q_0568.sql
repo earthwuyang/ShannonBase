@@ -1,0 +1,1 @@
+SELECT region.r_comment, region.r_regionkey, region.r_name FROM region UNION ALL SELECT customer.c_nationkey, customer.c_address, customer.c_name FROM customer WHERE customer.c_nationkey > 514 LIMIT 100

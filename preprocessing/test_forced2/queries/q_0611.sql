@@ -1,0 +1,1 @@
+SELECT lineitem.l_linestatus, VARIANCE(lineitem.l_linenumber) AS variance_lineitem_l_linenumber, STDDEV(lineitem.l_suppkey) AS stddev_lineitem_l_suppkey FROM lineitem WHERE lineitem.l_receiptdate >= '1997-04-25' GROUP BY lineitem.l_linestatus HAVING COUNT(*) > 5306 AND VARIANCE(lineitem.l_linenumber) > 61406 ORDER BY lineitem.l_linestatus

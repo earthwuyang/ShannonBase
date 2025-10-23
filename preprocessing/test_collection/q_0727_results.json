@@ -1,0 +1,13 @@
+{
+  "query_id": "q_0727",
+  "query_hash": "bdb7e11d098b613194ccb2e315836d94",
+  "timestamp": "2025-10-22T20:56:27.860762",
+  "database": "tpch_sf1",
+  "query_text": "SELECT nation.n_nationkey, MAX(nation.n_nationkey) AS max_n_nationkey, COUNT(nation.n_nationkey) AS ",
+  "mysql": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  },
+  "shannonbase": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  }
+}

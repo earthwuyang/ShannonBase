@@ -1,0 +1,1 @@
+SELECT customer.c_mktsegment, MAX(customer.c_custkey) AS max_customer_c_custkey, MAX(customer.c_custkey) AS max_customer_c_custkey FROM customer WHERE customer.c_name = 'FXOZQ' GROUP BY customer.c_mktsegment ORDER BY customer.c_mktsegment

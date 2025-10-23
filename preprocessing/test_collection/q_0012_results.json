@@ -1,0 +1,31 @@
+{
+  "query_id": "q_0012",
+  "query_hash": "ad27a3aff64b595bca2bde5b8d552466",
+  "timestamp": "2025-10-22T20:32:56.985159",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM customer WHERE customer.c_custkey BETWEEN 5420 AND 5452 LIMIT 100",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.5234948359429836,
+      "median_ms": 0.5245869979262352,
+      "std_ms": 0.035705540073482776,
+      "p95_ms": 0.5720634944736958,
+      "p99_ms": 0.5799111910164356,
+      "all_runs": [
+        0.5245869979262352,
+        0.5328250117599964,
+        0.5818731151521206,
+        0.5050851032137871,
+        0.47310395166277885
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "error": "rapid_not_supported",
+    "error_detail": "3889 (HY000): Secondary engine operation failed. All plans were rejected by the secondary storage engine.",
+    "note": "Query pattern not supported by secondary engine"
+  }
+}

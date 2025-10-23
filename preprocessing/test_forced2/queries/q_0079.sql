@@ -1,0 +1,1 @@
+WITH cte AS (SELECT part.p_type, SUM(part.p_partkey) as total FROM part GROUP BY part.p_type) SELECT * FROM cte CROSS JOIN nation LIMIT 1000

@@ -1,0 +1,1 @@
+SELECT part.p_brand, AVG(part.p_size) AS avg_p_size FROM part WHERE part.p_type LIKE '%C' GROUP BY part.p_brand ORDER BY part.p_brand

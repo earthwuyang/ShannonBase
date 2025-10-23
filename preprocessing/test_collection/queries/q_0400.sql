@@ -1,0 +1,1 @@
+SELECT nation.n_comment, AVG(nation.n_regionkey) AS avg_nation_n_regionkey, COUNT(nation.n_nationkey) AS count_nation_n_nationkey FROM nation WHERE nation.n_nationkey < 273 AND nation.n_name = 'WDGMZ' AND nation.n_nationkey BETWEEN 23 AND 639 GROUP BY nation.n_comment ORDER BY nation.n_comment

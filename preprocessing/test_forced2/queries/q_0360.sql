@@ -1,0 +1,1 @@
+SELECT customer.c_address, VARIANCE(customer.c_custkey) AS variance_customer_c_custkey, VARIANCE(customer.c_nationkey) AS variance_customer_c_nationkey FROM customer WHERE customer.c_nationkey BETWEEN 718 AND 981 GROUP BY customer.c_address ORDER BY customer.c_address

@@ -1,0 +1,1 @@
+SELECT lineitem.l_comment, lineitem.l_tax, lineitem.l_commitdate FROM lineitem WHERE lineitem.l_discount = 'VALUE_1' LIMIT 10

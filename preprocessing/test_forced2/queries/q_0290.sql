@@ -1,0 +1,1 @@
+SELECT lineitem.l_tax, lineitem.l_comment, lineitem.l_quantity FROM lineitem WHERE lineitem.l_shipdate = '2023-01-01' LIMIT 10

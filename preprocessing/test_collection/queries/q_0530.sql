@@ -1,0 +1,1 @@
+SELECT supplier.s_name, supplier.s_address, AVG(supplier.s_nationkey) OVER (PARTITION BY supplier.s_name ORDER BY supplier.s_suppkey) AS window_result FROM supplier WHERE supplier.s_nationkey = 228 LIMIT 100

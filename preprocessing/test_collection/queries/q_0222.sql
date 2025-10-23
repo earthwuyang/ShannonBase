@@ -1,0 +1,1 @@
+SELECT part.p_type, part.p_mfgr, VARIANCE(part.p_partkey) AS variance_part_p_partkey, SUM(part.p_partkey) AS sum_part_p_partkey, STDDEV(part.p_size) AS stddev_part_p_size, STDDEV(part.p_partkey) AS stddev_part_p_partkey FROM part WHERE part.p_container = 'ZJMTK' AND part.p_type LIKE 'A%' AND part.p_mfgr = 'JCGIX' GROUP BY part.p_type, part.p_mfgr ORDER BY part.p_type, part.p_mfgr

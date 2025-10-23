@@ -1,0 +1,1 @@
+SELECT part.p_name, COUNT(part.p_size) AS count_p_size, AVG(part.p_size) AS avg_p_size, MIN(part.p_partkey) AS min_p_partkey FROM part WHERE part.p_brand = 'DEPJA' AND part.p_type LIKE '%C' AND part.p_type LIKE 'A%' GROUP BY part.p_name HAVING COUNT(*) > 11

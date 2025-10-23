@@ -1,0 +1,1 @@
+SELECT partsupp.ps_suppkey, MAX(partsupp.ps_availqty) AS max_ps_availqty, MIN(partsupp.ps_availqty) AS min_ps_availqty, MAX(partsupp.ps_availqty) AS max_ps_availqty FROM partsupp WHERE partsupp.ps_partkey < 399 AND partsupp.ps_suppkey = 906 AND partsupp.ps_partkey < 570 GROUP BY partsupp.ps_suppkey ORDER BY partsupp.ps_suppkey

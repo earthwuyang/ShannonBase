@@ -1,0 +1,1 @@
+WITH cte AS (SELECT nation.n_nationkey, nation.n_regionkey, nation.n_name FROM nation) SELECT * FROM cte CROSS JOIN lineitem LIMIT 1000

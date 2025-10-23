@@ -1,0 +1,1 @@
+SELECT part.p_mfgr, SUM(part.p_size) AS sum_p_size, SUM(part.p_partkey) AS sum_p_partkey, SUM(part.p_size) AS sum_p_size FROM part WHERE part.p_type = 'FRAUQ' AND part.p_mfgr LIKE '%B%' GROUP BY part.p_mfgr HAVING COUNT(*) > 578

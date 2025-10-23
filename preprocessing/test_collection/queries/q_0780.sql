@@ -1,0 +1,1 @@
+SELECT part.p_type, VARIANCE(part.p_partkey) AS variance_part_p_partkey, SUM(part.p_retailprice) AS sum_part_p_retailprice FROM part WHERE (part.p_brand = 'EPYLU' AND part.p_type LIKE 'A%') OR (part.p_type = 'QLDCE') GROUP BY part.p_type ORDER BY part.p_type

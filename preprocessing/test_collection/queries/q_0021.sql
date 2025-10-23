@@ -1,0 +1,1 @@
+SELECT orders.o_orderpriority, orders.o_orderstatus, orders.o_custkey FROM orders WHERE orders.o_orderstatus = 'VALUE_1' LIMIT 10

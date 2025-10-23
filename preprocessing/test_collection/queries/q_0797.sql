@@ -1,0 +1,1 @@
+SELECT part.p_type, COUNT(part.p_partkey) AS count_p_partkey, SUM(part.p_partkey) AS sum_p_partkey, MAX(part.p_partkey) AS max_p_partkey FROM part WHERE part.p_name = 'BMFEM' AND part.p_partkey < 430 AND part.p_mfgr = 'DIQVP' AND part.p_brand LIKE 'A%' GROUP BY part.p_type

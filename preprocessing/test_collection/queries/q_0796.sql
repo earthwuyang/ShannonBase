@@ -1,0 +1,1 @@
+SELECT region.r_comment, region.r_name, AVG(region.r_regionkey) AS avg_region_r_regionkey, SUM(region.r_regionkey) AS sum_region_r_regionkey, MIN(region.r_regionkey) AS min_region_r_regionkey FROM region WHERE region.r_comment LIKE '%C' GROUP BY region.r_comment, region.r_name ORDER BY region.r_name, region.r_comment

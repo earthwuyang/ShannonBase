@@ -1,0 +1,1 @@
+SELECT partsupp.ps_comment, MIN(partsupp.ps_suppkey) AS min_partsupp_ps_suppkey, VARIANCE(partsupp.ps_availqty) AS variance_partsupp_ps_availqty FROM partsupp WHERE (partsupp.ps_partkey = 292) OR (partsupp.ps_comment LIKE '%C') AND partsupp.ps_availqty = 591 GROUP BY partsupp.ps_comment ORDER BY partsupp.ps_comment

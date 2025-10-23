@@ -1,0 +1,1 @@
+SELECT part.p_type, part.p_type, ROW_NUMBER() OVER (PARTITION BY part.p_comment ORDER BY part.p_mfgr) AS window_result FROM part WHERE part.p_comment LIKE '%B%' LIMIT 1000

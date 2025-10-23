@@ -1,0 +1,45 @@
+{
+  "query_id": "q_0016",
+  "query_hash": "0fdaf87cc844b43cb3c8e1044703a975",
+  "timestamp": "2025-10-23T11:00:28.649734",
+  "database": "tpch_sf1",
+  "query_text": "WITH cte AS (SELECT supplier.s_acctbal, SUM(supplier.s_suppkey) as total FROM supplier GROUP BY supp",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 13.601829670369625,
+      "median_ms": 11.631567031145096,
+      "std_ms": 2.5398447611983728,
+      "p95_ms": 16.789099480956793,
+      "p99_ms": 16.831442397087812,
+      "all_runs": [
+        11.5391262806952,
+        11.419042013585567,
+        16.842028126120567,
+        11.631567031145096,
+        16.577384900301695
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "features": null,
+    "latency": {
+      "mean_ms": 9.99457472935319,
+      "median_ms": 10.026969015598297,
+      "std_ms": 0.33069967116848276,
+      "p95_ms": 10.450004879385233,
+      "p99_ms": 10.517296437174082,
+      "all_runs": [
+        10.026969015598297,
+        10.113547090440989,
+        10.534119326621294,
+        9.67928534373641,
+        9.618952870368958
+      ]
+    },
+    "engine_mode": "ON",
+    "engine_type": "Rapid (Secondary/Column Store)"
+  }
+}

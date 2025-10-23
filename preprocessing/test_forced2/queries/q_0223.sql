@@ -1,0 +1,1 @@
+SELECT * FROM lineitem WHERE lineitem.l_partkey BETWEEN 7673 AND 7704 LIMIT 100

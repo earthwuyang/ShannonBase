@@ -1,0 +1,1 @@
+SELECT supplier.s_name, supplier.s_comment, supplier.s_phone, SUM(supplier.s_acctbal) AS sum_supplier_s_acctbal, MAX(supplier.s_suppkey) AS max_supplier_s_suppkey FROM supplier WHERE supplier.s_suppkey = 378 AND supplier.s_suppkey > 326 GROUP BY supplier.s_name, supplier.s_comment, supplier.s_phone ORDER BY supplier.s_phone, supplier.s_comment

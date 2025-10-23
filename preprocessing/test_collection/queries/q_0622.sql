@@ -1,0 +1,1 @@
+SELECT supplier.s_suppkey, supplier.s_comment, supplier.s_phone FROM supplier UNION SELECT region.r_name, region.r_regionkey, region.r_comment FROM region LIMIT 100

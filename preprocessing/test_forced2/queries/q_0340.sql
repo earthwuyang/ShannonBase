@@ -1,0 +1,1 @@
+WITH cte AS (SELECT customer.c_comment, SUM(customer.c_custkey) as total FROM customer GROUP BY customer.c_comment) SELECT * FROM cte LIMIT 100

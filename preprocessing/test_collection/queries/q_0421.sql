@@ -1,0 +1,1 @@
+SELECT region.r_comment, VARIANCE(region.r_regionkey) AS variance_region_r_regionkey, MAX(region.r_regionkey) AS max_region_r_regionkey, COUNT(region.r_regionkey) AS count_region_r_regionkey FROM region WHERE region.r_name LIKE '%C' GROUP BY region.r_comment ORDER BY region.r_comment

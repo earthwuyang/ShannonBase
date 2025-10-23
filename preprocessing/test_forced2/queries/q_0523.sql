@@ -1,0 +1,1 @@
+SELECT lineitem.l_partkey, lineitem.l_linenumber, AVG(lineitem.l_discount) OVER (PARTITION BY lineitem.l_discount ORDER BY lineitem.l_suppkey) AS window_result FROM lineitem LIMIT 100

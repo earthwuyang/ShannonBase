@@ -1,0 +1,1 @@
+SELECT customer.c_phone, MIN(customer.c_nationkey) AS min_c_nationkey FROM customer GROUP BY customer.c_phone ORDER BY customer.c_phone

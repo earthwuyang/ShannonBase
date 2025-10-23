@@ -1,0 +1,45 @@
+{
+  "query_id": "q_0008",
+  "query_hash": "facf9cba4d9d2d96f3d3480777c89017",
+  "timestamp": "2025-10-23T10:55:35.636106",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM nation WHERE nation.n_nationkey = 53433 LIMIT 1",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.23742476478219032,
+      "median_ms": 0.23710494861006737,
+      "std_ms": 0.02185595996113817,
+      "p95_ms": 0.2678576856851578,
+      "p99_ms": 0.2719596028327942,
+      "all_runs": [
+        0.21648872643709183,
+        0.23710494861006737,
+        0.2729850821197033,
+        0.2473480999469757,
+        0.21319696679711342
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.22285589948296547,
+      "median_ms": 0.2256208099424839,
+      "std_ms": 0.015496423753758443,
+      "p95_ms": 0.24129077792167664,
+      "p99_ms": 0.24310052394866943,
+      "all_runs": [
+        0.2256208099424839,
+        0.21471083164215088,
+        0.1981528475880623,
+        0.24355296045541763,
+        0.23224204778671265
+      ]
+    },
+    "engine_mode": "ON",
+    "engine_type": "Rapid (Secondary/Column Store)"
+  }
+}

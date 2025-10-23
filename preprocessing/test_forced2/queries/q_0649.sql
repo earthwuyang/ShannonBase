@@ -1,0 +1,1 @@
+SELECT part.p_size, MAX(part.p_partkey) AS max_p_partkey, SUM(part.p_size) AS sum_p_size FROM part WHERE part.p_size > 499 GROUP BY part.p_size HAVING COUNT(*) > 621 ORDER BY part.p_size

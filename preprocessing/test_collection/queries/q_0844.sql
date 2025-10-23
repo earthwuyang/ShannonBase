@@ -1,0 +1,1 @@
+SELECT region.r_comment, region.r_name, region.r_regionkey FROM region UNION ALL SELECT partsupp.ps_availqty, partsupp.ps_suppkey, partsupp.ps_partkey FROM partsupp LIMIT 100

@@ -1,0 +1,1 @@
+SELECT * FROM orders WHERE orders.o_orderstatus IN (SELECT supplier.s_name FROM supplier) LIMIT 100

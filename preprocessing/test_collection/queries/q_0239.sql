@@ -1,0 +1,1 @@
+SELECT lineitem.l_partkey, lineitem.l_linenumber, SUM(lineitem.l_extendedprice) OVER (PARTITION BY lineitem.l_orderkey ORDER BY lineitem.l_partkey) AS window_result FROM lineitem WHERE lineitem.l_suppkey > 293 LIMIT 100

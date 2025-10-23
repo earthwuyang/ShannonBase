@@ -1,0 +1,1 @@
+SELECT orders.o_orderkey, COUNT(orders.o_shippriority) AS count_o_shippriority FROM orders WHERE orders.o_orderstatus LIKE '%B%' AND orders.o_orderpriority = 'LIWXE' GROUP BY orders.o_orderkey ORDER BY orders.o_orderkey

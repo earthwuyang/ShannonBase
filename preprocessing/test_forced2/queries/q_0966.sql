@@ -1,0 +1,1 @@
+SELECT * FROM orders WHERE orders.o_orderkey = 28330 LIMIT 1

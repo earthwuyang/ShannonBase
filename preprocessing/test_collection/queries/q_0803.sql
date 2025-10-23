@@ -1,0 +1,1 @@
+SELECT nation.n_comment, MIN(nation.n_regionkey) AS min_nation_n_regionkey, AVG(nation.n_nationkey) AS avg_nation_n_nationkey FROM nation WHERE nation.n_comment = 'JMPFJ' AND nation.n_regionkey BETWEEN 530 AND 539 AND nation.n_regionkey < 66 GROUP BY nation.n_comment ORDER BY nation.n_comment

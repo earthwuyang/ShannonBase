@@ -1,0 +1,1 @@
+SELECT part.p_type, part.p_partkey, part.p_comment FROM part UNION SELECT region.r_regionkey, region.r_comment, region.r_name FROM region LIMIT 100

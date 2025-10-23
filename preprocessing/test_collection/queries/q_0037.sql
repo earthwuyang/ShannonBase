@@ -1,0 +1,1 @@
+SELECT nation.n_comment, nation.n_name, nation.n_regionkey FROM nation WHERE nation.n_name = 'XJZXY' UNION ALL SELECT customer.c_name, customer.c_nationkey, customer.c_phone FROM customer WHERE customer.c_address = 'FTTWK' LIMIT 100

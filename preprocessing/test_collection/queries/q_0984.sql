@@ -1,0 +1,1 @@
+SELECT part.p_name, AVG(part.p_size) AS avg_p_size FROM part WHERE part.p_mfgr = 'XHARL' AND part.p_brand = 'WKLDX' GROUP BY part.p_name HAVING COUNT(*) > 778 ORDER BY part.p_name

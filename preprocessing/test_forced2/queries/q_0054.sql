@@ -1,0 +1,1 @@
+SELECT region.r_comment, region.r_comment, AVG(region.r_regionkey) OVER (PARTITION BY region.r_regionkey ORDER BY region.r_name) AS window_result FROM region WHERE region.r_comment = 'WEXSX' LIMIT 100

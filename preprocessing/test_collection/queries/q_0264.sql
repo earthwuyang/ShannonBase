@@ -1,0 +1,1 @@
+SELECT region.r_comment, MAX(region.r_regionkey) AS max_r_regionkey, SUM(region.r_regionkey) AS sum_r_regionkey FROM region WHERE region.r_regionkey > 779 AND region.r_regionkey = 285 AND region.r_comment LIKE 'A%' GROUP BY region.r_comment HAVING COUNT(*) > 957 ORDER BY region.r_comment

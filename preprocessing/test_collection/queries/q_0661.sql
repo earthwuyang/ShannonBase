@@ -1,0 +1,1 @@
+SELECT lineitem.l_comment, lineitem.l_orderkey, lineitem.l_tax FROM lineitem WHERE lineitem.l_linenumber = 330 LIMIT 10

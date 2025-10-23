@@ -1,0 +1,1 @@
+SELECT nation.n_comment, nation.n_nationkey, DENSE_RANK() OVER (PARTITION BY nation.n_regionkey ORDER BY nation.n_name) AS window_result FROM nation WHERE nation.n_nationkey BETWEEN 423 AND 581 LIMIT 100

@@ -1,0 +1,1 @@
+SELECT * FROM customer WHERE customer.c_nationkey IN (SELECT partsupp.ps_partkey FROM partsupp WHERE partsupp.ps_availqty = 411) LIMIT 100

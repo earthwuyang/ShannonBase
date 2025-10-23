@@ -1,0 +1,1 @@
+SELECT nation.n_name, nation.n_regionkey, ROW_NUMBER() OVER (PARTITION BY nation.n_nationkey ORDER BY nation.n_name) AS window_result FROM nation WHERE nation.n_nationkey BETWEEN 199 AND 799 LIMIT 1000

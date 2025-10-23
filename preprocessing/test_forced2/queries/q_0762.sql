@@ -1,0 +1,1 @@
+SELECT supplier.s_address, supplier.s_comment, supplier.s_acctbal FROM supplier WHERE supplier.s_phone = 'VALUE_1' LIMIT 10

@@ -1,0 +1,1 @@
+WITH cte AS (SELECT part.p_brand, part.p_container, part.p_mfgr FROM part) SELECT * FROM cte CROSS JOIN orders LIMIT 1000

@@ -1,0 +1,1 @@
+SELECT customer.c_phone, MAX(customer.c_nationkey) AS max_customer_c_nationkey, STDDEV(customer.c_acctbal) AS stddev_customer_c_acctbal, VARIANCE(customer.c_custkey) AS variance_customer_c_custkey FROM customer WHERE customer.c_phone LIKE '%B%' AND customer.c_custkey < 121 GROUP BY customer.c_phone ORDER BY customer.c_phone

@@ -1,0 +1,1 @@
+SELECT * FROM customer WHERE customer.c_acctbal IN (SELECT supplier.s_name FROM supplier) LIMIT 100

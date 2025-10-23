@@ -1,0 +1,45 @@
+{
+  "query_id": "q_0020",
+  "query_hash": "f4e8e0aed6cb732aabd95733a1b1bfde",
+  "timestamp": "2025-10-23T11:00:29.412546",
+  "database": "tpch_sf1",
+  "query_text": "SELECT customer.c_phone, MAX(customer.c_custkey) AS max_c_custkey FROM customer WHERE customer.c_mkt",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 60.43925667181611,
+      "median_ms": 60.004823841154575,
+      "std_ms": 2.3298293375956924,
+      "p95_ms": 63.21283197030425,
+      "p99_ms": 63.25825182721019,
+      "all_runs": [
+        57.6196750625968,
+        58.31644497811794,
+        60.004823841154575,
+        63.26960679143667,
+        62.985732685774565
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "features": null,
+    "latency": {
+      "mean_ms": 67.9901909083128,
+      "median_ms": 66.75291759893298,
+      "std_ms": 3.452412894301108,
+      "p95_ms": 72.568547911942,
+      "p99_ms": 72.9384383186698,
+      "all_runs": [
+        70.71909587830305,
+        63.33237234503031,
+        66.75291759893298,
+        73.03091092035174,
+        66.1156577989459
+      ]
+    },
+    "engine_mode": "ON",
+    "engine_type": "Rapid (Secondary/Column Store)"
+  }
+}

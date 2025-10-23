@@ -1,0 +1,1 @@
+SELECT part.p_name, part.p_mfgr, part.p_brand, MAX(part.p_retailprice) AS max_part_p_retailprice, AVG(part.p_partkey) AS avg_part_p_partkey FROM part WHERE part.p_comment LIKE '%C' GROUP BY part.p_name, part.p_mfgr, part.p_brand ORDER BY part.p_name, part.p_mfgr

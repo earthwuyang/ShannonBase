@@ -1,0 +1,1 @@
+SELECT part.p_name, part.p_comment, COUNT(part.p_partkey) AS count_part_p_partkey, SUM(part.p_partkey) AS sum_part_p_partkey FROM part WHERE part.p_brand LIKE 'A%' AND part.p_size BETWEEN 102 AND 876 GROUP BY part.p_name, part.p_comment ORDER BY part.p_name, part.p_comment

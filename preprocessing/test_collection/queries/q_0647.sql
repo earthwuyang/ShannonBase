@@ -1,0 +1,1 @@
+SELECT customer.c_mktsegment, MAX(customer.c_nationkey) AS max_c_nationkey, MAX(customer.c_nationkey) AS max_c_nationkey FROM customer WHERE customer.c_mktsegment LIKE '%C' AND customer.c_custkey < 978 AND customer.c_mktsegment = 'MZDWG' GROUP BY customer.c_mktsegment HAVING COUNT(*) > 990

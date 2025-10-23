@@ -1,0 +1,1 @@
+SELECT nation.n_name, SUM(nation.n_nationkey) AS sum_nation_n_nationkey, COUNT(nation.n_nationkey) AS count_nation_n_nationkey FROM nation WHERE ((nation.n_comment LIKE 'A%') OR (nation.n_comment LIKE 'A%') AND nation.n_name = 'WKFDO') OR (nation.n_name = 'AYQAD') GROUP BY nation.n_name HAVING COUNT(*) > 7038 AND SUM(nation.n_nationkey) > 34121 ORDER BY nation.n_name

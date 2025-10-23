@@ -1,0 +1,1 @@
+SELECT partsupp.ps_availqty, AVG(partsupp.ps_availqty) AS avg_ps_availqty, MAX(partsupp.ps_suppkey) AS max_ps_suppkey, MAX(partsupp.ps_availqty) AS max_ps_availqty FROM partsupp WHERE partsupp.ps_suppkey = 758 AND partsupp.ps_suppkey < 372 GROUP BY partsupp.ps_availqty

@@ -1,0 +1,1 @@
+SELECT part.p_comment, MIN(part.p_size) AS min_p_size FROM part WHERE part.p_container LIKE '%C' AND part.p_comment = 'SPSOI' AND part.p_type = 'IPZUB' GROUP BY part.p_comment

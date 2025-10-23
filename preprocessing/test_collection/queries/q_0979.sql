@@ -1,0 +1,1 @@
+SELECT nation.n_comment, AVG(nation.n_regionkey) AS avg_nation_n_regionkey, STDDEV(nation.n_regionkey) AS stddev_nation_n_regionkey FROM nation WHERE (((nation.n_regionkey > 304) OR (nation.n_nationkey < 941)) OR (nation.n_nationkey BETWEEN 66 AND 769)) OR (nation.n_comment = 'VOSOK') GROUP BY nation.n_comment ORDER BY nation.n_comment

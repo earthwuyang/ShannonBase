@@ -1,0 +1,1 @@
+SELECT part.p_size, MAX(part.p_size) AS max_p_size, MIN(part.p_size) AS min_p_size, MAX(part.p_size) AS max_p_size FROM part WHERE part.p_container LIKE '%B%' AND part.p_partkey < 766 GROUP BY part.p_size

@@ -1,0 +1,1 @@
+SELECT part.p_brand, COUNT(part.p_size) AS count_p_size FROM part WHERE part.p_brand LIKE 'A%' AND part.p_name = 'OQXYZ' AND part.p_mfgr LIKE '%B%' GROUP BY part.p_brand HAVING COUNT(*) > 259 ORDER BY part.p_brand

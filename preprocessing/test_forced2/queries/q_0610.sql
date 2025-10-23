@@ -1,0 +1,1 @@
+SELECT part.p_container, part.p_comment, part.p_partkey FROM part WHERE part.p_name = 'VALUE_1' LIMIT 10

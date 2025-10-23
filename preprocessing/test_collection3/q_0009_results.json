@@ -1,0 +1,45 @@
+{
+  "query_id": "q_0009",
+  "query_hash": "7117e8e536fc659046d5c77295d3d644",
+  "timestamp": "2025-10-23T10:55:35.777590",
+  "database": "tpch_sf1",
+  "query_text": "WITH cte AS (SELECT customer.c_mktsegment, customer.c_name, customer.c_comment FROM customer) SELECT",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 5.025805067270994,
+      "median_ms": 5.031297914683819,
+      "std_ms": 0.07883492900594387,
+      "p95_ms": 5.138242710381746,
+      "p99_ms": 5.159232039004564,
+      "all_runs": [
+        5.164479371160269,
+        5.033296067267656,
+        5.031297914683819,
+        4.96132904663682,
+        4.938622936606407
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "features": null,
+    "latency": {
+      "mean_ms": 8.156054839491844,
+      "median_ms": 8.252852130681276,
+      "std_ms": 1.214970033136918,
+      "p95_ms": 9.329085424542427,
+      "p99_ms": 9.356570467352867,
+      "all_runs": [
+        5.960532929748297,
+        9.191660210490227,
+        9.363441728055477,
+        8.011787198483944,
+        8.252852130681276
+      ]
+    },
+    "engine_mode": "ON",
+    "engine_type": "Rapid (Secondary/Column Store)"
+  }
+}

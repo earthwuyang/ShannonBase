@@ -1,0 +1,1 @@
+SELECT lineitem.l_returnflag, lineitem.l_orderkey, lineitem.l_linestatus FROM lineitem WHERE lineitem.l_partkey = 571 LIMIT 10

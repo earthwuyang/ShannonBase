@@ -1,0 +1,42 @@
+{
+  "total_queries": 11,
+  "databases": [
+    "tpch_sf1"
+  ],
+  "successful_mysql": 11,
+  "successful_shannon": 0,
+  "errors": {
+    "table_not_found": 0,
+    "rapid_not_supported": 11,
+    "total_errors": 11
+  },
+  "timestamp": "2025-10-22T20:51:52.183651",
+  "category_breakdown": {
+    "AP": 4,
+    "TP": 7
+  },
+  "type_breakdown": {
+    "ap_aggregation": 2,
+    "tp_range_scan": 2,
+    "ap_window": 1,
+    "tp_point_lookup": 3,
+    "tp_simple_filter": 2,
+    "ap_cte_recursive": 1
+  },
+  "mysql_latency_stats": {
+    "mean": 20.314324037595227,
+    "median": 0.9053079411387444,
+    "p95": 87.65842402353883,
+    "p99": 103.23183806613089
+  },
+  "mysql_TP_latency": {
+    "mean": 15.04529734541263,
+    "median": 0.5198441445827484,
+    "count": 7
+  },
+  "mysql_AP_latency": {
+    "mean": 29.53512074891478,
+    "median": 5.259120743721724,
+    "count": 4
+  }
+}

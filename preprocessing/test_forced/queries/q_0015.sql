@@ -1,0 +1,1 @@
+SELECT region.r_regionkey, region.r_regionkey, DENSE_RANK() OVER (PARTITION BY region.r_name ORDER BY region.r_comment) AS window_result FROM region WHERE region.r_comment = 'TAODU' LIMIT 1000

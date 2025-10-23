@@ -1,0 +1,1 @@
+SELECT supplier.s_suppkey, MIN(supplier.s_suppkey) AS min_s_suppkey FROM supplier WHERE supplier.s_nationkey = 417 AND supplier.s_comment = 'EGRKQ' GROUP BY supplier.s_suppkey HAVING COUNT(*) > 462

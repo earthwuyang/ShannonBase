@@ -1,0 +1,1 @@
+SELECT part.p_brand, AVG(part.p_partkey) AS avg_p_partkey FROM part WHERE part.p_partkey > 19 AND part.p_name LIKE '%B%' AND part.p_name LIKE '%C' GROUP BY part.p_brand HAVING COUNT(*) > 835 ORDER BY part.p_brand

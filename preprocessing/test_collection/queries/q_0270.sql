@@ -1,0 +1,1 @@
+SELECT customer.c_address, customer.c_nationkey, customer.c_mktsegment FROM customer UNION SELECT orders.o_custkey, orders.o_orderdate, orders.o_shippriority FROM orders WHERE orders.o_custkey > 142 LIMIT 100

@@ -1,0 +1,1 @@
+SELECT nation.n_nationkey, nation.n_name, ROW_NUMBER() OVER (PARTITION BY nation.n_comment ORDER BY nation.n_comment) AS window_result FROM nation WHERE nation.n_name = 'CURDJ' LIMIT 100

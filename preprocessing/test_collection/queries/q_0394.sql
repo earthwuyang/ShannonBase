@@ -1,0 +1,1 @@
+SELECT part.p_brand, part.p_mfgr, part.p_name FROM part WHERE part.p_mfgr = 'GSBUD' UNION ALL SELECT nation.n_comment, nation.n_name, nation.n_regionkey FROM nation LIMIT 100

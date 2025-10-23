@@ -1,0 +1,1 @@
+SELECT orders.o_totalprice, COUNT(orders.o_shippriority) AS count_o_shippriority FROM orders WHERE orders.o_orderkey > 737 AND orders.o_orderpriority LIKE '%C' AND orders.o_orderdate >= '2021-06-26' AND orders.o_clerk LIKE '%C' GROUP BY orders.o_totalprice

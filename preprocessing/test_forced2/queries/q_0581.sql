@@ -1,0 +1,1 @@
+SELECT part.p_comment, MIN(part.p_size) AS min_p_size, SUM(part.p_size) AS sum_p_size, MAX(part.p_partkey) AS max_p_partkey FROM part WHERE part.p_container = 'DAPKA' AND part.p_size = 675 AND part.p_name LIKE '%C' AND part.p_container LIKE '%C' GROUP BY part.p_comment HAVING COUNT(*) > 286 ORDER BY part.p_comment

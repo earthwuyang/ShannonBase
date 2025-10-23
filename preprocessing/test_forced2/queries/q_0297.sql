@@ -1,0 +1,1 @@
+SELECT customer.c_nationkey, AVG(customer.c_nationkey) AS avg_c_nationkey, AVG(customer.c_custkey) AS avg_c_custkey, SUM(customer.c_nationkey) AS sum_c_nationkey FROM customer WHERE customer.c_custkey > 344 AND customer.c_address LIKE '%B%' AND customer.c_name = 'YFUVN' AND customer.c_phone LIKE 'A%' GROUP BY customer.c_nationkey HAVING COUNT(*) > 675

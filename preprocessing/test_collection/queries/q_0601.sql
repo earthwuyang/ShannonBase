@@ -1,0 +1,1 @@
+SELECT partsupp.ps_suppkey, AVG(partsupp.ps_partkey) AS avg_ps_partkey FROM partsupp WHERE partsupp.ps_suppkey > 629 AND partsupp.ps_partkey < 743 GROUP BY partsupp.ps_suppkey HAVING COUNT(*) > 922 ORDER BY partsupp.ps_suppkey

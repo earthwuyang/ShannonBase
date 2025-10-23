@@ -1,0 +1,31 @@
+{
+  "query_id": "q_0025",
+  "query_hash": "838798710bf38056359bb12f162c6424",
+  "timestamp": "2025-10-22T20:33:27.161993",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM lineitem WHERE lineitem.l_suppkey BETWEEN 5905 AND 5954 LIMIT 100",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 23.519941605627537,
+      "median_ms": 23.432969115674496,
+      "std_ms": 0.1378001377753119,
+      "p95_ms": 23.726458754390478,
+      "p99_ms": 23.754252698272467,
+      "all_runs": [
+        23.761201184242964,
+        23.407283704727888,
+        23.432969115674496,
+        23.587489034980536,
+        23.4107649885118
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "error": "rapid_not_supported",
+    "error_detail": "3889 (HY000): Secondary engine operation failed. All plans were rejected by the secondary storage engine.",
+    "note": "Query pattern not supported by secondary engine"
+  }
+}

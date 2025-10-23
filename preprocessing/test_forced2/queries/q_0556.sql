@@ -1,0 +1,1 @@
+SELECT supplier.s_address, STDDEV(supplier.s_suppkey) AS stddev_supplier_s_suppkey, COUNT(supplier.s_suppkey) AS count_supplier_s_suppkey FROM supplier WHERE supplier.s_address = 'NSGLN' GROUP BY supplier.s_address ORDER BY supplier.s_address

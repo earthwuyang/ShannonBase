@@ -1,0 +1,1 @@
+SELECT lineitem.l_comment, lineitem.l_linestatus, lineitem.l_linenumber FROM lineitem WHERE lineitem.l_linestatus = 'VALUE_1' LIMIT 10

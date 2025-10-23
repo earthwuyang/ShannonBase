@@ -1,0 +1,1 @@
+SELECT nation.n_comment, nation.n_nationkey, nation.n_regionkey FROM nation UNION SELECT region.r_name, region.r_regionkey, region.r_comment FROM region WHERE region.r_comment = 'VACMY' LIMIT 100

@@ -1,0 +1,45 @@
+{
+  "query_id": "q_0006",
+  "query_hash": "63b39a22c944633876c5fa04da93d2cb",
+  "timestamp": "2025-10-23T11:00:24.824876",
+  "database": "tpch_sf1",
+  "query_text": "WITH cte AS (SELECT part.p_comment, part.p_size, part.p_name FROM part) SELECT * FROM cte LIMIT 100",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.6901136599481106,
+      "median_ms": 0.6863018497824669,
+      "std_ms": 0.03332928999193893,
+      "p95_ms": 0.7377604022622108,
+      "p99_ms": 0.7444903627038002,
+      "all_runs": [
+        0.6863018497824669,
+        0.6588590331375599,
+        0.7461728528141975,
+        0.7041106000542641,
+        0.6551239639520645
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.5390269681811333,
+      "median_ms": 0.5268598906695843,
+      "std_ms": 0.04060020375927776,
+      "p95_ms": 0.5973775871098042,
+      "p99_ms": 0.6070195324718952,
+      "all_runs": [
+        0.5268598906695843,
+        0.4861741326749325,
+        0.5491678602993488,
+        0.5235029384493828,
+        0.609430018812418
+      ]
+    },
+    "engine_mode": "ON",
+    "engine_type": "Rapid (Secondary/Column Store)"
+  }
+}

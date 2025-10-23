@@ -1,0 +1,1 @@
+SELECT lineitem.l_shipdate, lineitem.l_discount, ROW_NUMBER() OVER (PARTITION BY lineitem.l_shipinstruct ORDER BY lineitem.l_shipinstruct) AS window_result FROM lineitem LIMIT 1000

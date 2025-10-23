@@ -1,0 +1,1 @@
+SELECT nation.n_nationkey, nation.n_name, DENSE_RANK() OVER (PARTITION BY nation.n_comment ORDER BY nation.n_regionkey) AS window_result FROM nation WHERE nation.n_name = 'UHMOW' LIMIT 100

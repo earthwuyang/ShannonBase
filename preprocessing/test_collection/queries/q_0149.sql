@@ -1,0 +1,1 @@
+SELECT nation.n_nationkey, SUM(nation.n_regionkey) AS sum_n_regionkey, SUM(nation.n_regionkey) AS sum_n_regionkey, AVG(nation.n_regionkey) AS avg_n_regionkey FROM nation WHERE nation.n_name LIKE 'A%' AND nation.n_regionkey = 405 AND nation.n_name = 'CSLMW' GROUP BY nation.n_nationkey

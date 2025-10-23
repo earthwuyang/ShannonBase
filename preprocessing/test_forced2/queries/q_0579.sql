@@ -1,0 +1,1 @@
+SELECT partsupp.ps_comment, MAX(partsupp.ps_suppkey) AS max_partsupp_ps_suppkey, AVG(partsupp.ps_availqty) AS avg_partsupp_ps_availqty, AVG(partsupp.ps_availqty) AS avg_partsupp_ps_availqty FROM partsupp WHERE ((partsupp.ps_comment LIKE '%B%') OR (partsupp.ps_comment = 'LBXNQ')) OR (partsupp.ps_availqty = 265) GROUP BY partsupp.ps_comment ORDER BY partsupp.ps_comment

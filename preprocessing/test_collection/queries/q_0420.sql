@@ -1,0 +1,1 @@
+SELECT customer.c_mktsegment, customer.c_address, COUNT(customer.c_custkey) AS count_customer_c_custkey, COUNT(customer.c_custkey) AS count_customer_c_custkey, MIN(customer.c_custkey) AS min_customer_c_custkey FROM customer WHERE customer.c_phone LIKE '%B%' GROUP BY customer.c_mktsegment, customer.c_address ORDER BY customer.c_address, customer.c_mktsegment

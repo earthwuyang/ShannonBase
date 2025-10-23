@@ -1,0 +1,1 @@
+SELECT customer.c_mktsegment, AVG(customer.c_nationkey) AS avg_customer_c_nationkey, AVG(customer.c_acctbal) AS avg_customer_c_acctbal FROM customer WHERE (customer.c_nationkey = 125) OR (customer.c_address = 'FOEOH') AND customer.c_comment LIKE 'A%' GROUP BY customer.c_mktsegment ORDER BY customer.c_mktsegment

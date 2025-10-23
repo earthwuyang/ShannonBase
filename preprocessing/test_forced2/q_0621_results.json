@@ -1,0 +1,13 @@
+{
+  "query_id": "q_0621",
+  "query_hash": "ff9516361790898d44c96336b3329f36",
+  "timestamp": "2025-10-23T11:29:08.541527",
+  "database": "tpch_sf1",
+  "query_text": "SELECT supplier.s_address, supplier.s_phone, MIN(supplier.s_suppkey) AS min_supplier_s_suppkey, MIN(",
+  "mysql": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  },
+  "shannonbase": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  }
+}

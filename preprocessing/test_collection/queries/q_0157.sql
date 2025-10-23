@@ -1,0 +1,1 @@
+SELECT customer.c_nationkey, customer.c_name, ROW_NUMBER() OVER (PARTITION BY customer.c_nationkey ORDER BY customer.c_nationkey) AS window_result FROM customer WHERE customer.c_nationkey < 138 LIMIT 100

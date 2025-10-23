@@ -1,0 +1,1 @@
+SELECT lineitem.l_shipdate, lineitem.l_shipinstruct, lineitem.l_extendedprice FROM lineitem WHERE lineitem.l_tax = 'VALUE_1' LIMIT 10

@@ -1,0 +1,1 @@
+SELECT partsupp.ps_supplycost, partsupp.ps_suppkey, partsupp.ps_comment FROM partsupp WHERE partsupp.ps_comment = 'VALUE_1' LIMIT 10

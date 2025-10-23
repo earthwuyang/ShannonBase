@@ -1,0 +1,1 @@
+WITH cte AS (SELECT lineitem.l_discount, SUM(lineitem.l_partkey) as total FROM lineitem GROUP BY lineitem.l_discount) SELECT * FROM cte CROSS JOIN part LIMIT 1000

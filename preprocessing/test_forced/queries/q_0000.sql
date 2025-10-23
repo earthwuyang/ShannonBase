@@ -1,0 +1,1 @@
+WITH cte AS (SELECT part.p_brand, SUM(part.p_size) as total FROM part GROUP BY part.p_brand) SELECT * FROM cte LIMIT 100

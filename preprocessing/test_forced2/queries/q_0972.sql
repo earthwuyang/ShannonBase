@@ -1,0 +1,1 @@
+SELECT * FROM customer WHERE customer.c_custkey BETWEEN 1815 AND 1914 LIMIT 100

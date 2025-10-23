@@ -1,0 +1,31 @@
+{
+  "query_id": "q_0013",
+  "query_hash": "4ae3d658887c0cc96dc346980a1cd11e",
+  "timestamp": "2025-10-22T20:51:52.394618",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM region WHERE region.r_regionkey BETWEEN 3758 AND 3857 LIMIT 100",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.3539053723216057,
+      "median_ms": 0.3394903615117073,
+      "std_ms": 0.046444973512006466,
+      "p95_ms": 0.4211089573800564,
+      "p99_ms": 0.43071476742625237,
+      "all_runs": [
+        0.3394903615117073,
+        0.32624416053295135,
+        0.43311621993780136,
+        0.37307990714907646,
+        0.29759621247649193
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "error": "rapid_not_supported",
+    "error_detail": "3889 (HY000): Secondary engine operation failed. All plans were rejected by the secondary storage engine.",
+    "note": "Query pattern not supported by secondary engine"
+  }
+}

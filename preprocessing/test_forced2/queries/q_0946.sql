@@ -1,0 +1,1 @@
+WITH cte AS (SELECT region.r_name, region.r_regionkey, region.r_comment FROM region) SELECT * FROM cte CROSS JOIN lineitem LIMIT 1000

@@ -1,0 +1,1 @@
+SELECT partsupp.ps_comment, MAX(partsupp.ps_availqty) AS max_ps_availqty FROM partsupp WHERE partsupp.ps_comment LIKE '%C' AND partsupp.ps_comment = 'HZMSV' AND partsupp.ps_availqty BETWEEN 141 AND 698 GROUP BY partsupp.ps_comment ORDER BY partsupp.ps_comment

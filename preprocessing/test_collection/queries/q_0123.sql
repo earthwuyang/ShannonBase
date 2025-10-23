@@ -1,0 +1,1 @@
+SELECT orders.o_clerk, MIN(orders.o_shippriority) AS min_o_shippriority FROM orders WHERE orders.o_clerk LIKE 'A%' GROUP BY orders.o_clerk HAVING COUNT(*) > 230

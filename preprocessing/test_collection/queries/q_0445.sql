@@ -1,0 +1,1 @@
+SELECT customer.c_phone, customer.c_mktsegment, STDDEV(customer.c_custkey) AS stddev_customer_c_custkey, AVG(customer.c_nationkey) AS avg_customer_c_nationkey FROM customer WHERE customer.c_address = 'VHWZN' GROUP BY customer.c_phone, customer.c_mktsegment HAVING COUNT(*) > 5475 AND AVG(customer.c_nationkey) > 762 ORDER BY customer.c_phone, customer.c_mktsegment

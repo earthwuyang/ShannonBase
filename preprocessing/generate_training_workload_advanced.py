@@ -52,14 +52,14 @@ MYSQL_CONFIG = {
     'host': '127.0.0.1',
     'port': 3306,
     'user': 'root',
-    'password': 'shannonbase'
+    'password': ''
 }
 
 SHANNONBASE_CONFIG = {
     'host': '127.0.0.1',
     'port': 3307,
     'user': 'root',
-    'password': 'shannonbase'
+    'password': ''
 }
 
 # Base paths
@@ -321,21 +321,29 @@ class AdvancedWorkloadGenerator:
             return result
     
     def generate_join_clause(self, start_table, num_joins):
-        """Generate JOIN clauses using relationships"""
+        """Generate JOIN clauses using relationships - only uses tables from current database"""
         if not self.relationships:
+            return [], [start_table]
+        
+        # Filter relationships to only include tables in current schema
+        valid_tables = set(self.schema_info.keys())
+        valid_rels = [(t1, c1, t2, c2) for t1, c1, t2, c2 in self.relationships
+                     if t1 in valid_tables and t2 in valid_tables]
+        
+        if not valid_rels:
             return [], [start_table]
             
         joins = []
         joined_tables = {start_table}
-        available_rels = list(self.relationships)
+        available_rels = list(valid_rels)
         
         for _ in range(num_joins):
             # Find possible joins
             possible_joins = []
             for t1, c1, t2, c2 in available_rels:
-                if t1 in joined_tables and t2 not in joined_tables:
+                if t1 in joined_tables and t2 not in joined_tables and t2 in valid_tables:
                     possible_joins.append((t1, c1, t2, c2, t2))
-                elif t2 in joined_tables and t1 not in joined_tables:
+                elif t2 in joined_tables and t1 not in joined_tables and t1 in valid_tables:
                     possible_joins.append((t2, c2, t1, c1, t1))
             
             if not possible_joins:
@@ -636,9 +644,14 @@ class AdvancedWorkloadGenerator:
         return query, QueryType.WINDOW
     
     def generate_subquery(self):
-        """Generate query with subquery"""
-        main_table = random.choice(list(self.schema_info.keys()))
-        sub_table = random.choice(list(self.schema_info.keys()))
+        """Generate query with subquery - only uses tables from current database"""
+        tables = list(self.schema_info.keys())
+        if len(tables) < 2:
+            # Need at least 2 tables for subquery, fallback to aggregation
+            return self.generate_ap_aggregation()
+        
+        main_table = random.choice(tables)
+        sub_table = random.choice(tables)
         
         # Find common column type for correlation
         main_cols = self.schema_info[main_table]['columns']
@@ -662,9 +675,12 @@ class AdvancedWorkloadGenerator:
         elif pattern == 'exists':
             subquery = f"SELECT 1 FROM {sub_table}"
             
-            # Try to correlate
+            # Try to correlate - only use relationships within current database
             if self.relationships:
+                valid_tables = set(self.schema_info.keys())
                 for t1, c1, t2, c2 in self.relationships:
+                    if t1 not in valid_tables or t2 not in valid_tables:
+                        continue
                     if t1 == main_table and t2 == sub_table:
                         subquery += f" WHERE {sub_table}.{c2} = {main_table}.{c1}"
                         break
@@ -686,14 +702,18 @@ class AdvancedWorkloadGenerator:
                 else:
                     query = f"SELECT *, ({subquery}) as avg_val FROM {main_table}"
             else:
-                return self.generate_join_query()  # Fallback
+                return self.generate_ap_complex_join()  # Fallback
                 
         return query + " LIMIT 100", QueryType.SUBQUERY
     
     def generate_cte_query(self):
-        """Generate query with Common Table Expression"""
-        cte_table = random.choice(list(self.schema_info.keys()))
-        main_table = random.choice(list(self.schema_info.keys()))
+        """Generate query with Common Table Expression - only uses tables from current database"""
+        tables = list(self.schema_info.keys())
+        if len(tables) < 1:
+            return self.generate_ap_aggregation()
+        
+        cte_table = random.choice(tables)
+        main_table = random.choice(tables)
         
         # Generate CTE
         cte_cols = random.sample(self.schema_info[cte_table]['columns'], 
@@ -722,9 +742,14 @@ class AdvancedWorkloadGenerator:
         return query, QueryType.CTE
     
     def generate_union_query(self):
-        """Generate UNION query"""
-        table1 = random.choice(list(self.schema_info.keys()))
-        table2 = random.choice(list(self.schema_info.keys()))
+        """Generate UNION query - only uses tables from current database"""
+        tables = list(self.schema_info.keys())
+        if len(tables) < 2:
+            # Need at least 2 tables for UNION, fallback to aggregation
+            return self.generate_ap_aggregation()
+        
+        table1 = random.choice(tables)
+        table2 = random.choice(tables)
         
         # Try to find compatible columns
         cols1 = self.schema_info[table1]['columns']
@@ -769,6 +794,7 @@ class AdvancedWorkloadGenerator:
             self.load_schema_and_stats()
             
         # Separate distributions for TP and AP queries
+        # NOTE: Subquery and UNION removed - not supported by Rapid secondary engine
         tp_distributions = [
             (QueryType.TP_POINT_LOOKUP, 0.40, self.generate_tp_point_lookup),
             (QueryType.TP_SIMPLE_FILTER, 0.30, self.generate_tp_simple_filter),
@@ -776,12 +802,12 @@ class AdvancedWorkloadGenerator:
         ]
         
         ap_distributions = [
-            (QueryType.AP_COMPLEX_JOIN, 0.30, self.generate_ap_complex_join),
-            (QueryType.AP_AGGREGATION, 0.25, self.generate_ap_aggregation),
-            (QueryType.AP_WINDOW, 0.15, self.generate_window_query),  # Keep existing
-            (QueryType.AP_SUBQUERY, 0.10, self.generate_subquery),    # Keep existing  
-            (QueryType.AP_CTE_RECURSIVE, 0.10, self.generate_cte_query), # Keep existing
-            (QueryType.AP_UNION_COMPLEX, 0.10, self.generate_union_query) # Keep existing
+            (QueryType.AP_COMPLEX_JOIN, 0.35, self.generate_ap_complex_join),     # Increased from 0.30
+            (QueryType.AP_AGGREGATION, 0.35, self.generate_ap_aggregation),       # Increased from 0.25
+            (QueryType.AP_WINDOW, 0.20, self.generate_window_query),             # Increased from 0.15
+            (QueryType.AP_CTE_RECURSIVE, 0.10, self.generate_cte_query),         # Keep existing
+            # Removed: AP_SUBQUERY (not supported by Rapid - error 1235)
+            # Removed: AP_UNION_COMPLEX (not supported by Rapid - syntax error)
         ]
         
         workload = []
@@ -914,7 +940,7 @@ def main():
     parser.add_argument('--database', type=str, default=None,
                        choices=AVAILABLE_DATASETS,
                        help='Database to use (default: generate for all datasets)')
-    parser.add_argument('--all-datasets', action='store_true',
+    parser.add_argument('--all-datasets', action='store_true', default=True,
                        help='Generate workload for all available datasets')
     parser.add_argument('--num-queries', type=int, default=10000,
                        help='Number of queries to generate per dataset (default: 1000)')

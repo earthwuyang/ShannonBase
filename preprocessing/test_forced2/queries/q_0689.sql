@@ -1,0 +1,1 @@
+SELECT orders.o_orderstatus, orders.o_orderkey, orders.o_custkey FROM orders WHERE orders.o_totalprice = 'VALUE_1' LIMIT 10

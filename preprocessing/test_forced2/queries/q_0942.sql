@@ -1,0 +1,1 @@
+SELECT part.p_partkey, part.p_container, part.p_brand FROM part WHERE part.p_mfgr = 'VALUE_1' LIMIT 10

@@ -1,0 +1,45 @@
+{
+  "query_id": "q_0007",
+  "query_hash": "af64e3e9abe0a9648fe07c8a19b5e904",
+  "timestamp": "2025-10-23T11:00:24.945956",
+  "database": "tpch_sf1",
+  "query_text": "SELECT part.p_mfgr, part.p_comment, part.p_name, MIN(part.p_size) AS min_part_p_size, COUNT(part.p_r",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 149.9458061531186,
+      "median_ms": 147.12972193956375,
+      "std_ms": 9.005835658820565,
+      "p95_ms": 162.5222522765398,
+      "p99_ms": 164.04623195528984,
+      "all_runs": [
+        154.9023538827896,
+        147.12972193956375,
+        138.08714505285025,
+        145.1825830154121,
+        164.42722687497735
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "features": null,
+    "latency": {
+      "mean_ms": 144.13452968001366,
+      "median_ms": 137.14393600821495,
+      "std_ms": 13.077847978268789,
+      "p95_ms": 161.76074696704745,
+      "p99_ms": 162.8200395964086,
+      "all_runs": [
+        137.14393600821495,
+        156.4642838202417,
+        131.71190721914172,
+        163.0848627537489,
+        132.26765859872103
+      ]
+    },
+    "engine_mode": "ON",
+    "engine_type": "Rapid (Secondary/Column Store)"
+  }
+}

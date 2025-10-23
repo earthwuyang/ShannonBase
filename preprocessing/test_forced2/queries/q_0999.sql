@@ -1,0 +1,1 @@
+SELECT partsupp.ps_comment, VARIANCE(partsupp.ps_supplycost) AS variance_partsupp_ps_supplycost, AVG(partsupp.ps_availqty) AS avg_partsupp_ps_availqty, MIN(partsupp.ps_availqty) AS min_partsupp_ps_availqty FROM partsupp WHERE (partsupp.ps_suppkey > 214 AND partsupp.ps_suppkey > 766) OR (partsupp.ps_suppkey > 208) GROUP BY partsupp.ps_comment ORDER BY partsupp.ps_comment

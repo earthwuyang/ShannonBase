@@ -1,0 +1,1 @@
+SELECT part.p_brand, part.p_container, part.p_comment FROM part WHERE part.p_partkey = 306 LIMIT 10

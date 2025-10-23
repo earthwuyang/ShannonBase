@@ -1,0 +1,1 @@
+SELECT customer.c_phone, customer.c_acctbal, RANK() OVER (PARTITION BY customer.c_address ORDER BY customer.c_custkey) AS window_result FROM customer WHERE customer.c_custkey = 591 LIMIT 100

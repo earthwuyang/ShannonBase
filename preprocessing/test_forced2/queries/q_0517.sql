@@ -1,0 +1,1 @@
+SELECT region.r_regionkey, region.r_comment, DENSE_RANK() OVER (PARTITION BY region.r_name ORDER BY region.r_regionkey) AS window_result FROM region WHERE region.r_comment = 'PCKPX' LIMIT 1000

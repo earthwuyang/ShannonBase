@@ -1,0 +1,1 @@
+SELECT part.p_type, AVG(part.p_partkey) AS avg_part_p_partkey, MAX(part.p_partkey) AS max_part_p_partkey, MAX(part.p_retailprice) AS max_part_p_retailprice, MAX(part.p_partkey) AS max_part_p_partkey, VARIANCE(part.p_retailprice) AS variance_part_p_retailprice FROM part WHERE part.p_mfgr = 'PKEWH' AND part.p_comment LIKE 'A%' GROUP BY part.p_type ORDER BY part.p_type

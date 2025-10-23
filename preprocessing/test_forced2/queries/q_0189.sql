@@ -1,0 +1,1 @@
+SELECT orders.o_orderstatus, MAX(orders.o_custkey) AS max_o_custkey FROM orders GROUP BY orders.o_orderstatus

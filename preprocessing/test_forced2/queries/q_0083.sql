@@ -1,0 +1,1 @@
+SELECT supplier.s_nationkey, AVG(supplier.s_nationkey) AS avg_s_nationkey FROM supplier WHERE supplier.s_nationkey = 264 AND supplier.s_suppkey = 417 AND supplier.s_address LIKE '%C' AND supplier.s_nationkey < 39 AND supplier.s_address LIKE '%C' GROUP BY supplier.s_nationkey ORDER BY supplier.s_nationkey

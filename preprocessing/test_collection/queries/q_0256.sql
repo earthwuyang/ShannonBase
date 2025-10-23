@@ -1,0 +1,1 @@
+SELECT part.p_name, part.p_retailprice, part.p_brand FROM part WHERE part.p_brand = 'VALUE_1' LIMIT 10

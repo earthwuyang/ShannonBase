@@ -1,0 +1,1 @@
+SELECT region.r_name, region.r_name, DENSE_RANK() OVER (PARTITION BY region.r_comment ORDER BY region.r_name) AS window_result FROM region LIMIT 1000

@@ -1,0 +1,1 @@
+SELECT part.p_brand, MAX(part.p_size) AS max_p_size FROM part WHERE part.p_partkey BETWEEN 710 AND 880 AND part.p_type LIKE 'A%' AND part.p_type LIKE 'A%' AND part.p_size > 103 GROUP BY part.p_brand HAVING COUNT(*) > 461

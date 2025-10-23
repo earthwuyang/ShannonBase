@@ -1,0 +1,1 @@
+SELECT supplier.s_nationkey, AVG(supplier.s_nationkey) AS avg_s_nationkey, MAX(supplier.s_nationkey) AS max_s_nationkey FROM supplier WHERE supplier.s_suppkey < 707 AND supplier.s_phone LIKE '%C' AND supplier.s_name LIKE 'A%' GROUP BY supplier.s_nationkey HAVING COUNT(*) > 71 ORDER BY supplier.s_nationkey

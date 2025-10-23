@@ -1,0 +1,1 @@
+SELECT nation.n_name, SUM(nation.n_regionkey) AS sum_n_regionkey, SUM(nation.n_nationkey) AS sum_n_nationkey FROM nation WHERE nation.n_name = 'HWBVS' AND nation.n_comment = 'VMQMV' AND nation.n_nationkey < 948 AND nation.n_nationkey BETWEEN 369 AND 656 AND nation.n_comment = 'UMDNY' GROUP BY nation.n_name ORDER BY nation.n_name

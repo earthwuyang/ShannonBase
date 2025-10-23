@@ -1,0 +1,31 @@
+{
+  "query_id": "q_0018",
+  "query_hash": "f5adeecb9a11f61707cb002034deba35",
+  "timestamp": "2025-10-23T11:12:32.235069",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM nation WHERE nation.n_regionkey BETWEEN 6813 AND 6834 LIMIT 100",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.33277804031968117,
+      "median_ms": 0.3494648262858391,
+      "std_ms": 0.027732637635146593,
+      "p95_ms": 0.3572744317352772,
+      "p99_ms": 0.3576316870748997,
+      "all_runs": [
+        0.3554881550371647,
+        0.3577210009098053,
+        0.3494648262858391,
+        0.2872040495276451,
+        0.31401216983795166
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "error": "rapid_not_supported",
+    "error_detail": "3889 (HY000): Secondary engine operation failed. All plans were rejected by the secondary storage engine.",
+    "note": "Query pattern not supported by secondary engine"
+  }
+}

@@ -1,0 +1,1 @@
+SELECT customer.c_mktsegment, customer.c_custkey, DENSE_RANK() OVER (PARTITION BY customer.c_phone ORDER BY customer.c_name) AS window_result FROM customer WHERE customer.c_mktsegment LIKE '%B%' LIMIT 1000

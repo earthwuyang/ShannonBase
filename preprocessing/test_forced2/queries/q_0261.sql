@@ -1,0 +1,1 @@
+SELECT region.r_regionkey, COUNT(region.r_regionkey) AS count_r_regionkey, COUNT(region.r_regionkey) AS count_r_regionkey, MAX(region.r_regionkey) AS max_r_regionkey FROM region WHERE region.r_comment LIKE 'A%' AND region.r_name = 'JBZFR' AND region.r_comment LIKE '%B%' GROUP BY region.r_regionkey

@@ -1,0 +1,1 @@
+WITH cte AS (SELECT partsupp.ps_supplycost, SUM(partsupp.ps_partkey) as total FROM partsupp GROUP BY partsupp.ps_supplycost) SELECT * FROM cte CROSS JOIN customer LIMIT 1000

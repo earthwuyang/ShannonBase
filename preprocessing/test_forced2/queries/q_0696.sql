@@ -1,0 +1,1 @@
+SELECT orders.o_orderdate, MIN(orders.o_orderkey) AS min_o_orderkey, SUM(orders.o_custkey) AS sum_o_custkey FROM orders WHERE orders.o_orderstatus = 'UAFJT' AND orders.o_comment LIKE '%C' GROUP BY orders.o_orderdate HAVING COUNT(*) > 653 ORDER BY orders.o_orderdate

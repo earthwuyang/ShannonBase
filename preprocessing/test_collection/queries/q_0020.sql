@@ -1,0 +1,1 @@
+SELECT supplier.s_phone, supplier.s_name, supplier.s_nationkey FROM supplier WHERE supplier.s_address LIKE 'A%' UNION ALL SELECT part.p_container, part.p_comment, part.p_retailprice FROM part WHERE part.p_type = 'NJJYG' LIMIT 100

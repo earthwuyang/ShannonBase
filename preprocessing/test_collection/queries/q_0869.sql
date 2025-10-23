@@ -1,0 +1,1 @@
+SELECT customer.c_comment, customer.c_custkey, customer.c_name FROM customer UNION SELECT lineitem.l_suppkey, lineitem.l_comment, lineitem.l_quantity FROM lineitem LIMIT 100

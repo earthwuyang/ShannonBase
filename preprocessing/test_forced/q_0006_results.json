@@ -1,0 +1,31 @@
+{
+  "query_id": "q_0006",
+  "query_hash": "63b39a22c944633876c5fa04da93d2cb",
+  "timestamp": "2025-10-23T11:12:28.913087",
+  "database": "tpch_sf1",
+  "query_text": "WITH cte AS (SELECT part.p_comment, part.p_size, part.p_name FROM part) SELECT * FROM cte LIMIT 100",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.6873323582112789,
+      "median_ms": 0.6732628680765629,
+      "std_ms": 0.07227254871463511,
+      "p95_ms": 0.7950812578201294,
+      "p99_ms": 0.8174076676368713,
+      "all_runs": [
+        0.8229892700910568,
+        0.6834492087364197,
+        0.6732628680765629,
+        0.6454158574342728,
+        0.6115445867180824
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "error": "rapid_not_supported",
+    "error_detail": "3889 (HY000): Secondary engine operation failed. No secondary engine defined for at least one of the query tables.",
+    "note": "Query pattern not supported by secondary engine"
+  }
+}

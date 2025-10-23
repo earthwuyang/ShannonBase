@@ -1,0 +1,1 @@
+WITH cte AS (SELECT lineitem.l_tax, lineitem.l_shipmode, lineitem.l_linestatus FROM lineitem) SELECT * FROM cte LIMIT 100

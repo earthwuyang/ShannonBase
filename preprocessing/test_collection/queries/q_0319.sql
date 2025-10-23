@@ -1,0 +1,1 @@
+SELECT supplier.s_nationkey, supplier.s_comment, supplier.s_name FROM supplier WHERE supplier.s_nationkey = 993 LIMIT 10

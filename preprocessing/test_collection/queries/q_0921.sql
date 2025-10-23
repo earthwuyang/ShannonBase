@@ -1,0 +1,1 @@
+SELECT nation.n_nationkey, MAX(nation.n_regionkey) AS max_n_regionkey, MAX(nation.n_regionkey) AS max_n_regionkey FROM nation WHERE nation.n_name LIKE '%B%' AND nation.n_name LIKE '%B%' AND nation.n_comment = 'GLEUV' GROUP BY nation.n_nationkey HAVING COUNT(*) > 546

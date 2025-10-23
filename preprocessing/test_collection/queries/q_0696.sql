@@ -1,0 +1,1 @@
+SELECT lineitem.l_receiptdate, SUM(lineitem.l_suppkey) AS sum_l_suppkey, AVG(lineitem.l_orderkey) AS avg_l_orderkey FROM lineitem WHERE lineitem.l_shipmode LIKE 'A%' AND lineitem.l_returnflag LIKE 'A%' AND lineitem.l_commitdate >= '2002-07-14' AND lineitem.l_linestatus = 'JSOKK' GROUP BY lineitem.l_receiptdate

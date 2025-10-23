@@ -1,0 +1,1 @@
+SELECT orders.o_orderstatus, orders.o_custkey, RANK() OVER (PARTITION BY orders.o_orderstatus ORDER BY orders.o_custkey) AS window_result FROM orders WHERE orders.o_orderstatus = 'JHRWS' LIMIT 100

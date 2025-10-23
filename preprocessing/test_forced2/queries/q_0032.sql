@@ -1,0 +1,1 @@
+SELECT nation.n_nationkey, nation.n_nationkey, RANK() OVER (PARTITION BY nation.n_nationkey ORDER BY nation.n_name) AS window_result FROM nation WHERE nation.n_regionkey > 524 LIMIT 100

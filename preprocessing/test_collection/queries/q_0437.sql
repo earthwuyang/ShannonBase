@@ -1,0 +1,1 @@
+SELECT * FROM orders WHERE orders.o_orderkey > (SELECT AVG(customer.c_custkey) FROM customer) LIMIT 100

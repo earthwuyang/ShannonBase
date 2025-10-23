@@ -1,0 +1,1 @@
+WITH cte AS (SELECT orders.o_shippriority, orders.o_orderdate, orders.o_comment FROM orders) SELECT * FROM cte CROSS JOIN customer LIMIT 1000

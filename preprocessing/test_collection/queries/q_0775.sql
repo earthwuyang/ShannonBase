@@ -1,0 +1,1 @@
+SELECT orders.o_orderstatus, orders.o_clerk, orders.o_orderpriority FROM orders UNION SELECT nation.n_name, nation.n_nationkey, nation.n_comment FROM nation LIMIT 100

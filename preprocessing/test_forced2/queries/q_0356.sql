@@ -1,0 +1,1 @@
+SELECT orders.o_custkey, COUNT(orders.o_orderkey) AS count_o_orderkey FROM orders WHERE orders.o_orderdate >= '2016-06-18' AND orders.o_orderpriority = 'YYUJE' AND orders.o_shippriority > 352 AND orders.o_comment LIKE '%C' GROUP BY orders.o_custkey HAVING COUNT(*) > 822 ORDER BY orders.o_custkey

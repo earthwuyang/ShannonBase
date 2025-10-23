@@ -1,0 +1,1 @@
+SELECT lineitem.l_comment, MAX(lineitem.l_partkey) AS max_l_partkey, SUM(lineitem.l_linenumber) AS sum_l_linenumber FROM lineitem WHERE lineitem.l_shipdate >= '1997-03-18' AND lineitem.l_shipmode LIKE '%B%' GROUP BY lineitem.l_comment ORDER BY lineitem.l_comment

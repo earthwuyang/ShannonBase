@@ -1,0 +1,1 @@
+SELECT customer.c_comment, customer.c_mktsegment, ROW_NUMBER() OVER (PARTITION BY customer.c_mktsegment ORDER BY customer.c_acctbal) AS window_result FROM customer WHERE customer.c_address LIKE 'A%' LIMIT 1000

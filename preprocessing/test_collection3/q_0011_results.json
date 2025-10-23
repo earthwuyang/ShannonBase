@@ -1,0 +1,45 @@
+{
+  "query_id": "q_0011",
+  "query_hash": "84cc32365482eb7b7cc3881e91b98211",
+  "timestamp": "2025-10-23T10:55:37.434730",
+  "database": "tpch_sf1",
+  "query_text": "SELECT nation.n_name, nation.n_comment, COUNT(nation.n_regionkey) AS count_nation_n_regionkey, MAX(n",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.43515339493751526,
+      "median_ms": 0.4278593696653843,
+      "std_ms": 0.03762246619811827,
+      "p95_ms": 0.4912623204290867,
+      "p99_ms": 0.5017092265188694,
+      "all_runs": [
+        0.5043209530413151,
+        0.4390277899801731,
+        0.3966451622545719,
+        0.4079136997461319,
+        0.4278593696653843
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.4306349903345108,
+      "median_ms": 0.4285532049834728,
+      "std_ms": 0.033166528401443976,
+      "p95_ms": 0.47282883897423744,
+      "p99_ms": 0.47555381432175636,
+      "all_runs": [
+        0.393611378967762,
+        0.39557134732604027,
+        0.4285532049834728,
+        0.45920396223664284,
+        0.4762350581586361
+      ]
+    },
+    "engine_mode": "ON",
+    "engine_type": "Rapid (Secondary/Column Store)"
+  }
+}

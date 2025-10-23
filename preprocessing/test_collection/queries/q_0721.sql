@@ -1,0 +1,1 @@
+WITH cte AS (SELECT customer.c_mktsegment, customer.c_custkey, customer.c_name FROM customer) SELECT * FROM cte LIMIT 100

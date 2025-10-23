@@ -1,0 +1,31 @@
+{
+  "query_id": "q_0067",
+  "query_hash": "acbf946492398e7ef5ddb0bf1f1b142b",
+  "timestamp": "2025-10-22T20:51:32.882239",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM region WHERE region.r_regionkey > (SELECT AVG(part.p_size) FROM part) LIMIT 100",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 90.16980566084385,
+      "median_ms": 94.45715881884098,
+      "std_ms": 9.912199709133507,
+      "p95_ms": 96.3706691749394,
+      "p99_ms": 96.68934496119618,
+      "all_runs": [
+        70.42140932753682,
+        96.76901390776038,
+        94.42415600642562,
+        94.45715881884098,
+        94.77729024365544
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "error": "rapid_not_supported",
+    "error_detail": "3889 (HY000): Secondary engine operation failed. No secondary engine defined for at least one of the query tables.",
+    "note": "Query pattern not supported by secondary engine"
+  }
+}

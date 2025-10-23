@@ -1,0 +1,13 @@
+{
+  "query_id": "q_0400",
+  "query_hash": "1fbeafda3ffc16155f19a0e53e598d8d",
+  "timestamp": "2025-10-23T11:29:08.285103",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM partsupp WHERE partsupp.ps_suppkey BETWEEN 2028 AND 2061 LIMIT 100",
+  "mysql": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  },
+  "shannonbase": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  }
+}

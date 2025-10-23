@@ -1,0 +1,1 @@
+SELECT customer.c_nationkey, AVG(customer.c_nationkey) AS avg_c_nationkey, MIN(customer.c_custkey) AS min_c_custkey FROM customer WHERE customer.c_custkey < 786 AND customer.c_mktsegment = 'REEJM' AND customer.c_comment = 'JWYIQ' AND customer.c_mktsegment = 'SKOEL' GROUP BY customer.c_nationkey ORDER BY customer.c_nationkey

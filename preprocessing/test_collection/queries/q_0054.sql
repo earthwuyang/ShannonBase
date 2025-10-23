@@ -1,0 +1,1 @@
+SELECT region.r_name, region.r_comment, ROW_NUMBER() OVER (PARTITION BY region.r_name ORDER BY region.r_comment) AS window_result FROM region WHERE region.r_comment LIKE 'A%' LIMIT 1000

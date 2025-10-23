@@ -1,0 +1,1 @@
+SELECT * FROM customer WHERE customer.c_nationkey BETWEEN 7594 AND 7614 LIMIT 100

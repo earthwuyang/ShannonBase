@@ -1,0 +1,1 @@
+SELECT region.r_name, VARIANCE(region.r_regionkey) AS variance_region_r_regionkey, VARIANCE(region.r_regionkey) AS variance_region_r_regionkey FROM region WHERE (region.r_comment = 'NFMQJ') OR (region.r_comment = 'FHMAG') AND region.r_comment = 'PQCYF' GROUP BY region.r_name ORDER BY region.r_name

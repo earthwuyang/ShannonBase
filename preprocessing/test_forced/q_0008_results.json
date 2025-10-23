@@ -1,0 +1,31 @@
+{
+  "query_id": "q_0008",
+  "query_hash": "38f5a57f6f6cc6598ef93dda627c0569",
+  "timestamp": "2025-10-23T11:12:30.673181",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM lineitem WHERE lineitem.l_orderkey BETWEEN 2695 AND 2722 LIMIT 100",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.7469666190445423,
+      "median_ms": 0.7053553126752377,
+      "std_ms": 0.1072823236109558,
+      "p95_ms": 0.8827418088912964,
+      "p99_ms": 0.8870651572942734,
+      "all_runs": [
+        0.6375829689204693,
+        0.6426237523555756,
+        0.7053553126752377,
+        0.8881459943950176,
+        0.8611250668764114
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "error": "rapid_not_supported",
+    "error_detail": "3889 (HY000): Secondary engine operation failed. All plans were rejected by the secondary storage engine.",
+    "note": "Query pattern not supported by secondary engine"
+  }
+}

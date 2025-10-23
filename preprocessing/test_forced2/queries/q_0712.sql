@@ -1,0 +1,1 @@
+SELECT customer.c_custkey, MIN(customer.c_custkey) AS min_c_custkey FROM customer WHERE customer.c_name LIKE 'A%' AND customer.c_phone LIKE '%C' GROUP BY customer.c_custkey ORDER BY customer.c_custkey

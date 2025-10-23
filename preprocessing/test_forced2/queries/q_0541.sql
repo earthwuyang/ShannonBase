@@ -1,0 +1,1 @@
+SELECT partsupp.ps_comment, STDDEV(partsupp.ps_supplycost) AS stddev_partsupp_ps_supplycost, COUNT(partsupp.ps_partkey) AS count_partsupp_ps_partkey FROM partsupp WHERE partsupp.ps_partkey > 507 GROUP BY partsupp.ps_comment ORDER BY partsupp.ps_comment

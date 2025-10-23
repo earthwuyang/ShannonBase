@@ -1,0 +1,13 @@
+{
+  "query_id": "q_0609",
+  "query_hash": "c60269f065b8d7a1c6fde0034b3c1f72",
+  "timestamp": "2025-10-22T20:56:27.624553",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM orders WHERE orders.o_shippriority > (SELECT AVG(nation.n_regionkey) FROM nation) LIMI",
+  "mysql": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  },
+  "shannonbase": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  }
+}

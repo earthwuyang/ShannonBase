@@ -1,0 +1,45 @@
+{
+  "query_id": "q_0001",
+  "query_hash": "88a7ebd814e214cf80e0eb2f892a0b50",
+  "timestamp": "2025-10-23T10:55:30.129161",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM orders WHERE orders.o_orderdate BETWEEN '2023-01-01' AND '2023-01-07' LIMIT 100",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.31363023445010185,
+      "median_ms": 0.3162091597914696,
+      "std_ms": 0.010173495725511869,
+      "p95_ms": 0.3247869201004505,
+      "p99_ms": 0.3252124972641468,
+      "all_runs": [
+        0.32265903428196907,
+        0.3253188915550709,
+        0.2987151965498924,
+        0.3052488900721073,
+        0.3162091597914696
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.35946788266301155,
+      "median_ms": 0.35496801137924194,
+      "std_ms": 0.012568866831438548,
+      "p95_ms": 0.37492532283067703,
+      "p99_ms": 0.37556421011686325,
+      "all_runs": [
+        0.35496801137924194,
+        0.3757239319384098,
+        0.3416906110942364,
+        0.3532259725034237,
+        0.37173088639974594
+      ]
+    },
+    "engine_mode": "ON",
+    "engine_type": "Rapid (Secondary/Column Store)"
+  }
+}

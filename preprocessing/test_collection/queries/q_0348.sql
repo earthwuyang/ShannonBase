@@ -1,0 +1,1 @@
+SELECT part.p_container, part.p_retailprice, part.p_brand FROM part UNION ALL SELECT region.r_regionkey, region.r_name, region.r_comment FROM region LIMIT 100

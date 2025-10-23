@@ -1,0 +1,1 @@
+SELECT part.p_name, part.p_comment, part.p_size FROM part UNION SELECT orders.o_clerk, orders.o_orderpriority, orders.o_orderstatus FROM orders WHERE orders.o_orderpriority = 'GDEPJ' LIMIT 100

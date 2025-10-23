@@ -1,0 +1,13 @@
+{
+  "query_id": "q_0545",
+  "query_hash": "bd6d3181e620f29b4e3c189d86fa4176",
+  "timestamp": "2025-10-22T20:56:27.505015",
+  "database": "tpch_sf1",
+  "query_text": "SELECT lineitem.l_shipmode, lineitem.l_shipinstruct, lineitem.l_returnflag, STDDEV(lineitem.l_linenu",
+  "mysql": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  },
+  "shannonbase": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  }
+}

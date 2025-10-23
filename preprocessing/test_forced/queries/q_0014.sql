@@ -1,0 +1,1 @@
+SELECT partsupp.ps_availqty, MAX(partsupp.ps_partkey) AS max_ps_partkey, SUM(partsupp.ps_partkey) AS sum_ps_partkey FROM partsupp WHERE partsupp.ps_availqty BETWEEN 701 AND 813 AND partsupp.ps_availqty = 848 GROUP BY partsupp.ps_availqty ORDER BY partsupp.ps_availqty

@@ -1,0 +1,1 @@
+SELECT * FROM region WHERE region.r_regionkey BETWEEN 6248 AND 6347 LIMIT 100

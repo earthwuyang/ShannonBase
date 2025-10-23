@@ -1,0 +1,1 @@
+SELECT part.p_size, part.p_comment, part.p_type FROM part UNION ALL SELECT part.p_brand, part.p_container, part.p_mfgr FROM part WHERE part.p_brand = 'IMCDI' LIMIT 100

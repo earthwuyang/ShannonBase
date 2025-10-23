@@ -1,0 +1,1 @@
+SELECT nation.n_comment, nation.n_comment, RANK() OVER (PARTITION BY nation.n_regionkey ORDER BY nation.n_comment) AS window_result FROM nation LIMIT 100

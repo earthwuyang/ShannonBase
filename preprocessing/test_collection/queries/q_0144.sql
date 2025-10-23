@@ -1,0 +1,1 @@
+SELECT partsupp.ps_suppkey, partsupp.ps_suppkey, DENSE_RANK() OVER (PARTITION BY partsupp.ps_comment ORDER BY partsupp.ps_suppkey) AS window_result FROM partsupp WHERE partsupp.ps_suppkey = 287 LIMIT 100

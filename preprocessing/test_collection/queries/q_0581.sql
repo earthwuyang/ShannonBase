@@ -1,0 +1,1 @@
+SELECT * FROM partsupp WHERE EXISTS (SELECT 1 FROM partsupp) LIMIT 100

@@ -1,0 +1,1 @@
+SELECT customer.c_acctbal, customer.c_phone, SUM(customer.c_custkey) OVER (PARTITION BY customer.c_custkey ORDER BY customer.c_mktsegment) AS window_result FROM customer WHERE customer.c_nationkey > 590 LIMIT 1000

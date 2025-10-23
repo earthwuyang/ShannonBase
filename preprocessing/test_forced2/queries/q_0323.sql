@@ -1,0 +1,1 @@
+SELECT region.r_comment, SUM(region.r_regionkey) AS sum_region_r_regionkey, AVG(region.r_regionkey) AS avg_region_r_regionkey, AVG(region.r_regionkey) AS avg_region_r_regionkey, SUM(region.r_regionkey) AS sum_region_r_regionkey FROM region WHERE region.r_comment = 'HVJCF' GROUP BY region.r_comment ORDER BY region.r_comment

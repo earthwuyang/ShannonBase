@@ -1,0 +1,1 @@
+SELECT part.p_container, part.p_comment, part.p_retailprice FROM part WHERE part.p_mfgr = 'EHASA' UNION ALL SELECT region.r_regionkey, region.r_name, region.r_comment FROM region LIMIT 100

@@ -1,0 +1,1 @@
+SELECT region.r_comment, SUM(region.r_regionkey) AS sum_r_regionkey FROM region WHERE region.r_regionkey BETWEEN 822 AND 915 AND region.r_comment = 'BJKOA' GROUP BY region.r_comment ORDER BY region.r_comment

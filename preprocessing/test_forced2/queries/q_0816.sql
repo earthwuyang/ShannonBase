@@ -1,0 +1,1 @@
+SELECT part.p_name, part.p_container, part.p_retailprice FROM part WHERE part.p_comment = 'VALUE_1' LIMIT 10

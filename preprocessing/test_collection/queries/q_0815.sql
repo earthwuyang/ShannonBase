@@ -1,0 +1,1 @@
+SELECT lineitem.l_extendedprice, lineitem.l_orderkey, lineitem.l_quantity FROM lineitem UNION ALL SELECT partsupp.ps_comment, partsupp.ps_partkey, partsupp.ps_availqty FROM partsupp LIMIT 100

@@ -1,0 +1,1 @@
+SELECT part.p_mfgr, part.p_partkey, RANK() OVER (PARTITION BY part.p_mfgr ORDER BY part.p_brand) AS window_result FROM part WHERE part.p_name LIKE '%C' LIMIT 100

@@ -1,0 +1,1 @@
+SELECT * FROM partsupp WHERE partsupp.ps_suppkey BETWEEN 2028 AND 2061 LIMIT 100

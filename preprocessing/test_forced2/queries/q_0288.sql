@@ -1,0 +1,1 @@
+SELECT region.r_name, AVG(region.r_regionkey) AS avg_region_r_regionkey, STDDEV(region.r_regionkey) AS stddev_region_r_regionkey, SUM(region.r_regionkey) AS sum_region_r_regionkey FROM region WHERE (region.r_comment = 'CLVQX') OR (region.r_regionkey = 827) GROUP BY region.r_name ORDER BY region.r_name

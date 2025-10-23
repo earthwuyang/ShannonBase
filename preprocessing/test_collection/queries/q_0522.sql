@@ -1,0 +1,1 @@
+SELECT partsupp.ps_suppkey, MIN(partsupp.ps_availqty) AS min_ps_availqty, AVG(partsupp.ps_suppkey) AS avg_ps_suppkey, AVG(partsupp.ps_availqty) AS avg_ps_availqty FROM partsupp WHERE partsupp.ps_availqty < 995 GROUP BY partsupp.ps_suppkey ORDER BY partsupp.ps_suppkey

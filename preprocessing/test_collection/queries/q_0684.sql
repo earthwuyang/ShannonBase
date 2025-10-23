@@ -1,0 +1,1 @@
+SELECT part.p_name, COUNT(part.p_partkey) AS count_p_partkey FROM part WHERE part.p_name = 'IFDJB' AND part.p_size BETWEEN 298 AND 716 GROUP BY part.p_name ORDER BY part.p_name

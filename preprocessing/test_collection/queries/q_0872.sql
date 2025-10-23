@@ -1,0 +1,1 @@
+SELECT customer.c_mktsegment, customer.c_comment, customer.c_nationkey FROM customer WHERE customer.c_mktsegment = 'VALUE_1' LIMIT 10

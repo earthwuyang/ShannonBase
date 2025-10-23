@@ -1,0 +1,1 @@
+SELECT part.p_brand, MAX(part.p_size) AS max_p_size, MIN(part.p_size) AS min_p_size, MIN(part.p_partkey) AS min_p_partkey FROM part WHERE part.p_name LIKE 'A%' AND part.p_partkey = 116 AND part.p_container LIKE '%C' AND part.p_partkey < 278 AND part.p_type LIKE 'A%' GROUP BY part.p_brand HAVING COUNT(*) > 970

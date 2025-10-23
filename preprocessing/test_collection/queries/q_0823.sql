@@ -1,0 +1,1 @@
+SELECT customer.c_name, COUNT(customer.c_custkey) AS count_c_custkey, MIN(customer.c_custkey) AS min_c_custkey FROM customer WHERE customer.c_comment LIKE '%C' AND customer.c_phone LIKE '%B%' GROUP BY customer.c_name

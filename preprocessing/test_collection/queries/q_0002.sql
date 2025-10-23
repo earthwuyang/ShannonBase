@@ -1,0 +1,1 @@
+SELECT supplier.s_address, supplier.s_acctbal, ROW_NUMBER() OVER (PARTITION BY supplier.s_nationkey ORDER BY supplier.s_suppkey) AS window_result FROM supplier WHERE supplier.s_address = 'YXBRK' LIMIT 100

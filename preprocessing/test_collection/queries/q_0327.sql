@@ -1,0 +1,1 @@
+SELECT nation.n_comment, nation.n_name, RANK() OVER (PARTITION BY nation.n_comment ORDER BY nation.n_name) AS window_result FROM nation WHERE nation.n_comment LIKE '%C' LIMIT 100

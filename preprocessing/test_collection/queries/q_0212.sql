@@ -1,0 +1,1 @@
+SELECT orders.o_comment, orders.o_shippriority, orders.o_totalprice FROM orders UNION SELECT lineitem.l_quantity, lineitem.l_orderkey, lineitem.l_returnflag FROM lineitem LIMIT 100

@@ -1,0 +1,1 @@
+WITH cte AS (SELECT region.r_comment, region.r_name, region.r_regionkey FROM region) SELECT * FROM cte LIMIT 100

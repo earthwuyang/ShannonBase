@@ -1,0 +1,1 @@
+SELECT partsupp.ps_comment, MAX(partsupp.ps_availqty) AS max_ps_availqty, SUM(partsupp.ps_partkey) AS sum_ps_partkey FROM partsupp WHERE partsupp.ps_comment = 'FGKBD' AND partsupp.ps_comment = 'LASTE' GROUP BY partsupp.ps_comment HAVING COUNT(*) > 140 ORDER BY partsupp.ps_comment

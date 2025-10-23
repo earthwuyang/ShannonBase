@@ -1,0 +1,13 @@
+{
+  "query_id": "q_0907",
+  "query_hash": "9b319c0c6b473573c676a466cb597d8a",
+  "timestamp": "2025-10-23T11:29:08.857782",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM region WHERE region.r_regionkey BETWEEN 4595 AND 4687 LIMIT 100",
+  "mysql": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  },
+  "shannonbase": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  }
+}

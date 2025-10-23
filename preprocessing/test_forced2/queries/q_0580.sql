@@ -1,0 +1,1 @@
+SELECT region.r_name, region.r_regionkey, ROW_NUMBER() OVER (PARTITION BY region.r_regionkey ORDER BY region.r_name) AS window_result FROM region WHERE region.r_regionkey < 373 LIMIT 100

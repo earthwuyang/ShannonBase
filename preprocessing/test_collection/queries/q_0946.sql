@@ -1,0 +1,1 @@
+SELECT * FROM lineitem WHERE lineitem.l_suppkey BETWEEN 993 AND 1027 LIMIT 100

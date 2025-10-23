@@ -1,0 +1,1 @@
+SELECT lineitem.l_shipmode, lineitem.l_orderkey, AVG(lineitem.l_quantity) OVER (PARTITION BY lineitem.l_orderkey ORDER BY lineitem.l_suppkey) AS window_result FROM lineitem WHERE lineitem.l_receiptdate >= '2006-05-18' LIMIT 100

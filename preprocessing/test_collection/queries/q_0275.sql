@@ -1,0 +1,1 @@
+WITH cte AS (SELECT part.p_container, SUM(part.p_partkey) as total FROM part GROUP BY part.p_container) SELECT * FROM cte LIMIT 100

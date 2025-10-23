@@ -1,0 +1,45 @@
+{
+  "query_id": "q_0010",
+  "query_hash": "725f3a8a03f21db336d134485bc766a4",
+  "timestamp": "2025-10-23T10:55:36.033538",
+  "database": "tpch_sf1",
+  "query_text": "SELECT customer.c_acctbal, customer.c_nationkey, customer.c_comment FROM customer WHERE customer.c_p",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 60.69609448313713,
+      "median_ms": 60.675275046378374,
+      "std_ms": 0.12062146324953857,
+      "p95_ms": 60.8611561357975,
+      "p99_ms": 60.88845297694206,
+      "all_runs": [
+        60.520472936332226,
+        60.675275046378374,
+        60.72467193007469,
+        60.8952771872282,
+        60.66477531567216
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "features": null,
+    "latency": {
+      "mean_ms": 73.11383336782455,
+      "median_ms": 75.99302800372243,
+      "std_ms": 10.525104822785849,
+      "p95_ms": 85.94558509066701,
+      "p99_ms": 87.12428832426667,
+      "all_runs": [
+        87.41896413266659,
+        80.0520689226687,
+        75.99302800372243,
+        60.084424912929535,
+        62.020680867135525
+      ]
+    },
+    "engine_mode": "ON",
+    "engine_type": "Rapid (Secondary/Column Store)"
+  }
+}

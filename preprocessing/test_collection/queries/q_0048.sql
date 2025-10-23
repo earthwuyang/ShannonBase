@@ -1,0 +1,1 @@
+SELECT * FROM lineitem WHERE EXISTS (SELECT 1 FROM supplier) LIMIT 100

@@ -1,0 +1,1 @@
+SELECT supplier.s_nationkey, supplier.s_comment, supplier.s_address FROM supplier WHERE supplier.s_suppkey = 144 LIMIT 10

@@ -1,0 +1,1 @@
+SELECT customer.c_name, customer.c_mktsegment, MIN(customer.c_acctbal) AS min_customer_c_acctbal, MIN(customer.c_custkey) AS min_customer_c_custkey FROM customer WHERE customer.c_address = 'IYSNF' GROUP BY customer.c_name, customer.c_mktsegment HAVING COUNT(*) > 9969 AND MIN(customer.c_custkey) > 85321 ORDER BY customer.c_name, customer.c_mktsegment

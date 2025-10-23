@@ -1,0 +1,1 @@
+SELECT nation.n_regionkey, AVG(nation.n_nationkey) AS avg_n_nationkey FROM nation WHERE nation.n_nationkey BETWEEN 618 AND 838 AND nation.n_nationkey < 277 AND nation.n_regionkey > 115 AND nation.n_nationkey < 109 AND nation.n_nationkey > 979 GROUP BY nation.n_regionkey HAVING COUNT(*) > 605 ORDER BY nation.n_regionkey

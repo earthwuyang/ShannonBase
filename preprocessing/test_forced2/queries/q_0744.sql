@@ -1,0 +1,1 @@
+SELECT partsupp.ps_supplycost, partsupp.ps_partkey, partsupp.ps_suppkey FROM partsupp WHERE partsupp.ps_suppkey = 606 LIMIT 10

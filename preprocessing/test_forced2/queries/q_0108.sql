@@ -1,0 +1,1 @@
+SELECT orders.o_orderdate, AVG(orders.o_shippriority) AS avg_o_shippriority FROM orders WHERE orders.o_custkey < 262 AND orders.o_shippriority > 786 AND orders.o_shippriority BETWEEN 190 AND 478 GROUP BY orders.o_orderdate HAVING COUNT(*) > 75

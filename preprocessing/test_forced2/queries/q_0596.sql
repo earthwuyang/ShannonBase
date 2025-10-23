@@ -1,0 +1,1 @@
+SELECT supplier.s_nationkey, AVG(supplier.s_suppkey) AS avg_s_suppkey, MIN(supplier.s_nationkey) AS min_s_nationkey FROM supplier WHERE supplier.s_address = 'ZDJTH' AND supplier.s_address LIKE '%C' AND supplier.s_suppkey < 929 AND supplier.s_phone LIKE 'A%' AND supplier.s_comment = 'KBKLA' GROUP BY supplier.s_nationkey ORDER BY supplier.s_nationkey

@@ -1,0 +1,1 @@
+SELECT * FROM nation WHERE nation.n_nationkey = 93089 LIMIT 1

@@ -1,0 +1,1 @@
+SELECT * FROM region WHERE region.r_regionkey = 49641 LIMIT 1

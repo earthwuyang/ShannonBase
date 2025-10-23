@@ -1,0 +1,1 @@
+SELECT supplier.s_name, COUNT(supplier.s_suppkey) AS count_s_suppkey, AVG(supplier.s_nationkey) AS avg_s_nationkey, MAX(supplier.s_nationkey) AS max_s_nationkey FROM supplier WHERE supplier.s_name = 'KCSDO' AND supplier.s_phone = 'KJFYC' AND supplier.s_comment = 'SCGMF' AND supplier.s_nationkey = 483 GROUP BY supplier.s_name HAVING COUNT(*) > 803 ORDER BY supplier.s_name

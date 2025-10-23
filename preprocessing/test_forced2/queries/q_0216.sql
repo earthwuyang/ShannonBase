@@ -1,0 +1,1 @@
+SELECT region.r_comment, region.r_regionkey, SUM(region.r_regionkey) OVER (PARTITION BY region.r_name ORDER BY region.r_comment) AS window_result FROM region LIMIT 1000

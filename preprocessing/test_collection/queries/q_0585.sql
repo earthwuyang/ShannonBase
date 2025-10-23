@@ -1,0 +1,1 @@
+SELECT lineitem.l_orderkey, MIN(lineitem.l_linenumber) AS min_l_linenumber, COUNT(lineitem.l_partkey) AS count_l_partkey, MIN(lineitem.l_orderkey) AS min_l_orderkey FROM lineitem WHERE lineitem.l_receiptdate >= '1998-01-27' AND lineitem.l_commitdate >= '2012-12-13' AND lineitem.l_orderkey < 733 GROUP BY lineitem.l_orderkey HAVING COUNT(*) > 620 ORDER BY lineitem.l_orderkey

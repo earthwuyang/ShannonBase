@@ -1,0 +1,1 @@
+SELECT part.p_type, AVG(part.p_partkey) AS avg_p_partkey, SUM(part.p_partkey) AS sum_p_partkey, MIN(part.p_size) AS min_p_size FROM part WHERE part.p_comment LIKE 'A%' AND part.p_mfgr = 'ZZTLB' AND part.p_name LIKE 'A%' AND part.p_size > 921 GROUP BY part.p_type HAVING COUNT(*) > 366

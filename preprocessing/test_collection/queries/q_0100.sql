@@ -1,0 +1,1 @@
+SELECT orders.o_orderstatus, orders.o_shippriority, orders.o_clerk FROM orders UNION ALL SELECT customer.c_acctbal, customer.c_custkey, customer.c_mktsegment FROM customer LIMIT 100

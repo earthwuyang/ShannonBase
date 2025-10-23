@@ -1,0 +1,1 @@
+SELECT supplier.s_suppkey, supplier.s_acctbal, supplier.s_name FROM supplier WHERE supplier.s_suppkey = 3 LIMIT 10

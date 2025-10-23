@@ -1,0 +1,45 @@
+{
+  "query_id": "q_0020",
+  "query_hash": "6c6d829f41c8ded92e6696a84e4733fd",
+  "timestamp": "2025-10-23T10:55:49.554850",
+  "database": "tpch_sf1",
+  "query_text": "SELECT supplier.s_phone, supplier.s_name, supplier.s_nationkey FROM supplier WHERE supplier.s_addres",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 2.9804746620357037,
+      "median_ms": 2.971124369651079,
+      "std_ms": 0.34952998690418063,
+      "p95_ms": 3.4429214894771576,
+      "p99_ms": 3.513527810573578,
+      "all_runs": [
+        2.971124369651079,
+        3.531179390847683,
+        3.089889883995056,
+        2.450430765748024,
+        2.859748899936676
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "features": null,
+    "latency": {
+      "mean_ms": 1.9936884753406048,
+      "median_ms": 1.9880631007254124,
+      "std_ms": 0.015366106290388088,
+      "p95_ms": 2.0149570889770985,
+      "p99_ms": 2.016815487295389,
+      "all_runs": [
+        2.005665097385645,
+        1.9880631007254124,
+        1.9792872481048107,
+        2.017280086874962,
+        1.978146843612194
+      ]
+    },
+    "engine_mode": "ON",
+    "engine_type": "Rapid (Secondary/Column Store)"
+  }
+}

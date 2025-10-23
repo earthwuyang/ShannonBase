@@ -1,0 +1,13 @@
+{
+  "query_id": "q_0235",
+  "query_hash": "736a827e18342db21b3afa6d0afaa147",
+  "timestamp": "2025-10-22T20:56:26.983588",
+  "database": "tpch_sf1",
+  "query_text": "SELECT customer.c_address, MAX(customer.c_nationkey) AS max_c_nationkey FROM customer WHERE customer",
+  "mysql": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  },
+  "shannonbase": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  }
+}

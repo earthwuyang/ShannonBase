@@ -1,0 +1,1 @@
+SELECT part.p_comment, MIN(part.p_partkey) AS min_p_partkey FROM part WHERE part.p_type LIKE '%B%' AND part.p_brand = 'VFSBC' GROUP BY part.p_comment HAVING COUNT(*) > 193 ORDER BY part.p_comment

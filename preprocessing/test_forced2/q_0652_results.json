@@ -1,0 +1,13 @@
+{
+  "query_id": "q_0652",
+  "query_hash": "b08fec650de0d234fea6f6fba9ede895",
+  "timestamp": "2025-10-23T11:29:08.574642",
+  "database": "tpch_sf1",
+  "query_text": "WITH cte AS (SELECT lineitem.l_discount, SUM(lineitem.l_partkey) as total FROM lineitem GROUP BY lin",
+  "mysql": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  },
+  "shannonbase": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  }
+}

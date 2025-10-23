@@ -1,0 +1,1 @@
+SELECT partsupp.ps_partkey, partsupp.ps_partkey, SUM(partsupp.ps_partkey) OVER (PARTITION BY partsupp.ps_comment ORDER BY partsupp.ps_partkey) AS window_result FROM partsupp WHERE partsupp.ps_availqty = 301 LIMIT 100

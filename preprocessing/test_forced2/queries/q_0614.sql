@@ -1,0 +1,1 @@
+SELECT region.r_regionkey, COUNT(region.r_regionkey) AS count_r_regionkey FROM region WHERE region.r_regionkey = 329 AND region.r_regionkey < 61 AND region.r_name = 'LNRCB' AND region.r_name LIKE '%C' GROUP BY region.r_regionkey HAVING COUNT(*) > 337 ORDER BY region.r_regionkey

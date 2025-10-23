@@ -1,0 +1,1 @@
+SELECT partsupp.ps_availqty, MIN(partsupp.ps_availqty) AS min_ps_availqty, MAX(partsupp.ps_suppkey) AS max_ps_suppkey FROM partsupp WHERE partsupp.ps_comment = 'GHVTR' GROUP BY partsupp.ps_availqty HAVING COUNT(*) > 13

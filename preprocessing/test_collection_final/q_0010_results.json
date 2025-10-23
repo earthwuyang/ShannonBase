@@ -1,0 +1,45 @@
+{
+  "query_id": "q_0010",
+  "query_hash": "d1a712f8fe0ad9c63f3241785da76c22",
+  "timestamp": "2025-10-23T11:00:27.975547",
+  "database": "tpch_sf1",
+  "query_text": "SELECT part.p_brand, part.p_partkey, part.p_mfgr FROM part WHERE part.p_partkey = 222 LIMIT 10",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.23602619767189026,
+      "median_ms": 0.24338718503713608,
+      "std_ms": 0.010387160045789271,
+      "p95_ms": 0.24554310366511345,
+      "p99_ms": 0.2458333782851696,
+      "all_runs": [
+        0.24590594694018364,
+        0.24338718503713608,
+        0.2244720235466957,
+        0.22227410227060318,
+        0.2440917305648327
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.2481524832546711,
+      "median_ms": 0.2500428818166256,
+      "std_ms": 0.011989559517028271,
+      "p95_ms": 0.26297587901353836,
+      "p99_ms": 0.26441145688295364,
+      "all_runs": [
+        0.2500428818166256,
+        0.25579798966646194,
+        0.26477035135030746,
+        0.2394663169980049,
+        0.23068487644195557
+      ]
+    },
+    "engine_mode": "ON",
+    "engine_type": "Rapid (Secondary/Column Store)"
+  }
+}

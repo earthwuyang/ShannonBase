@@ -1,0 +1,13 @@
+{
+  "query_id": "q_0554",
+  "query_hash": "e129c36c183fa4030e3d8a390ac4bbc1",
+  "timestamp": "2025-10-23T11:29:08.469599",
+  "database": "tpch_sf1",
+  "query_text": "SELECT supplier.s_address, SUM(supplier.s_suppkey) AS sum_s_suppkey FROM supplier WHERE supplier.s_a",
+  "mysql": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  },
+  "shannonbase": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  }
+}

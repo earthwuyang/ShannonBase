@@ -1,0 +1,45 @@
+{
+  "query_id": "q_0014",
+  "query_hash": "90c511497ee8d1ec86e17c94d26488d5",
+  "timestamp": "2025-10-23T11:00:28.408848",
+  "database": "tpch_sf1",
+  "query_text": "SELECT partsupp.ps_availqty, MAX(partsupp.ps_partkey) AS max_ps_partkey, SUM(partsupp.ps_partkey) AS",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.20667295902967453,
+      "median_ms": 0.2082432620227337,
+      "std_ms": 0.007152028630278982,
+      "p95_ms": 0.21596476435661316,
+      "p99_ms": 0.2174057811498642,
+      "all_runs": [
+        0.21776603534817696,
+        0.20875968039035797,
+        0.19637402147054672,
+        0.2022217959165573,
+        0.2082432620227337
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.2595982514321804,
+      "median_ms": 0.256258063018322,
+      "std_ms": 0.012614869361944362,
+      "p95_ms": 0.27865422889590263,
+      "p99_ms": 0.2829810045659542,
+      "all_runs": [
+        0.256258063018322,
+        0.25702035054564476,
+        0.2840626984834671,
+        0.2522459253668785,
+        0.24840421974658966
+      ]
+    },
+    "engine_mode": "ON",
+    "engine_type": "Rapid (Secondary/Column Store)"
+  }
+}

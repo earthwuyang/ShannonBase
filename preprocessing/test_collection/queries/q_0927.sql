@@ -1,0 +1,1 @@
+SELECT nation.n_name, MAX(nation.n_regionkey) AS max_nation_n_regionkey, VARIANCE(nation.n_regionkey) AS variance_nation_n_regionkey, AVG(nation.n_regionkey) AS avg_nation_n_regionkey, MIN(nation.n_regionkey) AS min_nation_n_regionkey FROM nation WHERE (nation.n_nationkey > 242) OR (nation.n_regionkey BETWEEN 31 AND 813) GROUP BY nation.n_name ORDER BY nation.n_name

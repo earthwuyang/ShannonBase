@@ -1,0 +1,1 @@
+SELECT supplier.s_acctbal, supplier.s_nationkey, ROW_NUMBER() OVER (PARTITION BY supplier.s_phone ORDER BY supplier.s_suppkey) AS window_result FROM supplier WHERE supplier.s_name LIKE '%B%' LIMIT 100

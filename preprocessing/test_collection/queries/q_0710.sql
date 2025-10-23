@@ -1,0 +1,1 @@
+SELECT supplier.s_suppkey, SUM(supplier.s_nationkey) AS sum_s_nationkey FROM supplier WHERE supplier.s_suppkey < 473 GROUP BY supplier.s_suppkey ORDER BY supplier.s_suppkey

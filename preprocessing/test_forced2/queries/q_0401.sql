@@ -1,0 +1,1 @@
+SELECT partsupp.ps_supplycost, MIN(partsupp.ps_availqty) AS min_ps_availqty, SUM(partsupp.ps_partkey) AS sum_ps_partkey, COUNT(partsupp.ps_partkey) AS count_ps_partkey FROM partsupp WHERE partsupp.ps_availqty BETWEEN 214 AND 375 GROUP BY partsupp.ps_supplycost ORDER BY partsupp.ps_supplycost

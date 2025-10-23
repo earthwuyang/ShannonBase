@@ -1,0 +1,1 @@
+SELECT part.p_comment, part.p_size, AVG(part.p_size) OVER (PARTITION BY part.p_type ORDER BY part.p_mfgr) AS window_result FROM part WHERE part.p_brand LIKE 'A%' LIMIT 100

@@ -1,0 +1,1 @@
+SELECT * FROM region WHERE region.r_regionkey IN (SELECT part.p_name FROM part) LIMIT 100

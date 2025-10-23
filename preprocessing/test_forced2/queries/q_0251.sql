@@ -1,0 +1,1 @@
+SELECT * FROM partsupp WHERE partsupp.ps_availqty BETWEEN 3920 AND 3991 LIMIT 100

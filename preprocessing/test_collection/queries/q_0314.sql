@@ -1,0 +1,1 @@
+SELECT * FROM orders WHERE orders.o_shippriority BETWEEN 682 AND 737 LIMIT 100

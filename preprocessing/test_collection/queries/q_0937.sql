@@ -1,0 +1,1 @@
+SELECT customer.c_mktsegment, customer.c_comment, customer.c_acctbal FROM customer WHERE customer.c_mktsegment = 'DXKLD' UNION SELECT nation.n_regionkey, nation.n_comment, nation.n_nationkey FROM nation WHERE nation.n_comment LIKE '%B%' LIMIT 100

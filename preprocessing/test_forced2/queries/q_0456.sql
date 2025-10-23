@@ -1,0 +1,1 @@
+SELECT customer.c_address, MIN(customer.c_custkey) AS min_customer_c_custkey, AVG(customer.c_acctbal) AS avg_customer_c_acctbal, COUNT(customer.c_acctbal) AS count_customer_c_acctbal FROM customer WHERE ((customer.c_address = 'TYCQW') OR (customer.c_custkey BETWEEN 690 AND 935)) OR (customer.c_address = 'LIAXC') GROUP BY customer.c_address ORDER BY customer.c_address

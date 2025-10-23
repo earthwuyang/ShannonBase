@@ -1,0 +1,1 @@
+SELECT lineitem.l_suppkey, lineitem.l_linestatus, lineitem.l_partkey FROM lineitem WHERE lineitem.l_linenumber = 545 LIMIT 10

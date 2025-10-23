@@ -1,0 +1,1 @@
+SELECT supplier.s_address, MIN(supplier.s_nationkey) AS min_s_nationkey, SUM(supplier.s_nationkey) AS sum_s_nationkey, MAX(supplier.s_nationkey) AS max_s_nationkey FROM supplier WHERE supplier.s_suppkey > 629 AND supplier.s_comment LIKE 'A%' GROUP BY supplier.s_address HAVING COUNT(*) > 905 ORDER BY supplier.s_address

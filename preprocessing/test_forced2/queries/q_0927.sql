@@ -1,0 +1,1 @@
+SELECT partsupp.ps_suppkey, MAX(partsupp.ps_suppkey) AS max_ps_suppkey FROM partsupp WHERE partsupp.ps_availqty > 72 AND partsupp.ps_partkey < 328 AND partsupp.ps_comment LIKE '%B%' AND partsupp.ps_partkey < 5 AND partsupp.ps_suppkey = 549 GROUP BY partsupp.ps_suppkey HAVING COUNT(*) > 956 ORDER BY partsupp.ps_suppkey

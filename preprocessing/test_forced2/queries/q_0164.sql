@@ -1,0 +1,1 @@
+SELECT customer.c_address, customer.c_name, customer.c_phone, MIN(customer.c_custkey) AS min_customer_c_custkey, AVG(customer.c_acctbal) AS avg_customer_c_acctbal FROM customer WHERE customer.c_comment = 'DAHZR' AND customer.c_nationkey BETWEEN 542 AND 826 GROUP BY customer.c_address, customer.c_name, customer.c_phone ORDER BY customer.c_address, customer.c_phone

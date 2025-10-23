@@ -1,0 +1,1 @@
+SELECT partsupp.ps_partkey, COUNT(partsupp.ps_availqty) AS count_ps_availqty, MAX(partsupp.ps_partkey) AS max_ps_partkey FROM partsupp WHERE partsupp.ps_suppkey BETWEEN 164 AND 320 AND partsupp.ps_availqty BETWEEN 9 AND 18 AND partsupp.ps_partkey < 635 GROUP BY partsupp.ps_partkey ORDER BY partsupp.ps_partkey

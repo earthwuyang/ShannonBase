@@ -1,0 +1,1 @@
+SELECT lineitem.l_shipdate, lineitem.l_receiptdate, lineitem.l_returnflag FROM lineitem WHERE lineitem.l_returnflag = 'VALUE_1' LIMIT 10

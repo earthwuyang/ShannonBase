@@ -1,0 +1,1 @@
+SELECT orders.o_clerk, MIN(orders.o_shippriority) AS min_o_shippriority, AVG(orders.o_shippriority) AS avg_o_shippriority FROM orders WHERE orders.o_orderpriority = 'WAWWU' AND orders.o_comment = 'SKMHX' AND orders.o_orderpriority = 'HGRJG' AND orders.o_comment = 'VWRMQ' GROUP BY orders.o_clerk ORDER BY orders.o_clerk

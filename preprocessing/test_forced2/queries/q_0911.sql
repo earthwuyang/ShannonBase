@@ -1,0 +1,1 @@
+SELECT nation.n_regionkey, nation.n_name, nation.n_comment FROM nation WHERE nation.n_name = 'VALUE_1' LIMIT 10

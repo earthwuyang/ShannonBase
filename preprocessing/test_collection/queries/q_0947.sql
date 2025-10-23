@@ -1,0 +1,1 @@
+SELECT nation.n_regionkey, nation.n_name, nation.n_comment FROM nation WHERE nation.n_nationkey = 646 UNION ALL SELECT customer.c_phone, customer.c_address, customer.c_name FROM customer WHERE customer.c_mktsegment LIKE '%C' LIMIT 100

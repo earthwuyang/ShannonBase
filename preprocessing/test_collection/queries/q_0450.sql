@@ -1,0 +1,1 @@
+SELECT customer.c_name, MAX(customer.c_custkey) AS max_c_custkey FROM customer WHERE customer.c_phone LIKE 'A%' AND customer.c_mktsegment = 'QINVM' AND customer.c_name = 'ATVYD' GROUP BY customer.c_name ORDER BY customer.c_name

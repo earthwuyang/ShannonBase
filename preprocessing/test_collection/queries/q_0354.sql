@@ -1,0 +1,1 @@
+SELECT customer.c_comment, customer.c_name, customer.c_acctbal FROM customer WHERE customer.c_nationkey = 73 LIMIT 10

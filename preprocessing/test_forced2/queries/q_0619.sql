@@ -1,0 +1,1 @@
+SELECT lineitem.l_partkey, SUM(lineitem.l_linenumber) AS sum_l_linenumber, MAX(lineitem.l_linenumber) AS max_l_linenumber, MAX(lineitem.l_orderkey) AS max_l_orderkey FROM lineitem WHERE lineitem.l_suppkey BETWEEN 167 AND 782 AND lineitem.l_comment = 'YPEVV' AND lineitem.l_linenumber < 429 GROUP BY lineitem.l_partkey HAVING COUNT(*) > 998 ORDER BY lineitem.l_partkey

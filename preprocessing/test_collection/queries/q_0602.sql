@@ -1,0 +1,1 @@
+SELECT orders.o_shippriority, MIN(orders.o_shippriority) AS min_o_shippriority, MIN(orders.o_orderkey) AS min_o_orderkey, MAX(orders.o_orderkey) AS max_o_orderkey FROM orders WHERE orders.o_custkey > 863 AND orders.o_orderpriority = 'XBYIO' AND orders.o_custkey = 4 GROUP BY orders.o_shippriority HAVING COUNT(*) > 412 ORDER BY orders.o_shippriority

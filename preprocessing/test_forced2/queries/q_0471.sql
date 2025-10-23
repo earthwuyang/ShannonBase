@@ -1,0 +1,1 @@
+SELECT lineitem.l_orderkey, SUM(lineitem.l_partkey) AS sum_l_partkey, COUNT(lineitem.l_suppkey) AS count_l_suppkey FROM lineitem WHERE lineitem.l_shipinstruct = 'EUIBP' AND lineitem.l_orderkey > 765 GROUP BY lineitem.l_orderkey ORDER BY lineitem.l_orderkey

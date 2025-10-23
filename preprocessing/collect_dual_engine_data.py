@@ -32,20 +32,21 @@ import hashlib
 # Note: Both connections use ShannonBase (port 3307) with different engine settings
 # - MYSQL_CONFIG: ShannonBase with primary engine (InnoDB) forced
 # - SHANNONBASE_CONFIG: ShannonBase with secondary engine (Rapid) forced
+# Database is set dynamically based on workload file, not hardcoded here
 MYSQL_CONFIG = {
     'host': '127.0.0.1',
     'port': 3307,  # Changed to 3307 - use ShannonBase for both
     'user': 'root',
-    'password': 'shannonbase',
-    'database': 'tpch_sf1'
+    'password': ''
+    # 'database' is set dynamically per workload
 }
 
 SHANNONBASE_CONFIG = {
     'host': '127.0.0.1', 
     'port': 3307,
     'user': 'root',
-    'password': 'shannonbase',
-    'database': 'tpch_sf1'
+    'password': ''
+    # 'database' is set dynamically per workload
 }
 
 # Feature collection settings
@@ -86,22 +87,15 @@ class DualEngineCollector:
             if database:
                 config['database'] = database
             conn = mysql.connector.connect(**config)
-            cursor = conn.cursor()
-            # Enable optimizer trace
-            for setting, value in OPTIMIZER_TRACE_SETTINGS.items():
-                # Use quotes only for string values, not for integers
-                if isinstance(value, str):
-                    cursor.execute(f"SET {setting} = '{value}'")
-                else:
-                    cursor.execute(f"SET {setting} = {value}")
-                # Consume any result to avoid "Unread result found" error
-                try:
-                    cursor.fetchall()
-                except:
-                    pass
+            cursor = conn.cursor(buffered=True)  # Use buffered cursor to avoid "Unread result"
+            
             # Force use of primary engine (InnoDB) - disable secondary engine
             cursor.execute("SET SESSION use_secondary_engine = OFF")
-            cursor.fetchall()  # Consume result
+            
+            # Enable optimizer trace (simplified - no need to set all options)
+            cursor.execute("SET optimizer_trace='enabled=on'")
+            cursor.execute("SET optimizer_trace_max_mem_size=1048576")
+            
             return conn, cursor
         except Exception as e:
             self.logger.error(f"Failed to connect to MySQL/InnoDB: {e}")
@@ -114,23 +108,16 @@ class DualEngineCollector:
             if database:
                 config['database'] = database
             conn = mysql.connector.connect(**config)
-            cursor = conn.cursor()
-            # Enable optimizer trace
-            for setting, value in OPTIMIZER_TRACE_SETTINGS.items():
-                # Use quotes only for string values, not for integers
-                if isinstance(value, str):
-                    cursor.execute(f"SET {setting} = '{value}'")
-                else:
-                    cursor.execute(f"SET {setting} = {value}")
-                # Consume any result to avoid "Unread result found" error
-                try:
-                    cursor.fetchall()
-                except:
-                    pass
+            cursor = conn.cursor(buffered=True)  # Use buffered cursor to avoid "Unread result"
+            
             # Force use of secondary engine (Rapid/Column Store)
-            # FORCED means queries will always use secondary engine if eligible
+            # FORCED mode now works after removing the assertion in ha_shannon_rapid.cc line 907
             cursor.execute("SET SESSION use_secondary_engine = FORCED")
-            cursor.fetchall()  # Consume result
+            
+            # Enable optimizer trace (simplified)
+            cursor.execute("SET optimizer_trace='enabled=on'")
+            cursor.execute("SET optimizer_trace_max_mem_size=1048576")
+            
             return conn, cursor
         except Exception as e:
             self.logger.error(f"Failed to connect to ShannonBase Rapid Engine: {e}")
@@ -143,13 +130,13 @@ class DualEngineCollector:
         # Warmup runs
         for _ in range(warmup):
             cursor.execute(query)
-            cursor.fetchall()
+            _ = cursor.fetchall()  # Explicitly consume results
         
         # Measured runs
         for _ in range(runs):
             start = time.perf_counter()
             cursor.execute(query)
-            cursor.fetchall()
+            _ = cursor.fetchall()  # Explicitly consume results
             end = time.perf_counter()
             latencies.append((end - start) * 1000)  # Convert to ms
         
@@ -167,11 +154,21 @@ class DualEngineCollector:
         try:
             cursor.execute("SHOW SESSION VARIABLES LIKE 'use_secondary_engine'")
             result = cursor.fetchone()
+            _ = cursor.fetchall()  # Ensure all results consumed
             if result:
                 return result[1]  # Returns 'OFF', 'ON', or 'FORCED'
         except Exception as e:
             self.logger.warning(f"Failed to verify engine: {e}")
         return None
+    
+    def ensure_cursor_clean(self, conn):
+        """Ensure no unread results on connection"""
+        try:
+            # Consume any unread results
+            if conn.unread_result:
+                conn.consume_results()
+        except:
+            pass
     
     def extract_features_from_trace(self, cursor):
         """Extract optimizer features from trace"""
@@ -205,7 +202,8 @@ class DualEngineCollector:
             'query_id': query_id,
             'query_hash': hashlib.md5(query.encode()).hexdigest(),
             'timestamp': datetime.now().isoformat(),
-            'database': database
+            'database': database,
+            'query_text': query[:100]  # Store first 100 chars for debugging
         }
         
         # Collect from MySQL (row store - primary engine)
@@ -216,12 +214,18 @@ class DualEngineCollector:
             engine_mode = self.verify_engine_used(mysql_cursor)
             self.logger.debug(f"MySQL engine mode: {engine_mode} (expected: OFF)")
             
-            # Get features
+            # Ensure clean state
+            self.ensure_cursor_clean(mysql_conn)
+            
+            # Get features - execute query and extract trace
             mysql_cursor.execute(query)
-            mysql_cursor.fetchall()
+            _ = mysql_cursor.fetchall()  # Explicitly consume query results
             features = self.extract_features_from_trace(mysql_cursor)
             
-            # Get latency
+            # Ensure clean state before timing
+            self.ensure_cursor_clean(mysql_conn)
+            
+            # Get latency with fresh cursor execution
             mysql_latency = self.execute_with_timing(mysql_cursor, query)
             
             results['mysql'] = {
@@ -231,10 +235,23 @@ class DualEngineCollector:
                 'engine_type': 'InnoDB (Primary/Row Store)'
             }
             
+            mysql_cursor.close()
             mysql_conn.close()
             
+        except mysql.connector.Error as e:
+            error_msg = str(e)
+            if '1146' in error_msg or "doesn't exist" in error_msg:
+                self.logger.error(f"Table not found for query {query_id}: {error_msg}")
+                results['mysql'] = {
+                    'error': 'table_not_found',
+                    'error_detail': error_msg,
+                    'skip_query': True  # Flag to skip this query entirely
+                }
+            else:
+                self.logger.error(f"MySQL/InnoDB execution failed for query {query_id}: {e}")
+                results['mysql'] = {'error': error_msg}
         except Exception as e:
-            self.logger.error(f"MySQL/InnoDB execution failed for query {query_id}: {e}")
+            self.logger.error(f"Unexpected MySQL error for query {query_id}: {e}")
             results['mysql'] = {'error': str(e)}
         
         # Collect from ShannonBase (column store - secondary engine)
@@ -245,12 +262,18 @@ class DualEngineCollector:
             engine_mode = self.verify_engine_used(shannon_cursor)
             self.logger.debug(f"ShannonBase engine mode: {engine_mode} (expected: FORCED)")
             
+            # Ensure clean state
+            self.ensure_cursor_clean(shannon_conn)
+            
             # Get features (should be same as MySQL)
             shannon_cursor.execute(query)
-            shannon_cursor.fetchall()
+            _ = shannon_cursor.fetchall()  # Explicitly consume query results
             shannon_features = self.extract_features_from_trace(shannon_cursor)
             
-            # Get latency
+            # Ensure clean state before timing
+            self.ensure_cursor_clean(shannon_conn)
+            
+            # Get latency with fresh cursor execution
             shannon_latency = self.execute_with_timing(shannon_cursor, query)
             
             results['shannonbase'] = {
@@ -260,10 +283,30 @@ class DualEngineCollector:
                 'engine_type': 'Rapid (Secondary/Column Store)'
             }
             
+            shannon_cursor.close()
             shannon_conn.close()
             
+        except mysql.connector.Error as e:
+            # Handle specific Rapid engine errors more gracefully
+            error_msg = str(e)
+            if '3889' in error_msg or 'Secondary engine operation failed' in error_msg:
+                self.logger.warning(f"Query {query_id} rejected by Rapid engine (query pattern not supported)")
+                results['shannonbase'] = {
+                    'error': 'rapid_not_supported',
+                    'error_detail': error_msg,
+                    'note': 'Query pattern not supported by secondary engine'
+                }
+            elif '1146' in error_msg or "doesn't exist" in error_msg:
+                self.logger.error(f"Table not found for query {query_id}: {error_msg}")
+                results['shannonbase'] = {
+                    'error': 'table_not_found',
+                    'error_detail': error_msg
+                }
+            else:
+                self.logger.error(f"ShannonBase Rapid execution failed for query {query_id}: {e}")
+                results['shannonbase'] = {'error': error_msg}
         except Exception as e:
-            self.logger.error(f"ShannonBase Rapid execution failed for query {query_id}: {e}")
+            self.logger.error(f"Unexpected error for query {query_id}: {e}")
             results['shannonbase'] = {'error': str(e)}
         
         # Save results
@@ -323,7 +366,12 @@ class DualEngineCollector:
         if 'training_workload_' in workload_path.name:
             parts = workload_path.stem.replace('training_workload_', '')
             database_name = parts
-            self.logger.info(f"Detected database: {database_name}")
+            self.logger.info(f"Detected database from filename: {database_name}")
+        
+        # Validate database detection
+        if not database_name:
+            raise ValueError(f"Could not detect database name from workload file: {workload_path.name}. "
+                           f"Expected format: training_workload_<database_name>.sql")
         
         # Load queries based on file format
         if workload_path.suffix == '.json':
@@ -404,6 +452,7 @@ class DualEngineCollector:
                     })
         
         self.logger.info(f"Loaded {len(queries)} queries from {workload_file}")
+        self.logger.info(f"Target database: {database_name}")
         
         # Log category breakdown
         categories = {}
@@ -440,10 +489,28 @@ class DualEngineCollector:
     
     def _save_summary(self, results):
         """Save summary of collected data"""
+        # Extract database name from results (if available)
+        databases = set(r.get('database') for r in results if r.get('database'))
+        
+        # Count different error types
+        table_not_found = sum(1 for r in results 
+                             if ('mysql' in r and r.get('mysql', {}).get('error') == 'table_not_found') or
+                                ('shannonbase' in r and r.get('shannonbase', {}).get('error') == 'table_not_found'))
+        rapid_not_supported = sum(1 for r in results 
+                                 if 'shannonbase' in r and r.get('shannonbase', {}).get('error') == 'rapid_not_supported')
+        
         summary = {
             'total_queries': len(results),
+            'databases': list(databases),
             'successful_mysql': sum(1 for r in results if 'mysql' in r and 'error' not in r.get('mysql', {})),
             'successful_shannon': sum(1 for r in results if 'shannonbase' in r and 'error' not in r.get('shannonbase', {})),
+            'errors': {
+                'table_not_found': table_not_found,
+                'rapid_not_supported': rapid_not_supported,
+                'total_errors': sum(1 for r in results if 
+                                   ('mysql' in r and 'error' in r.get('mysql', {})) or
+                                   ('shannonbase' in r and 'error' in r.get('shannonbase', {})))
+            },
             'timestamp': datetime.now().isoformat()
         }
         

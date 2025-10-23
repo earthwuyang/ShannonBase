@@ -1,0 +1,1 @@
+SELECT partsupp.ps_comment, MAX(partsupp.ps_partkey) AS max_ps_partkey FROM partsupp WHERE partsupp.ps_suppkey < 132 AND partsupp.ps_suppkey > 39 AND partsupp.ps_availqty < 890 AND partsupp.ps_suppkey < 49 GROUP BY partsupp.ps_comment

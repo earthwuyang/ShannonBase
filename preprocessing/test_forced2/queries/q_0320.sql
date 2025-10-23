@@ -1,0 +1,1 @@
+SELECT lineitem.l_receiptdate, lineitem.l_linestatus, DENSE_RANK() OVER (PARTITION BY lineitem.l_linestatus ORDER BY lineitem.l_shipdate) AS window_result FROM lineitem LIMIT 100

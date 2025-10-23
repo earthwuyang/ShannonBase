@@ -1,0 +1,1 @@
+SELECT lineitem.l_commitdate, lineitem.l_shipdate, lineitem.l_receiptdate FROM lineitem UNION ALL SELECT orders.o_orderstatus, orders.o_totalprice, orders.o_orderpriority FROM orders LIMIT 100

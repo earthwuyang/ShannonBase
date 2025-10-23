@@ -1,0 +1,1 @@
+SELECT orders.o_comment, AVG(orders.o_orderkey) AS avg_orders_o_orderkey, COUNT(orders.o_shippriority) AS count_orders_o_shippriority FROM orders WHERE (orders.o_orderkey BETWEEN 336 AND 660) OR (orders.o_orderdate >= '2000-12-26') AND orders.o_orderdate >= '1990-06-20' AND orders.o_orderkey < 240 GROUP BY orders.o_comment ORDER BY orders.o_comment

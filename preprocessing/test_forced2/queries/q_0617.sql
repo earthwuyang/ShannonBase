@@ -1,0 +1,1 @@
+SELECT lineitem.l_extendedprice, AVG(lineitem.l_linenumber) AS avg_l_linenumber, MAX(lineitem.l_suppkey) AS max_l_suppkey, MIN(lineitem.l_partkey) AS min_l_partkey FROM lineitem WHERE lineitem.l_returnflag = 'QCYUG' AND lineitem.l_suppkey > 584 AND lineitem.l_orderkey = 621 AND lineitem.l_receiptdate >= '2000-12-15' GROUP BY lineitem.l_extendedprice

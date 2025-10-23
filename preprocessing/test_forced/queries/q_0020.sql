@@ -1,0 +1,1 @@
+SELECT customer.c_phone, MAX(customer.c_custkey) AS max_c_custkey FROM customer WHERE customer.c_mktsegment LIKE '%B%' AND customer.c_mktsegment LIKE '%B%' AND customer.c_mktsegment = 'ABSEN' GROUP BY customer.c_phone HAVING COUNT(*) > 659 ORDER BY customer.c_phone

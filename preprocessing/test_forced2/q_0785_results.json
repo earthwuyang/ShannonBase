@@ -1,0 +1,13 @@
+{
+  "query_id": "q_0785",
+  "query_hash": "f9c2e135d36b51ed601205c7fc711264",
+  "timestamp": "2025-10-23T11:29:08.718977",
+  "database": "tpch_sf1",
+  "query_text": "SELECT part.p_brand, AVG(part.p_partkey) AS avg_p_partkey FROM part WHERE part.p_partkey > 19 AND pa",
+  "mysql": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  },
+  "shannonbase": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  }
+}

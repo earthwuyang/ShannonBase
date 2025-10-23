@@ -1,0 +1,1 @@
+WITH cte AS (SELECT supplier.s_acctbal, SUM(supplier.s_suppkey) as total FROM supplier GROUP BY supplier.s_acctbal) SELECT * FROM cte LIMIT 100

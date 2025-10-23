@@ -1,0 +1,1 @@
+SELECT customer.c_phone, MAX(customer.c_custkey) AS max_c_custkey FROM customer WHERE customer.c_nationkey BETWEEN 85 AND 952 AND customer.c_name LIKE 'A%' GROUP BY customer.c_phone HAVING COUNT(*) > 578 ORDER BY customer.c_phone

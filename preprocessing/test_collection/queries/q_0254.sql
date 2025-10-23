@@ -1,0 +1,1 @@
+SELECT part.p_comment, part.p_size, part.p_retailprice FROM part WHERE part.p_comment = 'ZILUD' UNION ALL SELECT customer.c_acctbal, customer.c_comment, customer.c_phone FROM customer WHERE customer.c_custkey > 408 LIMIT 100

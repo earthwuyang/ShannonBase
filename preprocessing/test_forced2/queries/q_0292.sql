@@ -1,0 +1,1 @@
+SELECT orders.o_shippriority, MIN(orders.o_shippriority) AS min_o_shippriority, SUM(orders.o_orderkey) AS sum_o_orderkey, AVG(orders.o_custkey) AS avg_o_custkey FROM orders WHERE orders.o_orderstatus = 'TURPQ' AND orders.o_comment = 'GEQSG' GROUP BY orders.o_shippriority HAVING COUNT(*) > 925 ORDER BY orders.o_shippriority

@@ -1,0 +1,13 @@
+{
+  "query_id": "q_0430",
+  "query_hash": "3a19421a6052e06f53f5f8b13dab9312",
+  "timestamp": "2025-10-23T11:29:08.317635",
+  "database": "tpch_sf1",
+  "query_text": "SELECT region.r_comment, region.r_name, region.r_regionkey FROM region WHERE region.r_regionkey = 23",
+  "mysql": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  },
+  "shannonbase": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  }
+}

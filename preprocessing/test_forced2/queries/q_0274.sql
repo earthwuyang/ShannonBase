@@ -1,0 +1,1 @@
+SELECT supplier.s_address, supplier.s_comment, AVG(supplier.s_nationkey) OVER (PARTITION BY supplier.s_suppkey ORDER BY supplier.s_name) AS window_result FROM supplier WHERE supplier.s_phone = 'FZOTV' LIMIT 100

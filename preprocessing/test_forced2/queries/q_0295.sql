@@ -1,0 +1,1 @@
+SELECT supplier.s_address, supplier.s_name, SUM(supplier.s_acctbal) OVER (PARTITION BY supplier.s_phone ORDER BY supplier.s_phone) AS window_result FROM supplier LIMIT 1000

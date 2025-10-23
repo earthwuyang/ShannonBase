@@ -1,0 +1,1 @@
+SELECT lineitem.l_extendedprice, SUM(lineitem.l_linenumber) AS sum_l_linenumber FROM lineitem WHERE lineitem.l_receiptdate >= '1992-03-19' AND lineitem.l_linenumber = 270 AND lineitem.l_returnflag = 'QKDCW' AND lineitem.l_shipinstruct LIKE 'A%' AND lineitem.l_commitdate >= '2015-09-12' GROUP BY lineitem.l_extendedprice HAVING COUNT(*) > 437 ORDER BY lineitem.l_extendedprice

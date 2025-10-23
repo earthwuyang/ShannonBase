@@ -1,0 +1,1 @@
+SELECT partsupp.ps_comment, MAX(partsupp.ps_partkey) AS max_partsupp_ps_partkey, AVG(partsupp.ps_suppkey) AS avg_partsupp_ps_suppkey FROM partsupp WHERE partsupp.ps_suppkey < 630 GROUP BY partsupp.ps_comment ORDER BY partsupp.ps_comment

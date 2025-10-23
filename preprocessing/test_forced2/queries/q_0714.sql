@@ -1,0 +1,1 @@
+SELECT part.p_name, STDDEV(part.p_retailprice) AS stddev_part_p_retailprice, SUM(part.p_size) AS sum_part_p_size FROM part WHERE (part.p_brand LIKE '%C' AND part.p_container LIKE 'A%') OR (part.p_name = 'EOAMF') AND part.p_mfgr LIKE '%B%' GROUP BY part.p_name HAVING COUNT(*) > 8441 AND STDDEV(part.p_retailprice) > 34610 ORDER BY part.p_name

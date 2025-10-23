@@ -1,0 +1,1 @@
+WITH cte AS (SELECT lineitem.l_orderkey, lineitem.l_linenumber, lineitem.l_comment FROM lineitem) SELECT * FROM cte CROSS JOIN supplier LIMIT 1000

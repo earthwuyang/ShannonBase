@@ -1,0 +1,1 @@
+SELECT customer.c_name, customer.c_custkey, AVG(customer.c_nationkey) OVER (PARTITION BY customer.c_address ORDER BY customer.c_nationkey) AS window_result FROM customer WHERE customer.c_address = 'KPGHS' LIMIT 1000

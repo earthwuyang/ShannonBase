@@ -1,0 +1,1 @@
+SELECT supplier.s_address, MAX(supplier.s_acctbal) AS max_supplier_s_acctbal, AVG(supplier.s_nationkey) AS avg_supplier_s_nationkey FROM supplier WHERE ((supplier.s_nationkey < 82) OR (supplier.s_name LIKE '%C')) OR (supplier.s_nationkey > 713) GROUP BY supplier.s_address ORDER BY supplier.s_address

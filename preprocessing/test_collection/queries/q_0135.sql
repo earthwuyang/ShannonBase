@@ -1,0 +1,1 @@
+SELECT orders.o_custkey, AVG(orders.o_orderkey) AS avg_o_orderkey, MIN(orders.o_shippriority) AS min_o_shippriority, AVG(orders.o_shippriority) AS avg_o_shippriority FROM orders WHERE orders.o_comment LIKE '%C' AND orders.o_comment = 'JEOFH' AND orders.o_orderstatus LIKE '%C' AND orders.o_orderpriority = 'DRKVF' GROUP BY orders.o_custkey ORDER BY orders.o_custkey

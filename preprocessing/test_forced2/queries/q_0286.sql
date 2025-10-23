@@ -1,0 +1,1 @@
+WITH cte AS (SELECT part.p_size, part.p_brand, part.p_name FROM part) SELECT * FROM cte CROSS JOIN region LIMIT 1000

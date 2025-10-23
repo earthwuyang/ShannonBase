@@ -1,0 +1,1 @@
+SELECT lineitem.l_quantity, lineitem.l_shipdate, lineitem.l_suppkey FROM lineitem WHERE lineitem.l_quantity = 'VALUE_1' LIMIT 10

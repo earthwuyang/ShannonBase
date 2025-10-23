@@ -1,0 +1,1 @@
+SELECT lineitem.l_extendedprice, lineitem.l_tax, lineitem.l_discount FROM lineitem WHERE lineitem.l_orderkey = 176 LIMIT 10

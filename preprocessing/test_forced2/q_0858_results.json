@@ -1,0 +1,13 @@
+{
+  "query_id": "q_0858",
+  "query_hash": "e2b4c1d524e9e2a72488c364a960a806",
+  "timestamp": "2025-10-23T11:29:08.798981",
+  "database": "tpch_sf1",
+  "query_text": "SELECT partsupp.ps_comment, MAX(partsupp.ps_availqty) AS max_ps_availqty, SUM(partsupp.ps_partkey) A",
+  "mysql": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  },
+  "shannonbase": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  }
+}

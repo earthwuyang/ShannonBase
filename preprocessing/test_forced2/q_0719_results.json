@@ -1,0 +1,13 @@
+{
+  "query_id": "q_0719",
+  "query_hash": "5f0f376e9c279caccc0118f65ce38e8f",
+  "timestamp": "2025-10-23T11:29:08.648286",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM supplier WHERE supplier.s_suppkey BETWEEN 4528 AND 4581 LIMIT 100",
+  "mysql": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  },
+  "shannonbase": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  }
+}

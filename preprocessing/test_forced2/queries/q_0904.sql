@@ -1,0 +1,1 @@
+SELECT partsupp.ps_comment, SUM(partsupp.ps_partkey) AS sum_partsupp_ps_partkey, MIN(partsupp.ps_supplycost) AS min_partsupp_ps_supplycost FROM partsupp WHERE partsupp.ps_partkey < 430 GROUP BY partsupp.ps_comment ORDER BY partsupp.ps_comment

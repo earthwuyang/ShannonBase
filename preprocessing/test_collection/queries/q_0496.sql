@@ -1,0 +1,1 @@
+SELECT lineitem.l_shipinstruct, MIN(lineitem.l_orderkey) AS min_l_orderkey, MAX(lineitem.l_partkey) AS max_l_partkey FROM lineitem WHERE lineitem.l_linenumber < 126 AND lineitem.l_receiptdate >= '2002-10-25' AND lineitem.l_shipmode LIKE 'A%' AND lineitem.l_returnflag = 'TZQKS' GROUP BY lineitem.l_shipinstruct ORDER BY lineitem.l_shipinstruct

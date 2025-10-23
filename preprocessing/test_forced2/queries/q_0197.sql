@@ -1,0 +1,1 @@
+SELECT part.p_name, MAX(part.p_size) AS max_p_size, MAX(part.p_partkey) AS max_p_partkey FROM part WHERE part.p_brand = 'WUVLA' AND part.p_mfgr = 'AYBXR' AND part.p_comment LIKE 'A%' GROUP BY part.p_name

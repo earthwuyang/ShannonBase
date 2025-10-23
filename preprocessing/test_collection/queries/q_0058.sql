@@ -1,0 +1,1 @@
+SELECT supplier.s_comment, supplier.s_suppkey, ROW_NUMBER() OVER (PARTITION BY supplier.s_address ORDER BY supplier.s_name) AS window_result FROM supplier LIMIT 100

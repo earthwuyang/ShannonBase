@@ -1,0 +1,1 @@
+SELECT part.p_container, part.p_type, part.p_name FROM part WHERE part.p_type = 'VALUE_1' LIMIT 10

@@ -1,0 +1,1 @@
+SELECT region.r_name, AVG(region.r_regionkey) AS avg_r_regionkey FROM region WHERE region.r_name LIKE '%C' AND region.r_name LIKE 'A%' GROUP BY region.r_name ORDER BY region.r_name

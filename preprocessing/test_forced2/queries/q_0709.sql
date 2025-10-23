@@ -1,0 +1,1 @@
+SELECT orders.o_clerk, orders.o_orderpriority, orders.o_custkey FROM orders WHERE orders.o_orderdate = '2023-01-01' LIMIT 10

@@ -1,0 +1,1 @@
+SELECT nation.n_comment, nation.n_nationkey, nation.n_name FROM nation WHERE nation.n_nationkey = 756 LIMIT 10

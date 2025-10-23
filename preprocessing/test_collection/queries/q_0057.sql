@@ -1,0 +1,1 @@
+SELECT customer.c_comment, customer.c_nationkey, RANK() OVER (PARTITION BY customer.c_custkey ORDER BY customer.c_name) AS window_result FROM customer LIMIT 1000

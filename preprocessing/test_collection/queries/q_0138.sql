@@ -1,0 +1,1 @@
+SELECT region.r_name, AVG(region.r_regionkey) AS avg_r_regionkey, COUNT(region.r_regionkey) AS count_r_regionkey FROM region WHERE region.r_comment LIKE '%C' AND region.r_comment LIKE '%C' AND region.r_regionkey BETWEEN 484 AND 640 AND region.r_regionkey > 47 AND region.r_name LIKE 'A%' GROUP BY region.r_name HAVING COUNT(*) > 514

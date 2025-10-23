@@ -1,0 +1,31 @@
+{
+  "query_id": "q_0009",
+  "query_hash": "7117e8e536fc659046d5c77295d3d644",
+  "timestamp": "2025-10-22T20:32:56.027196",
+  "database": "tpch_sf1",
+  "query_text": "WITH cte AS (SELECT customer.c_mktsegment, customer.c_name, customer.c_comment FROM customer) SELECT",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 5.413580872118473,
+      "median_ms": 5.441314075142145,
+      "std_ms": 0.12132550321760786,
+      "p95_ms": 5.552663467824459,
+      "p99_ms": 5.559643171727657,
+      "all_runs": [
+        5.517764948308468,
+        5.441314075142145,
+        5.296146962791681,
+        5.561388097703457,
+        5.251290276646614
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "error": "rapid_not_supported",
+    "error_detail": "3889 (HY000): Secondary engine operation failed. No secondary engine defined for at least one of the query tables.",
+    "note": "Query pattern not supported by secondary engine"
+  }
+}

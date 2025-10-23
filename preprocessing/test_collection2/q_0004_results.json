@@ -1,0 +1,31 @@
+{
+  "query_id": "q_0004",
+  "query_hash": "d98fe5392bfdef59100403e1037d87b9",
+  "timestamp": "2025-10-22T20:51:44.879388",
+  "database": "tpch_sf1",
+  "query_text": "SELECT partsupp.ps_partkey, partsupp.ps_suppkey, partsupp.ps_comment FROM partsupp WHERE partsupp.ps",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 34.625650476664305,
+      "median_ms": 34.27612315863371,
+      "std_ms": 1.2578280044248193,
+      "p95_ms": 36.36344224214554,
+      "p99_ms": 36.57688848674297,
+      "all_runs": [
+        32.907797023653984,
+        34.27612315863371,
+        36.63025004789233,
+        35.29621101915836,
+        34.017871133983135
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "error": "rapid_not_supported",
+    "error_detail": "3889 (HY000): Secondary engine operation failed. All plans were rejected by the secondary storage engine.",
+    "note": "Query pattern not supported by secondary engine"
+  }
+}

@@ -1,0 +1,1 @@
+WITH cte AS (SELECT part.p_comment, part.p_size, part.p_name FROM part) SELECT * FROM cte LIMIT 100

@@ -1,0 +1,13 @@
+{
+  "query_id": "q_0770",
+  "query_hash": "2b4421bdccf6b1f1e1a82e877ab4f586",
+  "timestamp": "2025-10-22T20:56:27.939866",
+  "database": "tpch_sf1",
+  "query_text": "SELECT part.p_mfgr, part.p_partkey, RANK() OVER (PARTITION BY part.p_mfgr ORDER BY part.p_brand) AS ",
+  "mysql": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  },
+  "shannonbase": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "query_id": "q_0361",
+  "query_hash": "23fcbf6d2ee0b4651c81a36bb5fb0aa4",
+  "timestamp": "2025-10-23T11:29:08.248265",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM lineitem WHERE lineitem.l_suppkey BETWEEN 1858 AND 1880 LIMIT 100",
+  "mysql": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  },
+  "shannonbase": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  }
+}

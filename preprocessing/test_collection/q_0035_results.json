@@ -1,0 +1,31 @@
+{
+  "query_id": "q_0035",
+  "query_hash": "ebc6d33b0f4c29638afb7eb3cf3405e1",
+  "timestamp": "2025-10-22T20:34:16.264977",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM orders WHERE orders.o_orderkey = 74862 LIMIT 1",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.31623076647520065,
+      "median_ms": 0.31671999022364616,
+      "std_ms": 0.023638084026663033,
+      "p95_ms": 0.3463068976998329,
+      "p99_ms": 0.34869205206632614,
+      "all_runs": [
+        0.34928834065794945,
+        0.31671999022364616,
+        0.2861977554857731,
+        0.3343811258673668,
+        0.2945666201412678
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "error": "rapid_not_supported",
+    "error_detail": "3889 (HY000): Secondary engine operation failed. All plans were rejected by the secondary storage engine.",
+    "note": "Query pattern not supported by secondary engine"
+  }
+}

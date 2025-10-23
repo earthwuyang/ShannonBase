@@ -1,0 +1,1 @@
+SELECT part.p_container, AVG(part.p_partkey) AS avg_p_partkey, MIN(part.p_partkey) AS min_p_partkey FROM part WHERE part.p_mfgr LIKE 'A%' AND part.p_name = 'TLWWN' GROUP BY part.p_container HAVING COUNT(*) > 204 ORDER BY part.p_container

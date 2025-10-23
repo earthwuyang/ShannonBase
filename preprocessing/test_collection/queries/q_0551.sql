@@ -1,0 +1,1 @@
+SELECT nation.n_name, nation.n_comment, AVG(nation.n_regionkey) AS avg_nation_n_regionkey, AVG(nation.n_nationkey) AS avg_nation_n_nationkey, SUM(nation.n_regionkey) AS sum_nation_n_regionkey, MAX(nation.n_regionkey) AS max_nation_n_regionkey FROM nation WHERE nation.n_regionkey = 94 GROUP BY nation.n_name, nation.n_comment ORDER BY nation.n_comment, nation.n_name

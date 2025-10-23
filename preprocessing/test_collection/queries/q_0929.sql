@@ -1,0 +1,1 @@
+SELECT part.p_retailprice, part.p_partkey, part.p_size FROM part WHERE part.p_container = 'VALUE_1' LIMIT 10

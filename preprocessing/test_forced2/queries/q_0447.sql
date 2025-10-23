@@ -1,0 +1,1 @@
+SELECT * FROM partsupp WHERE partsupp.ps_partkey BETWEEN 8164 AND 8213 LIMIT 100

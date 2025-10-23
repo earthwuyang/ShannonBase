@@ -1,0 +1,1 @@
+SELECT lineitem.l_partkey, MAX(lineitem.l_suppkey) AS max_l_suppkey, AVG(lineitem.l_partkey) AS avg_l_partkey FROM lineitem WHERE lineitem.l_shipinstruct LIKE '%C' AND lineitem.l_partkey = 204 AND lineitem.l_shipmode LIKE 'A%' AND lineitem.l_commitdate >= '2007-06-24' GROUP BY lineitem.l_partkey HAVING COUNT(*) > 458 ORDER BY lineitem.l_partkey

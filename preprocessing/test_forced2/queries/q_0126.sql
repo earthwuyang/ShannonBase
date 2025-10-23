@@ -1,0 +1,1 @@
+SELECT lineitem.l_returnflag, lineitem.l_quantity, lineitem.l_extendedprice FROM lineitem WHERE lineitem.l_quantity = 'VALUE_1' LIMIT 10

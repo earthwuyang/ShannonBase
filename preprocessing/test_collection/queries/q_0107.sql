@@ -1,0 +1,1 @@
+SELECT part.p_mfgr, COUNT(part.p_size) AS count_part_p_size, VARIANCE(part.p_retailprice) AS variance_part_p_retailprice, MAX(part.p_partkey) AS max_part_p_partkey FROM part WHERE part.p_name = 'CJSDL' AND part.p_mfgr LIKE '%B%' AND part.p_name = 'SXLLT' GROUP BY part.p_mfgr ORDER BY part.p_mfgr

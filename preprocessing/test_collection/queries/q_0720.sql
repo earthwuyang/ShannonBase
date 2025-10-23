@@ -1,0 +1,1 @@
+SELECT orders.o_orderdate, AVG(orders.o_orderkey) AS avg_o_orderkey FROM orders WHERE orders.o_orderdate >= '2003-08-22' AND orders.o_shippriority < 980 AND orders.o_comment = 'HVORC' GROUP BY orders.o_orderdate

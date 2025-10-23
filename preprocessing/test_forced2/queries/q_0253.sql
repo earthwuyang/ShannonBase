@@ -1,0 +1,1 @@
+SELECT nation.n_nationkey, MAX(nation.n_regionkey) AS max_n_regionkey, AVG(nation.n_regionkey) AS avg_n_regionkey, AVG(nation.n_nationkey) AS avg_n_nationkey FROM nation WHERE nation.n_nationkey = 713 AND nation.n_name LIKE '%B%' AND nation.n_nationkey < 741 GROUP BY nation.n_nationkey HAVING COUNT(*) > 267 ORDER BY nation.n_nationkey

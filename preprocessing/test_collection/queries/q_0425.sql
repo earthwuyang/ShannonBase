@@ -1,0 +1,1 @@
+SELECT region.r_name, MAX(region.r_regionkey) AS max_r_regionkey, SUM(region.r_regionkey) AS sum_r_regionkey, COUNT(region.r_regionkey) AS count_r_regionkey FROM region WHERE region.r_name LIKE 'A%' AND region.r_comment LIKE 'A%' AND region.r_regionkey > 211 AND region.r_comment LIKE '%C' AND region.r_comment = 'EJEEK' GROUP BY region.r_name

@@ -1,0 +1,45 @@
+{
+  "query_id": "q_0008",
+  "query_hash": "38f5a57f6f6cc6598ef93dda627c0569",
+  "timestamp": "2025-10-23T11:00:27.757075",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM lineitem WHERE lineitem.l_orderkey BETWEEN 2695 AND 2722 LIMIT 100",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.5738441832363605,
+      "median_ms": 0.564544927328825,
+      "std_ms": 0.02431178387574306,
+      "p95_ms": 0.611012801527977,
+      "p99_ms": 0.6187591701745987,
+      "all_runs": [
+        0.6206957623362541,
+        0.5722809582948685,
+        0.564544927328825,
+        0.5592931993305683,
+        0.5524060688912868
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.7195906713604927,
+      "median_ms": 0.6773150525987148,
+      "std_ms": 0.06600056895512714,
+      "p95_ms": 0.8074560202658176,
+      "p99_ms": 0.8120095916092396,
+      "all_runs": [
+        0.6506671197712421,
+        0.6721350364387035,
+        0.6773150525987148,
+        0.8131479844450951,
+        0.784688163548708
+      ]
+    },
+    "engine_mode": "ON",
+    "engine_type": "Rapid (Secondary/Column Store)"
+  }
+}

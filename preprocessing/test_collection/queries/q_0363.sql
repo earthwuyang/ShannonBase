@@ -1,0 +1,1 @@
+SELECT lineitem.l_shipmode, lineitem.l_receiptdate, lineitem.l_shipdate FROM lineitem WHERE lineitem.l_discount = 'VALUE_1' LIMIT 10

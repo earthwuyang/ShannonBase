@@ -1,0 +1,1 @@
+SELECT region.r_comment, MAX(region.r_regionkey) AS max_region_r_regionkey, SUM(region.r_regionkey) AS sum_region_r_regionkey, AVG(region.r_regionkey) AS avg_region_r_regionkey, MAX(region.r_regionkey) AS max_region_r_regionkey FROM region WHERE region.r_name = 'YKPFJ' AND region.r_regionkey < 650 AND region.r_comment LIKE '%B%' GROUP BY region.r_comment ORDER BY region.r_comment

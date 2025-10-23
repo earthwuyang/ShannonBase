@@ -1,0 +1,1 @@
+SELECT supplier.s_phone, MAX(supplier.s_suppkey) AS max_s_suppkey FROM supplier WHERE supplier.s_address LIKE 'A%' AND supplier.s_comment LIKE '%C' GROUP BY supplier.s_phone ORDER BY supplier.s_phone

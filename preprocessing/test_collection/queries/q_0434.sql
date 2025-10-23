@@ -1,0 +1,1 @@
+WITH cte AS (SELECT lineitem.l_suppkey, SUM(lineitem.l_linenumber) as total FROM lineitem GROUP BY lineitem.l_suppkey) SELECT * FROM cte LIMIT 100

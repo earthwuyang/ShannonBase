@@ -1,0 +1,1 @@
+SELECT customer.c_nationkey, customer.c_name, customer.c_acctbal FROM customer WHERE customer.c_name = 'VALUE_1' LIMIT 10

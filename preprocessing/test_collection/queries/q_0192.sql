@@ -1,0 +1,1 @@
+SELECT nation.n_comment, SUM(nation.n_nationkey) AS sum_n_nationkey, COUNT(nation.n_nationkey) AS count_n_nationkey, AVG(nation.n_regionkey) AS avg_n_regionkey FROM nation WHERE nation.n_comment = 'TWGVG' AND nation.n_name LIKE '%B%' AND nation.n_regionkey < 587 AND nation.n_nationkey BETWEEN 720 AND 805 GROUP BY nation.n_comment HAVING COUNT(*) > 746 ORDER BY nation.n_comment

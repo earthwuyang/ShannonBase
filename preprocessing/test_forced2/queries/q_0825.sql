@@ -1,0 +1,1 @@
+SELECT region.r_name, VARIANCE(region.r_regionkey) AS variance_region_r_regionkey, MIN(region.r_regionkey) AS min_region_r_regionkey FROM region WHERE region.r_regionkey BETWEEN 43 AND 891 AND region.r_regionkey > 993 GROUP BY region.r_name ORDER BY region.r_name

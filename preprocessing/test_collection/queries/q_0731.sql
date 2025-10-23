@@ -1,0 +1,1 @@
+SELECT * FROM region WHERE region.r_comment IN (SELECT supplier.s_suppkey FROM supplier WHERE supplier.s_phone LIKE '%B%') LIMIT 100

@@ -1,0 +1,1 @@
+SELECT region.r_name, AVG(region.r_regionkey) AS avg_region_r_regionkey, MAX(region.r_regionkey) AS max_region_r_regionkey FROM region WHERE region.r_name = 'YRFVL' AND region.r_comment LIKE '%C' GROUP BY region.r_name ORDER BY region.r_name

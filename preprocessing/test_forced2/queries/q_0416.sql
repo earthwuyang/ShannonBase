@@ -1,0 +1,1 @@
+SELECT customer.c_acctbal, customer.c_custkey, customer.c_address FROM customer WHERE customer.c_custkey = 874 LIMIT 10

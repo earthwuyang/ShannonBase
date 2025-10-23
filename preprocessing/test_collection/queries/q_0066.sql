@@ -1,0 +1,1 @@
+SELECT nation.n_name, MIN(nation.n_nationkey) AS min_nation_n_nationkey, AVG(nation.n_nationkey) AS avg_nation_n_nationkey, VARIANCE(nation.n_regionkey) AS variance_nation_n_regionkey, AVG(nation.n_nationkey) AS avg_nation_n_nationkey, COUNT(nation.n_nationkey) AS count_nation_n_nationkey FROM nation WHERE nation.n_nationkey = 190 GROUP BY nation.n_name ORDER BY nation.n_name

@@ -1,0 +1,1 @@
+SELECT lineitem.l_receiptdate, AVG(lineitem.l_linenumber) AS avg_l_linenumber, SUM(lineitem.l_partkey) AS sum_l_partkey FROM lineitem WHERE lineitem.l_comment = 'MYJHM' AND lineitem.l_suppkey BETWEEN 66 AND 769 AND lineitem.l_receiptdate >= '1994-10-19' GROUP BY lineitem.l_receiptdate

@@ -1,0 +1,1 @@
+SELECT * FROM partsupp WHERE partsupp.ps_suppkey > (SELECT AVG(supplier.s_suppkey) FROM supplier) LIMIT 100

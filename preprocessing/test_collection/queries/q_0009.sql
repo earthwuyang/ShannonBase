@@ -1,0 +1,1 @@
+WITH cte AS (SELECT customer.c_mktsegment, customer.c_name, customer.c_comment FROM customer) SELECT * FROM cte CROSS JOIN partsupp LIMIT 1000

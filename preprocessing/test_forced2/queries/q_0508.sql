@@ -1,0 +1,1 @@
+SELECT nation.n_regionkey, SUM(nation.n_regionkey) AS sum_n_regionkey, COUNT(nation.n_regionkey) AS count_n_regionkey, MIN(nation.n_regionkey) AS min_n_regionkey FROM nation WHERE nation.n_regionkey < 963 AND nation.n_comment = 'FWEAE' AND nation.n_nationkey = 912 GROUP BY nation.n_regionkey ORDER BY nation.n_regionkey

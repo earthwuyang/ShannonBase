@@ -1,0 +1,1 @@
+WITH cte AS (SELECT part.p_partkey, part.p_name, part.p_type FROM part) SELECT * FROM cte LIMIT 100

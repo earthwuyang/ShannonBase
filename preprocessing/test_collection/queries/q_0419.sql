@@ -1,0 +1,1 @@
+SELECT supplier.s_comment, supplier.s_name, AVG(supplier.s_acctbal) OVER (PARTITION BY supplier.s_suppkey ORDER BY supplier.s_phone) AS window_result FROM supplier LIMIT 100

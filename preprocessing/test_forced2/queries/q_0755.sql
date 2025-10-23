@@ -1,0 +1,1 @@
+SELECT orders.o_orderdate, AVG(orders.o_custkey) AS avg_o_custkey FROM orders WHERE orders.o_custkey BETWEEN 447 AND 925 AND orders.o_orderkey BETWEEN 795 AND 828 AND orders.o_orderdate >= '2001-05-08' AND orders.o_clerk = 'OILFV' AND orders.o_orderpriority = 'ZWQYU' GROUP BY orders.o_orderdate HAVING COUNT(*) > 633

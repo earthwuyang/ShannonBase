@@ -1,0 +1,1 @@
+SELECT orders.o_orderstatus, SUM(orders.o_shippriority) AS sum_o_shippriority, SUM(orders.o_shippriority) AS sum_o_shippriority, COUNT(orders.o_shippriority) AS count_o_shippriority FROM orders WHERE orders.o_orderpriority = 'SRRWE' AND orders.o_clerk = 'JVQZF' AND orders.o_clerk = 'VQSWG' AND orders.o_comment = 'HRMCG' GROUP BY orders.o_orderstatus ORDER BY orders.o_orderstatus

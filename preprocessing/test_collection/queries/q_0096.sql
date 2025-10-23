@@ -1,0 +1,1 @@
+SELECT * FROM partsupp WHERE partsupp.ps_suppkey IN (SELECT partsupp.ps_comment FROM partsupp) LIMIT 100

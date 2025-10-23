@@ -1,0 +1,13 @@
+{
+  "query_id": "q_0060",
+  "query_hash": "f5445a68c5976318f98178d87ebca6de",
+  "timestamp": "2025-10-23T11:29:07.945210",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM part WHERE part.p_size BETWEEN 1646 AND 1707 LIMIT 100",
+  "mysql": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  },
+  "shannonbase": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  }
+}

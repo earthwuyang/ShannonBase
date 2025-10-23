@@ -1,0 +1,1 @@
+SELECT customer.c_phone, COUNT(customer.c_custkey) AS count_c_custkey, COUNT(customer.c_nationkey) AS count_c_nationkey FROM customer WHERE customer.c_mktsegment = 'SJOEE' AND customer.c_name LIKE '%B%' GROUP BY customer.c_phone ORDER BY customer.c_phone

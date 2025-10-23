@@ -1,0 +1,1 @@
+SELECT nation.n_name, AVG(nation.n_regionkey) AS avg_n_regionkey, SUM(nation.n_nationkey) AS sum_n_nationkey FROM nation WHERE nation.n_regionkey BETWEEN 409 AND 478 AND nation.n_regionkey < 475 AND nation.n_comment = 'GDQCJ' GROUP BY nation.n_name ORDER BY nation.n_name

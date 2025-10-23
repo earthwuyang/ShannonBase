@@ -1,0 +1,1 @@
+SELECT part.p_comment, part.p_type, VARIANCE(part.p_retailprice) AS variance_part_p_retailprice, AVG(part.p_size) AS avg_part_p_size, MAX(part.p_size) AS max_part_p_size FROM part WHERE part.p_container = 'YSVGP' GROUP BY part.p_comment, part.p_type HAVING COUNT(*) > 8076 AND AVG(part.p_size) > 91055 ORDER BY part.p_comment, part.p_type

@@ -1,0 +1,1 @@
+SELECT region.r_comment, region.r_name, MAX(region.r_regionkey) AS max_region_r_regionkey, COUNT(region.r_regionkey) AS count_region_r_regionkey FROM region WHERE region.r_comment = 'PLMUB' GROUP BY region.r_comment, region.r_name HAVING COUNT(*) > 2346 AND MAX(region.r_regionkey) > 33342 ORDER BY region.r_comment, region.r_name

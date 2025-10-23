@@ -1,0 +1,1 @@
+SELECT region.r_comment, MIN(region.r_regionkey) AS min_r_regionkey, COUNT(region.r_regionkey) AS count_r_regionkey FROM region WHERE region.r_comment LIKE 'A%' AND region.r_name = 'OXAPD' GROUP BY region.r_comment HAVING COUNT(*) > 145 ORDER BY region.r_comment

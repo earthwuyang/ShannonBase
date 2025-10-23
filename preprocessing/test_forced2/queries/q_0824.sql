@@ -1,0 +1,1 @@
+SELECT orders.o_clerk, orders.o_custkey, AVG(orders.o_totalprice) OVER (PARTITION BY orders.o_clerk ORDER BY orders.o_custkey) AS window_result FROM orders WHERE orders.o_custkey < 524 LIMIT 1000

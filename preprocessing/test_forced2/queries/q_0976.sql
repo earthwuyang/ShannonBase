@@ -1,0 +1,1 @@
+SELECT supplier.s_phone, SUM(supplier.s_suppkey) AS sum_s_suppkey FROM supplier WHERE supplier.s_name LIKE '%C' AND supplier.s_suppkey BETWEEN 222 AND 631 AND supplier.s_suppkey < 771 AND supplier.s_name = 'CFVOT' GROUP BY supplier.s_phone

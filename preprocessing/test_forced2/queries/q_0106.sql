@@ -1,0 +1,1 @@
+SELECT region.r_comment, region.r_name, ROW_NUMBER() OVER (PARTITION BY region.r_name ORDER BY region.r_regionkey) AS window_result FROM region LIMIT 100

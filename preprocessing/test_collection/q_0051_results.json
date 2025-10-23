@@ -1,0 +1,31 @@
+{
+  "query_id": "q_0051",
+  "query_hash": "b171d1c95aac471725fae3f9bd76c86e",
+  "timestamp": "2025-10-22T20:35:08.390262",
+  "database": "tpch_sf1",
+  "query_text": "WITH cte AS (SELECT region.r_comment, SUM(region.r_regionkey) as total FROM region GROUP BY region.r",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.444769486784935,
+      "median_ms": 0.44526299461722374,
+      "std_ms": 0.03596784521539243,
+      "p95_ms": 0.4900454543530941,
+      "p99_ms": 0.4984539560973644,
+      "all_runs": [
+        0.38695335388183594,
+        0.4480029456317425,
+        0.500556081533432,
+        0.4430720582604408,
+        0.44526299461722374
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "error": "rapid_not_supported",
+    "error_detail": "3889 (HY000): Secondary engine operation failed. No secondary engine defined for at least one of the query tables.",
+    "note": "Query pattern not supported by secondary engine"
+  }
+}

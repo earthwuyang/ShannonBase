@@ -1,0 +1,1 @@
+SELECT lineitem.l_tax, lineitem.l_orderkey, lineitem.l_quantity FROM lineitem WHERE lineitem.l_linestatus = 'VALUE_1' LIMIT 10

@@ -1,0 +1,1 @@
+SELECT orders.o_orderstatus, orders.o_orderstatus, DENSE_RANK() OVER (PARTITION BY orders.o_custkey ORDER BY orders.o_orderdate) AS window_result FROM orders LIMIT 1000

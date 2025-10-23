@@ -1,0 +1,1 @@
+WITH cte AS (SELECT orders.o_orderpriority, SUM(orders.o_shippriority) as total FROM orders GROUP BY orders.o_orderpriority) SELECT * FROM cte CROSS JOIN supplier LIMIT 1000

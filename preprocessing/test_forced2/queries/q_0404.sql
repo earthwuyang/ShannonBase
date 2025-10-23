@@ -1,0 +1,1 @@
+SELECT lineitem.l_comment, lineitem.l_quantity, lineitem.l_returnflag FROM lineitem WHERE lineitem.l_suppkey = 85 LIMIT 10

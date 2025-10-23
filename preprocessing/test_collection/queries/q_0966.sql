@@ -1,0 +1,1 @@
+SELECT nation.n_nationkey, COUNT(nation.n_nationkey) AS count_n_nationkey FROM nation WHERE nation.n_comment LIKE 'A%' AND nation.n_regionkey < 874 AND nation.n_regionkey = 223 AND nation.n_nationkey = 210 GROUP BY nation.n_nationkey HAVING COUNT(*) > 598 ORDER BY nation.n_nationkey

@@ -1,0 +1,1 @@
+SELECT customer.c_nationkey, customer.c_address, ROW_NUMBER() OVER (PARTITION BY customer.c_custkey ORDER BY customer.c_name) AS window_result FROM customer LIMIT 100

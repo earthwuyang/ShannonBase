@@ -1,0 +1,1 @@
+WITH cte AS (SELECT customer.c_name, SUM(customer.c_nationkey) as total FROM customer GROUP BY customer.c_name) SELECT * FROM cte LIMIT 100

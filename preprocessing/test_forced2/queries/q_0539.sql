@@ -1,0 +1,1 @@
+SELECT supplier.s_name, SUM(supplier.s_nationkey) AS sum_s_nationkey, MIN(supplier.s_nationkey) AS min_s_nationkey, SUM(supplier.s_nationkey) AS sum_s_nationkey FROM supplier WHERE supplier.s_name LIKE '%C' GROUP BY supplier.s_name HAVING COUNT(*) > 110 ORDER BY supplier.s_name

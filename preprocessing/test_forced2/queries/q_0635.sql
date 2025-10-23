@@ -1,0 +1,1 @@
+SELECT nation.n_regionkey, MAX(nation.n_nationkey) AS max_n_nationkey, SUM(nation.n_regionkey) AS sum_n_regionkey, MIN(nation.n_regionkey) AS min_n_regionkey FROM nation WHERE nation.n_comment = 'YFOVC' AND nation.n_name LIKE '%C' AND nation.n_nationkey > 864 AND nation.n_regionkey BETWEEN 153 AND 555 AND nation.n_regionkey > 642 GROUP BY nation.n_regionkey HAVING COUNT(*) > 885

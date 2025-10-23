@@ -1,0 +1,1 @@
+SELECT lineitem.l_linenumber, AVG(lineitem.l_orderkey) AS avg_l_orderkey, SUM(lineitem.l_partkey) AS sum_l_partkey FROM lineitem WHERE lineitem.l_shipmode = 'SRYTY' GROUP BY lineitem.l_linenumber ORDER BY lineitem.l_linenumber

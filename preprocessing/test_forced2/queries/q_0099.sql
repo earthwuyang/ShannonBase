@@ -1,0 +1,1 @@
+SELECT part.p_partkey, MIN(part.p_size) AS min_p_size FROM part WHERE part.p_type LIKE '%C' AND part.p_name LIKE '%C' AND part.p_mfgr LIKE '%C' GROUP BY part.p_partkey HAVING COUNT(*) > 637

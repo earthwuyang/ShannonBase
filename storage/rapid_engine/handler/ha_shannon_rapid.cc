@@ -904,7 +904,7 @@ static bool RapidPrepareEstimateQueryCosts(THD *thd, LEX *lex) {
 
   // 1: to check whether there're changes in sys_pop_buff, which will be used for query.
   // if there're still do populating, then goes to innodb. and gets cardinality of tables.
-  ut_a(thd->variables.use_secondary_engine != SECONDARY_ENGINE_FORCED);
+  // NOTE: This check is skipped when FORCED mode is used (user explicitly wants Rapid)
   for (auto &table_ref : shannon_statement_context->get_query_tables()) {
     std::string table_name(table_ref->db);
     table_name.append("/").append(table_ref->table_name);

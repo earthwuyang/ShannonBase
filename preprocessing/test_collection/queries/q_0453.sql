@@ -1,0 +1,1 @@
+SELECT part.p_partkey, COUNT(part.p_partkey) AS count_p_partkey FROM part WHERE part.p_partkey > 737 AND part.p_size BETWEEN 746 AND 798 AND part.p_type LIKE '%B%' AND part.p_container LIKE '%C' AND part.p_brand LIKE 'A%' GROUP BY part.p_partkey ORDER BY part.p_partkey

@@ -1,0 +1,1 @@
+SELECT customer.c_comment, SUM(customer.c_custkey) AS sum_c_custkey FROM customer WHERE customer.c_address = 'HHFRB' AND customer.c_comment LIKE 'A%' AND customer.c_name LIKE 'A%' GROUP BY customer.c_comment ORDER BY customer.c_comment

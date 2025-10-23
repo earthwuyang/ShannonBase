@@ -1,0 +1,1 @@
+SELECT nation.n_comment, AVG(nation.n_nationkey) AS avg_n_nationkey, SUM(nation.n_regionkey) AS sum_n_regionkey, COUNT(nation.n_regionkey) AS count_n_regionkey FROM nation WHERE nation.n_name = 'OJKOV' AND nation.n_name = 'GJWXY' AND nation.n_nationkey = 80 AND nation.n_regionkey > 401 GROUP BY nation.n_comment ORDER BY nation.n_comment

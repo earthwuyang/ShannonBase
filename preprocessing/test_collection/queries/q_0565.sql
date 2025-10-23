@@ -1,0 +1,1 @@
+SELECT lineitem.l_returnflag, SUM(lineitem.l_linenumber) AS sum_l_linenumber, MIN(lineitem.l_partkey) AS min_l_partkey FROM lineitem WHERE lineitem.l_orderkey BETWEEN 589 AND 817 AND lineitem.l_shipinstruct LIKE '%B%' AND lineitem.l_orderkey < 178 AND lineitem.l_shipmode LIKE '%B%' GROUP BY lineitem.l_returnflag HAVING COUNT(*) > 369

@@ -1,0 +1,1 @@
+SELECT part.p_mfgr, STDDEV(part.p_size) AS stddev_part_p_size, COUNT(part.p_size) AS count_part_p_size, SUM(part.p_partkey) AS sum_part_p_partkey FROM part WHERE part.p_brand LIKE '%C' AND part.p_name LIKE '%C' AND part.p_size BETWEEN 724 AND 940 GROUP BY part.p_mfgr HAVING COUNT(*) > 3926 AND STDDEV(part.p_size) > 66821 ORDER BY part.p_mfgr

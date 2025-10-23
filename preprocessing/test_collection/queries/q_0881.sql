@@ -1,0 +1,1 @@
+SELECT * FROM lineitem WHERE lineitem.l_orderkey > (SELECT AVG(orders.o_orderkey) FROM orders) LIMIT 100

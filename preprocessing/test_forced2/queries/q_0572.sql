@@ -1,0 +1,1 @@
+SELECT part.p_retailprice, COUNT(part.p_size) AS count_p_size, MIN(part.p_partkey) AS min_p_partkey FROM part GROUP BY part.p_retailprice HAVING COUNT(*) > 371 ORDER BY part.p_retailprice

@@ -1,0 +1,1 @@
+SELECT nation.n_comment, AVG(nation.n_regionkey) AS avg_nation_n_regionkey, STDDEV(nation.n_regionkey) AS stddev_nation_n_regionkey, STDDEV(nation.n_regionkey) AS stddev_nation_n_regionkey FROM nation WHERE nation.n_regionkey = 966 GROUP BY nation.n_comment HAVING COUNT(*) > 9072 AND STDDEV(nation.n_regionkey) > 63018 ORDER BY nation.n_comment

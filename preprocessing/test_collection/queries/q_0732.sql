@@ -1,0 +1,1 @@
+SELECT nation.n_nationkey, nation.n_nationkey, DENSE_RANK() OVER (PARTITION BY nation.n_name ORDER BY nation.n_nationkey) AS window_result FROM nation WHERE nation.n_nationkey < 37 LIMIT 100

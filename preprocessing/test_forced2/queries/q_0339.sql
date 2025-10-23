@@ -1,0 +1,1 @@
+SELECT supplier.s_acctbal, SUM(supplier.s_nationkey) AS sum_s_nationkey FROM supplier WHERE supplier.s_phone = 'BRLSP' AND supplier.s_phone LIKE '%C' GROUP BY supplier.s_acctbal HAVING COUNT(*) > 76 ORDER BY supplier.s_acctbal

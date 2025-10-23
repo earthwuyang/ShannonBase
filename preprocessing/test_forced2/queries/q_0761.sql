@@ -1,0 +1,1 @@
+WITH cte AS (SELECT orders.o_shippriority, SUM(orders.o_shippriority) as total FROM orders GROUP BY orders.o_shippriority) SELECT * FROM cte CROSS JOIN lineitem LIMIT 1000

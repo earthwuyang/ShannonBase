@@ -1,0 +1,1 @@
+SELECT orders.o_orderstatus, orders.o_orderpriority, MAX(orders.o_totalprice) AS max_orders_o_totalprice, SUM(orders.o_orderkey) AS sum_orders_o_orderkey FROM orders WHERE orders.o_orderkey > 672 GROUP BY orders.o_orderstatus, orders.o_orderpriority HAVING COUNT(*) > 2746 AND MAX(orders.o_totalprice) > 19829 ORDER BY orders.o_orderpriority, orders.o_orderstatus

@@ -1,0 +1,1 @@
+SELECT customer.c_name, customer.c_mktsegment, ROW_NUMBER() OVER (PARTITION BY customer.c_phone ORDER BY customer.c_acctbal) AS window_result FROM customer WHERE customer.c_nationkey = 396 LIMIT 100

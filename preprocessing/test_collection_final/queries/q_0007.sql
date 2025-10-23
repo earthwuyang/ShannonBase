@@ -1,0 +1,1 @@
+SELECT part.p_mfgr, part.p_comment, part.p_name, MIN(part.p_size) AS min_part_p_size, COUNT(part.p_retailprice) AS count_part_p_retailprice, SUM(part.p_size) AS sum_part_p_size, MIN(part.p_size) AS min_part_p_size, AVG(part.p_partkey) AS avg_part_p_partkey FROM part WHERE part.p_size = 44 GROUP BY part.p_mfgr, part.p_comment, part.p_name ORDER BY part.p_name, part.p_comment

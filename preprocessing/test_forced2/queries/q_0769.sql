@@ -1,0 +1,1 @@
+SELECT region.r_comment, region.r_name, DENSE_RANK() OVER (PARTITION BY region.r_regionkey ORDER BY region.r_regionkey) AS window_result FROM region WHERE region.r_comment = 'PEGOC' LIMIT 100

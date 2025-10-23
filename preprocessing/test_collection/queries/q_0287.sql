@@ -1,0 +1,1 @@
+SELECT nation.n_comment, COUNT(nation.n_regionkey) AS count_n_regionkey FROM nation WHERE nation.n_comment = 'ORINC' AND nation.n_nationkey > 336 GROUP BY nation.n_comment

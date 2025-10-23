@@ -1,0 +1,1 @@
+SELECT * FROM partsupp WHERE partsupp.ps_supplycost IN (SELECT supplier.s_suppkey FROM supplier) LIMIT 100

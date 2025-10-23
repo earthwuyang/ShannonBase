@@ -1,0 +1,1 @@
+SELECT * FROM supplier WHERE supplier.s_suppkey IN (SELECT part.p_mfgr FROM part WHERE part.p_type LIKE '%C') LIMIT 100

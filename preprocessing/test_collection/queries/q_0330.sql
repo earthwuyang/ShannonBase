@@ -1,0 +1,1 @@
+SELECT orders.o_comment, MAX(orders.o_custkey) AS max_o_custkey FROM orders WHERE orders.o_shippriority > 212 AND orders.o_comment = 'ZHPAH' AND orders.o_orderstatus LIKE 'A%' GROUP BY orders.o_comment

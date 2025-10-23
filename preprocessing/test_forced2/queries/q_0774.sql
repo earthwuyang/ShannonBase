@@ -1,0 +1,1 @@
+SELECT lineitem.l_discount, MAX(lineitem.l_orderkey) AS max_l_orderkey FROM lineitem WHERE lineitem.l_comment LIKE '%C' AND lineitem.l_returnflag LIKE '%B%' AND lineitem.l_partkey > 166 AND lineitem.l_linenumber BETWEEN 114 AND 128 AND lineitem.l_shipinstruct LIKE '%B%' GROUP BY lineitem.l_discount ORDER BY lineitem.l_discount

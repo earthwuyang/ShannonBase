@@ -1,0 +1,1 @@
+SELECT nation.n_name, SUM(nation.n_nationkey) AS sum_nation_n_nationkey, MAX(nation.n_nationkey) AS max_nation_n_nationkey, MAX(nation.n_nationkey) AS max_nation_n_nationkey FROM nation WHERE nation.n_nationkey > 91 AND nation.n_regionkey BETWEEN 286 AND 671 GROUP BY nation.n_name HAVING COUNT(*) > 8699 AND MAX(nation.n_nationkey) > 14479 ORDER BY nation.n_name

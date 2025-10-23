@@ -1,0 +1,1 @@
+SELECT lineitem.l_suppkey, lineitem.l_extendedprice, lineitem.l_returnflag FROM lineitem UNION SELECT orders.o_comment, orders.o_custkey, orders.o_orderstatus FROM orders WHERE orders.o_orderstatus = 'LWFUF' LIMIT 100

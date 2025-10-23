@@ -1,0 +1,31 @@
+{
+  "query_id": "q_0048",
+  "query_hash": "febcfaedcd4b90fc0a23713e5cb60a19",
+  "timestamp": "2025-10-22T20:35:08.015917",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM lineitem WHERE EXISTS (SELECT 1 FROM supplier) LIMIT 100",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 1.9094526767730713,
+      "median_ms": 1.9089216366410255,
+      "std_ms": 0.11057690630744274,
+      "p95_ms": 2.0542409271001816,
+      "p99_ms": 2.070513442158699,
+      "all_runs": [
+        2.0745815709233284,
+        1.9728783518075943,
+        1.7515760846436024,
+        1.9089216366410255,
+        1.8393057398498058
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "error": "rapid_not_supported",
+    "error_detail": "3889 (HY000): Secondary engine operation failed. All plans were rejected by the secondary storage engine.",
+    "note": "Query pattern not supported by secondary engine"
+  }
+}

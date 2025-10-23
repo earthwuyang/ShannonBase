@@ -1,0 +1,1 @@
+SELECT orders.o_comment, orders.o_orderpriority, orders.o_totalprice FROM orders WHERE orders.o_totalprice = 'VALUE_1' LIMIT 10

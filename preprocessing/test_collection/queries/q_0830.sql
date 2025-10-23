@@ -1,0 +1,1 @@
+SELECT region.r_regionkey, region.r_comment, region.r_name FROM region WHERE region.r_comment LIKE 'A%' UNION SELECT lineitem.l_discount, lineitem.l_partkey, lineitem.l_shipmode FROM lineitem LIMIT 100

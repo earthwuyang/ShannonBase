@@ -1,0 +1,1 @@
+SELECT lineitem.l_linestatus, STDDEV(lineitem.l_quantity) AS stddev_lineitem_l_quantity, COUNT(lineitem.l_extendedprice) AS count_lineitem_l_extendedprice FROM lineitem WHERE lineitem.l_commitdate >= '2021-01-11' GROUP BY lineitem.l_linestatus ORDER BY lineitem.l_linestatus

@@ -1,0 +1,1 @@
+SELECT region.r_comment, VARIANCE(region.r_regionkey) AS variance_region_r_regionkey, MIN(region.r_regionkey) AS min_region_r_regionkey FROM region WHERE region.r_regionkey BETWEEN 567 AND 947 AND region.r_name LIKE '%C' GROUP BY region.r_comment ORDER BY region.r_comment

@@ -1,0 +1,13 @@
+{
+  "query_id": "q_0437",
+  "query_hash": "7a36338d7da81abe3e8e9242f857e26d",
+  "timestamp": "2025-10-23T11:29:08.326682",
+  "database": "tpch_sf1",
+  "query_text": "SELECT * FROM lineitem WHERE lineitem.l_shipdate BETWEEN '2023-01-01' AND '2023-01-07' LIMIT 100",
+  "mysql": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  },
+  "shannonbase": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  }
+}

@@ -1,0 +1,1 @@
+SELECT customer.c_address, COUNT(customer.c_nationkey) AS count_c_nationkey FROM customer WHERE customer.c_phone LIKE '%B%' AND customer.c_custkey = 264 AND customer.c_mktsegment LIKE 'A%' GROUP BY customer.c_address ORDER BY customer.c_address

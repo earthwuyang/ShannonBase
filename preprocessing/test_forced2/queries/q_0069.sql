@@ -1,0 +1,1 @@
+SELECT region.r_comment, COUNT(region.r_regionkey) AS count_r_regionkey, COUNT(region.r_regionkey) AS count_r_regionkey, SUM(region.r_regionkey) AS sum_r_regionkey FROM region WHERE region.r_comment = 'NKEVB' AND region.r_name = 'XTTOS' AND region.r_regionkey BETWEEN 146 AND 929 AND region.r_name LIKE '%C' GROUP BY region.r_comment HAVING COUNT(*) > 712

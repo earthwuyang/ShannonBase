@@ -1,0 +1,1 @@
+SELECT supplier.s_acctbal, supplier.s_suppkey, AVG(supplier.s_nationkey) OVER (PARTITION BY supplier.s_name ORDER BY supplier.s_name) AS window_result FROM supplier WHERE supplier.s_phone = 'AYCJU' LIMIT 100

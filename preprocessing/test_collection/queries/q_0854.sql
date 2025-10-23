@@ -1,0 +1,1 @@
+SELECT customer.c_comment, customer.c_address, customer.c_name FROM customer WHERE customer.c_custkey = 665 LIMIT 10

@@ -1,0 +1,1 @@
+SELECT lineitem.l_orderkey, AVG(lineitem.l_suppkey) AS avg_l_suppkey, MAX(lineitem.l_orderkey) AS max_l_orderkey, COUNT(lineitem.l_suppkey) AS count_l_suppkey FROM lineitem WHERE lineitem.l_shipmode LIKE '%B%' AND lineitem.l_suppkey < 500 AND lineitem.l_receiptdate >= '2001-02-04' AND lineitem.l_returnflag = 'PPYLE' GROUP BY lineitem.l_orderkey ORDER BY lineitem.l_orderkey

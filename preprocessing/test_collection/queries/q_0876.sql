@@ -1,0 +1,1 @@
+SELECT part.p_brand, part.p_type, part.p_size FROM part WHERE part.p_name LIKE '%C' UNION ALL SELECT part.p_type, part.p_name, part.p_container FROM part WHERE part.p_brand = 'VYGPH' LIMIT 100

@@ -1,0 +1,1 @@
+SELECT nation.n_name, nation.n_comment, COUNT(nation.n_nationkey) AS count_nation_n_nationkey, MAX(nation.n_nationkey) AS max_nation_n_nationkey FROM nation WHERE ((nation.n_name = 'PMNBB') OR (nation.n_regionkey > 939)) OR (nation.n_nationkey > 698) GROUP BY nation.n_name, nation.n_comment ORDER BY nation.n_name, nation.n_comment

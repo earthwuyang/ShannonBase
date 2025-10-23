@@ -1,0 +1,1 @@
+SELECT region.r_regionkey, MIN(region.r_regionkey) AS min_r_regionkey FROM region WHERE region.r_regionkey < 168 AND region.r_comment = 'CLVQX' AND region.r_regionkey = 827 AND region.r_regionkey = 215 AND region.r_name = 'GTMCV' GROUP BY region.r_regionkey HAVING COUNT(*) > 578 ORDER BY region.r_regionkey

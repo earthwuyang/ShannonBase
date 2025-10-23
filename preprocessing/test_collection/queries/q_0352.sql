@@ -1,0 +1,1 @@
+SELECT supplier.s_suppkey, supplier.s_phone, supplier.s_acctbal FROM supplier WHERE supplier.s_nationkey = 174 LIMIT 10

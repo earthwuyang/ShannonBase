@@ -1,0 +1,31 @@
+{
+  "query_id": "q_0056",
+  "query_hash": "1afa8e0bfc2c0608e9ae193df4d2b68e",
+  "timestamp": "2025-10-22T20:35:09.417283",
+  "database": "tpch_sf1",
+  "query_text": "SELECT nation.n_name, nation.n_nationkey, nation.n_regionkey FROM nation WHERE nation.n_regionkey = ",
+  "mysql": {
+    "features": null,
+    "latency": {
+      "mean_ms": 0.3714820370078087,
+      "median_ms": 0.37233904004096985,
+      "std_ms": 0.03239779118782801,
+      "p95_ms": 0.4066203720867634,
+      "p99_ms": 0.40782565250992775,
+      "all_runs": [
+        0.40059396997094154,
+        0.40812697261571884,
+        0.358648132532835,
+        0.37233904004096985,
+        0.3177020698785782
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "error": "rapid_not_supported",
+    "error_detail": "3889 (HY000): Secondary engine operation failed. All plans were rejected by the secondary storage engine.",
+    "note": "Query pattern not supported by secondary engine"
+  }
+}

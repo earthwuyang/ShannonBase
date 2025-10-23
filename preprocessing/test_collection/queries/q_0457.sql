@@ -1,0 +1,1 @@
+SELECT part.p_comment, part.p_brand, part.p_type FROM part WHERE part.p_container LIKE '%B%' UNION ALL SELECT part.p_type, part.p_mfgr, part.p_retailprice FROM part WHERE part.p_comment = 'IBVYS' LIMIT 100

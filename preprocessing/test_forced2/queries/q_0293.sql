@@ -1,0 +1,1 @@
+SELECT lineitem.l_shipmode, lineitem.l_returnflag, STDDEV(lineitem.l_partkey) AS stddev_lineitem_l_partkey, SUM(lineitem.l_orderkey) AS sum_lineitem_l_orderkey, MIN(lineitem.l_linenumber) AS min_lineitem_l_linenumber FROM lineitem WHERE lineitem.l_partkey = 357 GROUP BY lineitem.l_shipmode, lineitem.l_returnflag ORDER BY lineitem.l_shipmode, lineitem.l_returnflag

@@ -1,0 +1,1 @@
+SELECT nation.n_comment, AVG(nation.n_nationkey) AS avg_nation_n_nationkey, AVG(nation.n_nationkey) AS avg_nation_n_nationkey FROM nation WHERE nation.n_comment LIKE 'A%' GROUP BY nation.n_comment ORDER BY nation.n_comment

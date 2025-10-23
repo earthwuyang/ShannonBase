@@ -1,0 +1,1 @@
+WITH cte AS (SELECT nation.n_comment, SUM(nation.n_nationkey) as total FROM nation GROUP BY nation.n_comment) SELECT * FROM cte LIMIT 100

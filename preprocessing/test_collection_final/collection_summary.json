@@ -1,0 +1,59 @@
+{
+  "total_queries": 21,
+  "databases": [
+    "tpch_sf1"
+  ],
+  "successful_mysql": 21,
+  "successful_shannon": 21,
+  "errors": {
+    "table_not_found": 0,
+    "rapid_not_supported": 0,
+    "total_errors": 0
+  },
+  "timestamp": "2025-10-23T11:00:30.713634",
+  "category_breakdown": {
+    "AP": 11,
+    "TP": 10
+  },
+  "type_breakdown": {
+    "ap_cte_recursive": 4,
+    "tp_point_lookup": 5,
+    "ap_aggregation": 4,
+    "tp_range_scan": 3,
+    "tp_simple_filter": 2,
+    "ap_complex_join": 2,
+    "ap_window": 1
+  },
+  "mysql_latency_stats": {
+    "mean": 35.96159229498534,
+    "median": 0.3837060183286667,
+    "p95": 149.9458061531186,
+    "p99": 332.4634702131154
+  },
+  "shannon_latency_stats": {
+    "mean": 36.51803996680038,
+    "median": 0.4325632005929947,
+    "p95": 147.90461044758558,
+    "p99": 341.83913525193947
+  },
+  "mysql_TP_latency": {
+    "mean": 0.3220436070114374,
+    "median": 0.27738255448639393,
+    "count": 10
+  },
+  "shannon_TP_latency": {
+    "mean": 0.342770554125309,
+    "median": 0.296285143122077,
+    "count": 10
+  },
+  "mysql_AP_latency": {
+    "mean": 68.36118201132525,
+    "median": 0.9170971810817719,
+    "count": 11
+  },
+  "shannon_AP_latency": {
+    "mean": 69.40464852377772,
+    "median": 0.9801533073186874,
+    "count": 11
+  }
+}

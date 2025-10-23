@@ -1,0 +1,1 @@
+SELECT nation.n_nationkey, MAX(nation.n_nationkey) AS max_n_nationkey, AVG(nation.n_nationkey) AS avg_n_nationkey, SUM(nation.n_nationkey) AS sum_n_nationkey FROM nation WHERE nation.n_name LIKE '%B%' AND nation.n_comment LIKE '%C' AND nation.n_regionkey > 730 AND nation.n_regionkey < 186 AND nation.n_name LIKE 'A%' GROUP BY nation.n_nationkey HAVING COUNT(*) > 330

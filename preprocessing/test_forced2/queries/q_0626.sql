@@ -1,0 +1,1 @@
+SELECT orders.o_totalprice, orders.o_shippriority, orders.o_clerk FROM orders WHERE orders.o_orderkey = 666 LIMIT 10

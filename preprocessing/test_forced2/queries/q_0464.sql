@@ -1,0 +1,1 @@
+SELECT region.r_name, AVG(region.r_regionkey) AS avg_r_regionkey, MAX(region.r_regionkey) AS max_r_regionkey, AVG(region.r_regionkey) AS avg_r_regionkey FROM region WHERE region.r_name = 'EYPGQ' AND region.r_comment = 'AZYUG' AND region.r_comment = 'PWDGM' AND region.r_comment = 'LQBHF' GROUP BY region.r_name HAVING COUNT(*) > 610 ORDER BY region.r_name

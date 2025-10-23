@@ -1,0 +1,1 @@
+SELECT orders.o_comment, AVG(orders.o_custkey) AS avg_o_custkey, COUNT(orders.o_shippriority) AS count_o_shippriority FROM orders WHERE orders.o_shippriority > 908 AND orders.o_orderkey BETWEEN 275 AND 643 AND orders.o_orderstatus LIKE '%B%' AND orders.o_custkey BETWEEN 588 AND 634 AND orders.o_shippriority = 576 GROUP BY orders.o_comment ORDER BY orders.o_comment

@@ -1,0 +1,1 @@
+SELECT part.p_brand, part.p_retailprice, part.p_name FROM part WHERE part.p_mfgr = 'CERRG' UNION ALL SELECT orders.o_orderstatus, orders.o_orderkey, orders.o_comment FROM orders WHERE orders.o_clerk = 'XTAOF' LIMIT 100

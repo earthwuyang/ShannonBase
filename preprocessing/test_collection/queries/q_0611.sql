@@ -1,0 +1,1 @@
+SELECT partsupp.ps_supplycost, partsupp.ps_comment, partsupp.ps_availqty FROM partsupp UNION ALL SELECT nation.n_regionkey, nation.n_name, nation.n_nationkey FROM nation LIMIT 100

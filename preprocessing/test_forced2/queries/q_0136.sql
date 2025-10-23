@@ -1,0 +1,1 @@
+SELECT supplier.s_comment, supplier.s_suppkey, supplier.s_nationkey FROM supplier WHERE supplier.s_comment = 'VALUE_1' LIMIT 10

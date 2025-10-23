@@ -1,0 +1,13 @@
+{
+  "query_id": "q_0738",
+  "query_hash": "1ee2a75d050f2571e152f3d9c77f7a16",
+  "timestamp": "2025-10-23T11:29:08.669798",
+  "database": "tpch_sf1",
+  "query_text": "SELECT customer.c_address, COUNT(customer.c_nationkey) AS count_c_nationkey FROM customer WHERE cust",
+  "mysql": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  },
+  "shannonbase": {
+    "error": "2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (111)"
+  }
+}

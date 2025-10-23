@@ -1,0 +1,1 @@
+SELECT region.r_name, region.r_name, SUM(region.r_regionkey) OVER (PARTITION BY region.r_name ORDER BY region.r_regionkey) AS window_result FROM region WHERE region.r_regionkey > 692 LIMIT 100

@@ -1,0 +1,1 @@
+SELECT partsupp.ps_comment, MIN(partsupp.ps_availqty) AS min_partsupp_ps_availqty, AVG(partsupp.ps_suppkey) AS avg_partsupp_ps_suppkey FROM partsupp WHERE partsupp.ps_availqty = 44 GROUP BY partsupp.ps_comment ORDER BY partsupp.ps_comment

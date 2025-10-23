@@ -15,7 +15,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SCALE=1
 
 # Parallelization settings
-MAX_PARALLEL=${MAX_PARALLEL:-16}  # Default to number of CPUs
+MAX_PARALLEL=${MAX_PARALLEL:-1}  # Default to number of CPUs
 BATCH_SIZE=${BATCH_SIZE:-1000000}       # Rows per split file for large tables
 
 # MySQL configuration

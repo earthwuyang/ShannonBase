@@ -1,0 +1,1 @@
+SELECT partsupp.ps_availqty, COUNT(partsupp.ps_partkey) AS count_ps_partkey FROM partsupp WHERE partsupp.ps_availqty BETWEEN 266 AND 431 GROUP BY partsupp.ps_availqty HAVING COUNT(*) > 837 ORDER BY partsupp.ps_availqty

@@ -1,0 +1,1 @@
+SELECT supplier.s_acctbal, supplier.s_phone, RANK() OVER (PARTITION BY supplier.s_comment ORDER BY supplier.s_suppkey) AS window_result FROM supplier WHERE supplier.s_comment = 'ZBQNB' LIMIT 1000

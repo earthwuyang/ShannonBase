@@ -1,0 +1,1 @@
+WITH cte AS (SELECT supplier.s_phone, supplier.s_comment, supplier.s_address FROM supplier) SELECT * FROM cte CROSS JOIN part LIMIT 1000

@@ -1,0 +1,1 @@
+SELECT customer.c_address, SUM(customer.c_nationkey) AS sum_c_nationkey, SUM(customer.c_nationkey) AS sum_c_nationkey, AVG(customer.c_nationkey) AS avg_c_nationkey FROM customer WHERE customer.c_mktsegment LIKE '%C' AND customer.c_name = 'TLWYY' AND customer.c_nationkey > 400 AND customer.c_name = 'KRBYF' AND customer.c_nationkey > 920 GROUP BY customer.c_address

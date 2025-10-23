@@ -1,0 +1,1 @@
+SELECT part.p_size, part.p_mfgr, part.p_retailprice FROM part WHERE part.p_size = 745 LIMIT 10

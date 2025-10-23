@@ -1,0 +1,1 @@
+SELECT part.p_container, COUNT(part.p_size) AS count_p_size FROM part WHERE part.p_name = 'LMMXA' AND part.p_brand = 'VOSSS' GROUP BY part.p_container HAVING COUNT(*) > 332
