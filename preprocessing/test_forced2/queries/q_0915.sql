@@ -1,1 +1,0 @@
-SELECT lineitem.l_shipinstruct, lineitem.l_returnflag, AVG(lineitem.l_orderkey) OVER (PARTITION BY lineitem.l_linenumber ORDER BY lineitem.l_orderkey) AS window_result FROM lineitem WHERE lineitem.l_partkey = 169 LIMIT 100

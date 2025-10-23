@@ -58,6 +58,8 @@ preprocessing/__pycache__/
 preprocessing/*.pyc
 preprocessing/.pytest_cache/
 preprocessing/hybrid_optimizer_training/
+preprocessing/test_forced2/
+preprocessing/test_forced/
 
 # Cross DB benchmark - ignore data files but keep code
 preprocessing/cross_db_benchmark/datasets/*/dataset_documentation/*.csv

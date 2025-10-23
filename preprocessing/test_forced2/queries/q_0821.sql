@@ -1,1 +1,0 @@
-SELECT part.p_name, MAX(part.p_partkey) AS max_p_partkey, COUNT(part.p_size) AS count_p_size, COUNT(part.p_partkey) AS count_p_partkey FROM part WHERE part.p_mfgr LIKE 'A%' AND part.p_size BETWEEN 583 AND 707 AND part.p_brand = 'DAVUZ' AND part.p_mfgr = 'ULQUX' GROUP BY part.p_name ORDER BY part.p_name

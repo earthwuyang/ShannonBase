@@ -1,1 +1,0 @@
-SELECT part.p_type, STDDEV(part.p_retailprice) AS stddev_part_p_retailprice, AVG(part.p_size) AS avg_part_p_size, MIN(part.p_retailprice) AS min_part_p_retailprice FROM part WHERE part.p_type = 'VIZRG' GROUP BY part.p_type ORDER BY part.p_type

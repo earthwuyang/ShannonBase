@@ -1,1 +1,0 @@
-SELECT part.p_type, part.p_container, ROW_NUMBER() OVER (PARTITION BY part.p_type ORDER BY part.p_mfgr) AS window_result FROM part LIMIT 1000

@@ -1,1 +1,0 @@
-SELECT partsupp.ps_comment, AVG(partsupp.ps_suppkey) AS avg_ps_suppkey FROM partsupp WHERE partsupp.ps_comment LIKE '%C' AND partsupp.ps_suppkey > 359 GROUP BY partsupp.ps_comment ORDER BY partsupp.ps_comment

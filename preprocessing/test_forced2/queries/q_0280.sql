@@ -1,1 +1,0 @@
-SELECT supplier.s_comment, MIN(supplier.s_acctbal) AS min_supplier_s_acctbal, COUNT(supplier.s_nationkey) AS count_supplier_s_nationkey FROM supplier WHERE ((supplier.s_comment LIKE '%C') OR (supplier.s_comment LIKE 'A%')) OR (supplier.s_name LIKE '%C') AND supplier.s_name = 'CXXTO' GROUP BY supplier.s_comment ORDER BY supplier.s_comment

@@ -1,1 +1,0 @@
-SELECT customer.c_custkey, customer.c_mktsegment, AVG(customer.c_nationkey) OVER (PARTITION BY customer.c_address ORDER BY customer.c_name) AS window_result FROM customer LIMIT 1000

@@ -1,1 +1,0 @@
-SELECT orders.o_custkey, MIN(orders.o_orderkey) AS min_o_orderkey, COUNT(orders.o_custkey) AS count_o_custkey, COUNT(orders.o_shippriority) AS count_o_shippriority FROM orders WHERE orders.o_orderdate >= '2000-01-07' AND orders.o_custkey < 981 AND orders.o_orderdate >= '1991-02-10' GROUP BY orders.o_custkey ORDER BY orders.o_custkey

@@ -1,1 +1,0 @@
-SELECT part.p_name, AVG(part.p_size) AS avg_p_size, SUM(part.p_size) AS sum_p_size FROM part WHERE part.p_container LIKE '%B%' AND part.p_name = 'VBKDL' AND part.p_brand LIKE '%C' GROUP BY part.p_name HAVING COUNT(*) > 230

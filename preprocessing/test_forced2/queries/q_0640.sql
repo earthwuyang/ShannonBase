@@ -1,1 +1,0 @@
-SELECT nation.n_comment, SUM(nation.n_regionkey) AS sum_n_regionkey FROM nation WHERE nation.n_comment = 'XRPLC' AND nation.n_name = 'VACMY' AND nation.n_nationkey > 701 GROUP BY nation.n_comment

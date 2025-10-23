@@ -1,1 +1,0 @@
-SELECT customer.c_phone, customer.c_comment, RANK() OVER (PARTITION BY customer.c_name ORDER BY customer.c_name) AS window_result FROM customer WHERE customer.c_mktsegment = 'WVEBP' LIMIT 1000

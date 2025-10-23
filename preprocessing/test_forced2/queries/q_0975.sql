@@ -1,1 +1,0 @@
-SELECT part.p_name, SUM(part.p_size) AS sum_part_p_size, MIN(part.p_partkey) AS min_part_p_partkey FROM part WHERE (part.p_mfgr LIKE '%C' AND part.p_partkey BETWEEN 50 AND 901) OR (part.p_partkey = 531) GROUP BY part.p_name ORDER BY part.p_name

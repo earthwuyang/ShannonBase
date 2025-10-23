@@ -1,1 +1,0 @@
-SELECT partsupp.ps_supplycost, partsupp.ps_partkey, partsupp.ps_suppkey FROM partsupp WHERE partsupp.ps_supplycost = 'VALUE_1' LIMIT 10

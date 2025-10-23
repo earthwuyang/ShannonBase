@@ -1,1 +1,0 @@
-SELECT partsupp.ps_supplycost, MIN(partsupp.ps_suppkey) AS min_ps_suppkey, AVG(partsupp.ps_availqty) AS avg_ps_availqty, MAX(partsupp.ps_partkey) AS max_ps_partkey FROM partsupp WHERE partsupp.ps_suppkey = 134 AND partsupp.ps_partkey = 123 GROUP BY partsupp.ps_supplycost HAVING COUNT(*) > 999 ORDER BY partsupp.ps_supplycost

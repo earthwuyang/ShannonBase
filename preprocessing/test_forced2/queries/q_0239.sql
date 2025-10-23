@@ -1,1 +1,0 @@
-SELECT region.r_comment, VARIANCE(region.r_regionkey) AS variance_region_r_regionkey, VARIANCE(region.r_regionkey) AS variance_region_r_regionkey, STDDEV(region.r_regionkey) AS stddev_region_r_regionkey, MIN(region.r_regionkey) AS min_region_r_regionkey FROM region WHERE region.r_comment LIKE 'A%' AND region.r_name = 'KPCPX' GROUP BY region.r_comment ORDER BY region.r_comment

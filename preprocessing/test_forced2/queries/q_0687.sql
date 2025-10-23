@@ -1,1 +1,0 @@
-SELECT partsupp.ps_supplycost, MAX(partsupp.ps_availqty) AS max_ps_availqty, MAX(partsupp.ps_suppkey) AS max_ps_suppkey FROM partsupp WHERE partsupp.ps_availqty > 280 AND partsupp.ps_partkey > 251 GROUP BY partsupp.ps_supplycost HAVING COUNT(*) > 923 ORDER BY partsupp.ps_supplycost

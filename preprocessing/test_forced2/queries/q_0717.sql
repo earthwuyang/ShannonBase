@@ -1,1 +1,0 @@
-SELECT customer.c_phone, customer.c_comment, ROW_NUMBER() OVER (PARTITION BY customer.c_mktsegment ORDER BY customer.c_comment) AS window_result FROM customer WHERE customer.c_nationkey < 902 LIMIT 100

@@ -1,1 +1,0 @@
-WITH cte AS (SELECT customer.c_name, SUM(customer.c_custkey) as total FROM customer GROUP BY customer.c_name) SELECT * FROM cte CROSS JOIN lineitem LIMIT 1000

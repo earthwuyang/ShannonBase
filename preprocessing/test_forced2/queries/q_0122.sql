@@ -1,1 +1,0 @@
-SELECT orders.o_orderpriority, orders.o_custkey, SUM(orders.o_custkey) OVER (PARTITION BY orders.o_orderstatus ORDER BY orders.o_orderdate) AS window_result FROM orders WHERE orders.o_orderpriority = 'ZXMVR' LIMIT 1000

@@ -1,1 +1,0 @@
-SELECT orders.o_clerk, COUNT(orders.o_shippriority) AS count_o_shippriority FROM orders WHERE orders.o_orderdate >= '2014-11-05' AND orders.o_orderkey = 268 AND orders.o_orderpriority LIKE 'A%' AND orders.o_custkey < 454 GROUP BY orders.o_clerk

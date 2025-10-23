@@ -1,1 +1,0 @@
-SELECT supplier.s_nationkey, SUM(supplier.s_nationkey) AS sum_s_nationkey, MAX(supplier.s_suppkey) AS max_s_suppkey, AVG(supplier.s_nationkey) AS avg_s_nationkey FROM supplier WHERE supplier.s_comment = 'QMGFE' GROUP BY supplier.s_nationkey HAVING COUNT(*) > 752 ORDER BY supplier.s_nationkey

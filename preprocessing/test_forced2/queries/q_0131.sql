@@ -1,1 +1,0 @@
-SELECT part.p_comment, part.p_container, part.p_type FROM part WHERE part.p_brand = 'VALUE_1' LIMIT 10

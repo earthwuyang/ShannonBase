@@ -1,1 +1,0 @@
-SELECT nation.n_nationkey, MAX(nation.n_nationkey) AS max_n_nationkey, SUM(nation.n_regionkey) AS sum_n_regionkey FROM nation WHERE nation.n_regionkey = 899 AND nation.n_regionkey > 233 GROUP BY nation.n_nationkey HAVING COUNT(*) > 154 ORDER BY nation.n_nationkey

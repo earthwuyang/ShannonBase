@@ -1,1 +1,0 @@
-SELECT partsupp.ps_suppkey, partsupp.ps_comment, RANK() OVER (PARTITION BY partsupp.ps_suppkey ORDER BY partsupp.ps_partkey) AS window_result FROM partsupp WHERE partsupp.ps_partkey < 813 LIMIT 1000

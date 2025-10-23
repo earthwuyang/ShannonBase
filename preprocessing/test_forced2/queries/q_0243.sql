@@ -1,1 +1,0 @@
-SELECT part.p_mfgr, part.p_type, MAX(part.p_retailprice) AS max_part_p_retailprice, COUNT(part.p_partkey) AS count_part_p_partkey FROM part WHERE (part.p_comment = 'JSOKK') OR (part.p_partkey < 553) GROUP BY part.p_mfgr, part.p_type ORDER BY part.p_mfgr, part.p_type

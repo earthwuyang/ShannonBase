@@ -1,1 +1,0 @@
-SELECT part.p_size, part.p_type, SUM(part.p_size) OVER (PARTITION BY part.p_retailprice ORDER BY part.p_mfgr) AS window_result FROM part WHERE part.p_size > 399 LIMIT 100

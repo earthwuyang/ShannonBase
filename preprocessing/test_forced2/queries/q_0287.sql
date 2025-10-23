@@ -1,1 +1,0 @@
-SELECT lineitem.l_quantity, lineitem.l_discount, SUM(lineitem.l_suppkey) OVER (PARTITION BY lineitem.l_linestatus ORDER BY lineitem.l_comment) AS window_result FROM lineitem WHERE lineitem.l_suppkey BETWEEN 449 AND 923 LIMIT 1000

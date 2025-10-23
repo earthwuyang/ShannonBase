@@ -1,1 +1,0 @@
-SELECT customer.c_nationkey, SUM(customer.c_custkey) AS sum_c_custkey, MAX(customer.c_custkey) AS max_c_custkey, SUM(customer.c_custkey) AS sum_c_custkey FROM customer WHERE customer.c_comment = 'EHDHO' AND customer.c_phone = 'MKBQT' GROUP BY customer.c_nationkey ORDER BY customer.c_nationkey

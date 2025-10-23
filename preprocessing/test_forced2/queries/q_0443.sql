@@ -1,1 +1,0 @@
-SELECT orders.o_orderkey, orders.o_orderstatus, RANK() OVER (PARTITION BY orders.o_orderkey ORDER BY orders.o_orderdate) AS window_result FROM orders LIMIT 1000

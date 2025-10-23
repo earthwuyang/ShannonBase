@@ -1,1 +1,0 @@
-SELECT lineitem.l_orderkey, lineitem.l_quantity, AVG(lineitem.l_suppkey) OVER (PARTITION BY lineitem.l_commitdate ORDER BY lineitem.l_orderkey) AS window_result FROM lineitem LIMIT 100

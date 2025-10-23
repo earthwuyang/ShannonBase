@@ -1,1 +1,0 @@
-WITH cte AS (SELECT supplier.s_suppkey, SUM(supplier.s_nationkey) as total FROM supplier GROUP BY supplier.s_suppkey) SELECT * FROM cte CROSS JOIN customer LIMIT 1000

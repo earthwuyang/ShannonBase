@@ -1,1 +1,0 @@
-SELECT lineitem.l_partkey, MAX(lineitem.l_suppkey) AS max_l_suppkey, MAX(lineitem.l_orderkey) AS max_l_orderkey FROM lineitem WHERE lineitem.l_commitdate >= '1993-04-13' AND lineitem.l_shipdate >= '2010-03-20' GROUP BY lineitem.l_partkey HAVING COUNT(*) > 321

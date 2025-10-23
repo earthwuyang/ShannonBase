@@ -1,1 +1,0 @@
-WITH cte AS (SELECT supplier.s_address, SUM(supplier.s_nationkey) as total FROM supplier GROUP BY supplier.s_address) SELECT * FROM cte LIMIT 100

@@ -1,1 +1,0 @@
-SELECT part.p_retailprice, part.p_name, part.p_brand FROM part WHERE part.p_partkey = 428 LIMIT 10

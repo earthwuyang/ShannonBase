@@ -1,1 +1,0 @@
-SELECT orders.o_totalprice, MAX(orders.o_custkey) AS max_o_custkey, MIN(orders.o_shippriority) AS min_o_shippriority, MAX(orders.o_shippriority) AS max_o_shippriority FROM orders WHERE orders.o_comment LIKE 'A%' AND orders.o_orderstatus LIKE '%B%' AND orders.o_orderstatus = 'LKTLI' AND orders.o_comment LIKE '%B%' GROUP BY orders.o_totalprice ORDER BY orders.o_totalprice

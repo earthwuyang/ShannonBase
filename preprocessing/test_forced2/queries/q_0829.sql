@@ -1,1 +1,0 @@
-SELECT customer.c_mktsegment, customer.c_address, MAX(customer.c_custkey) AS max_customer_c_custkey, MAX(customer.c_acctbal) AS max_customer_c_acctbal FROM customer GROUP BY customer.c_mktsegment, customer.c_address ORDER BY customer.c_mktsegment, customer.c_address

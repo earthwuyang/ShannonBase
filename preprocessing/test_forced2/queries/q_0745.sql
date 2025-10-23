@@ -1,1 +1,0 @@
-SELECT lineitem.l_receiptdate, SUM(lineitem.l_suppkey) AS sum_l_suppkey, MAX(lineitem.l_partkey) AS max_l_partkey, MIN(lineitem.l_suppkey) AS min_l_suppkey FROM lineitem WHERE lineitem.l_shipmode = 'SCJSD' GROUP BY lineitem.l_receiptdate ORDER BY lineitem.l_receiptdate

@@ -1,1 +1,0 @@
-SELECT nation.n_comment, VARIANCE(nation.n_regionkey) AS variance_nation_n_regionkey, SUM(nation.n_regionkey) AS sum_nation_n_regionkey, MAX(nation.n_nationkey) AS max_nation_n_nationkey FROM nation WHERE nation.n_comment = 'YDMAK' GROUP BY nation.n_comment ORDER BY nation.n_comment

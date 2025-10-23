@@ -1,1 +1,0 @@
-SELECT customer.c_name, MAX(customer.c_nationkey) AS max_c_nationkey, MAX(customer.c_nationkey) AS max_c_nationkey, SUM(customer.c_custkey) AS sum_c_custkey FROM customer WHERE customer.c_mktsegment = 'ACHJU' AND customer.c_custkey < 920 GROUP BY customer.c_name HAVING COUNT(*) > 960 ORDER BY customer.c_name

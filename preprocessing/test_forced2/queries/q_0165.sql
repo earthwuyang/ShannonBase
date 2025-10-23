@@ -1,1 +1,0 @@
-SELECT region.r_name, MIN(region.r_regionkey) AS min_region_r_regionkey, SUM(region.r_regionkey) AS sum_region_r_regionkey FROM region WHERE (region.r_comment LIKE '%C') OR (region.r_comment LIKE 'A%') GROUP BY region.r_name HAVING COUNT(*) > 383 AND SUM(region.r_regionkey) > 50877 ORDER BY region.r_name

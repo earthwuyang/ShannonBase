@@ -1,1 +1,0 @@
-SELECT partsupp.ps_supplycost, MAX(partsupp.ps_suppkey) AS max_ps_suppkey FROM partsupp WHERE partsupp.ps_suppkey = 211 GROUP BY partsupp.ps_supplycost HAVING COUNT(*) > 917

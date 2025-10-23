@@ -1,1 +1,0 @@
-WITH cte AS (SELECT supplier.s_phone, supplier.s_address, supplier.s_name FROM supplier) SELECT * FROM cte LIMIT 100

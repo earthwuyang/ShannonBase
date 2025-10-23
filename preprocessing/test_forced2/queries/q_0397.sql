@@ -1,1 +1,0 @@
-SELECT orders.o_totalprice, MIN(orders.o_shippriority) AS min_o_shippriority, AVG(orders.o_custkey) AS avg_o_custkey, AVG(orders.o_shippriority) AS avg_o_shippriority FROM orders WHERE orders.o_orderkey > 984 AND orders.o_custkey < 924 GROUP BY orders.o_totalprice HAVING COUNT(*) > 634 ORDER BY orders.o_totalprice

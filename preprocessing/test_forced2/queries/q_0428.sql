@@ -1,1 +1,0 @@
-SELECT partsupp.ps_availqty, AVG(partsupp.ps_availqty) AS avg_ps_availqty, AVG(partsupp.ps_partkey) AS avg_ps_partkey FROM partsupp WHERE partsupp.ps_suppkey BETWEEN 48 AND 237 AND partsupp.ps_partkey < 469 AND partsupp.ps_availqty < 80 GROUP BY partsupp.ps_availqty HAVING COUNT(*) > 921

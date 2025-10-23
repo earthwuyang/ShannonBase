@@ -1,1 +1,0 @@
-SELECT nation.n_comment, nation.n_name, SUM(nation.n_regionkey) OVER (PARTITION BY nation.n_regionkey ORDER BY nation.n_nationkey) AS window_result FROM nation WHERE nation.n_nationkey BETWEEN 498 AND 832 LIMIT 1000

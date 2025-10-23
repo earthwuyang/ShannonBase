@@ -1,1 +1,0 @@
-SELECT lineitem.l_linestatus, lineitem.l_quantity, SUM(lineitem.l_orderkey) OVER (PARTITION BY lineitem.l_shipinstruct ORDER BY lineitem.l_comment) AS window_result FROM lineitem LIMIT 1000

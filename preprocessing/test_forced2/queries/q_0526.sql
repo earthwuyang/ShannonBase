@@ -1,1 +1,0 @@
-SELECT region.r_regionkey, MAX(region.r_regionkey) AS max_r_regionkey, MAX(region.r_regionkey) AS max_r_regionkey FROM region WHERE region.r_regionkey = 465 AND region.r_regionkey < 377 AND region.r_name = 'KYHZY' GROUP BY region.r_regionkey HAVING COUNT(*) > 607

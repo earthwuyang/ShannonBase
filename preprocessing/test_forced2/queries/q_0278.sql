@@ -1,1 +1,0 @@
-SELECT supplier.s_name, COUNT(supplier.s_nationkey) AS count_s_nationkey, MAX(supplier.s_nationkey) AS max_s_nationkey, MIN(supplier.s_suppkey) AS min_s_suppkey FROM supplier WHERE supplier.s_address = 'BWOCX' AND supplier.s_comment LIKE '%C' GROUP BY supplier.s_name HAVING COUNT(*) > 572 ORDER BY supplier.s_name

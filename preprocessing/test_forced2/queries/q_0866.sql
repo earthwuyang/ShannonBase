@@ -1,1 +1,0 @@
-SELECT region.r_name, COUNT(region.r_regionkey) AS count_r_regionkey FROM region WHERE region.r_comment LIKE '%B%' AND region.r_name LIKE 'A%' AND region.r_comment = 'XYSHP' GROUP BY region.r_name

@@ -1,1 +1,0 @@
-WITH cte AS (SELECT supplier.s_comment, SUM(supplier.s_nationkey) as total FROM supplier GROUP BY supplier.s_comment) SELECT * FROM cte CROSS JOIN part LIMIT 1000

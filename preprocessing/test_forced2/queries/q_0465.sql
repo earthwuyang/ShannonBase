@@ -1,1 +1,0 @@
-SELECT partsupp.ps_supplycost, MIN(partsupp.ps_suppkey) AS min_ps_suppkey, COUNT(partsupp.ps_partkey) AS count_ps_partkey, SUM(partsupp.ps_suppkey) AS sum_ps_suppkey FROM partsupp WHERE partsupp.ps_availqty < 403 AND partsupp.ps_suppkey < 483 GROUP BY partsupp.ps_supplycost ORDER BY partsupp.ps_supplycost

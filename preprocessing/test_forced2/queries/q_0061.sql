@@ -1,1 +1,0 @@
-SELECT lineitem.l_quantity, lineitem.l_linenumber, AVG(lineitem.l_suppkey) OVER (PARTITION BY lineitem.l_suppkey ORDER BY lineitem.l_linenumber) AS window_result FROM lineitem WHERE lineitem.l_linestatus LIKE 'A%' LIMIT 1000

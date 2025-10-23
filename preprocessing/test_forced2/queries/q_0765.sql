@@ -1,1 +1,0 @@
-SELECT lineitem.l_shipdate, AVG(lineitem.l_suppkey) AS avg_l_suppkey FROM lineitem WHERE lineitem.l_commitdate >= '2000-07-27' AND lineitem.l_partkey = 462 AND lineitem.l_shipinstruct = 'VTYWE' GROUP BY lineitem.l_shipdate HAVING COUNT(*) > 920

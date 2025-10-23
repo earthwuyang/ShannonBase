@@ -1,1 +1,0 @@
-WITH cte AS (SELECT customer.c_name, customer.c_mktsegment, customer.c_comment FROM customer) SELECT * FROM cte LIMIT 100

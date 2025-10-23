@@ -1,1 +1,0 @@
-SELECT nation.n_name, VARIANCE(nation.n_nationkey) AS variance_nation_n_nationkey, MIN(nation.n_regionkey) AS min_nation_n_regionkey, STDDEV(nation.n_nationkey) AS stddev_nation_n_nationkey FROM nation WHERE nation.n_name LIKE '%B%' GROUP BY nation.n_name ORDER BY nation.n_name

@@ -1,1 +1,0 @@
-SELECT supplier.s_nationkey, supplier.s_address, supplier.s_acctbal FROM supplier WHERE supplier.s_name = 'VALUE_1' LIMIT 10

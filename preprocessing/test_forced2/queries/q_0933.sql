@@ -1,1 +1,0 @@
-SELECT customer.c_comment, customer.c_mktsegment, SUM(customer.c_custkey) OVER (PARTITION BY customer.c_phone ORDER BY customer.c_nationkey) AS window_result FROM customer LIMIT 100

@@ -1,1 +1,0 @@
-SELECT lineitem.l_commitdate, lineitem.l_shipdate, SUM(lineitem.l_tax) AS sum_lineitem_l_tax, MIN(lineitem.l_discount) AS min_lineitem_l_discount FROM lineitem GROUP BY lineitem.l_commitdate, lineitem.l_shipdate HAVING COUNT(*) > 3286 AND MIN(lineitem.l_discount) > 15898 ORDER BY lineitem.l_commitdate, lineitem.l_shipdate

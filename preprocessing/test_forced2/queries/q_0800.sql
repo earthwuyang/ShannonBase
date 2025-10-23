@@ -1,1 +1,0 @@
-SELECT region.r_comment, region.r_comment, ROW_NUMBER() OVER (PARTITION BY region.r_name ORDER BY region.r_name) AS window_result FROM region WHERE region.r_regionkey < 497 LIMIT 1000

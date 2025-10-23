@@ -1,1 +1,0 @@
-SELECT part.p_brand, part.p_comment, part.p_container FROM part WHERE part.p_partkey = 445 LIMIT 10

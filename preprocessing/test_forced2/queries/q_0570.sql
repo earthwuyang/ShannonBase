@@ -1,1 +1,0 @@
-SELECT lineitem.l_linenumber, lineitem.l_shipdate, lineitem.l_returnflag FROM lineitem WHERE lineitem.l_shipmode = 'VALUE_1' LIMIT 10

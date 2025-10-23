@@ -1,1 +1,0 @@
-SELECT partsupp.ps_availqty, partsupp.ps_partkey, AVG(partsupp.ps_availqty) OVER (PARTITION BY partsupp.ps_availqty ORDER BY partsupp.ps_availqty) AS window_result FROM partsupp WHERE partsupp.ps_partkey BETWEEN 442 AND 989 LIMIT 1000

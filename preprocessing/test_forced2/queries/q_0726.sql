@@ -1,1 +1,0 @@
-SELECT nation.n_regionkey, nation.n_regionkey, RANK() OVER (PARTITION BY nation.n_nationkey ORDER BY nation.n_nationkey) AS window_result FROM nation WHERE nation.n_nationkey BETWEEN 616 AND 829 LIMIT 100

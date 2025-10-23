@@ -1,1 +1,0 @@
-SELECT lineitem.l_receiptdate, lineitem.l_shipdate, COUNT(lineitem.l_linenumber) AS count_lineitem_l_linenumber, COUNT(lineitem.l_discount) AS count_lineitem_l_discount FROM lineitem GROUP BY lineitem.l_receiptdate, lineitem.l_shipdate ORDER BY lineitem.l_shipdate, lineitem.l_receiptdate

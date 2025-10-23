@@ -1,1 +1,0 @@
-SELECT * FROM lineitem WHERE lineitem.l_orderkey BETWEEN 2695 AND 2722 LIMIT 100

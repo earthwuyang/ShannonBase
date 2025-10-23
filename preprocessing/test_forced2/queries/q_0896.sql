@@ -1,1 +1,0 @@
-SELECT lineitem.l_returnflag, lineitem.l_receiptdate, lineitem.l_linestatus FROM lineitem WHERE lineitem.l_tax = 'VALUE_1' LIMIT 10

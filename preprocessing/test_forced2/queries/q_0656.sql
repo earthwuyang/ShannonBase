@@ -1,1 +1,0 @@
-SELECT part.p_mfgr, part.p_partkey, DENSE_RANK() OVER (PARTITION BY part.p_brand ORDER BY part.p_size) AS window_result FROM part LIMIT 1000

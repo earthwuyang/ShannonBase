@@ -1,1 +1,0 @@
-SELECT nation.n_comment, AVG(nation.n_nationkey) AS avg_nation_n_nationkey, SUM(nation.n_nationkey) AS sum_nation_n_nationkey FROM nation WHERE (nation.n_comment = 'GEMDP' AND nation.n_regionkey > 191) OR (nation.n_regionkey = 724) GROUP BY nation.n_comment ORDER BY nation.n_comment

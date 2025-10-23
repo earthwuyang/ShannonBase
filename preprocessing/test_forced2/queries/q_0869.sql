@@ -1,1 +1,0 @@
-SELECT partsupp.ps_comment, partsupp.ps_availqty, AVG(partsupp.ps_supplycost) OVER (PARTITION BY partsupp.ps_comment ORDER BY partsupp.ps_comment) AS window_result FROM partsupp LIMIT 100

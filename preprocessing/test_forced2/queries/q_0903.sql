@@ -1,1 +1,0 @@
-SELECT lineitem.l_shipinstruct, COUNT(lineitem.l_partkey) AS count_l_partkey, MAX(lineitem.l_suppkey) AS max_l_suppkey FROM lineitem WHERE lineitem.l_comment LIKE '%C' AND lineitem.l_suppkey > 230 AND lineitem.l_receiptdate >= '1998-10-20' AND lineitem.l_receiptdate >= '2017-05-11' GROUP BY lineitem.l_shipinstruct ORDER BY lineitem.l_shipinstruct

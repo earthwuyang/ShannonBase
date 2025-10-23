@@ -1,1 +1,0 @@
-SELECT * FROM orders WHERE orders.o_shippriority BETWEEN 4337 AND 4385 LIMIT 100

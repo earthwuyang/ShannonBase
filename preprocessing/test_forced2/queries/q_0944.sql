@@ -1,1 +1,0 @@
-SELECT customer.c_acctbal, COUNT(customer.c_nationkey) AS count_c_nationkey, MAX(customer.c_custkey) AS max_c_custkey FROM customer WHERE customer.c_nationkey = 18 AND customer.c_address LIKE '%C' AND customer.c_comment LIKE '%C' GROUP BY customer.c_acctbal

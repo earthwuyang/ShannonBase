@@ -1,1 +1,0 @@
-SELECT partsupp.ps_partkey, partsupp.ps_suppkey, SUM(partsupp.ps_suppkey) OVER (PARTITION BY partsupp.ps_partkey ORDER BY partsupp.ps_comment) AS window_result FROM partsupp WHERE partsupp.ps_partkey = 638 LIMIT 1000

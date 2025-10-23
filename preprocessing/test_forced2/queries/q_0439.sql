@@ -1,1 +1,0 @@
-SELECT partsupp.ps_availqty, partsupp.ps_supplycost, partsupp.ps_partkey FROM partsupp WHERE partsupp.ps_comment = 'VALUE_1' LIMIT 10

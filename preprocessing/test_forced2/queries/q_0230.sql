@@ -1,1 +1,0 @@
-SELECT customer.c_acctbal, customer.c_comment, AVG(customer.c_nationkey) OVER (PARTITION BY customer.c_nationkey ORDER BY customer.c_comment) AS window_result FROM customer LIMIT 100

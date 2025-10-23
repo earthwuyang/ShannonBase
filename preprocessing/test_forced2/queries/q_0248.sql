@@ -1,1 +1,0 @@
-SELECT partsupp.ps_availqty, AVG(partsupp.ps_suppkey) AS avg_ps_suppkey, MAX(partsupp.ps_availqty) AS max_ps_availqty FROM partsupp WHERE partsupp.ps_comment LIKE '%B%' AND partsupp.ps_partkey < 895 AND partsupp.ps_availqty < 122 AND partsupp.ps_comment LIKE '%B%' GROUP BY partsupp.ps_availqty ORDER BY partsupp.ps_availqty

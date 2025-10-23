@@ -1,1 +1,0 @@
-SELECT nation.n_comment, VARIANCE(nation.n_nationkey) AS variance_nation_n_nationkey, AVG(nation.n_nationkey) AS avg_nation_n_nationkey FROM nation WHERE nation.n_comment = 'RWHFU' GROUP BY nation.n_comment ORDER BY nation.n_comment

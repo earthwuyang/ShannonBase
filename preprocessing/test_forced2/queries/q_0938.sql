@@ -1,1 +1,0 @@
-SELECT orders.o_orderstatus, orders.o_orderdate, AVG(orders.o_shippriority) AS avg_orders_o_shippriority, VARIANCE(orders.o_custkey) AS variance_orders_o_custkey FROM orders WHERE orders.o_orderstatus = 'HUVAD' GROUP BY orders.o_orderstatus, orders.o_orderdate ORDER BY orders.o_orderstatus, orders.o_orderdate

@@ -1,1 +1,0 @@
-SELECT customer.c_nationkey, MAX(customer.c_nationkey) AS max_c_nationkey, SUM(customer.c_nationkey) AS sum_c_nationkey FROM customer WHERE customer.c_nationkey = 282 AND customer.c_comment LIKE '%B%' GROUP BY customer.c_nationkey HAVING COUNT(*) > 211

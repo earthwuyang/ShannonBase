@@ -1,1 +1,0 @@
-SELECT lineitem.l_shipmode, AVG(lineitem.l_partkey) AS avg_l_partkey, MIN(lineitem.l_partkey) AS min_l_partkey, MAX(lineitem.l_suppkey) AS max_l_suppkey FROM lineitem WHERE lineitem.l_receiptdate >= '2019-12-17' AND lineitem.l_suppkey < 931 GROUP BY lineitem.l_shipmode ORDER BY lineitem.l_shipmode

@@ -1,1 +1,0 @@
-SELECT partsupp.ps_comment, STDDEV(partsupp.ps_suppkey) AS stddev_partsupp_ps_suppkey, AVG(partsupp.ps_partkey) AS avg_partsupp_ps_partkey FROM partsupp WHERE partsupp.ps_suppkey < 873 GROUP BY partsupp.ps_comment ORDER BY partsupp.ps_comment

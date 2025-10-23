@@ -1,1 +1,0 @@
-SELECT * FROM customer WHERE customer.c_custkey = 51143 LIMIT 1

@@ -1,1 +1,0 @@
-SELECT nation.n_name, SUM(nation.n_regionkey) AS sum_nation_n_regionkey, STDDEV(nation.n_nationkey) AS stddev_nation_n_nationkey, MAX(nation.n_nationkey) AS max_nation_n_nationkey, SUM(nation.n_regionkey) AS sum_nation_n_regionkey FROM nation WHERE nation.n_regionkey > 896 GROUP BY nation.n_name ORDER BY nation.n_name

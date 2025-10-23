@@ -1,1 +1,0 @@
-SELECT region.r_comment, AVG(region.r_regionkey) AS avg_region_r_regionkey, MIN(region.r_regionkey) AS min_region_r_regionkey FROM region WHERE region.r_name = 'MMAVL' AND region.r_comment = 'IDRKV' GROUP BY region.r_comment HAVING COUNT(*) > 3809 AND MIN(region.r_regionkey) > 67190 ORDER BY region.r_comment

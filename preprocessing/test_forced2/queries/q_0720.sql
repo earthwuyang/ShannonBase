@@ -1,1 +1,0 @@
-SELECT lineitem.l_tax, MAX(lineitem.l_orderkey) AS max_l_orderkey, MAX(lineitem.l_suppkey) AS max_l_suppkey FROM lineitem WHERE lineitem.l_partkey = 363 AND lineitem.l_suppkey > 716 AND lineitem.l_partkey BETWEEN 10 AND 936 AND lineitem.l_linenumber BETWEEN 248 AND 276 GROUP BY lineitem.l_tax HAVING COUNT(*) > 902 ORDER BY lineitem.l_tax

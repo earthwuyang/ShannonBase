@@ -1,1 +1,0 @@
-SELECT supplier.s_suppkey, supplier.s_address, RANK() OVER (PARTITION BY supplier.s_address ORDER BY supplier.s_comment) AS window_result FROM supplier WHERE supplier.s_suppkey = 521 LIMIT 100

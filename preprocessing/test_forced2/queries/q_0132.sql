@@ -1,1 +1,0 @@
-SELECT lineitem.l_tax, COUNT(lineitem.l_suppkey) AS count_l_suppkey, SUM(lineitem.l_suppkey) AS sum_l_suppkey FROM lineitem WHERE lineitem.l_returnflag LIKE '%C' AND lineitem.l_linestatus LIKE '%B%' GROUP BY lineitem.l_tax HAVING COUNT(*) > 900

@@ -1,1 +1,0 @@
-SELECT supplier.s_nationkey, MAX(supplier.s_suppkey) AS max_s_suppkey, MIN(supplier.s_suppkey) AS min_s_suppkey FROM supplier WHERE supplier.s_suppkey < 614 AND supplier.s_nationkey = 442 AND supplier.s_comment = 'KDWNY' AND supplier.s_address LIKE '%B%' AND supplier.s_comment = 'FSHGD' GROUP BY supplier.s_nationkey HAVING COUNT(*) > 939 ORDER BY supplier.s_nationkey

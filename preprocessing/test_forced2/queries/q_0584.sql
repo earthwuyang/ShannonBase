@@ -1,1 +1,0 @@
-SELECT lineitem.l_tax, AVG(lineitem.l_suppkey) AS avg_l_suppkey FROM lineitem WHERE lineitem.l_shipdate >= '2016-11-10' AND lineitem.l_linestatus = 'NHUPL' GROUP BY lineitem.l_tax

@@ -1,1 +1,0 @@
-WITH cte AS (SELECT part.p_mfgr, part.p_type, part.p_partkey FROM part) SELECT * FROM cte CROSS JOIN nation LIMIT 1000

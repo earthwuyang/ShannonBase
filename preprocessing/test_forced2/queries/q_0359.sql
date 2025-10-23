@@ -1,1 +1,0 @@
-WITH cte AS (SELECT region.r_regionkey, region.r_comment, region.r_name FROM region) SELECT * FROM cte CROSS JOIN customer LIMIT 1000

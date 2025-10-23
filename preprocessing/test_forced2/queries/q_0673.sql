@@ -1,1 +1,0 @@
-SELECT lineitem.l_comment, lineitem.l_shipinstruct, lineitem.l_discount FROM lineitem WHERE lineitem.l_shipmode = 'VALUE_1' LIMIT 10

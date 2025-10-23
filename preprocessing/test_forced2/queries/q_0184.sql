@@ -1,1 +1,0 @@
-SELECT part.p_brand, part.p_container, part.p_size FROM part WHERE part.p_size = 99 LIMIT 10

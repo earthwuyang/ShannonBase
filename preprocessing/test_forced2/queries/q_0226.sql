@@ -1,1 +1,0 @@
-SELECT customer.c_phone, customer.c_mktsegment, customer.c_custkey FROM customer WHERE customer.c_name = 'VALUE_1' LIMIT 10

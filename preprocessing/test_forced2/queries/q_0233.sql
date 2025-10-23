@@ -1,1 +1,0 @@
-SELECT region.r_regionkey, MIN(region.r_regionkey) AS min_r_regionkey FROM region WHERE region.r_comment = 'QLRJU' AND region.r_regionkey > 937 AND region.r_comment = 'SLQXI' AND region.r_name LIKE '%C' AND region.r_regionkey < 221 GROUP BY region.r_regionkey HAVING COUNT(*) > 491

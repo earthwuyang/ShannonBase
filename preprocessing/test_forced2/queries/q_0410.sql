@@ -1,1 +1,0 @@
-SELECT nation.n_name, AVG(nation.n_regionkey) AS avg_n_regionkey, MAX(nation.n_nationkey) AS max_n_nationkey FROM nation WHERE nation.n_regionkey BETWEEN 108 AND 960 AND nation.n_comment = 'TNUEZ' AND nation.n_regionkey BETWEEN 468 AND 993 AND nation.n_regionkey < 441 GROUP BY nation.n_name HAVING COUNT(*) > 564

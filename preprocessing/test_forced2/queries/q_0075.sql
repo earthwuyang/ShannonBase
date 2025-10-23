@@ -1,1 +1,0 @@
-SELECT region.r_comment, MIN(region.r_regionkey) AS min_r_regionkey, MAX(region.r_regionkey) AS max_r_regionkey, MIN(region.r_regionkey) AS min_r_regionkey FROM region WHERE region.r_regionkey > 824 AND region.r_name LIKE '%C' GROUP BY region.r_comment ORDER BY region.r_comment

@@ -1,1 +1,0 @@
-SELECT * FROM nation WHERE nation.n_nationkey = 976 LIMIT 1

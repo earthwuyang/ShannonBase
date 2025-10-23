@@ -1,1 +1,0 @@
-SELECT lineitem.l_orderkey, lineitem.l_suppkey, SUM(lineitem.l_suppkey) OVER (PARTITION BY lineitem.l_receiptdate ORDER BY lineitem.l_shipdate) AS window_result FROM lineitem LIMIT 100

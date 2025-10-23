@@ -1,1 +1,0 @@
-SELECT nation.n_comment, nation.n_comment, SUM(nation.n_regionkey) OVER (PARTITION BY nation.n_regionkey ORDER BY nation.n_nationkey) AS window_result FROM nation LIMIT 100

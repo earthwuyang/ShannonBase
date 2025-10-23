@@ -1,1 +1,0 @@
-SELECT nation.n_name, MAX(nation.n_nationkey) AS max_n_nationkey, COUNT(nation.n_regionkey) AS count_n_regionkey, SUM(nation.n_regionkey) AS sum_n_regionkey FROM nation WHERE nation.n_name LIKE '%B%' AND nation.n_regionkey < 514 AND nation.n_regionkey BETWEEN 584 AND 780 AND nation.n_name LIKE '%B%' AND nation.n_name LIKE 'A%' GROUP BY nation.n_name ORDER BY nation.n_name

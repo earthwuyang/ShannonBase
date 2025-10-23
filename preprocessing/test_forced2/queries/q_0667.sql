@@ -1,1 +1,0 @@
-SELECT lineitem.l_shipdate, SUM(lineitem.l_suppkey) AS sum_lineitem_l_suppkey, AVG(lineitem.l_partkey) AS avg_lineitem_l_partkey, COUNT(lineitem.l_suppkey) AS count_lineitem_l_suppkey FROM lineitem WHERE lineitem.l_suppkey BETWEEN 125 AND 536 GROUP BY lineitem.l_shipdate HAVING COUNT(*) > 6835 AND SUM(lineitem.l_suppkey) > 54538 ORDER BY lineitem.l_shipdate

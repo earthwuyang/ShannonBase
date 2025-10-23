@@ -1,1 +1,0 @@
-SELECT part.p_container, AVG(part.p_partkey) AS avg_p_partkey, MAX(part.p_partkey) AS max_p_partkey, AVG(part.p_size) AS avg_p_size FROM part WHERE part.p_name = 'ZXREX' AND part.p_partkey = 162 AND part.p_partkey = 328 AND part.p_size < 884 GROUP BY part.p_container HAVING COUNT(*) > 197 ORDER BY part.p_container

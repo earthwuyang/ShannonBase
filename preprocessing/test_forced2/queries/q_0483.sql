@@ -1,1 +1,0 @@
-SELECT lineitem.l_linestatus, COUNT(lineitem.l_orderkey) AS count_l_orderkey FROM lineitem GROUP BY lineitem.l_linestatus ORDER BY lineitem.l_linestatus

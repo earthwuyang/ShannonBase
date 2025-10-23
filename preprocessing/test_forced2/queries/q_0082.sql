@@ -1,1 +1,0 @@
-SELECT customer.c_custkey, customer.c_name, customer.c_comment FROM customer WHERE customer.c_nationkey = 370 LIMIT 10

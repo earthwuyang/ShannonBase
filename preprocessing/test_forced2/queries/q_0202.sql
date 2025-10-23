@@ -1,1 +1,0 @@
-SELECT part.p_container, part.p_type, part.p_brand, AVG(part.p_retailprice) AS avg_part_p_retailprice, AVG(part.p_partkey) AS avg_part_p_partkey FROM part WHERE ((part.p_mfgr = 'SABET') OR (part.p_mfgr = 'JIWTA')) OR (part.p_partkey BETWEEN 255 AND 813) GROUP BY part.p_container, part.p_type, part.p_brand ORDER BY part.p_brand, part.p_container

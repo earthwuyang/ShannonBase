@@ -1,1 +1,0 @@
-SELECT lineitem.l_tax, lineitem.l_returnflag, lineitem.l_shipmode FROM lineitem WHERE lineitem.l_suppkey = 348 LIMIT 10

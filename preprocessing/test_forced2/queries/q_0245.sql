@@ -1,1 +1,0 @@
-SELECT partsupp.ps_suppkey, partsupp.ps_partkey, ROW_NUMBER() OVER (PARTITION BY partsupp.ps_availqty ORDER BY partsupp.ps_partkey) AS window_result FROM partsupp WHERE partsupp.ps_availqty BETWEEN 298 AND 716 LIMIT 1000

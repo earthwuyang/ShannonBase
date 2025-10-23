@@ -1,1 +1,0 @@
-SELECT region.r_regionkey, COUNT(region.r_regionkey) AS count_r_regionkey, MAX(region.r_regionkey) AS max_r_regionkey, COUNT(region.r_regionkey) AS count_r_regionkey FROM region WHERE region.r_regionkey < 180 AND region.r_name LIKE 'A%' AND region.r_name = 'DWFNX' AND region.r_regionkey < 857 GROUP BY region.r_regionkey ORDER BY region.r_regionkey

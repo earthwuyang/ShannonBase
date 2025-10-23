@@ -1,1 +1,0 @@
-SELECT supplier.s_address, supplier.s_phone, MIN(supplier.s_suppkey) AS min_supplier_s_suppkey, MIN(supplier.s_suppkey) AS min_supplier_s_suppkey, SUM(supplier.s_suppkey) AS sum_supplier_s_suppkey FROM supplier WHERE supplier.s_comment LIKE '%C' GROUP BY supplier.s_address, supplier.s_phone ORDER BY supplier.s_phone, supplier.s_address

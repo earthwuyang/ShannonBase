@@ -1,1 +1,0 @@
-SELECT region.r_name, region.r_regionkey, AVG(region.r_regionkey) OVER (PARTITION BY region.r_regionkey ORDER BY region.r_regionkey) AS window_result FROM region WHERE region.r_comment LIKE '%B%' LIMIT 1000

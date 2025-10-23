@@ -1,1 +1,0 @@
-SELECT * FROM orders WHERE orders.o_shippriority BETWEEN 8011 AND 8056 LIMIT 100

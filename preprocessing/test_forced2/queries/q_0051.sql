@@ -1,1 +1,0 @@
-SELECT partsupp.ps_comment, SUM(partsupp.ps_suppkey) AS sum_ps_suppkey FROM partsupp WHERE partsupp.ps_suppkey < 666 AND partsupp.ps_partkey > 464 AND partsupp.ps_suppkey < 456 GROUP BY partsupp.ps_comment HAVING COUNT(*) > 911

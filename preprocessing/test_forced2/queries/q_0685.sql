@@ -1,1 +1,0 @@
-SELECT * FROM part WHERE part.p_partkey = 72433 LIMIT 1

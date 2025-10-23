@@ -1,1 +1,0 @@
-SELECT region.r_regionkey, MAX(region.r_regionkey) AS max_r_regionkey FROM region WHERE region.r_name LIKE '%C' AND region.r_name LIKE 'A%' AND region.r_name = 'IXTPA' AND region.r_comment = 'ZSTQF' GROUP BY region.r_regionkey ORDER BY region.r_regionkey

@@ -1,1 +1,0 @@
-SELECT partsupp.ps_comment, SUM(partsupp.ps_availqty) AS sum_ps_availqty FROM partsupp WHERE partsupp.ps_availqty > 577 AND partsupp.ps_suppkey > 711 AND partsupp.ps_availqty BETWEEN 530 AND 590 AND partsupp.ps_partkey > 332 AND partsupp.ps_availqty BETWEEN 419 AND 878 GROUP BY partsupp.ps_comment HAVING COUNT(*) > 819 ORDER BY partsupp.ps_comment

@@ -1,1 +1,0 @@
-SELECT part.p_container, part.p_partkey, part.p_retailprice FROM part WHERE part.p_name = 'VALUE_1' LIMIT 10

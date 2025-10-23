@@ -1,1 +1,0 @@
-SELECT lineitem.l_shipmode, lineitem.l_linestatus, SUM(lineitem.l_partkey) AS sum_lineitem_l_partkey, STDDEV(lineitem.l_linenumber) AS stddev_lineitem_l_linenumber, VARIANCE(lineitem.l_suppkey) AS variance_lineitem_l_suppkey FROM lineitem WHERE lineitem.l_returnflag LIKE '%C' GROUP BY lineitem.l_shipmode, lineitem.l_linestatus ORDER BY lineitem.l_shipmode, lineitem.l_linestatus

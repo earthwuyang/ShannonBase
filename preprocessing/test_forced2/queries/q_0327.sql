@@ -1,1 +1,0 @@
-SELECT customer.c_phone, COUNT(customer.c_custkey) AS count_c_custkey FROM customer WHERE customer.c_name = 'RWRPM' GROUP BY customer.c_phone

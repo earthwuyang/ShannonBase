@@ -1,1 +1,0 @@
-SELECT lineitem.l_receiptdate, MAX(lineitem.l_suppkey) AS max_l_suppkey FROM lineitem WHERE lineitem.l_orderkey = 781 AND lineitem.l_returnflag = 'OYFHH' GROUP BY lineitem.l_receiptdate HAVING COUNT(*) > 670 ORDER BY lineitem.l_receiptdate

@@ -1,1 +1,0 @@
-SELECT customer.c_nationkey, customer.c_phone, customer.c_custkey FROM customer WHERE customer.c_nationkey = 236 LIMIT 10

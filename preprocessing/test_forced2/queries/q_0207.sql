@@ -1,1 +1,0 @@
-SELECT orders.o_orderkey, orders.o_orderstatus, SUM(orders.o_custkey) OVER (PARTITION BY orders.o_clerk ORDER BY orders.o_orderdate) AS window_result FROM orders WHERE orders.o_orderpriority LIKE '%B%' LIMIT 100

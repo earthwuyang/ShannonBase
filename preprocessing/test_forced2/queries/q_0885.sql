@@ -1,1 +1,0 @@
-SELECT part.p_partkey, MIN(part.p_size) AS min_p_size, SUM(part.p_size) AS sum_p_size, AVG(part.p_partkey) AS avg_p_partkey FROM part WHERE part.p_brand = 'BMQCQ' AND part.p_mfgr LIKE '%C' AND part.p_partkey BETWEEN 155 AND 763 AND part.p_type LIKE 'A%' GROUP BY part.p_partkey ORDER BY part.p_partkey

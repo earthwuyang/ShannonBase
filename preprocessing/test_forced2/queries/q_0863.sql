@@ -1,1 +1,0 @@
-SELECT lineitem.l_shipdate, lineitem.l_comment, lineitem.l_linenumber FROM lineitem WHERE lineitem.l_comment = 'VALUE_1' LIMIT 10

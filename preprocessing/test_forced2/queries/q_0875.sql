@@ -1,1 +1,0 @@
-SELECT supplier.s_address, supplier.s_acctbal, AVG(supplier.s_suppkey) OVER (PARTITION BY supplier.s_suppkey ORDER BY supplier.s_comment) AS window_result FROM supplier WHERE supplier.s_phone LIKE 'A%' LIMIT 100

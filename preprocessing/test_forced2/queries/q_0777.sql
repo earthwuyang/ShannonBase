@@ -1,1 +1,0 @@
-SELECT customer.c_custkey, MAX(customer.c_nationkey) AS max_c_nationkey, MAX(customer.c_custkey) AS max_c_custkey, SUM(customer.c_custkey) AS sum_c_custkey FROM customer WHERE customer.c_name = 'XITCB' AND customer.c_mktsegment = 'AAKOS' AND customer.c_comment LIKE '%C' AND customer.c_nationkey < 327 GROUP BY customer.c_custkey ORDER BY customer.c_custkey

@@ -1,1 +1,0 @@
-SELECT orders.o_orderstatus, orders.o_orderdate, orders.o_custkey FROM orders WHERE orders.o_orderpriority = 'VALUE_1' LIMIT 10

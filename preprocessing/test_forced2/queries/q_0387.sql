@@ -1,1 +1,0 @@
-SELECT customer.c_name, SUM(customer.c_nationkey) AS sum_customer_c_nationkey, VARIANCE(customer.c_nationkey) AS variance_customer_c_nationkey FROM customer WHERE customer.c_address = 'DMYTP' GROUP BY customer.c_name ORDER BY customer.c_name

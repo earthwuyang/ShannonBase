@@ -1,1 +1,0 @@
-SELECT orders.o_orderdate, AVG(orders.o_orderkey) AS avg_o_orderkey, MAX(orders.o_shippriority) AS max_o_shippriority, MAX(orders.o_shippriority) AS max_o_shippriority FROM orders WHERE orders.o_custkey BETWEEN 463 AND 689 AND orders.o_clerk = 'FFCCK' AND orders.o_orderpriority = 'CUGPT' AND orders.o_custkey < 232 GROUP BY orders.o_orderdate ORDER BY orders.o_orderdate

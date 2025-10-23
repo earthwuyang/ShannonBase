@@ -1,1 +1,0 @@
-SELECT orders.o_totalprice, COUNT(orders.o_custkey) AS count_o_custkey, MIN(orders.o_shippriority) AS min_o_shippriority FROM orders WHERE orders.o_shippriority > 106 AND orders.o_comment = 'UMIBZ' AND orders.o_comment = 'BCHWV' AND orders.o_orderstatus LIKE '%B%' GROUP BY orders.o_totalprice ORDER BY orders.o_totalprice

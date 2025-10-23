@@ -1,1 +1,0 @@
-SELECT part.p_comment, SUM(part.p_partkey) AS sum_p_partkey FROM part WHERE part.p_mfgr LIKE '%C' AND part.p_comment LIKE '%C' AND part.p_brand LIKE '%C' GROUP BY part.p_comment

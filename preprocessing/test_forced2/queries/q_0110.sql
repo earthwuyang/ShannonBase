@@ -1,1 +1,0 @@
-SELECT part.p_partkey, part.p_name, part.p_comment FROM part WHERE part.p_mfgr = 'VALUE_1' LIMIT 10

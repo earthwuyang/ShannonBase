@@ -1,1 +1,0 @@
-SELECT partsupp.ps_comment, AVG(partsupp.ps_partkey) AS avg_partsupp_ps_partkey, STDDEV(partsupp.ps_partkey) AS stddev_partsupp_ps_partkey FROM partsupp WHERE partsupp.ps_availqty < 418 AND partsupp.ps_comment = 'YEFJA' AND partsupp.ps_comment LIKE '%B%' GROUP BY partsupp.ps_comment HAVING COUNT(*) > 7454 AND AVG(partsupp.ps_partkey) > 17383 ORDER BY partsupp.ps_comment

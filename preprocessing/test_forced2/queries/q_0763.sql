@@ -1,1 +1,0 @@
-SELECT lineitem.l_shipdate, MAX(lineitem.l_linenumber) AS max_l_linenumber FROM lineitem WHERE lineitem.l_shipmode LIKE '%C' AND lineitem.l_linestatus = 'IPZUB' GROUP BY lineitem.l_shipdate HAVING COUNT(*) > 705

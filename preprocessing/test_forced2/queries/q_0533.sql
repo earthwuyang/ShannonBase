@@ -1,1 +1,0 @@
-WITH cte AS (SELECT nation.n_regionkey, SUM(nation.n_regionkey) as total FROM nation GROUP BY nation.n_regionkey) SELECT * FROM cte CROSS JOIN lineitem LIMIT 1000

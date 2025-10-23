@@ -1,1 +1,0 @@
-SELECT lineitem.l_comment, MIN(lineitem.l_suppkey) AS min_l_suppkey FROM lineitem WHERE lineitem.l_linenumber = 516 GROUP BY lineitem.l_comment HAVING COUNT(*) > 350 ORDER BY lineitem.l_comment

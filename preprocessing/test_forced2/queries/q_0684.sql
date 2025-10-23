@@ -1,1 +1,0 @@
-SELECT region.r_name, AVG(region.r_regionkey) AS avg_r_regionkey, AVG(region.r_regionkey) AS avg_r_regionkey, COUNT(region.r_regionkey) AS count_r_regionkey FROM region WHERE region.r_name LIKE 'A%' AND region.r_comment = 'NOHAT' AND region.r_name = 'EORXO' GROUP BY region.r_name HAVING COUNT(*) > 185 ORDER BY region.r_name

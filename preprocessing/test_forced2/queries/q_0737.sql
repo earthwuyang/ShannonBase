@@ -1,1 +1,0 @@
-SELECT part.p_brand, part.p_retailprice, SUM(part.p_partkey) OVER (PARTITION BY part.p_name ORDER BY part.p_size) AS window_result FROM part WHERE part.p_comment LIKE 'A%' LIMIT 1000

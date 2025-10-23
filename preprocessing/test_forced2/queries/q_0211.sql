@@ -1,1 +1,0 @@
-SELECT part.p_name, COUNT(part.p_partkey) AS count_p_partkey, SUM(part.p_partkey) AS sum_p_partkey, COUNT(part.p_size) AS count_p_size FROM part WHERE part.p_comment LIKE '%C' AND part.p_type LIKE '%B%' AND part.p_size BETWEEN 327 AND 799 GROUP BY part.p_name HAVING COUNT(*) > 47 ORDER BY part.p_name

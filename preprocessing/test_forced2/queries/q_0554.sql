@@ -1,1 +1,0 @@
-SELECT supplier.s_address, SUM(supplier.s_suppkey) AS sum_s_suppkey FROM supplier WHERE supplier.s_address = 'IEDME' AND supplier.s_phone = 'MUPBF' AND supplier.s_nationkey = 437 GROUP BY supplier.s_address ORDER BY supplier.s_address

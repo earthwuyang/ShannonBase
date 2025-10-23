@@ -1,1 +1,0 @@
-SELECT lineitem.l_commitdate, VARIANCE(lineitem.l_quantity) AS variance_lineitem_l_quantity, MIN(lineitem.l_tax) AS min_lineitem_l_tax, MAX(lineitem.l_linenumber) AS max_lineitem_l_linenumber FROM lineitem WHERE lineitem.l_shipdate >= '2006-01-06' GROUP BY lineitem.l_commitdate HAVING COUNT(*) > 9111 AND MIN(lineitem.l_tax) > 14350 ORDER BY lineitem.l_commitdate

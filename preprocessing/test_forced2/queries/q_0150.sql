@@ -1,1 +1,0 @@
-SELECT customer.c_custkey, customer.c_address, ROW_NUMBER() OVER (PARTITION BY customer.c_mktsegment ORDER BY customer.c_mktsegment) AS window_result FROM customer LIMIT 100

@@ -1,1 +1,0 @@
-WITH cte AS (SELECT nation.n_name, nation.n_nationkey, nation.n_comment FROM nation) SELECT * FROM cte LIMIT 100

@@ -1,1 +1,0 @@
-SELECT orders.o_comment, orders.o_orderstatus, orders.o_orderkey FROM orders WHERE orders.o_orderdate = '2023-01-01' LIMIT 10

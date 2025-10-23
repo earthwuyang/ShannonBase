@@ -1,1 +1,0 @@
-WITH cte AS (SELECT region.r_name, SUM(region.r_regionkey) as total FROM region GROUP BY region.r_name) SELECT * FROM cte LIMIT 100

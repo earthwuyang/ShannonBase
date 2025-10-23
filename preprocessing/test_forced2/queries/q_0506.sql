@@ -1,1 +1,0 @@
-SELECT supplier.s_comment, supplier.s_address, supplier.s_nationkey FROM supplier WHERE supplier.s_suppkey = 473 LIMIT 10

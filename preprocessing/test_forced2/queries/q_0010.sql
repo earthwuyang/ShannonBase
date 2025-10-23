@@ -1,1 +1,0 @@
-SELECT part.p_brand, part.p_partkey, part.p_mfgr FROM part WHERE part.p_partkey = 222 LIMIT 10

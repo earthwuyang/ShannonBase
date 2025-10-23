@@ -1,1 +1,0 @@
-SELECT nation.n_regionkey, MIN(nation.n_nationkey) AS min_n_nationkey, SUM(nation.n_regionkey) AS sum_n_regionkey, COUNT(nation.n_nationkey) AS count_n_nationkey FROM nation WHERE nation.n_name = 'FBLXV' AND nation.n_nationkey BETWEEN 57 AND 862 AND nation.n_nationkey > 98 GROUP BY nation.n_regionkey HAVING COUNT(*) > 933 ORDER BY nation.n_regionkey

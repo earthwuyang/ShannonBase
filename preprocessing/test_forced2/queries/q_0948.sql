@@ -1,1 +1,0 @@
-SELECT customer.c_phone, SUM(customer.c_custkey) AS sum_c_custkey FROM customer WHERE customer.c_mktsegment LIKE '%C' AND customer.c_custkey = 917 AND customer.c_address LIKE 'A%' AND customer.c_mktsegment = 'KNDRQ' GROUP BY customer.c_phone HAVING COUNT(*) > 421

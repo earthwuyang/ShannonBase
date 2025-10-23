@@ -1,1 +1,0 @@
-SELECT lineitem.l_extendedprice, lineitem.l_extendedprice, AVG(lineitem.l_orderkey) OVER (PARTITION BY lineitem.l_commitdate ORDER BY lineitem.l_shipinstruct) AS window_result FROM lineitem LIMIT 100

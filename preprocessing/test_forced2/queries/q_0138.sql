@@ -1,1 +1,0 @@
-SELECT orders.o_orderdate, orders.o_orderstatus, RANK() OVER (PARTITION BY orders.o_orderkey ORDER BY orders.o_totalprice) AS window_result FROM orders WHERE orders.o_comment LIKE '%C' LIMIT 100

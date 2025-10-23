@@ -1,1 +1,0 @@
-SELECT * FROM orders WHERE orders.o_orderkey BETWEEN 8266 AND 8289 LIMIT 100

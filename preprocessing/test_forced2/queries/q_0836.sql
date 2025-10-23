@@ -1,1 +1,0 @@
-SELECT partsupp.ps_comment, partsupp.ps_supplycost, DENSE_RANK() OVER (PARTITION BY partsupp.ps_partkey ORDER BY partsupp.ps_availqty) AS window_result FROM partsupp LIMIT 1000

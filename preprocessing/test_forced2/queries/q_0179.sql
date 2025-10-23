@@ -1,1 +1,0 @@
-SELECT partsupp.ps_comment, AVG(partsupp.ps_suppkey) AS avg_partsupp_ps_suppkey, SUM(partsupp.ps_supplycost) AS sum_partsupp_ps_supplycost FROM partsupp WHERE partsupp.ps_suppkey > 49 AND partsupp.ps_comment = 'ZCHZG' GROUP BY partsupp.ps_comment HAVING COUNT(*) > 1764 AND SUM(partsupp.ps_supplycost) > 61756 ORDER BY partsupp.ps_comment

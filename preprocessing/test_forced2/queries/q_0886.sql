@@ -1,1 +1,0 @@
-SELECT lineitem.l_linestatus, lineitem.l_linenumber, lineitem.l_receiptdate FROM lineitem WHERE lineitem.l_receiptdate = '2023-01-01' LIMIT 10

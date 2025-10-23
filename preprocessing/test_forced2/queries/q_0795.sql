@@ -1,1 +1,0 @@
-SELECT orders.o_totalprice, orders.o_orderstatus, orders.o_shippriority FROM orders WHERE orders.o_orderstatus = 'VALUE_1' LIMIT 10

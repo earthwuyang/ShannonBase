@@ -1,1 +1,0 @@
-SELECT * FROM lineitem WHERE lineitem.l_suppkey BETWEEN 3862 AND 3934 LIMIT 100

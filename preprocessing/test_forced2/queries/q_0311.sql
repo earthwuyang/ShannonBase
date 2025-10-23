@@ -1,1 +1,0 @@
-SELECT orders.o_totalprice, orders.o_orderpriority, DENSE_RANK() OVER (PARTITION BY orders.o_comment ORDER BY orders.o_custkey) AS window_result FROM orders LIMIT 1000

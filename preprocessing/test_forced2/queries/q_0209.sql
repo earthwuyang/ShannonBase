@@ -1,1 +1,0 @@
-SELECT supplier.s_name, MAX(supplier.s_suppkey) AS max_s_suppkey, AVG(supplier.s_suppkey) AS avg_s_suppkey FROM supplier WHERE supplier.s_nationkey = 37 AND supplier.s_address LIKE '%C' AND supplier.s_suppkey > 830 GROUP BY supplier.s_name ORDER BY supplier.s_name

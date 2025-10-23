@@ -1,1 +1,0 @@
-SELECT region.r_comment, AVG(region.r_regionkey) AS avg_r_regionkey FROM region WHERE region.r_regionkey > 642 AND region.r_name = 'UCCMQ' AND region.r_name LIKE '%B%' GROUP BY region.r_comment HAVING COUNT(*) > 786 ORDER BY region.r_comment

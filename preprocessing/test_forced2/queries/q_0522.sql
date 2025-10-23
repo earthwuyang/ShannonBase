@@ -1,1 +1,0 @@
-SELECT supplier.s_comment, AVG(supplier.s_suppkey) AS avg_s_suppkey FROM supplier WHERE supplier.s_suppkey > 305 AND supplier.s_nationkey < 507 AND supplier.s_name = 'AYCUK' GROUP BY supplier.s_comment ORDER BY supplier.s_comment

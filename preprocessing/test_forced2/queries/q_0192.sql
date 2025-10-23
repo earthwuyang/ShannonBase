@@ -1,1 +1,0 @@
-SELECT supplier.s_name, SUM(supplier.s_nationkey) AS sum_s_nationkey, SUM(supplier.s_suppkey) AS sum_s_suppkey FROM supplier WHERE supplier.s_phone LIKE '%C' AND supplier.s_nationkey > 179 AND supplier.s_nationkey > 241 AND supplier.s_comment = 'VAUMC' GROUP BY supplier.s_name HAVING COUNT(*) > 61 ORDER BY supplier.s_name

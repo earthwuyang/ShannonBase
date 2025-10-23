@@ -1,1 +1,0 @@
-SELECT orders.o_totalprice, SUM(orders.o_shippriority) AS sum_o_shippriority, SUM(orders.o_shippriority) AS sum_o_shippriority, SUM(orders.o_shippriority) AS sum_o_shippriority FROM orders WHERE orders.o_orderdate >= '2014-04-09' AND orders.o_orderstatus LIKE 'A%' AND orders.o_orderpriority LIKE '%C' GROUP BY orders.o_totalprice HAVING COUNT(*) > 791 ORDER BY orders.o_totalprice

@@ -1,1 +1,0 @@
-SELECT supplier.s_phone, supplier.s_phone, RANK() OVER (PARTITION BY supplier.s_nationkey ORDER BY supplier.s_address) AS window_result FROM supplier LIMIT 1000

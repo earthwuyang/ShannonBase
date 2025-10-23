@@ -1,1 +1,0 @@
-SELECT lineitem.l_linestatus, lineitem.l_shipmode, lineitem.l_commitdate FROM lineitem WHERE lineitem.l_discount = 'VALUE_1' LIMIT 10

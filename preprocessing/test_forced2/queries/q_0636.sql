@@ -1,1 +1,0 @@
-SELECT partsupp.ps_supplycost, partsupp.ps_availqty, ROW_NUMBER() OVER (PARTITION BY partsupp.ps_comment ORDER BY partsupp.ps_comment) AS window_result FROM partsupp LIMIT 100

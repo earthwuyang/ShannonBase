@@ -1,1 +1,0 @@
-SELECT part.p_brand, AVG(part.p_partkey) AS avg_p_partkey FROM part WHERE part.p_size = 214 AND part.p_size > 493 GROUP BY part.p_brand

@@ -1,1 +1,0 @@
-SELECT lineitem.l_returnflag, MIN(lineitem.l_orderkey) AS min_l_orderkey FROM lineitem WHERE lineitem.l_linenumber > 205 AND lineitem.l_suppkey < 130 AND lineitem.l_orderkey = 5 AND lineitem.l_linestatus LIKE 'A%' GROUP BY lineitem.l_returnflag HAVING COUNT(*) > 684 ORDER BY lineitem.l_returnflag

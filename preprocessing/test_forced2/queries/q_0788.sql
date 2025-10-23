@@ -1,1 +1,0 @@
-SELECT region.r_comment, COUNT(region.r_regionkey) AS count_region_r_regionkey, COUNT(region.r_regionkey) AS count_region_r_regionkey, AVG(region.r_regionkey) AS avg_region_r_regionkey FROM region WHERE ((region.r_name LIKE '%B%') OR (region.r_regionkey < 566)) OR (region.r_name LIKE '%C') AND region.r_regionkey > 467 GROUP BY region.r_comment ORDER BY region.r_comment

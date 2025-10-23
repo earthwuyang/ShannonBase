@@ -1,1 +1,0 @@
-SELECT part.p_type, COUNT(part.p_size) AS count_p_size, COUNT(part.p_partkey) AS count_p_partkey FROM part WHERE part.p_partkey BETWEEN 768 AND 982 AND part.p_mfgr = 'IBZAV' AND part.p_size = 797 AND part.p_comment LIKE 'A%' GROUP BY part.p_type

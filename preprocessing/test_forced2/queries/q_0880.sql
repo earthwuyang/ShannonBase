@@ -1,1 +1,0 @@
-SELECT supplier.s_phone, MIN(supplier.s_nationkey) AS min_s_nationkey FROM supplier WHERE supplier.s_phone = 'VJZSY' AND supplier.s_comment LIKE '%C' AND supplier.s_comment = 'AFYYS' AND supplier.s_nationkey > 150 AND supplier.s_address LIKE '%C' GROUP BY supplier.s_phone ORDER BY supplier.s_phone

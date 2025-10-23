@@ -1,1 +1,0 @@
-SELECT nation.n_comment, COUNT(nation.n_regionkey) AS count_n_regionkey, AVG(nation.n_regionkey) AS avg_n_regionkey FROM nation WHERE nation.n_name = 'ZHLXA' AND nation.n_regionkey = 278 AND nation.n_nationkey < 11 GROUP BY nation.n_comment HAVING COUNT(*) > 638 ORDER BY nation.n_comment

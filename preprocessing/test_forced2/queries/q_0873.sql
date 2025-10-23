@@ -1,1 +1,0 @@
-SELECT customer.c_acctbal, customer.c_nationkey, customer.c_mktsegment FROM customer WHERE customer.c_custkey = 520 LIMIT 10

@@ -1,1 +1,0 @@
-SELECT nation.n_name, STDDEV(nation.n_regionkey) AS stddev_nation_n_regionkey, MAX(nation.n_nationkey) AS max_nation_n_nationkey FROM nation WHERE nation.n_regionkey > 799 AND nation.n_comment = 'ITDFZ' AND nation.n_name = 'YXNQT' AND nation.n_regionkey < 355 GROUP BY nation.n_name HAVING COUNT(*) > 5895 AND MAX(nation.n_nationkey) > 7592 ORDER BY nation.n_name

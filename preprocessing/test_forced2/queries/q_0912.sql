@@ -1,1 +1,0 @@
-SELECT lineitem.l_linenumber, lineitem.l_quantity, DENSE_RANK() OVER (PARTITION BY lineitem.l_orderkey ORDER BY lineitem.l_returnflag) AS window_result FROM lineitem LIMIT 1000

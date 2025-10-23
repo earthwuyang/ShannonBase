@@ -1,1 +1,0 @@
-SELECT * FROM lineitem WHERE lineitem.l_shipdate BETWEEN '2023-01-01' AND '2023-01-07' LIMIT 100

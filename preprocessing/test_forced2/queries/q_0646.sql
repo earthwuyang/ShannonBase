@@ -1,1 +1,0 @@
-SELECT supplier.s_address, supplier.s_comment, ROW_NUMBER() OVER (PARTITION BY supplier.s_phone ORDER BY supplier.s_phone) AS window_result FROM supplier WHERE supplier.s_suppkey BETWEEN 631 AND 635 LIMIT 100

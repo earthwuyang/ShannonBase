@@ -1,1 +1,0 @@
-SELECT part.p_size, MAX(part.p_size) AS max_p_size, AVG(part.p_size) AS avg_p_size, AVG(part.p_size) AS avg_p_size FROM part WHERE part.p_container LIKE 'A%' AND part.p_partkey > 478 AND part.p_name = 'BGHZR' GROUP BY part.p_size HAVING COUNT(*) > 89

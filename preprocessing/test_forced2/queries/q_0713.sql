@@ -1,1 +1,0 @@
-SELECT part.p_size, SUM(part.p_size) AS sum_p_size, SUM(part.p_size) AS sum_p_size FROM part WHERE part.p_mfgr LIKE '%C' AND part.p_size > 660 AND part.p_brand = 'BZHRF' AND part.p_partkey < 707 AND part.p_partkey > 357 GROUP BY part.p_size

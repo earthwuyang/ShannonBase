@@ -1,1 +1,0 @@
-SELECT lineitem.l_extendedprice, lineitem.l_suppkey, RANK() OVER (PARTITION BY lineitem.l_comment ORDER BY lineitem.l_discount) AS window_result FROM lineitem LIMIT 100

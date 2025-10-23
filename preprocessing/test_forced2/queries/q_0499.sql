@@ -1,1 +1,0 @@
-SELECT partsupp.ps_comment, COUNT(partsupp.ps_partkey) AS count_partsupp_ps_partkey, STDDEV(partsupp.ps_partkey) AS stddev_partsupp_ps_partkey, VARIANCE(partsupp.ps_suppkey) AS variance_partsupp_ps_suppkey FROM partsupp GROUP BY partsupp.ps_comment ORDER BY partsupp.ps_comment

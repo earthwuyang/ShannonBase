@@ -1,1 +1,0 @@
-SELECT supplier.s_suppkey, supplier.s_address, DENSE_RANK() OVER (PARTITION BY supplier.s_phone ORDER BY supplier.s_suppkey) AS window_result FROM supplier LIMIT 100

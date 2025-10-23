@@ -1,1 +1,0 @@
-SELECT partsupp.ps_supplycost, SUM(partsupp.ps_availqty) AS sum_ps_availqty FROM partsupp WHERE partsupp.ps_partkey > 940 AND partsupp.ps_partkey BETWEEN 624 AND 966 AND partsupp.ps_comment LIKE 'A%' AND partsupp.ps_availqty > 888 GROUP BY partsupp.ps_supplycost

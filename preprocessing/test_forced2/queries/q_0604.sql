@@ -1,1 +1,0 @@
-SELECT nation.n_regionkey, nation.n_name, SUM(nation.n_nationkey) OVER (PARTITION BY nation.n_comment ORDER BY nation.n_comment) AS window_result FROM nation WHERE nation.n_name LIKE 'A%' LIMIT 1000

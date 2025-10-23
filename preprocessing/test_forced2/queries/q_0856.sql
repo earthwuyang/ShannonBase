@@ -1,1 +1,0 @@
-SELECT lineitem.l_partkey, lineitem.l_suppkey, lineitem.l_quantity FROM lineitem WHERE lineitem.l_shipdate = '2023-01-01' LIMIT 10

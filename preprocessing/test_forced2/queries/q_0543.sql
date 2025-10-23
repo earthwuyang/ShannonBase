@@ -1,1 +1,0 @@
-SELECT part.p_container, MAX(part.p_size) AS max_p_size, AVG(part.p_partkey) AS avg_p_partkey FROM part WHERE part.p_brand = 'OGGVU' AND part.p_mfgr LIKE '%C' AND part.p_partkey < 585 AND part.p_mfgr = 'IRPTX' GROUP BY part.p_container HAVING COUNT(*) > 229 ORDER BY part.p_container

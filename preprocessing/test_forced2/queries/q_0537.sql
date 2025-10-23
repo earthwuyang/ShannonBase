@@ -1,1 +1,0 @@
-SELECT customer.c_name, SUM(customer.c_nationkey) AS sum_customer_c_nationkey, MIN(customer.c_custkey) AS min_customer_c_custkey FROM customer WHERE ((customer.c_phone LIKE '%C') OR (customer.c_comment = 'FMHFA')) OR (customer.c_comment LIKE 'A%') GROUP BY customer.c_name HAVING COUNT(*) > 3066 AND MIN(customer.c_custkey) > 6628 ORDER BY customer.c_name

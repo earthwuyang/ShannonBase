@@ -1,1 +1,0 @@
-SELECT lineitem.l_shipinstruct, MAX(lineitem.l_orderkey) AS max_l_orderkey FROM lineitem WHERE lineitem.l_receiptdate >= '2002-08-25' AND lineitem.l_shipdate >= '1990-01-10' AND lineitem.l_shipinstruct LIKE 'A%' GROUP BY lineitem.l_shipinstruct

@@ -1,1 +1,0 @@
-SELECT lineitem.l_shipmode, COUNT(lineitem.l_orderkey) AS count_l_orderkey, COUNT(lineitem.l_partkey) AS count_l_partkey, AVG(lineitem.l_linenumber) AS avg_l_linenumber FROM lineitem WHERE lineitem.l_suppkey BETWEEN 221 AND 486 AND lineitem.l_shipdate >= '2004-03-22' AND lineitem.l_comment = 'VGNNV' GROUP BY lineitem.l_shipmode HAVING COUNT(*) > 798 ORDER BY lineitem.l_shipmode

@@ -1,1 +1,0 @@
-SELECT region.r_comment, region.r_regionkey, RANK() OVER (PARTITION BY region.r_name ORDER BY region.r_comment) AS window_result FROM region WHERE region.r_comment LIKE '%B%' LIMIT 100

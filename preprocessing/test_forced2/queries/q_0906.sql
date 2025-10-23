@@ -1,1 +1,0 @@
-SELECT customer.c_nationkey, customer.c_acctbal, customer.c_comment FROM customer WHERE customer.c_acctbal = 'VALUE_1' LIMIT 10

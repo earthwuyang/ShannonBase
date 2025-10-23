@@ -1,1 +1,0 @@
-SELECT orders.o_shippriority, orders.o_totalprice, orders.o_custkey FROM orders WHERE orders.o_clerk = 'VALUE_1' LIMIT 10

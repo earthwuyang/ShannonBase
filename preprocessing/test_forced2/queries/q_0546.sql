@@ -1,1 +1,0 @@
-SELECT part.p_mfgr, part.p_container, part.p_type, VARIANCE(part.p_retailprice) AS variance_part_p_retailprice, AVG(part.p_retailprice) AS avg_part_p_retailprice FROM part WHERE part.p_name LIKE '%B%' GROUP BY part.p_mfgr, part.p_container, part.p_type ORDER BY part.p_mfgr, part.p_type

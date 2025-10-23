@@ -1,1 +1,0 @@
-SELECT customer.c_custkey, customer.c_acctbal, ROW_NUMBER() OVER (PARTITION BY customer.c_name ORDER BY customer.c_custkey) AS window_result FROM customer LIMIT 100

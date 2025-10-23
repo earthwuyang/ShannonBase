@@ -1,1 +1,0 @@
-WITH cte AS (SELECT orders.o_orderstatus, SUM(orders.o_shippriority) as total FROM orders GROUP BY orders.o_orderstatus) SELECT * FROM cte CROSS JOIN customer LIMIT 1000

@@ -1,1 +1,0 @@
-SELECT nation.n_comment, AVG(nation.n_regionkey) AS avg_n_regionkey, SUM(nation.n_regionkey) AS sum_n_regionkey FROM nation WHERE nation.n_comment LIKE '%B%' AND nation.n_regionkey BETWEEN 193 AND 620 AND nation.n_name = 'AQHZR' GROUP BY nation.n_comment ORDER BY nation.n_comment

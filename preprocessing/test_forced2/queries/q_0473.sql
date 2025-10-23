@@ -1,1 +1,0 @@
-SELECT supplier.s_address, SUM(supplier.s_acctbal) AS sum_supplier_s_acctbal, COUNT(supplier.s_suppkey) AS count_supplier_s_suppkey, COUNT(supplier.s_acctbal) AS count_supplier_s_acctbal, VARIANCE(supplier.s_acctbal) AS variance_supplier_s_acctbal FROM supplier WHERE supplier.s_name LIKE 'A%' GROUP BY supplier.s_address ORDER BY supplier.s_address

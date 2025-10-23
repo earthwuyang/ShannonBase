@@ -1,1 +1,0 @@
-SELECT part.p_brand, SUM(part.p_size) AS sum_p_size, MIN(part.p_partkey) AS min_p_partkey FROM part WHERE part.p_type = 'ZUADZ' AND part.p_partkey BETWEEN 725 AND 839 AND part.p_name = 'KLDTZ' GROUP BY part.p_brand ORDER BY part.p_brand

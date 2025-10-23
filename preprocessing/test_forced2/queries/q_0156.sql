@@ -1,1 +1,0 @@
-SELECT partsupp.ps_partkey, partsupp.ps_supplycost, RANK() OVER (PARTITION BY partsupp.ps_comment ORDER BY partsupp.ps_suppkey) AS window_result FROM partsupp LIMIT 1000

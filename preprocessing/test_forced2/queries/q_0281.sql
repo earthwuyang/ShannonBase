@@ -1,1 +1,0 @@
-SELECT part.p_comment, part.p_comment, AVG(part.p_partkey) OVER (PARTITION BY part.p_retailprice ORDER BY part.p_name) AS window_result FROM part WHERE part.p_size > 938 LIMIT 1000

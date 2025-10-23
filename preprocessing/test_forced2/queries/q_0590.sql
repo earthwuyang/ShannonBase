@@ -1,1 +1,0 @@
-SELECT customer.c_mktsegment, COUNT(customer.c_nationkey) AS count_c_nationkey, SUM(customer.c_custkey) AS sum_c_custkey FROM customer WHERE customer.c_name = 'SXYZA' GROUP BY customer.c_mktsegment ORDER BY customer.c_mktsegment

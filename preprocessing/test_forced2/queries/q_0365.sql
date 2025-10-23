@@ -1,1 +1,0 @@
-SELECT customer.c_comment, AVG(customer.c_nationkey) AS avg_customer_c_nationkey, STDDEV(customer.c_nationkey) AS stddev_customer_c_nationkey, VARIANCE(customer.c_acctbal) AS variance_customer_c_acctbal FROM customer WHERE customer.c_phone LIKE '%C' AND customer.c_mktsegment LIKE '%B%' GROUP BY customer.c_comment ORDER BY customer.c_comment

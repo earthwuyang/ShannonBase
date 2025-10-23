@@ -1,1 +1,0 @@
-SELECT lineitem.l_shipinstruct, SUM(lineitem.l_suppkey) AS sum_l_suppkey FROM lineitem WHERE lineitem.l_returnflag LIKE '%C' AND lineitem.l_shipmode LIKE '%B%' GROUP BY lineitem.l_shipinstruct HAVING COUNT(*) > 60 ORDER BY lineitem.l_shipinstruct

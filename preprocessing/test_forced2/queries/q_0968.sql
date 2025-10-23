@@ -1,1 +1,0 @@
-WITH cte AS (SELECT lineitem.l_comment, SUM(lineitem.l_partkey) as total FROM lineitem GROUP BY lineitem.l_comment) SELECT * FROM cte LIMIT 100

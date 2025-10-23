@@ -1,1 +1,0 @@
-SELECT lineitem.l_linenumber, SUM(lineitem.l_suppkey) AS sum_l_suppkey, MAX(lineitem.l_partkey) AS max_l_partkey, AVG(lineitem.l_linenumber) AS avg_l_linenumber FROM lineitem GROUP BY lineitem.l_linenumber HAVING COUNT(*) > 673 ORDER BY lineitem.l_linenumber
