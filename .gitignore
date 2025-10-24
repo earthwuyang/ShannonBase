@@ -72,6 +72,7 @@ preprocessing/cross_db_benchmark/datasets/*/*.tbl
 training_workloads_unsupported/
 preprocessing/test_collecction_final/
 preprocessing/test_connection/
+training_data/
 
 db/data/
 db/*.log

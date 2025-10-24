@@ -1,1 +1,0 @@
-SELECT On_Time_On_Time_Performance_2016_1.Diverted, On_Time_On_Time_Performance_2016_1.WeatherDelay, On_Time_On_Time_Performance_2016_1.OriginStateFips FROM On_Time_On_Time_Performance_2016_1 WHERE On_Time_On_Time_Performance_2016_1.Div1LongestGTime IS NOT NULL AND On_Time_On_Time_Performance_2016_1.Div1AirportID IS NOT NULL AND On_Time_On_Time_Performance_2016_1.DayOfWeek > 0
