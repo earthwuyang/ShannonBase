@@ -1,1 +1,0 @@
-SELECT part.p_container, part.p_partkey, part.p_type FROM part WHERE part.p_comment = 'VFYMD' UNION ALL SELECT supplier.s_address, supplier.s_comment, supplier.s_suppkey FROM supplier LIMIT 100

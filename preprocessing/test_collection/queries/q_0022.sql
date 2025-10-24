@@ -1,1 +1,0 @@
-SELECT nation.n_nationkey, MAX(nation.n_nationkey) AS max_n_nationkey, AVG(nation.n_nationkey) AS avg_n_nationkey, MAX(nation.n_nationkey) AS max_n_nationkey FROM nation WHERE nation.n_name LIKE '%C' AND nation.n_comment = 'LSSEP' AND nation.n_nationkey BETWEEN 1 AND 140 GROUP BY nation.n_nationkey ORDER BY nation.n_nationkey

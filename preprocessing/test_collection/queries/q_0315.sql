@@ -1,1 +1,0 @@
-SELECT lineitem.l_discount, lineitem.l_returnflag, lineitem.l_tax FROM lineitem UNION ALL SELECT supplier.s_nationkey, supplier.s_acctbal, supplier.s_address FROM supplier WHERE supplier.s_name LIKE '%B%' LIMIT 100

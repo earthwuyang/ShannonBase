@@ -4,7 +4,7 @@
 #include <cstdio>
 #include "sql/sql_class.h"
 #include "sql/sql_executor.h"
-#include "sql/opt_range.h"
+#include "sql/range_optimizer/range_optimizer.h"
 #include "sql/handler.h"
 #include "sql/item_subselect.h"
 
@@ -66,7 +66,7 @@ bool FeatureExtractor::ExtractSelectedFeatures(const JOIN *join,
       feat_item.add("value", selected_features[i]);
       static std::vector<std::string> feature_names = GetFeatureNames();
       if (feature_indices[i] < static_cast<int>(feature_names.size())) {
-        feat_item.add("name", feature_names[feature_indices[i]]);
+        feat_item.add_alnum("name", feature_names[feature_indices[i]].c_str());
       }
     }
   }
@@ -269,7 +269,7 @@ void FeatureExtractor::ExtractAggregationFeatures(const JOIN *join,
   bool has_groupby = !join->group_list.empty();
   bool has_distinct = join->select_distinct;
   bool has_having = (join->having_cond != nullptr);
-  int sum_func_count = join->sum_funcs ? join->sum_funcs->size() : 0;
+  int sum_func_count = join->tmp_table_param.sum_func_count;
   bool has_windows = join->m_windows.elements > 0;
   
   // Store aggregation features
@@ -300,7 +300,7 @@ void FeatureExtractor::ExtractOrderingFeatures(const JOIN *join,
   features[idx++] = static_cast<float>(LogTransform(limit_value));     // 33
   features[idx++] = simple_order ? 1.0f : 0.0f;                        // 34
   features[idx++] = simple_group ? 1.0f : 0.0f;                        // 35
-  features[idx++] = join->need_tmp ? 1.0f : 0.0f;                      // 36
+  features[idx++] = join->need_tmp_before_win ? 1.0f : 0.0f;           // 36
   features[idx++] = join->skip_sort_order ? 1.0f : 0.0f;               // 37
 }
 

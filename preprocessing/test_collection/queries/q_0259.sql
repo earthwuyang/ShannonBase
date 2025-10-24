@@ -1,1 +1,0 @@
-SELECT part.p_name, MIN(part.p_size) AS min_part_p_size, VARIANCE(part.p_partkey) AS variance_part_p_partkey, MAX(part.p_partkey) AS max_part_p_partkey, COUNT(part.p_retailprice) AS count_part_p_retailprice FROM part WHERE part.p_partkey > 717 AND part.p_container = 'GVCKD' AND part.p_partkey BETWEEN 11 AND 304 AND part.p_mfgr LIKE '%B%' GROUP BY part.p_name ORDER BY part.p_name

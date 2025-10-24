@@ -1,1 +1,0 @@
-SELECT partsupp.ps_supplycost, partsupp.ps_comment, DENSE_RANK() OVER (PARTITION BY partsupp.ps_availqty ORDER BY partsupp.ps_supplycost) AS window_result FROM partsupp WHERE partsupp.ps_suppkey > 492 LIMIT 100

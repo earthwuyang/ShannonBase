@@ -1,1 +1,0 @@
-SELECT orders.o_shippriority, orders.o_orderstatus, orders.o_orderpriority FROM orders UNION ALL SELECT lineitem.l_linestatus, lineitem.l_orderkey, lineitem.l_linenumber FROM lineitem WHERE lineitem.l_suppkey = 186 LIMIT 100

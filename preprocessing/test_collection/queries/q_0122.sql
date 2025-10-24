@@ -1,1 +1,0 @@
-SELECT lineitem.l_quantity, lineitem.l_linestatus, AVG(lineitem.l_linenumber) OVER (PARTITION BY lineitem.l_shipmode ORDER BY lineitem.l_suppkey) AS window_result FROM lineitem WHERE lineitem.l_shipdate >= '2023-05-09' LIMIT 1000

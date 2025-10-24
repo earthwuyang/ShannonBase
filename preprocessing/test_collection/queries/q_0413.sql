@@ -1,1 +1,0 @@
-SELECT partsupp.ps_comment, STDDEV(partsupp.ps_partkey) AS stddev_partsupp_ps_partkey, STDDEV(partsupp.ps_partkey) AS stddev_partsupp_ps_partkey, STDDEV(partsupp.ps_partkey) AS stddev_partsupp_ps_partkey FROM partsupp WHERE partsupp.ps_suppkey = 751 AND partsupp.ps_suppkey < 203 GROUP BY partsupp.ps_comment ORDER BY partsupp.ps_comment

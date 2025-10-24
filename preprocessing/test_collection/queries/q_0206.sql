@@ -1,1 +1,0 @@
-SELECT * FROM supplier WHERE supplier.s_name IN (SELECT customer.c_comment FROM customer) LIMIT 100

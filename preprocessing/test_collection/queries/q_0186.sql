@@ -1,1 +1,0 @@
-SELECT nation.n_comment, nation.n_regionkey, nation.n_nationkey FROM nation WHERE nation.n_regionkey > 42 UNION ALL SELECT supplier.s_phone, supplier.s_suppkey, supplier.s_acctbal FROM supplier LIMIT 100

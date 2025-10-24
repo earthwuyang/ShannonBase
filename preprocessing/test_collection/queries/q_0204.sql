@@ -1,1 +1,0 @@
-SELECT * FROM supplier WHERE supplier.s_suppkey BETWEEN 646 AND 673 LIMIT 100

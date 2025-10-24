@@ -1,1 +1,0 @@
-SELECT region.r_name, AVG(region.r_regionkey) AS avg_region_r_regionkey, VARIANCE(region.r_regionkey) AS variance_region_r_regionkey FROM region WHERE (region.r_regionkey < 858 AND region.r_regionkey BETWEEN 342 AND 484) OR (region.r_name LIKE '%C') GROUP BY region.r_name HAVING COUNT(*) > 3601 AND VARIANCE(region.r_regionkey) > 48322 ORDER BY region.r_name

@@ -1,1 +1,0 @@
-SELECT orders.o_orderstatus, orders.o_orderkey, DENSE_RANK() OVER (PARTITION BY orders.o_totalprice ORDER BY orders.o_orderdate) AS window_result FROM orders LIMIT 100

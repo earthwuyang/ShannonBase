@@ -1,1 +1,0 @@
-SELECT customer.c_phone, SUM(customer.c_custkey) AS sum_c_custkey FROM customer WHERE customer.c_mktsegment LIKE '%C' GROUP BY customer.c_phone ORDER BY customer.c_phone

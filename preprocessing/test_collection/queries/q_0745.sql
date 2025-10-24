@@ -1,1 +1,0 @@
-SELECT part.p_container, MAX(part.p_size) AS max_p_size, SUM(part.p_partkey) AS sum_p_partkey FROM part WHERE part.p_mfgr = 'RKITD' AND part.p_mfgr LIKE '%B%' AND part.p_container = 'FAHBV' AND part.p_mfgr LIKE '%C' GROUP BY part.p_container ORDER BY part.p_container

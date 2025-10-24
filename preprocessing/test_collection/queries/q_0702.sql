@@ -1,1 +1,0 @@
-SELECT supplier.s_comment, MAX(supplier.s_suppkey) AS max_s_suppkey FROM supplier WHERE supplier.s_comment = 'BFDIF' AND supplier.s_phone = 'WJYJS' AND supplier.s_phone = 'RGNZU' AND supplier.s_name = 'IJSHE' GROUP BY supplier.s_comment HAVING COUNT(*) > 242

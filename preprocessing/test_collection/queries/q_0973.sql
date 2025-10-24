@@ -1,1 +1,0 @@
-SELECT * FROM supplier WHERE supplier.s_nationkey BETWEEN 6909 AND 6926 LIMIT 100

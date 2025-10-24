@@ -1,1 +1,0 @@
-SELECT orders.o_orderpriority, orders.o_orderkey, ROW_NUMBER() OVER (PARTITION BY orders.o_orderpriority ORDER BY orders.o_clerk) AS window_result FROM orders WHERE orders.o_orderpriority LIKE '%C' LIMIT 100

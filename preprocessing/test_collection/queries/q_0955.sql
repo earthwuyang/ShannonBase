@@ -1,1 +1,0 @@
-SELECT region.r_comment, region.r_regionkey, region.r_name FROM region WHERE region.r_regionkey = 678 LIMIT 10

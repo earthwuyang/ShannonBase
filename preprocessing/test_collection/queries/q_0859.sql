@@ -1,1 +1,0 @@
-SELECT region.r_comment, region.r_name, MAX(region.r_regionkey) AS max_region_r_regionkey, AVG(region.r_regionkey) AS avg_region_r_regionkey FROM region WHERE (region.r_name LIKE '%C') OR (region.r_comment = 'WSIKF') AND region.r_comment LIKE '%B%' GROUP BY region.r_comment, region.r_name ORDER BY region.r_comment, region.r_name

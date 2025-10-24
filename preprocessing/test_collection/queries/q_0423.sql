@@ -1,1 +1,0 @@
-SELECT * FROM orders WHERE orders.o_orderkey BETWEEN 498 AND 568 LIMIT 100

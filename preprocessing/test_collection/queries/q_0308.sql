@@ -1,1 +1,0 @@
-SELECT partsupp.ps_supplycost, MIN(partsupp.ps_partkey) AS min_ps_partkey, COUNT(partsupp.ps_suppkey) AS count_ps_suppkey, SUM(partsupp.ps_suppkey) AS sum_ps_suppkey FROM partsupp WHERE partsupp.ps_availqty < 122 AND partsupp.ps_comment LIKE '%B%' AND partsupp.ps_comment LIKE '%B%' GROUP BY partsupp.ps_supplycost HAVING COUNT(*) > 419 ORDER BY partsupp.ps_supplycost

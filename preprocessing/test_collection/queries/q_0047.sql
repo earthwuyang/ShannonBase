@@ -1,1 +1,0 @@
-SELECT * FROM region WHERE region.r_regionkey BETWEEN 3540 AND 3622 LIMIT 100

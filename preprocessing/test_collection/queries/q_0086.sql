@@ -1,1 +1,0 @@
-WITH cte AS (SELECT supplier.s_acctbal, supplier.s_suppkey, supplier.s_nationkey FROM supplier) SELECT * FROM cte LIMIT 100

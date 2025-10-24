@@ -1,0 +1,43 @@
+{
+  "total_queries": 10000,
+  "database": "Credit",
+  "categories": {
+    "TP": 5000,
+    "AP": 5000
+  },
+  "category_percentages": {
+    "TP": 50.0,
+    "AP": 50.0
+  },
+  "query_types": {
+    "tp_range_scan": 1501,
+    "ap_complex_join": 1700,
+    "tp_point_lookup": 1993,
+    "ap_window": 999,
+    "ap_aggregation": 1788,
+    "ap_cte_recursive": 513,
+    "tp_simple_filter": 1506
+  },
+  "query_type_percentages": {
+    "tp_range_scan": 15.010000000000002,
+    "ap_complex_join": 17.0,
+    "tp_point_lookup": 19.93,
+    "ap_window": 9.99,
+    "ap_aggregation": 17.88,
+    "ap_cte_recursive": 5.13,
+    "tp_simple_filter": 15.06
+  },
+  "category_breakdown": {
+    "TP": {
+      "tp_range_scan": 1501,
+      "tp_point_lookup": 1993,
+      "tp_simple_filter": 1506
+    },
+    "AP": {
+      "ap_complex_join": 1700,
+      "ap_window": 999,
+      "ap_aggregation": 1788,
+      "ap_cte_recursive": 513
+    }
+  }
+}

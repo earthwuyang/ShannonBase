@@ -1,1 +1,0 @@
-WITH cte AS (SELECT customer.c_acctbal, customer.c_custkey, customer.c_address FROM customer) SELECT * FROM cte CROSS JOIN lineitem LIMIT 1000

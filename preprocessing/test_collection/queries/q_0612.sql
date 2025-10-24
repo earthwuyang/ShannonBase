@@ -1,1 +1,0 @@
-SELECT * FROM supplier WHERE supplier.s_name IN (SELECT region.r_comment FROM region WHERE region.r_comment = 'TGKNN') LIMIT 100

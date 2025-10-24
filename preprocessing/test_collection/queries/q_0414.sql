@@ -1,1 +1,0 @@
-SELECT partsupp.ps_comment, AVG(partsupp.ps_availqty) AS avg_partsupp_ps_availqty, SUM(partsupp.ps_partkey) AS sum_partsupp_ps_partkey FROM partsupp GROUP BY partsupp.ps_comment HAVING COUNT(*) > 5277 AND SUM(partsupp.ps_partkey) > 7173 ORDER BY partsupp.ps_comment

@@ -1,1 +1,0 @@
-SELECT partsupp.ps_availqty, MIN(partsupp.ps_suppkey) AS min_ps_suppkey, MAX(partsupp.ps_partkey) AS max_ps_partkey, COUNT(partsupp.ps_availqty) AS count_ps_availqty FROM partsupp WHERE partsupp.ps_comment = 'NMSAD' AND partsupp.ps_suppkey BETWEEN 659 AND 900 AND partsupp.ps_partkey = 647 AND partsupp.ps_partkey = 237 GROUP BY partsupp.ps_availqty

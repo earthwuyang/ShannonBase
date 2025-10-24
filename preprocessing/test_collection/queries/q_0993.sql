@@ -1,1 +1,0 @@
-SELECT nation.n_name, SUM(nation.n_regionkey) AS sum_nation_n_regionkey, AVG(nation.n_nationkey) AS avg_nation_n_nationkey, SUM(nation.n_nationkey) AS sum_nation_n_nationkey FROM nation WHERE nation.n_comment = 'MHWJH' AND nation.n_regionkey > 484 GROUP BY nation.n_name HAVING COUNT(*) > 2158 AND SUM(nation.n_regionkey) > 32138 ORDER BY nation.n_name

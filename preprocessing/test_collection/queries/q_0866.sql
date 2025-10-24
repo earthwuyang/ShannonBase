@@ -1,1 +1,0 @@
-SELECT orders.o_custkey, orders.o_comment, AVG(orders.o_custkey) OVER (PARTITION BY orders.o_shippriority ORDER BY orders.o_comment) AS window_result FROM orders WHERE orders.o_custkey > 614 LIMIT 1000

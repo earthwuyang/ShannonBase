@@ -1,1 +1,0 @@
-WITH cte AS (SELECT part.p_container, SUM(part.p_size) as total FROM part GROUP BY part.p_container) SELECT * FROM cte CROSS JOIN orders LIMIT 1000

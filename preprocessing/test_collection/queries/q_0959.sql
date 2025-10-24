@@ -1,1 +1,0 @@
-SELECT region.r_name, MAX(region.r_regionkey) AS max_r_regionkey, MIN(region.r_regionkey) AS min_r_regionkey, COUNT(region.r_regionkey) AS count_r_regionkey FROM region WHERE region.r_name LIKE '%B%' AND region.r_name LIKE '%B%' AND region.r_regionkey = 378 AND region.r_name LIKE 'A%' AND region.r_comment LIKE '%B%' GROUP BY region.r_name

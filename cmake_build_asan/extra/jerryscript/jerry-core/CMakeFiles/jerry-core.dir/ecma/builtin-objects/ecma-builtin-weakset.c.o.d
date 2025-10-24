@@ -1,0 +1,62 @@
+extra/jerryscript/jerry-core/CMakeFiles/jerry-core.dir/ecma/builtin-objects/ecma-builtin-weakset.c.o: \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/ecma/builtin-objects/ecma-builtin-weakset.c \
+ /usr/include/stdc-predef.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/ecma/builtin-objects/ecma-builtins.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/ecma/base/ecma-globals.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/ecma/base/ecma-errors.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/lit/lit-globals.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/jrt/jrt.h \
+ /usr/include/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+ /usr/include/features.h /usr/include/features-time64.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/bits/timesize.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/long-double.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+ /usr/include/x86_64-linux-gnu/bits/time64.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/string.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/include/jerryscript-core.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/include/jerryscript-types.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/include/jerryscript-compiler.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/include/jerryscript-port.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/config.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/jrt/jrt-types.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/ecma/base/ecma-error-messages.inc.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/jmem/jmem.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/lit/lit-magic-strings.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/lit/lit-globals.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/lit/lit-magic-strings.inc.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/ecma/builtin-objects/ecma-builtins.inc.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/ecma/operations/ecma-container-object.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/ecma/builtin-objects/ecma-builtins.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/ecma/operations/ecma-exceptions.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/ecma/builtin-objects/ecma-builtins-internal.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/ecma/builtin-objects/ecma-builtin-internal-routines-template.inc.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/ecma/operations/ecma-objects.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/ecma/operations/ecma-conversion.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/ecma/base/ecma-helpers.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/ecma/base/ecma-globals.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/lit/lit-strings.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/ecma/builtin-objects/ecma-builtin-weakset.inc.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/ecma/builtin-objects/ecma-builtin-helpers-macro-defines.inc.h \
+ /home/wuy/ShannonBase/extra/jerryscript/jerry-core/ecma/builtin-objects/ecma-builtin-helpers-macro-undefs.inc.h

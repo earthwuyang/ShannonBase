@@ -1,1 +1,0 @@
-SELECT * FROM partsupp WHERE partsupp.ps_partkey = 54658 LIMIT 1

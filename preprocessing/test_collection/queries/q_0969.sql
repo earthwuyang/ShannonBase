@@ -1,1 +1,0 @@
-WITH cte AS (SELECT lineitem.l_comment, lineitem.l_commitdate, lineitem.l_linestatus FROM lineitem) SELECT * FROM cte CROSS JOIN customer LIMIT 1000

@@ -1,1 +1,0 @@
-SELECT part.p_type, part.p_brand, AVG(part.p_size) AS avg_part_p_size, VARIANCE(part.p_size) AS variance_part_p_size, MIN(part.p_partkey) AS min_part_p_partkey, SUM(part.p_retailprice) AS sum_part_p_retailprice FROM part WHERE (part.p_brand LIKE '%B%') OR (part.p_type = 'MLDUQ') GROUP BY part.p_type, part.p_brand ORDER BY part.p_type, part.p_brand

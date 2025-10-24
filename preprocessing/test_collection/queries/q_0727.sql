@@ -1,1 +1,0 @@
-SELECT nation.n_nationkey, MAX(nation.n_nationkey) AS max_n_nationkey, COUNT(nation.n_nationkey) AS count_n_nationkey, AVG(nation.n_regionkey) AS avg_n_regionkey FROM nation WHERE nation.n_nationkey > 586 AND nation.n_comment LIKE '%B%' AND nation.n_nationkey < 467 GROUP BY nation.n_nationkey HAVING COUNT(*) > 691 ORDER BY nation.n_nationkey

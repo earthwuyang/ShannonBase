@@ -1,1 +1,0 @@
-SELECT lineitem.l_returnflag, COUNT(lineitem.l_partkey) AS count_l_partkey, COUNT(lineitem.l_suppkey) AS count_l_suppkey, AVG(lineitem.l_suppkey) AS avg_l_suppkey FROM lineitem WHERE lineitem.l_receiptdate >= '2002-03-12' AND lineitem.l_receiptdate >= '2004-04-18' AND lineitem.l_shipdate >= '2015-03-09' GROUP BY lineitem.l_returnflag ORDER BY lineitem.l_returnflag

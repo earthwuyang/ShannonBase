@@ -1,1 +1,0 @@
-SELECT supplier.s_name, COUNT(supplier.s_suppkey) AS count_s_suppkey FROM supplier WHERE supplier.s_address = 'XKZQX' AND supplier.s_suppkey > 946 GROUP BY supplier.s_name

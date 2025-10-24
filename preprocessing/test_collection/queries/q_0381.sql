@@ -1,1 +1,0 @@
-SELECT * FROM customer WHERE customer.c_nationkey > (SELECT AVG(customer.c_nationkey) FROM customer) LIMIT 100

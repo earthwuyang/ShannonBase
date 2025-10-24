@@ -1,1 +1,0 @@
-SELECT orders.o_orderkey, MIN(orders.o_custkey) AS min_o_custkey FROM orders WHERE orders.o_clerk LIKE '%C' AND orders.o_shippriority = 210 AND orders.o_comment = 'IZUUP' AND orders.o_shippriority > 859 GROUP BY orders.o_orderkey ORDER BY orders.o_orderkey

@@ -1,1 +1,0 @@
-SELECT region.r_name, region.r_comment, AVG(region.r_regionkey) AS avg_region_r_regionkey, AVG(region.r_regionkey) AS avg_region_r_regionkey FROM region WHERE (region.r_name LIKE '%B%') OR (region.r_comment = 'YLPUH') GROUP BY region.r_name, region.r_comment HAVING COUNT(*) > 428 AND AVG(region.r_regionkey) > 53291 ORDER BY region.r_comment, region.r_name

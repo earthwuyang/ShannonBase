@@ -1,1 +1,0 @@
-SELECT partsupp.ps_comment, AVG(partsupp.ps_availqty) AS avg_partsupp_ps_availqty, VARIANCE(partsupp.ps_partkey) AS variance_partsupp_ps_partkey FROM partsupp WHERE partsupp.ps_availqty < 533 GROUP BY partsupp.ps_comment HAVING COUNT(*) > 9000 AND VARIANCE(partsupp.ps_partkey) > 2036 ORDER BY partsupp.ps_comment

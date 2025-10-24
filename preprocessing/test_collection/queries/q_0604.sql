@@ -1,1 +1,0 @@
-SELECT partsupp.ps_partkey, COUNT(partsupp.ps_partkey) AS count_ps_partkey FROM partsupp WHERE partsupp.ps_comment LIKE '%B%' AND partsupp.ps_partkey BETWEEN 594 AND 637 AND partsupp.ps_suppkey = 293 AND partsupp.ps_suppkey < 761 GROUP BY partsupp.ps_partkey ORDER BY partsupp.ps_partkey

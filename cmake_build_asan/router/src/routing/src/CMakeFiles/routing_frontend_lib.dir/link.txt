@@ -1,0 +1,2 @@
+/usr/bin/ar qc librouting_frontend_lib.a CMakeFiles/routing_frontend_lib.dir/routing.cc.o
+/usr/bin/ranlib librouting_frontend_lib.a

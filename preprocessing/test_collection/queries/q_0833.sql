@@ -1,1 +1,0 @@
-SELECT customer.c_mktsegment, SUM(customer.c_nationkey) AS sum_c_nationkey, MAX(customer.c_nationkey) AS max_c_nationkey FROM customer WHERE customer.c_phone = 'QLMIP' AND customer.c_custkey BETWEEN 216 AND 767 AND customer.c_name LIKE '%C' AND customer.c_custkey > 379 GROUP BY customer.c_mktsegment HAVING COUNT(*) > 633 ORDER BY customer.c_mktsegment

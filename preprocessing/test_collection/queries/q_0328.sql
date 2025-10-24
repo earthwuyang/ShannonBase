@@ -1,1 +1,0 @@
-SELECT nation.n_regionkey, nation.n_comment, nation.n_name FROM nation WHERE nation.n_nationkey = 644 LIMIT 10

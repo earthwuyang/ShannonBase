@@ -1,1 +1,0 @@
-SELECT customer.c_address, MAX(customer.c_nationkey) AS max_c_nationkey FROM customer WHERE customer.c_nationkey < 871 AND customer.c_comment = 'UDOWH' AND customer.c_address = 'ITVYX' AND customer.c_mktsegment = 'GLXQS' GROUP BY customer.c_address HAVING COUNT(*) > 57

@@ -1,1 +1,0 @@
-SELECT * FROM orders WHERE orders.o_shippriority > (SELECT AVG(supplier.s_nationkey) FROM supplier) LIMIT 100

@@ -1,1 +1,0 @@
-SELECT orders.o_custkey, orders.o_comment, orders.o_orderpriority FROM orders WHERE orders.o_clerk = 'VALUE_1' LIMIT 10

@@ -1,1 +1,0 @@
-SELECT nation.n_nationkey, nation.n_regionkey, RANK() OVER (PARTITION BY nation.n_regionkey ORDER BY nation.n_name) AS window_result FROM nation WHERE nation.n_comment LIKE 'A%' LIMIT 1000

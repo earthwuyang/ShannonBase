@@ -1,1 +1,0 @@
-SELECT * FROM customer WHERE customer.c_mktsegment IN (SELECT nation.n_name FROM nation) LIMIT 100

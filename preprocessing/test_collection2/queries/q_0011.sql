@@ -1,1 +1,0 @@
-SELECT nation.n_name, nation.n_comment, COUNT(nation.n_regionkey) AS count_nation_n_regionkey, MAX(nation.n_nationkey) AS max_nation_n_nationkey, COUNT(nation.n_regionkey) AS count_nation_n_regionkey FROM nation WHERE nation.n_regionkey = 429 GROUP BY nation.n_name, nation.n_comment HAVING COUNT(*) > 6053 AND MAX(nation.n_nationkey) > 2944 ORDER BY nation.n_name, nation.n_comment

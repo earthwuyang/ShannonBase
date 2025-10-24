@@ -1,1 +1,0 @@
-WITH cte AS (SELECT customer.c_address, SUM(customer.c_nationkey) as total FROM customer GROUP BY customer.c_address) SELECT * FROM cte CROSS JOIN nation LIMIT 1000

@@ -1,1 +1,0 @@
-WITH cte AS (SELECT partsupp.ps_partkey, SUM(partsupp.ps_availqty) as total FROM partsupp GROUP BY partsupp.ps_partkey) SELECT * FROM cte LIMIT 100

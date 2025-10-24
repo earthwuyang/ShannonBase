@@ -1,1 +1,0 @@
-SELECT * FROM part WHERE part.p_partkey IN (SELECT part.p_brand FROM part) LIMIT 100

@@ -1,1 +1,0 @@
-SELECT nation.n_name, STDDEV(nation.n_regionkey) AS stddev_nation_n_regionkey, MIN(nation.n_regionkey) AS min_nation_n_regionkey FROM nation WHERE (nation.n_nationkey = 248 AND nation.n_nationkey BETWEEN 199 AND 799) OR (nation.n_regionkey < 489) GROUP BY nation.n_name ORDER BY nation.n_name

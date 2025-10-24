@@ -1,1 +1,0 @@
-SELECT * FROM partsupp WHERE partsupp.ps_availqty > (SELECT AVG(lineitem.l_orderkey) FROM lineitem) LIMIT 100

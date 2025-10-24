@@ -1,1 +1,0 @@
-SELECT * FROM partsupp WHERE partsupp.ps_availqty > (SELECT AVG(nation.n_regionkey) FROM nation) LIMIT 100

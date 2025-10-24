@@ -1,1 +1,0 @@
-SELECT * FROM orders WHERE orders.o_orderdate IN (SELECT partsupp.ps_supplycost FROM partsupp WHERE partsupp.ps_availqty = 854) LIMIT 100

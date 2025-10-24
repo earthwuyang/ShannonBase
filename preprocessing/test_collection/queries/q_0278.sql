@@ -1,1 +1,0 @@
-SELECT supplier.s_address, AVG(supplier.s_nationkey) AS avg_s_nationkey FROM supplier WHERE supplier.s_address LIKE '%C' AND supplier.s_address LIKE '%B%' AND supplier.s_address = 'WNQKH' AND supplier.s_nationkey > 225 AND supplier.s_nationkey > 164 GROUP BY supplier.s_address ORDER BY supplier.s_address

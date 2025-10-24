@@ -1,1 +1,0 @@
-SELECT lineitem.l_suppkey, lineitem.l_comment, lineitem.l_returnflag FROM lineitem WHERE lineitem.l_linenumber = 167 LIMIT 10

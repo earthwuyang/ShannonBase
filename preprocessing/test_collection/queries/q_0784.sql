@@ -1,1 +1,0 @@
-SELECT supplier.s_nationkey, supplier.s_suppkey, supplier.s_phone FROM supplier WHERE supplier.s_comment = 'VALUE_1' LIMIT 10

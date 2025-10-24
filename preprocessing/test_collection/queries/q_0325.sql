@@ -1,1 +1,0 @@
-SELECT * FROM lineitem WHERE lineitem.l_discount IN (SELECT region.r_name FROM region WHERE region.r_comment = 'QSVAC') LIMIT 100

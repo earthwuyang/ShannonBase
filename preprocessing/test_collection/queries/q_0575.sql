@@ -1,1 +1,0 @@
-SELECT region.r_comment, region.r_name, COUNT(region.r_regionkey) AS count_region_r_regionkey, STDDEV(region.r_regionkey) AS stddev_region_r_regionkey FROM region WHERE (region.r_comment = 'KQXIX') OR (region.r_comment = 'RZXRE') GROUP BY region.r_comment, region.r_name HAVING COUNT(*) > 9371 AND STDDEV(region.r_regionkey) > 7901 ORDER BY region.r_comment, region.r_name

@@ -1,1 +1,0 @@
-SELECT lineitem.l_linenumber, lineitem.l_comment, RANK() OVER (PARTITION BY lineitem.l_partkey ORDER BY lineitem.l_discount) AS window_result FROM lineitem WHERE lineitem.l_shipdate >= '2005-05-26' LIMIT 100

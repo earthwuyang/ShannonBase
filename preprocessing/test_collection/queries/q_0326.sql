@@ -1,1 +1,0 @@
-SELECT * FROM region WHERE region.r_regionkey > (SELECT AVG(lineitem.l_suppkey) FROM lineitem) LIMIT 100

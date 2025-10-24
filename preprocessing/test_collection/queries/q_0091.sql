@@ -1,1 +1,0 @@
-SELECT region.r_regionkey, region.r_name, DENSE_RANK() OVER (PARTITION BY region.r_comment ORDER BY region.r_name) AS window_result FROM region WHERE region.r_regionkey > 837 LIMIT 100

@@ -1,1 +1,0 @@
-SELECT orders.o_orderpriority, MIN(orders.o_orderkey) AS min_o_orderkey, AVG(orders.o_custkey) AS avg_o_custkey, SUM(orders.o_shippriority) AS sum_o_shippriority FROM orders WHERE orders.o_orderstatus LIKE '%C' GROUP BY orders.o_orderpriority HAVING COUNT(*) > 161

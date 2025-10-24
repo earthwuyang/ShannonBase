@@ -1,1 +1,0 @@
-SELECT region.r_comment, MAX(region.r_regionkey) AS max_r_regionkey, AVG(region.r_regionkey) AS avg_r_regionkey, SUM(region.r_regionkey) AS sum_r_regionkey FROM region WHERE region.r_comment = 'AZYKJ' AND region.r_name = 'OHEQL' AND region.r_name LIKE '%C' AND region.r_name = 'DWNYC' GROUP BY region.r_comment ORDER BY region.r_comment

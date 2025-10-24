@@ -1,1 +1,0 @@
-SELECT region.r_name, MIN(region.r_regionkey) AS min_r_regionkey, AVG(region.r_regionkey) AS avg_r_regionkey, MAX(region.r_regionkey) AS max_r_regionkey FROM region WHERE region.r_name LIKE 'A%' AND region.r_name LIKE 'A%' GROUP BY region.r_name HAVING COUNT(*) > 478

@@ -1,1 +1,0 @@
-SELECT part.p_partkey, part.p_mfgr, SUM(part.p_size) OVER (PARTITION BY part.p_partkey ORDER BY part.p_mfgr) AS window_result FROM part WHERE part.p_comment = 'HDVLQ' LIMIT 1000

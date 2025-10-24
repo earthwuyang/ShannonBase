@@ -1,1 +1,0 @@
-SELECT partsupp.ps_comment, partsupp.ps_availqty, partsupp.ps_supplycost FROM partsupp UNION ALL SELECT part.p_container, part.p_size, part.p_mfgr FROM part LIMIT 100

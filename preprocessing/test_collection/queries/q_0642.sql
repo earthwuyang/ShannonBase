@@ -1,1 +1,0 @@
-SELECT lineitem.l_partkey, lineitem.l_comment, AVG(lineitem.l_partkey) OVER (PARTITION BY lineitem.l_shipinstruct ORDER BY lineitem.l_quantity) AS window_result FROM lineitem WHERE lineitem.l_linestatus = 'ROJFO' LIMIT 100

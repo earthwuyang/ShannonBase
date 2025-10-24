@@ -1,0 +1,298 @@
+================================================================================
+AddressSanitizer Build Strategy Deliverables
+================================================================================
+Created: 2025-10-23
+Target: ShannonBase Rapid Engine Connection Lifecycle Crash Debug
+================================================================================
+
+DOCUMENTATION (3 files)
+-----------------------
+1. ASAN_README.md (4.5KB)
+   - Overview and navigation guide
+   - Quick reference for all resources
+   - Troubleshooting index
+
+2. ASAN_BUILD_STRATEGY.md (34KB)
+   - Complete 10-part comprehensive guide
+   - Build configuration analysis
+   - Step-by-step build instructions
+   - Runtime configuration details
+   - ASan report interpretation guide
+   - Advanced debugging techniques
+   - Common pattern analysis
+   - Performance impact analysis
+
+3. ASAN_QUICKSTART.md (5KB)
+   - Get started in 5 steps (30 min)
+   - Essential commands only
+   - Quick troubleshooting
+
+EXECUTABLE SCRIPTS (3 files)
+-----------------------------
+1. run_cmake_asan.sh
+   - CMake configuration for ASan build
+   - Separate build directory (cmake_build_asan)
+   - Debug build with full instrumentation
+   - Port 3308 (separate from production)
+
+2. asan_env.sh
+   - Runtime environment configuration
+   - Optimized ASan options for this bug
+   - Leak detection enabled
+   - Maximum detail for stack traces
+
+3. test_connection_crash.py
+   - Minimal crash reproducer
+   - Connection lifecycle testing
+   - Multiple query complexity levels
+   - Setup and teardown automation
+   - Progress reporting
+
+CONFIGURATION (1 file)
+----------------------
+1. lsan_suppressions.txt
+   - Leak Sanitizer suppression file
+   - Initially empty (no false positive suppression)
+   - Template for adding suppressions
+
+TOTAL: 7 files ready for immediate use
+
+================================================================================
+WORKFLOW SUMMARY
+================================================================================
+
+Step 1: Build (30-60 min)
+--------------------------
+cd /home/wuy/ShannonBase
+./run_cmake_asan.sh
+cd cmake_build_asan
+make -j$(nproc) && make install
+
+Step 2: Initialize (2 min)
+---------------------------
+export SHANNON_ASAN_BIN="/home/wuy/DB/ShannonBase/shannon_bin_asan"
+export SHANNON_ASAN_DATA="/home/wuy/DB/ShannonBase/db/data_asan"
+${SHANNON_ASAN_BIN}/bin/mysqld --initialize-insecure \
+  --basedir=${SHANNON_ASAN_BIN} \
+  --datadir=${SHANNON_ASAN_DATA} \
+  --user=$(whoami)
+
+Step 3: Start Server (1 min)
+-----------------------------
+source /home/wuy/ShannonBase/asan_env.sh
+${SHANNON_ASAN_BIN}/bin/mysqld \
+  --basedir=${SHANNON_ASAN_BIN} \
+  --datadir=${SHANNON_ASAN_DATA} \
+  --port=3308 \
+  --socket=/tmp/mysql_asan.sock \
+  --user=$(whoami) &
+
+Step 4: Setup Test (2 min)
+---------------------------
+python3 test_connection_crash.py --port 3308 --setup --rows 10000
+
+Step 5: Trigger Crash (2-5 min)
+--------------------------------
+python3 test_connection_crash.py \
+  --port 3308 \
+  --iterations 200 \
+  --query-type rapid
+
+Expected: ASan detects and reports memory error with full stack trace
+
+================================================================================
+KEY FEATURES
+================================================================================
+
+Build Configuration:
+- Separate build directory (no conflict with release)
+- Debug symbols + ASan instrumentation
+- Use-after-scope detection enabled
+- Optimal stack trace verbosity (-O1 -fno-inline)
+- All ShannonBase features enabled (Rapid engine included)
+
+Runtime Configuration:
+- Leak detection enabled
+- Stack-use-after-return detection
+- 256MB quarantine (catches use-after-free)
+- Maximum context for stack traces (30 frames)
+- Detailed logging to files
+- Abort on error for debugging
+
+Test Script Features:
+- Minimal, focused reproducer
+- Multiple query complexity levels
+- Automatic table setup with Rapid engine
+- Progress reporting
+- Realistic connection patterns
+- Configurable iterations
+
+Expected ASan Output:
+- Error type (heap-use-after-free, etc.)
+- Exact location (file:line) of invalid access
+- When memory was freed (stack trace)
+- When memory was allocated (stack trace)
+- Memory layout details
+- Full call chain for analysis
+
+================================================================================
+DOCUMENTATION STRUCTURE
+================================================================================
+
+ASAN_README.md:
+- Overview and navigation
+- Problem statement
+- Quick navigation guide
+- Workflow diagram
+- Troubleshooting index
+
+ASAN_QUICKSTART.md:
+- 5-step quick start
+- Essential commands
+- Expected output examples
+- Common troubleshooting
+
+ASAN_BUILD_STRATEGY.md:
+Part 1:  Build Configuration Analysis
+Part 2:  ASan Build Instructions
+Part 3:  ASan Runtime Configuration
+Part 4:  Minimal Crash Reproducer Script
+Part 5:  Complete Testing Workflow
+Part 6:  Interpreting ASan Reports ⭐ KEY SECTION
+Part 7:  Advanced Debugging Techniques
+Part 8:  Performance Impact and Limitations
+Part 9:  Quick Reference Commands
+Part 10: Troubleshooting
+Appendix: Common Rapid Engine Patterns
+
+================================================================================
+CRITICAL INFORMATION
+================================================================================
+
+ASan Detection Capabilities:
+✓ Use-after-free (EXPECTED for this bug)
+✓ Heap buffer overflow
+✓ Stack buffer overflow
+✓ Use-after-return
+✓ Use-after-scope
+✓ Double-free
+✓ Memory leaks (via LeakSanitizer)
+
+Performance Impact:
+- Build time: 2x slower (30-60 min vs 15-30 min)
+- Binary size: 3x larger (600MB vs 200MB)
+- Runtime: 2-5x slower (acceptable for testing)
+- Memory: 2-3x more (quarantine + shadow memory)
+
+System Requirements:
+- GCC 11.2.0 ✓ (already installed)
+- 30GB disk space for build
+- 8GB RAM minimum, 16GB recommended
+- Python 3 with mysql-connector
+
+Port Assignment:
+- Production ShannonBase: 3307
+- ASan ShannonBase: 3308 (can run concurrently)
+
+Expected Timeline:
+- Build: 30-60 minutes
+- Setup: 5 minutes
+- Test: 2-5 minutes
+- Analysis: Variable (depends on bug complexity)
+- Fix and validation: Variable
+
+================================================================================
+WHAT HAPPENS NEXT
+================================================================================
+
+1. Build completes → ASan-instrumented binaries in shannon_bin_asan/
+
+2. Server starts → Runs with ASan environment, extra memory overhead
+
+3. Test runs → Opens/closes connections repeatedly with Rapid queries
+
+4. Crash occurs → ASan catches memory error and prints detailed report
+
+5. Report shows → Exact location, freed/allocated traces, memory layout
+
+6. Developer → Examines code, understands bug, implements fix
+
+7. Rebuild → Quick rebuild (only changed files)
+
+8. Validation → Re-run test with extended iterations (500-2000)
+
+9. Success → No crash, bug fixed and validated
+
+================================================================================
+SUCCESS CRITERIA
+================================================================================
+
+Build Phase:
+✓ CMake configuration succeeds with WITH_ASAN=ON
+✓ Compilation completes without sanitizer errors
+✓ libasan.so.6 linked to mysqld binary
+✓ Binary contains __asan_* symbols
+
+Runtime Phase:
+✓ Server starts on port 3308
+✓ Test table loads into Rapid engine
+✓ ASan environment variables set correctly
+✓ Log directory created and writable
+
+Testing Phase:
+✓ Crash occurs within 100-200 iterations
+✓ ASan prints detailed error report
+✓ Stack traces show Rapid engine functions
+✓ Report includes allocation and deallocation traces
+
+Debug Phase:
+✓ Error type identified (use-after-free expected)
+✓ Bug location pinpointed (file:line)
+✓ Object lifetime understood
+✓ Root cause identified
+
+Fix Phase:
+✓ Fix implemented and code-reviewed
+✓ Rebuild successful
+✓ Extended test passes (500-2000 iterations)
+✓ No ASan errors reported
+
+================================================================================
+IMMEDIATE NEXT STEPS
+================================================================================
+
+1. READ: Start with ASAN_QUICKSTART.md for immediate action
+
+2. BUILD: Run ./run_cmake_asan.sh and build
+
+3. TEST: Follow 5-step workflow to trigger crash
+
+4. ANALYZE: Use Part 6 of ASAN_BUILD_STRATEGY.md to interpret report
+
+5. DEBUG: Examine source code at reported location
+
+6. FIX: Implement solution based on root cause
+
+7. VALIDATE: Rebuild and test with extended iterations
+
+================================================================================
+SUPPORT RESOURCES
+================================================================================
+
+Local Documentation:
+- ASAN_README.md → Overview and navigation
+- ASAN_QUICKSTART.md → Quick start guide
+- ASAN_BUILD_STRATEGY.md → Complete reference (34KB)
+
+External Resources:
+- ASan Wiki: https://github.com/google/sanitizers/wiki/AddressSanitizer
+- MySQL Handler API: https://dev.mysql.com/doc/dev/mysql-server/latest/
+- GCC Sanitizers: https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html
+
+All scripts are executable and ready to use.
+All documentation is complete and cross-referenced.
+All paths are absolute and verified.
+
+================================================================================
+END OF DELIVERABLES SUMMARY
+================================================================================

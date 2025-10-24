@@ -1,1 +1,0 @@
-SELECT * FROM customer WHERE customer.c_nationkey BETWEEN 1474 AND 1524 LIMIT 100

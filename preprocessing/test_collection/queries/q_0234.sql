@@ -1,1 +1,0 @@
-SELECT * FROM orders WHERE orders.o_orderkey = 63992 LIMIT 1

@@ -1,1 +1,0 @@
-SELECT part.p_comment, MIN(part.p_size) AS min_p_size, SUM(part.p_size) AS sum_p_size, SUM(part.p_size) AS sum_p_size FROM part WHERE part.p_name LIKE '%B%' AND part.p_mfgr = 'CYAXB' AND part.p_container = 'GPOUC' AND part.p_mfgr = 'QAFSE' GROUP BY part.p_comment HAVING COUNT(*) > 894 ORDER BY part.p_comment

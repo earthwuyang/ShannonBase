@@ -1,1 +1,0 @@
-SELECT part.p_container, MIN(part.p_partkey) AS min_p_partkey FROM part WHERE part.p_comment = 'BAXUO' GROUP BY part.p_container ORDER BY part.p_container

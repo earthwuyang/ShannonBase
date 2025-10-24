@@ -1,1 +1,0 @@
-SELECT * FROM customer WHERE customer.c_custkey BETWEEN 5420 AND 5452 LIMIT 100

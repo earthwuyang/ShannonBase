@@ -1,0 +1,13 @@
+# LeakSanitizer Suppressions for ShannonBase
+# Add suppressions only after confirming they are not related to the crash
+
+# Example suppressions (commented out - start without suppressions):
+# leak:my_thread_global_init
+# leak:_dl_allocate_tls
+# leak:call_init.part.0
+
+# To add a suppression:
+# 1. Run with ASAN_OPTIONS containing print_suppressions=1
+# 2. Copy the suppression entry from ASan output
+# 3. Paste here and uncomment
+# 4. Re-run test to verify suppression works

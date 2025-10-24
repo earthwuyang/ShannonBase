@@ -1,1 +1,0 @@
-WITH cte AS (SELECT part.p_mfgr, part.p_size, part.p_retailprice FROM part) SELECT * FROM cte CROSS JOIN supplier LIMIT 1000

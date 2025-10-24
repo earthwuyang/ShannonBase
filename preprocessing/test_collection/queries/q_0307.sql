@@ -1,1 +1,0 @@
-SELECT customer.c_mktsegment, customer.c_mktsegment, SUM(customer.c_custkey) OVER (PARTITION BY customer.c_custkey ORDER BY customer.c_address) AS window_result FROM customer WHERE customer.c_custkey > 941 LIMIT 1000

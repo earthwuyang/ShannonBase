@@ -1,1 +1,0 @@
-SELECT supplier.s_phone, SUM(supplier.s_suppkey) AS sum_supplier_s_suppkey, AVG(supplier.s_nationkey) AS avg_supplier_s_nationkey, AVG(supplier.s_suppkey) AS avg_supplier_s_suppkey FROM supplier WHERE supplier.s_name LIKE '%B%' GROUP BY supplier.s_phone ORDER BY supplier.s_phone

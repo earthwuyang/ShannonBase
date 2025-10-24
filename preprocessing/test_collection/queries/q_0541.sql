@@ -1,1 +1,0 @@
-SELECT partsupp.ps_comment, COUNT(partsupp.ps_availqty) AS count_ps_availqty, MAX(partsupp.ps_availqty) AS max_ps_availqty, MAX(partsupp.ps_availqty) AS max_ps_availqty FROM partsupp WHERE partsupp.ps_partkey > 940 GROUP BY partsupp.ps_comment HAVING COUNT(*) > 837 ORDER BY partsupp.ps_comment

@@ -62,6 +62,7 @@ SET(SHANNON_IMCS_SOURCES
    utils/utils.cpp
    utils/SIMD.cpp
    imcs/purge/purge.cpp
+   imcs/small_table_cache.cpp
    autopilot/loader.cpp
 )
 
@@ -143,6 +144,7 @@ SET(SHANNON_ITERATOR_SOURCES
     executor/iterators/aggregate_iterator.cpp
     executor/iterators/hash_join_iterator.cpp
     executor/iterators/table_scan_iterator.cpp
+    executor/iterators/nested_loop_iterator.cpp
     ${SHANNON_READER_SOURCES}
 )
 

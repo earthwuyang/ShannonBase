@@ -1,1 +1,0 @@
-SELECT nation.n_comment, nation.n_nationkey, nation.n_name FROM nation WHERE nation.n_comment = 'EJZVU' UNION SELECT part.p_mfgr, part.p_container, part.p_comment FROM part LIMIT 100

@@ -1,1 +1,0 @@
-SELECT * FROM partsupp WHERE partsupp.ps_availqty BETWEEN 8062 AND 8108 LIMIT 100

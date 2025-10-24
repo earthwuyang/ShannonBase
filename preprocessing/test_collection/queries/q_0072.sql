@@ -1,1 +1,0 @@
-SELECT lineitem.l_extendedprice, lineitem.l_orderkey, lineitem.l_receiptdate FROM lineitem UNION ALL SELECT region.r_name, region.r_regionkey, region.r_comment FROM region LIMIT 100

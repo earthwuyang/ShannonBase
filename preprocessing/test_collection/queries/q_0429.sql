@@ -1,1 +1,0 @@
-SELECT lineitem.l_extendedprice, lineitem.l_discount, lineitem.l_shipinstruct FROM lineitem WHERE lineitem.l_discount = 'VALUE_1' LIMIT 10

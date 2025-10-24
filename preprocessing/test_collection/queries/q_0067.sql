@@ -1,1 +1,0 @@
-SELECT * FROM region WHERE region.r_regionkey > (SELECT AVG(part.p_size) FROM part) LIMIT 100

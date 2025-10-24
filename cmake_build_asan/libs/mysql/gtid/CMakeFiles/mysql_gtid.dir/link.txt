@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../archive_output_directory/libmysql_gtid.a CMakeFiles/mysql_gtid.dir/gtid.cpp.o CMakeFiles/mysql_gtid.dir/gtidset.cpp.o CMakeFiles/mysql_gtid.dir/tag.cpp.o CMakeFiles/mysql_gtid.dir/tag_plain.cpp.o CMakeFiles/mysql_gtid.dir/tsid.cpp.o CMakeFiles/mysql_gtid.dir/tsid_plain.cpp.o CMakeFiles/mysql_gtid.dir/uuid.cpp.o
+/usr/bin/ranlib ../../../archive_output_directory/libmysql_gtid.a

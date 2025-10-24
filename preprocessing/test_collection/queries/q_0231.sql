@@ -1,1 +1,0 @@
-SELECT part.p_size, MAX(part.p_size) AS max_p_size, AVG(part.p_size) AS avg_p_size FROM part WHERE part.p_container = 'ZHEDL' AND part.p_type LIKE 'A%' AND part.p_name LIKE 'A%' AND part.p_size BETWEEN 737 AND 762 GROUP BY part.p_size HAVING COUNT(*) > 219 ORDER BY part.p_size

@@ -1,0 +1,1 @@
+/usr/bin/c++ -std=c++20 -fno-omit-frame-pointer -ftls-model=initial-exec  -fsanitize=address -O1 -fno-inline -fsanitize-address-use-after-scope -DSAFE_MUTEX -DENABLED_DEBUG_SYNC -g  -Wl,--build-id=sha1 CMakeFiles/cno_huffman_generator.dir/cno_huffman_generator.cc.o -o ../../runtime_output_directory/cno_huffman_generator  -lpthread

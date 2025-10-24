@@ -94,6 +94,7 @@
 #include "sql/opt_hints.h"    // hint_table_state
 #include "sql/opt_trace.h"    // Opt_trace_object
 #include "sql/opt_trace_context.h"
+#include "sql/hybrid_opt/feature_extractor.h"
 #include "sql/parse_tree_node_base.h"
 #include "sql/parser_yystype.h"
 #include "sql/query_options.h"
@@ -719,6 +720,23 @@ bool JOIN::optimize(bool finalize_access_paths) {
 
   // Set up join order and initial access paths
   THD_STAGE_INFO(thd, stage_statistics);
+
+  // Extract features for hybrid optimizer
+  if (thd->opt_trace.is_started() && thd->variables.hybrid_optimizer_features) {
+    static std::vector<int> feature_indices =
+        hybrid_opt::FeatureExtractor::LoadFeatureIndices(
+            "/usr/local/mysql/data/top_feature_indices.txt");
+
+    std::vector<float> selected_features;
+    if (hybrid_opt::FeatureExtractor::ExtractSelectedFeatures(
+            this, feature_indices, selected_features, &thd->opt_trace)) {
+      Opt_trace_object hybrid_opt_trace(&thd->opt_trace,
+                                       "hybrid_optimizer_analysis");
+      hybrid_opt_trace.add_alnum("feature_extraction", "success");
+      hybrid_opt_trace.add("num_features", static_cast<int>(selected_features.size()));
+    }
+  }
+
   if (make_join_plan()) {
     if (thd->killed) thd->send_kill_message();
     DBUG_PRINT("error", ("Error: JOIN::make_join_plan() failed"));
@@ -5354,6 +5372,18 @@ bool JOIN::make_join_plan() {
   SARGABLE_PARAM *sargables = nullptr;
 
   Opt_trace_context *const trace = &thd->opt_trace;
+
+  // Extract full feature set for hybrid optimizer training
+  if (thd->variables.hybrid_optimizer_features && thd->opt_trace.is_started()) {
+    std::array<float, hybrid_opt::NUM_FEATURES> features;
+    if (hybrid_opt::FeatureExtractor::ExtractFeatures(this, features,
+                                                      &thd->opt_trace)) {
+      // Features will be added to optimizer trace
+      Opt_trace_object plan_features(&thd->opt_trace, "join_plan_features");
+      plan_features.add_alnum("extraction_point", "make_join_plan_start");
+      plan_features.add("total_features", hybrid_opt::NUM_FEATURES);
+    }
+  }
 
   if (init_planner_arrays())  // Create and initialize the arrays
     return true;

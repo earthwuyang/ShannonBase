@@ -1,1 +1,0 @@
-SELECT partsupp.ps_suppkey, partsupp.ps_availqty, partsupp.ps_partkey FROM partsupp WHERE partsupp.ps_suppkey = 984 LIMIT 10

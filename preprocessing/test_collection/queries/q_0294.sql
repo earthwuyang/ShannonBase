@@ -1,1 +1,0 @@
-SELECT supplier.s_address, supplier.s_phone, supplier.s_nationkey FROM supplier WHERE supplier.s_suppkey = 205 LIMIT 10

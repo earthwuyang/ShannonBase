@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../archive_output_directory/libdecimal.a "CMakeFiles/decimal_objlib.dir/__/sql-common/my_decimal.cc.o"
+/usr/bin/ranlib ../archive_output_directory/libdecimal.a

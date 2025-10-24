@@ -1,1 +1,0 @@
-SELECT orders.o_totalprice, AVG(orders.o_orderkey) AS avg_o_orderkey FROM orders WHERE orders.o_orderstatus = 'IYCOC' AND orders.o_custkey = 618 AND orders.o_orderkey BETWEEN 116 AND 225 GROUP BY orders.o_totalprice HAVING COUNT(*) > 253 ORDER BY orders.o_totalprice

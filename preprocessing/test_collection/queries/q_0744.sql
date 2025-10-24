@@ -1,1 +1,0 @@
-SELECT * FROM supplier WHERE supplier.s_suppkey > (SELECT AVG(lineitem.l_orderkey) FROM lineitem) LIMIT 100

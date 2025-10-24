@@ -1,1 +1,0 @@
-SELECT customer.c_nationkey, customer.c_custkey, customer.c_address FROM customer WHERE customer.c_address = 'VALUE_1' LIMIT 10

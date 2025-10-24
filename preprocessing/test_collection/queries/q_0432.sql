@@ -1,1 +1,0 @@
-SELECT lineitem.l_tax, lineitem.l_comment, lineitem.l_discount FROM lineitem UNION SELECT nation.n_name, nation.n_nationkey, nation.n_comment FROM nation WHERE nation.n_regionkey < 68 LIMIT 100

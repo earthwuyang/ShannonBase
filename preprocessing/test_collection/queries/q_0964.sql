@@ -1,1 +1,0 @@
-SELECT part.p_container, MAX(part.p_size) AS max_p_size, AVG(part.p_size) AS avg_p_size FROM part WHERE part.p_name LIKE 'A%' GROUP BY part.p_container ORDER BY part.p_container

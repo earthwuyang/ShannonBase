@@ -1,1 +1,0 @@
-SELECT region.r_name, VARIANCE(region.r_regionkey) AS variance_region_r_regionkey, STDDEV(region.r_regionkey) AS stddev_region_r_regionkey, STDDEV(region.r_regionkey) AS stddev_region_r_regionkey FROM region WHERE (region.r_name LIKE '%B%' AND region.r_regionkey < 123 AND region.r_name = 'VTVBK') OR (region.r_regionkey = 821) GROUP BY region.r_name ORDER BY region.r_name

@@ -1,1 +1,0 @@
-SELECT supplier.s_nationkey, supplier.s_comment, ROW_NUMBER() OVER (PARTITION BY supplier.s_address ORDER BY supplier.s_address) AS window_result FROM supplier WHERE supplier.s_nationkey > 858 LIMIT 100

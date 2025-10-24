@@ -1,1 +1,0 @@
-SELECT * FROM lineitem WHERE lineitem.l_partkey BETWEEN 3707 AND 3749 LIMIT 100

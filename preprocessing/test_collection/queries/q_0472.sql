@@ -1,1 +1,0 @@
-WITH cte AS (SELECT nation.n_name, SUM(nation.n_nationkey) as total FROM nation GROUP BY nation.n_name) SELECT * FROM cte CROSS JOIN part LIMIT 1000

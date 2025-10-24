@@ -1,1 +1,0 @@
-SELECT * FROM lineitem WHERE lineitem.l_commitdate IN (SELECT region.r_comment FROM region WHERE region.r_regionkey > 101) LIMIT 100

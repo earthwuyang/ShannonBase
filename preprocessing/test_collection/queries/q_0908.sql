@@ -1,1 +1,0 @@
-SELECT supplier.s_address, supplier.s_suppkey, RANK() OVER (PARTITION BY supplier.s_nationkey ORDER BY supplier.s_address) AS window_result FROM supplier WHERE supplier.s_suppkey > 879 LIMIT 1000

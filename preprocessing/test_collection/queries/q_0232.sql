@@ -1,1 +1,0 @@
-SELECT partsupp.ps_availqty, COUNT(partsupp.ps_availqty) AS count_ps_availqty, MAX(partsupp.ps_partkey) AS max_ps_partkey, SUM(partsupp.ps_suppkey) AS sum_ps_suppkey FROM partsupp WHERE partsupp.ps_suppkey BETWEEN 564 AND 610 AND partsupp.ps_availqty > 660 AND partsupp.ps_suppkey = 50 GROUP BY partsupp.ps_availqty ORDER BY partsupp.ps_availqty

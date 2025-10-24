@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcno.a "CMakeFiles/cno.dir/libcno-208939f540957a35b337dacdd5c5e34d51821bd2/cno/common.c.o" "CMakeFiles/cno.dir/libcno-208939f540957a35b337dacdd5c5e34d51821bd2/cno/core.c.o" "CMakeFiles/cno.dir/libcno-208939f540957a35b337dacdd5c5e34d51821bd2/cno/hpack.c.o" "CMakeFiles/cno.dir/libcno-208939f540957a35b337dacdd5c5e34d51821bd2/picohttpparser/picohttpparser.c.o"
+/usr/bin/ranlib libcno.a

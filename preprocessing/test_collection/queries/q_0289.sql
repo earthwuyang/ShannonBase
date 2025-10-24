@@ -1,1 +1,0 @@
-SELECT * FROM region WHERE region.r_regionkey IN (SELECT region.r_comment FROM region) LIMIT 100

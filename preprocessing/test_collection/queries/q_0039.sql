@@ -1,1 +1,0 @@
-SELECT customer.c_address, customer.c_comment, customer.c_phone, SUM(customer.c_custkey) AS sum_customer_c_custkey, AVG(customer.c_nationkey) AS avg_customer_c_nationkey FROM customer WHERE customer.c_nationkey = 4 AND customer.c_custkey > 830 GROUP BY customer.c_address, customer.c_comment, customer.c_phone ORDER BY customer.c_phone, customer.c_address

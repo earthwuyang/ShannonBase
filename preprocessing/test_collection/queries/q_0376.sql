@@ -1,1 +1,0 @@
-SELECT lineitem.l_extendedprice, lineitem.l_discount, AVG(lineitem.l_partkey) OVER (PARTITION BY lineitem.l_orderkey ORDER BY lineitem.l_partkey) AS window_result FROM lineitem LIMIT 1000

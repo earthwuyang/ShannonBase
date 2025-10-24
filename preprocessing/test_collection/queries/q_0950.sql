@@ -1,1 +1,0 @@
-SELECT orders.o_custkey, orders.o_clerk, SUM(orders.o_orderkey) OVER (PARTITION BY orders.o_shippriority ORDER BY orders.o_orderkey) AS window_result FROM orders LIMIT 100

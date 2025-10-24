@@ -1,1 +1,0 @@
-SELECT supplier.s_acctbal, MIN(supplier.s_suppkey) AS min_s_suppkey, SUM(supplier.s_suppkey) AS sum_s_suppkey FROM supplier WHERE supplier.s_suppkey = 741 AND supplier.s_name = 'IPIYG' AND supplier.s_nationkey BETWEEN 175 AND 647 AND supplier.s_comment = 'MOOCP' GROUP BY supplier.s_acctbal ORDER BY supplier.s_acctbal

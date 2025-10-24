@@ -1,1 +1,0 @@
-SELECT partsupp.ps_supplycost, COUNT(partsupp.ps_suppkey) AS count_ps_suppkey FROM partsupp WHERE partsupp.ps_availqty > 208 AND partsupp.ps_suppkey < 375 AND partsupp.ps_comment = 'GLWBY' AND partsupp.ps_suppkey = 291 GROUP BY partsupp.ps_supplycost HAVING COUNT(*) > 821

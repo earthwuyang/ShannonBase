@@ -1,1 +1,0 @@
-SELECT * FROM region WHERE region.r_regionkey BETWEEN 24 AND 95 LIMIT 100

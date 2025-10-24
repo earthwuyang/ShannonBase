@@ -231,6 +231,7 @@ struct System_variables {
   ulonglong optimizer_switch;
   ulonglong optimizer_trace;           ///< bitmap to tune optimizer tracing
   ulonglong optimizer_trace_features;  ///< bitmap to select features to trace
+  bool hybrid_optimizer_features;      ///< Enable feature extraction in trace for hybrid optimizer
   long optimizer_trace_offset;
   long optimizer_trace_limit;
   ulong optimizer_trace_max_mem_size;

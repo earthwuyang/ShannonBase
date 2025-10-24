@@ -1,1 +1,0 @@
-SELECT nation.n_comment, nation.n_nationkey, nation.n_name FROM nation WHERE nation.n_comment LIKE '%C' UNION ALL SELECT orders.o_clerk, orders.o_shippriority, orders.o_orderdate FROM orders LIMIT 100

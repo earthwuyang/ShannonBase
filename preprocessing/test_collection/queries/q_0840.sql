@@ -1,1 +1,0 @@
-SELECT customer.c_name, customer.c_nationkey, customer.c_phone FROM customer WHERE customer.c_name LIKE '%C' UNION SELECT customer.c_acctbal, customer.c_name, customer.c_mktsegment FROM customer WHERE customer.c_name LIKE '%B%' LIMIT 100

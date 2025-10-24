@@ -54,9 +54,11 @@ static ShannonBase::Rapid_ha_data *&get_ha_data(THD *const thd) {
 }
 
 static void destroy_ha_data(THD *const thd) {
-  ShannonBase::Rapid_ha_data *&ha_data = get_ha_data(thd);
-  delete ha_data;
-  ha_data = nullptr;
+  ShannonBase::Rapid_ha_data *&ha_data = get_ha_data_or_null(thd);
+  if (ha_data != nullptr) {
+    delete ha_data;
+    ha_data = nullptr;
+  }
 }
 
 ShannonBase::Transaction::ISOLATION_LEVEL Transaction::get_rpd_isolation_level(THD *thd) {
@@ -104,11 +106,18 @@ Transaction *Transaction::get_or_create_trx(THD *thd) {
 }
 
 void Transaction::free_trx_from_thd(THD *const thd) {
-  auto *trx = ShannonBase::Transaction::get_trx_from_thd(thd);
+  // Use get_ha_data_or_null to avoid re-allocation during cleanup
+  auto *&ha_data_ref = get_ha_data_or_null(thd);
+  if (ha_data_ref == nullptr) {
+    // Already cleaned up or never initialized
+    return;
+  }
+
+  auto *trx = ha_data_ref->get_trx();
   if (trx) {
     trx->reset_trx_on_thd(thd);
     delete trx;
-    trx = nullptr;
+    // ha_data is already cleaned by reset_trx_on_thd
   }
 }
 

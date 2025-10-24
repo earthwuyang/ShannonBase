@@ -25,6 +25,8 @@
 
 #include <NdbTick.h>
 #include <ndb_global.h>
+#include <time.h>
+#include <sys/time.h>
 #include <EventLogger.hpp>
 #include "ndb_config.h"
 #include "util/require.h"

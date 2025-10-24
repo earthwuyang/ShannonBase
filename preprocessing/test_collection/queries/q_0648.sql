@@ -1,1 +1,0 @@
-SELECT * FROM orders WHERE orders.o_orderdate BETWEEN '2023-01-01' AND '2023-01-07' LIMIT 100

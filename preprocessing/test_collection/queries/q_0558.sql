@@ -1,1 +1,0 @@
-SELECT lineitem.l_shipmode, COUNT(lineitem.l_quantity) AS count_lineitem_l_quantity, SUM(lineitem.l_suppkey) AS sum_lineitem_l_suppkey FROM lineitem WHERE lineitem.l_partkey = 328 GROUP BY lineitem.l_shipmode ORDER BY lineitem.l_shipmode

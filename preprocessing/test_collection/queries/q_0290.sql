@@ -1,1 +1,0 @@
-SELECT nation.n_name, COUNT(nation.n_nationkey) AS count_n_nationkey, AVG(nation.n_regionkey) AS avg_n_regionkey FROM nation WHERE nation.n_nationkey BETWEEN 55 AND 417 AND nation.n_name LIKE '%C' AND nation.n_regionkey = 791 AND nation.n_name = 'BUYWG' AND nation.n_nationkey > 641 GROUP BY nation.n_name HAVING COUNT(*) > 995 ORDER BY nation.n_name

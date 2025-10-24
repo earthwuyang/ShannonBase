@@ -1,1 +1,0 @@
-SELECT supplier.s_address, supplier.s_suppkey, RANK() OVER (PARTITION BY supplier.s_phone ORDER BY supplier.s_comment) AS window_result FROM supplier WHERE supplier.s_name LIKE '%B%' LIMIT 100

@@ -1,1 +1,0 @@
-SELECT region.r_regionkey, MIN(region.r_regionkey) AS min_r_regionkey FROM region WHERE region.r_regionkey = 168 AND region.r_name LIKE 'A%' AND region.r_name = 'YMCLX' AND region.r_name LIKE '%C' GROUP BY region.r_regionkey HAVING COUNT(*) > 920 ORDER BY region.r_regionkey

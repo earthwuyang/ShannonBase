@@ -1,1 +1,0 @@
-SELECT orders.o_comment, orders.o_clerk, AVG(orders.o_shippriority) OVER (PARTITION BY orders.o_orderkey ORDER BY orders.o_clerk) AS window_result FROM orders WHERE orders.o_orderkey > 530 LIMIT 1000

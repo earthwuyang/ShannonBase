@@ -3424,6 +3424,14 @@ static Sys_var_uint Sys_protocol_version(
     READ_ONLY NON_PERSIST GLOBAL_VAR(protocol_version), NO_CMD_LINE,
     VALID_RANGE(0, ~0), DEFAULT(PROTOCOL_VERSION), BLOCK_SIZE(1));
 
+static Sys_var_bool Sys_hybrid_optimizer_features(
+    "hybrid_optimizer_features",
+    "Extract and include optimizer features in trace for hybrid optimizer",
+    SESSION_VAR(hybrid_optimizer_features), CMD_LINE(OPT_ARG),
+    DEFAULT(false), NO_MUTEX_GUARD, NOT_IN_BINLOG,
+    ON_CHECK(nullptr),
+    ON_UPDATE(nullptr));
+
 static Sys_var_proxy_user Sys_proxy_user(
     "proxy_user", "The proxy user account name used when logging in",
     IN_SYSTEM_CHARSET);

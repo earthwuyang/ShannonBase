@@ -1,1 +1,0 @@
-SELECT lineitem.l_discount, lineitem.l_linestatus, lineitem.l_extendedprice FROM lineitem WHERE lineitem.l_partkey BETWEEN 1 AND 823 UNION ALL SELECT region.r_name, region.r_comment, region.r_regionkey FROM region WHERE region.r_regionkey > 173 LIMIT 100

@@ -1,1 +1,0 @@
-WITH cte AS (SELECT orders.o_totalprice, orders.o_clerk, orders.o_comment FROM orders) SELECT * FROM cte LIMIT 100

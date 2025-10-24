@@ -1,1 +1,0 @@
-SELECT partsupp.ps_partkey, partsupp.ps_comment, partsupp.ps_availqty FROM partsupp WHERE partsupp.ps_availqty = 537 LIMIT 10

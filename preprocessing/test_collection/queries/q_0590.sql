@@ -1,1 +1,0 @@
-SELECT orders.o_orderstatus, MAX(orders.o_orderkey) AS max_o_orderkey, COUNT(orders.o_custkey) AS count_o_custkey, AVG(orders.o_shippriority) AS avg_o_shippriority FROM orders WHERE orders.o_shippriority BETWEEN 26 AND 912 AND orders.o_orderkey BETWEEN 94 AND 118 GROUP BY orders.o_orderstatus HAVING COUNT(*) > 872

@@ -1,1 +1,0 @@
-SELECT part.p_retailprice, part.p_type, part.p_partkey FROM part WHERE part.p_comment = 'ZCAHW' UNION ALL SELECT part.p_comment, part.p_brand, part.p_retailprice FROM part LIMIT 100

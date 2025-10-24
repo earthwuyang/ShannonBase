@@ -1,1 +1,0 @@
-SELECT * FROM partsupp WHERE partsupp.ps_partkey BETWEEN 8671 AND 8743 LIMIT 100

@@ -1,1 +1,0 @@
-SELECT partsupp.ps_comment, partsupp.ps_supplycost, partsupp.ps_suppkey FROM partsupp WHERE partsupp.ps_suppkey = 184 LIMIT 10

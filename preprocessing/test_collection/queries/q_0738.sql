@@ -1,1 +1,0 @@
-SELECT part.p_container, part.p_size, part.p_retailprice FROM part WHERE part.p_container = 'TWOXT' UNION SELECT region.r_regionkey, region.r_name, region.r_comment FROM region LIMIT 100

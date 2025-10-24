@@ -1,1 +1,0 @@
-SELECT customer.c_acctbal, customer.c_phone, customer.c_custkey FROM customer WHERE customer.c_name LIKE '%B%' UNION ALL SELECT lineitem.l_commitdate, lineitem.l_extendedprice, lineitem.l_returnflag FROM lineitem LIMIT 100

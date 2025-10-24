@@ -1,1 +1,0 @@
-SELECT lineitem.l_comment, lineitem.l_returnflag, lineitem.l_extendedprice FROM lineitem WHERE lineitem.l_linenumber = 827 LIMIT 10

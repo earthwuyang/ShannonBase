@@ -1,1 +1,0 @@
-SELECT supplier.s_address, SUM(supplier.s_suppkey) AS sum_s_suppkey FROM supplier WHERE supplier.s_name LIKE 'A%' AND supplier.s_comment = 'PEGOC' AND supplier.s_suppkey BETWEEN 837 AND 943 AND supplier.s_phone = 'ZNNBP' GROUP BY supplier.s_address HAVING COUNT(*) > 181

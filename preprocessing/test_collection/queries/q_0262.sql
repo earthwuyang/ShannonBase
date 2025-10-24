@@ -1,1 +1,0 @@
-SELECT lineitem.l_shipmode, MAX(lineitem.l_quantity) AS max_lineitem_l_quantity, COUNT(lineitem.l_orderkey) AS count_lineitem_l_orderkey, MIN(lineitem.l_discount) AS min_lineitem_l_discount FROM lineitem WHERE (lineitem.l_partkey = 3) OR (lineitem.l_commitdate >= '2011-02-12') GROUP BY lineitem.l_shipmode ORDER BY lineitem.l_shipmode

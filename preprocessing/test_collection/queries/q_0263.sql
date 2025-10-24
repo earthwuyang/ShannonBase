@@ -1,1 +1,0 @@
-SELECT supplier.s_phone, MAX(supplier.s_nationkey) AS max_supplier_s_nationkey, SUM(supplier.s_acctbal) AS sum_supplier_s_acctbal FROM supplier WHERE supplier.s_address = 'TVXVK' AND supplier.s_nationkey = 223 GROUP BY supplier.s_phone ORDER BY supplier.s_phone

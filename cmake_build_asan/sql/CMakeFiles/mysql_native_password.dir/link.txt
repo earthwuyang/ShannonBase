@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmysql_native_password.a CMakeFiles/mysql_native_password.dir/auth/mysql_native_password.cc.o
+/usr/bin/ranlib libmysql_native_password.a

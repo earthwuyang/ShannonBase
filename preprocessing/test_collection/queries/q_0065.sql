@@ -1,1 +1,0 @@
-SELECT * FROM partsupp WHERE partsupp.ps_suppkey BETWEEN 3130 AND 3166 LIMIT 100

@@ -1,1 +1,0 @@
-SELECT supplier.s_suppkey, COUNT(supplier.s_nationkey) AS count_s_nationkey, COUNT(supplier.s_nationkey) AS count_s_nationkey, AVG(supplier.s_suppkey) AS avg_s_suppkey FROM supplier WHERE supplier.s_address = 'BEIGO' AND supplier.s_nationkey BETWEEN 624 AND 966 AND supplier.s_phone LIKE '%C' AND supplier.s_name = 'QWKDA' GROUP BY supplier.s_suppkey ORDER BY supplier.s_suppkey

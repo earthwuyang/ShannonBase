@@ -1,1 +1,0 @@
-SELECT * FROM customer WHERE EXISTS (SELECT 1 FROM customer) LIMIT 100

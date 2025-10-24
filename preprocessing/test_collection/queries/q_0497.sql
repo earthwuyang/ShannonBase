@@ -1,1 +1,0 @@
-SELECT orders.o_orderstatus, MIN(orders.o_orderkey) AS min_o_orderkey FROM orders WHERE orders.o_shippriority > 546 AND orders.o_shippriority > 625 AND orders.o_custkey > 69 AND orders.o_orderdate >= '2023-12-06' AND orders.o_orderkey < 860 GROUP BY orders.o_orderstatus HAVING COUNT(*) > 815 ORDER BY orders.o_orderstatus

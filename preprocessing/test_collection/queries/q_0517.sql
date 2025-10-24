@@ -1,1 +1,0 @@
-SELECT region.r_regionkey, region.r_regionkey, SUM(region.r_regionkey) OVER (PARTITION BY region.r_comment ORDER BY region.r_regionkey) AS window_result FROM region LIMIT 1000

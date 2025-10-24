@@ -1,1 +1,0 @@
-SELECT part.p_partkey, part.p_comment, AVG(part.p_size) OVER (PARTITION BY part.p_brand ORDER BY part.p_mfgr) AS window_result FROM part WHERE part.p_name = 'VUFUU' LIMIT 1000

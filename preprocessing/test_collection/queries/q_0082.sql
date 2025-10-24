@@ -1,1 +1,0 @@
-SELECT partsupp.ps_comment, partsupp.ps_suppkey, partsupp.ps_supplycost FROM partsupp WHERE partsupp.ps_partkey BETWEEN 130 AND 227 UNION SELECT orders.o_clerk, orders.o_totalprice, orders.o_shippriority FROM orders WHERE orders.o_orderkey < 125 LIMIT 100

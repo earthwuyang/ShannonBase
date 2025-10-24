@@ -1,1 +1,0 @@
-SELECT supplier.s_phone, COUNT(supplier.s_suppkey) AS count_s_suppkey FROM supplier WHERE supplier.s_name LIKE '%C' AND supplier.s_nationkey > 274 AND supplier.s_suppkey BETWEEN 173 AND 225 GROUP BY supplier.s_phone ORDER BY supplier.s_phone

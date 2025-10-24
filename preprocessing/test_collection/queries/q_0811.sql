@@ -1,1 +1,0 @@
-SELECT orders.o_orderkey, orders.o_orderpriority, ROW_NUMBER() OVER (PARTITION BY orders.o_clerk ORDER BY orders.o_orderkey) AS window_result FROM orders LIMIT 100

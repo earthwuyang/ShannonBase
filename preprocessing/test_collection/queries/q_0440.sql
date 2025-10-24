@@ -1,1 +1,0 @@
-SELECT customer.c_custkey, MAX(customer.c_custkey) AS max_c_custkey, MIN(customer.c_custkey) AS min_c_custkey FROM customer WHERE customer.c_comment = 'JWYWO' AND customer.c_custkey < 659 AND customer.c_name LIKE 'A%' GROUP BY customer.c_custkey ORDER BY customer.c_custkey

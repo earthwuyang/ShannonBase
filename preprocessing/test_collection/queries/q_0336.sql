@@ -1,1 +1,0 @@
-SELECT customer.c_phone, MIN(customer.c_custkey) AS min_c_custkey FROM customer WHERE customer.c_phone = 'GNIAD' AND customer.c_nationkey < 835 AND customer.c_nationkey < 76 AND customer.c_comment LIKE '%B%' GROUP BY customer.c_phone

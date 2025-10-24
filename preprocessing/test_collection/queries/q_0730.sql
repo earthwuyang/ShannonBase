@@ -1,1 +1,0 @@
-SELECT nation.n_nationkey, COUNT(nation.n_nationkey) AS count_n_nationkey FROM nation WHERE nation.n_name = 'WCIBC' AND nation.n_comment LIKE 'A%' AND nation.n_nationkey BETWEEN 235 AND 730 AND nation.n_nationkey = 833 AND nation.n_regionkey > 504 GROUP BY nation.n_nationkey ORDER BY nation.n_nationkey

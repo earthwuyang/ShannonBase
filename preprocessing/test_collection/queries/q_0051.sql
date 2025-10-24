@@ -1,1 +1,0 @@
-WITH cte AS (SELECT region.r_comment, SUM(region.r_regionkey) as total FROM region GROUP BY region.r_comment) SELECT * FROM cte LIMIT 100

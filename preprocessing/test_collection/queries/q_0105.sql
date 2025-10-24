@@ -1,1 +1,0 @@
-SELECT * FROM nation WHERE nation.n_nationkey BETWEEN 4863 AND 4904 LIMIT 100

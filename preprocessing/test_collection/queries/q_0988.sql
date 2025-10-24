@@ -1,1 +1,0 @@
-SELECT orders.o_totalprice, orders.o_shippriority, orders.o_custkey FROM orders UNION ALL SELECT lineitem.l_quantity, lineitem.l_discount, lineitem.l_shipdate FROM lineitem LIMIT 100

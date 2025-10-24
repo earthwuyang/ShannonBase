@@ -1,1 +1,0 @@
-SELECT partsupp.ps_suppkey, MAX(partsupp.ps_suppkey) AS max_ps_suppkey FROM partsupp WHERE partsupp.ps_partkey < 89 AND partsupp.ps_comment LIKE 'A%' AND partsupp.ps_availqty < 18 AND partsupp.ps_availqty > 659 GROUP BY partsupp.ps_suppkey HAVING COUNT(*) > 794

@@ -1,1 +1,0 @@
-WITH cte AS (SELECT lineitem.l_shipdate, SUM(lineitem.l_suppkey) as total FROM lineitem GROUP BY lineitem.l_shipdate) SELECT * FROM cte LIMIT 100

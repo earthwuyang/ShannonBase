@@ -1,1 +1,0 @@
-SELECT * FROM lineitem WHERE lineitem.l_orderkey = 93467 LIMIT 1

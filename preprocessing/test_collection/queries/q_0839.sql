@@ -1,1 +1,0 @@
-WITH cte AS (SELECT part.p_comment, part.p_size, part.p_name FROM part) SELECT * FROM cte CROSS JOIN lineitem LIMIT 1000

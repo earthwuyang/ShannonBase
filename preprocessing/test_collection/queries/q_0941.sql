@@ -1,1 +1,0 @@
-SELECT lineitem.l_returnflag, lineitem.l_linestatus, lineitem.l_quantity FROM lineitem WHERE lineitem.l_orderkey = 731 LIMIT 10

@@ -1,1 +1,0 @@
-SELECT nation.n_nationkey, nation.n_comment, RANK() OVER (PARTITION BY nation.n_comment ORDER BY nation.n_nationkey) AS window_result FROM nation WHERE nation.n_nationkey BETWEEN 81 AND 433 LIMIT 100

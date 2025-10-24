@@ -1,1 +1,0 @@
-SELECT orders.o_clerk, SUM(orders.o_custkey) AS sum_o_custkey FROM orders WHERE orders.o_shippriority > 937 AND orders.o_comment = 'FKQRA' AND orders.o_shippriority = 562 GROUP BY orders.o_clerk HAVING COUNT(*) > 197 ORDER BY orders.o_clerk

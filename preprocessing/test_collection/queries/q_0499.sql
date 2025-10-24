@@ -1,1 +1,0 @@
-SELECT nation.n_comment, nation.n_name, ROW_NUMBER() OVER (PARTITION BY nation.n_regionkey ORDER BY nation.n_comment) AS window_result FROM nation WHERE nation.n_regionkey = 322 LIMIT 100

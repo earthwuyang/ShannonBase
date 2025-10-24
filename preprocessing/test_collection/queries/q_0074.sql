@@ -1,1 +1,0 @@
-SELECT * FROM partsupp WHERE partsupp.ps_comment IN (SELECT nation.n_name FROM nation) LIMIT 100

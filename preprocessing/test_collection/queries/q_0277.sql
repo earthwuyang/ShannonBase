@@ -1,1 +1,0 @@
-SELECT * FROM region WHERE region.r_regionkey = 37002 LIMIT 1

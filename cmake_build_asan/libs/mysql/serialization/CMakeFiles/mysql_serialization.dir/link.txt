@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../archive_output_directory/libmysql_serialization.a CMakeFiles/mysql_serialization.dir/archive_binary.cpp.o CMakeFiles/mysql_serialization.dir/archive_text.cpp.o CMakeFiles/mysql_serialization.dir/primitive_type_codec.cpp.o CMakeFiles/mysql_serialization.dir/serialization_error.cpp.o CMakeFiles/mysql_serialization.dir/write_archive_binary.cpp.o CMakeFiles/mysql_serialization.dir/read_archive_binary.cpp.o
+/usr/bin/ranlib ../../../archive_output_directory/libmysql_serialization.a

@@ -1,1 +1,0 @@
-SELECT * FROM nation WHERE nation.n_regionkey BETWEEN 6083 AND 6163 LIMIT 100

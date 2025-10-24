@@ -1,1 +1,0 @@
-SELECT part.p_size, part.p_mfgr, ROW_NUMBER() OVER (PARTITION BY part.p_brand ORDER BY part.p_mfgr) AS window_result FROM part WHERE part.p_name LIKE '%C' LIMIT 100

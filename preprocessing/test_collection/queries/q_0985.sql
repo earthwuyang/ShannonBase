@@ -1,1 +1,0 @@
-SELECT part.p_type, AVG(part.p_size) AS avg_part_p_size, VARIANCE(part.p_partkey) AS variance_part_p_partkey, MIN(part.p_partkey) AS min_part_p_partkey FROM part WHERE part.p_type = 'GURXT' GROUP BY part.p_type HAVING COUNT(*) > 9189 AND MIN(part.p_partkey) > 42116 ORDER BY part.p_type

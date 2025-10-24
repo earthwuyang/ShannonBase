@@ -1,0 +1,43 @@
+{
+  "total_queries": 10000,
+  "database": "financial",
+  "categories": {
+    "AP": 5000,
+    "TP": 5000
+  },
+  "category_percentages": {
+    "AP": 50.0,
+    "TP": 50.0
+  },
+  "query_types": {
+    "ap_cte_recursive": 489,
+    "ap_window": 1024,
+    "tp_point_lookup": 2013,
+    "tp_simple_filter": 1478,
+    "tp_range_scan": 1509,
+    "ap_complex_join": 1733,
+    "ap_aggregation": 1754
+  },
+  "query_type_percentages": {
+    "ap_cte_recursive": 4.89,
+    "ap_window": 10.24,
+    "tp_point_lookup": 20.13,
+    "tp_simple_filter": 14.78,
+    "tp_range_scan": 15.09,
+    "ap_complex_join": 17.330000000000002,
+    "ap_aggregation": 17.54
+  },
+  "category_breakdown": {
+    "AP": {
+      "ap_cte_recursive": 489,
+      "ap_window": 1024,
+      "ap_complex_join": 1733,
+      "ap_aggregation": 1754
+    },
+    "TP": {
+      "tp_point_lookup": 2013,
+      "tp_simple_filter": 1478,
+      "tp_range_scan": 1509
+    }
+  }
+}

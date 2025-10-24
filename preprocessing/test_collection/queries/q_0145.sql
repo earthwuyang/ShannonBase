@@ -1,1 +1,0 @@
-SELECT * FROM partsupp WHERE partsupp.ps_suppkey BETWEEN 672 AND 730 LIMIT 100

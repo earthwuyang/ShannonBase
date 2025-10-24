@@ -1,1 +1,0 @@
-SELECT supplier.s_address, supplier.s_phone, AVG(supplier.s_nationkey) OVER (PARTITION BY supplier.s_comment ORDER BY supplier.s_phone) AS window_result FROM supplier LIMIT 1000

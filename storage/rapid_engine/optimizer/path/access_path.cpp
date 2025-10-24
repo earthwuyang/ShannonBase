@@ -44,6 +44,9 @@
 #include "sql/iterators/timing_iterator.h"
 #include "sql/iterators/window_iterators.h"
 
+// PHASE 2: Rapid engine optimized iterators
+#include "storage/rapid_engine/executor/iterators/nested_loop_iterator.h"
+
 #include "sql/join_optimizer/access_path.h"
 #include "sql/join_optimizer/bit_utils.h"
 #include "sql/join_optimizer/cost_model.h"
@@ -290,7 +293,9 @@ unique_ptr_destroy_only<RowIterator> PathGenerator::CreateIteratorFromAccessPath
     switch (path->type) {
       case AccessPath::TABLE_SCAN: {
         const auto &param = path->table_scan();
-        if (path->vectorized &&
+        // BUG FIX: Check for null before dereferencing param.table->s
+        // param.table can be null for temp tables or in-memory tables
+        if (path->vectorized && param.table != nullptr && param.table->s != nullptr &&
             param.table->s->table_category ==
                 enum_table_category::TABLE_CATEGORY_USER)  // Here param.table maybe a temp table/in-memory temp table.)
           iterator = NewIterator<ShannonBase::Executor::VectorizedTableScanIterator>(
@@ -371,21 +376,30 @@ unique_ptr_destroy_only<RowIterator> PathGenerator::CreateIteratorFromAccessPath
       }
       case AccessPath::INDEX_RANGE_SCAN: {
         const auto &param = path->index_range_scan();
-        TABLE *table = param.used_key_part[0].field->table;
-        if (param.geometry) {
-          iterator = NewIterator<GeometryIndexRangeScanIterator>(
-              thd, mem_root, table, examined_rows, path->num_output_rows(), param.index, param.need_rows_in_rowid_order,
-              param.reuse_handler, mem_root, param.mrr_flags, param.mrr_buf_size,
-              Bounds_checked_array{param.ranges, param.num_ranges});
-        } else if (param.reverse) {
-          iterator = NewIterator<ReverseIndexRangeScanIterator>(
-              thd, mem_root, table, examined_rows, path->num_output_rows(), param.index, mem_root, param.mrr_flags,
-              Bounds_checked_array{param.ranges, param.num_ranges}, param.using_extended_key_parts);
-        } else {
-          iterator = NewIterator<IndexRangeScanIterator>(
-              thd, mem_root, table, examined_rows, path->num_output_rows(), param.index, param.need_rows_in_rowid_order,
-              param.reuse_handler, mem_root, param.mrr_flags, param.mrr_buf_size,
-              Bounds_checked_array{param.ranges, param.num_ranges});
+        // BUG FIX: Check for null before dereferencing param.used_key_part[0].field
+        // used_key_part may not have a valid field pointer, especially for complex index scans
+        TABLE *table = nullptr;
+        if (param.used_key_part && param.used_key_part[0].field != nullptr) {
+          table = param.used_key_part[0].field->table;
+        }
+
+        // Only create iterators if we have a valid table
+        if (table != nullptr) {
+          if (param.geometry) {
+            iterator = NewIterator<GeometryIndexRangeScanIterator>(
+                thd, mem_root, table, examined_rows, path->num_output_rows(), param.index, param.need_rows_in_rowid_order,
+                param.reuse_handler, mem_root, param.mrr_flags, param.mrr_buf_size,
+                Bounds_checked_array{param.ranges, param.num_ranges});
+          } else if (param.reverse) {
+            iterator = NewIterator<ReverseIndexRangeScanIterator>(
+                thd, mem_root, table, examined_rows, path->num_output_rows(), param.index, mem_root, param.mrr_flags,
+                Bounds_checked_array{param.ranges, param.num_ranges}, param.using_extended_key_parts);
+          } else {
+            iterator = NewIterator<IndexRangeScanIterator>(
+                thd, mem_root, table, examined_rows, path->num_output_rows(), param.index, param.need_rows_in_rowid_order,
+                param.reuse_handler, mem_root, param.mrr_flags, param.mrr_buf_size,
+                Bounds_checked_array{param.ranges, param.num_ranges});
+          }
         }
         break;
       }
@@ -408,7 +422,10 @@ unique_ptr_destroy_only<RowIterator> PathGenerator::CreateIteratorFromAccessPath
         children.reserve(param.children->size());
         for (size_t child_idx = 0; child_idx < param.children->size(); ++child_idx) {
           AccessPath *range_scan = (*param.children)[child_idx];
-          if (param.allow_clustered_primary_key_scan && param.table->file->primary_key_is_clustered() &&
+          // BUG FIX: Check for null before dereferencing param.table->file and param.table->s
+          if (param.allow_clustered_primary_key_scan && param.table != nullptr &&
+              param.table->file != nullptr && param.table->s != nullptr &&
+              param.table->file->primary_key_is_clustered() &&
               range_scan->index_range_scan().index == param.table->s->primary_key) {
             assert(pk_quick_select == nullptr);
             pk_quick_select = std::move(job.children[child_idx]);
@@ -546,6 +563,11 @@ unique_ptr_destroy_only<RowIterator> PathGenerator::CreateIteratorFromAccessPath
           continue;
         }
 
+        // TEMPORARY: Use standard NestedLoopIterator due to OptimizedNestedLoopIterator bugs
+        // TODO: Re-enable optimized version after fixing crashes
+        // iterator = NewIterator<ShannonBase::Executor::OptimizedNestedLoopIterator>(
+        //     thd, mem_root, std::move(job.children[0]),
+        //     std::move(job.children[1]), param.join_type, param.pfs_batch_mode);
         iterator = NewIterator<NestedLoopIterator>(thd, mem_root, std::move(job.children[0]),
                                                    std::move(job.children[1]), param.join_type, param.pfs_batch_mode);
         break;
@@ -705,10 +727,14 @@ unique_ptr_destroy_only<RowIterator> PathGenerator::CreateIteratorFromAccessPath
         Filesort *filesort = param.filesort;
         iterator = NewIterator<SortingIterator>(thd, mem_root, filesort, std::move(job.children[0]), num_rows_estimate,
                                                 param.tables_to_get_rowid_for, examined_rows);
-        if (filesort->m_remove_duplicates) {
-          filesort->tables[0]->duplicate_removal_iterator = down_cast<SortingIterator *>(iterator->real_iterator());
-        } else {
-          filesort->tables[0]->sorting_iterator = down_cast<SortingIterator *>(iterator->real_iterator());
+        // BUG FIX: Check for null before dereferencing filesort->tables[0]
+        // filesort->tables is a Mem_root_array, check if non-empty and first element is non-null
+        if (filesort != nullptr && !filesort->tables.empty() && filesort->tables[0] != nullptr) {
+          if (filesort->m_remove_duplicates) {
+            filesort->tables[0]->duplicate_removal_iterator = down_cast<SortingIterator *>(iterator->real_iterator());
+          } else {
+            filesort->tables[0]->sorting_iterator = down_cast<SortingIterator *>(iterator->real_iterator());
+          }
         }
         break;
       }

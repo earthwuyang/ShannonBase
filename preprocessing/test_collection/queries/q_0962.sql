@@ -1,1 +1,0 @@
-SELECT region.r_name, MIN(region.r_regionkey) AS min_r_regionkey, SUM(region.r_regionkey) AS sum_r_regionkey FROM region WHERE region.r_comment = 'ZKWAW' AND region.r_regionkey < 94 AND region.r_name LIKE 'A%' AND region.r_regionkey < 254 GROUP BY region.r_name HAVING COUNT(*) > 131 ORDER BY region.r_name

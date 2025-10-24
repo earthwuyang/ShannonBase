@@ -1,1 +1,0 @@
-SELECT supplier.s_name, supplier.s_suppkey, supplier.s_comment FROM supplier WHERE supplier.s_nationkey = 567 LIMIT 10

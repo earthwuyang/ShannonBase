@@ -1,1 +1,0 @@
-SELECT nation.n_regionkey, MIN(nation.n_regionkey) AS min_n_regionkey, COUNT(nation.n_nationkey) AS count_n_nationkey FROM nation WHERE nation.n_nationkey BETWEEN 768 AND 982 AND nation.n_name = 'IBZAV' AND nation.n_regionkey = 797 AND nation.n_comment = 'ZRWZC' AND nation.n_name LIKE 'A%' GROUP BY nation.n_regionkey ORDER BY nation.n_regionkey

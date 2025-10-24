@@ -1,1 +1,0 @@
-SELECT customer.c_address, VARIANCE(customer.c_acctbal) AS variance_customer_c_acctbal, MAX(customer.c_acctbal) AS max_customer_c_acctbal FROM customer WHERE ((customer.c_name = 'YCCWI' AND customer.c_phone LIKE '%C') OR (customer.c_phone = 'ZEGWA')) OR (customer.c_nationkey > 781) GROUP BY customer.c_address ORDER BY customer.c_address

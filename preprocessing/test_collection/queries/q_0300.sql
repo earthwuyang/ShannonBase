@@ -1,1 +1,0 @@
-SELECT nation.n_name, SUM(nation.n_nationkey) AS sum_n_nationkey, SUM(nation.n_regionkey) AS sum_n_regionkey FROM nation WHERE nation.n_regionkey = 738 AND nation.n_regionkey < 965 AND nation.n_nationkey > 548 AND nation.n_regionkey BETWEEN 289 AND 867 AND nation.n_comment = 'VOJEE' GROUP BY nation.n_name

@@ -1,1 +1,0 @@
-SELECT nation.n_nationkey, nation.n_regionkey, nation.n_name FROM nation WHERE nation.n_nationkey = 814 LIMIT 10

@@ -1,1 +1,0 @@
-WITH cte AS (SELECT lineitem.l_orderkey, SUM(lineitem.l_suppkey) as total FROM lineitem GROUP BY lineitem.l_orderkey) SELECT * FROM cte CROSS JOIN supplier LIMIT 1000

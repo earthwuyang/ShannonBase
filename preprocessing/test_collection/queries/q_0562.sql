@@ -1,1 +1,0 @@
-SELECT * FROM supplier WHERE supplier.s_suppkey > (SELECT AVG(orders.o_shippriority) FROM orders) LIMIT 100

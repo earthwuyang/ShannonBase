@@ -1,1 +1,0 @@
-SELECT region.r_comment, AVG(region.r_regionkey) AS avg_r_regionkey FROM region WHERE region.r_comment LIKE '%C' AND region.r_regionkey > 728 AND region.r_comment LIKE '%B%' AND region.r_regionkey = 663 AND region.r_name LIKE 'A%' GROUP BY region.r_comment

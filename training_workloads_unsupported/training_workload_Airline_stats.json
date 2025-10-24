@@ -1,0 +1,43 @@
+{
+  "total_queries": 10000,
+  "database": "Airline",
+  "categories": {
+    "AP": 5000,
+    "TP": 5000
+  },
+  "category_percentages": {
+    "AP": 50.0,
+    "TP": 50.0
+  },
+  "query_types": {
+    "ap_aggregation": 2015,
+    "tp_range_scan": 1100,
+    "ap_complex_join": 1761,
+    "tp_simple_filter": 1939,
+    "ap_cte_recursive": 507,
+    "ap_window": 717,
+    "tp_point_lookup": 1961
+  },
+  "query_type_percentages": {
+    "ap_aggregation": 20.150000000000002,
+    "tp_range_scan": 11.0,
+    "ap_complex_join": 17.61,
+    "tp_simple_filter": 19.39,
+    "ap_cte_recursive": 5.07,
+    "ap_window": 7.17,
+    "tp_point_lookup": 19.61
+  },
+  "category_breakdown": {
+    "AP": {
+      "ap_aggregation": 2015,
+      "ap_complex_join": 1761,
+      "ap_cte_recursive": 507,
+      "ap_window": 717
+    },
+    "TP": {
+      "tp_range_scan": 1100,
+      "tp_simple_filter": 1939,
+      "tp_point_lookup": 1961
+    }
+  }
+}

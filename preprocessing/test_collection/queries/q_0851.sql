@@ -1,1 +1,0 @@
-SELECT * FROM lineitem WHERE lineitem.l_suppkey IN (SELECT orders.o_custkey FROM orders) LIMIT 100

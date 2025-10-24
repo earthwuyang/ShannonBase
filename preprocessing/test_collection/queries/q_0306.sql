@@ -1,1 +1,0 @@
-SELECT orders.o_orderpriority, COUNT(orders.o_custkey) AS count_o_custkey, MAX(orders.o_shippriority) AS max_o_shippriority FROM orders WHERE orders.o_orderdate >= '2013-01-26' AND orders.o_shippriority BETWEEN 444 AND 782 AND orders.o_comment = 'ZDVIS' AND orders.o_orderstatus = 'TFQHF' GROUP BY orders.o_orderpriority

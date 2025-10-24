@@ -1,1 +1,0 @@
-SELECT * FROM lineitem WHERE lineitem.l_linenumber BETWEEN 9910 AND 9965 LIMIT 100

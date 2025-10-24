@@ -1,1 +1,0 @@
-SELECT region.r_name, region.r_regionkey, region.r_comment FROM region UNION SELECT customer.c_phone, customer.c_comment, customer.c_name FROM customer WHERE customer.c_phone = 'CFNET' LIMIT 100

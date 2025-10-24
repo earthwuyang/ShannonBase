@@ -1,1 +1,0 @@
-SELECT part.p_name, SUM(part.p_partkey) AS sum_p_partkey, COUNT(part.p_partkey) AS count_p_partkey FROM part WHERE part.p_brand LIKE '%B%' AND part.p_mfgr = 'YAYHQ' GROUP BY part.p_name HAVING COUNT(*) > 378 ORDER BY part.p_name

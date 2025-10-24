@@ -1,1 +1,0 @@
-SELECT partsupp.ps_partkey, AVG(partsupp.ps_availqty) AS avg_ps_availqty, MAX(partsupp.ps_partkey) AS max_ps_partkey, COUNT(partsupp.ps_suppkey) AS count_ps_suppkey FROM partsupp WHERE partsupp.ps_suppkey < 999 AND partsupp.ps_suppkey = 161 GROUP BY partsupp.ps_partkey HAVING COUNT(*) > 609 ORDER BY partsupp.ps_partkey

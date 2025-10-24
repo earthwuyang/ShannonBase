@@ -1,1 +1,0 @@
-SELECT lineitem.l_comment, AVG(lineitem.l_suppkey) AS avg_l_suppkey, MIN(lineitem.l_linenumber) AS min_l_linenumber, MAX(lineitem.l_partkey) AS max_l_partkey FROM lineitem WHERE lineitem.l_partkey > 45 AND lineitem.l_returnflag = 'ULJBX' AND lineitem.l_linestatus = 'IJCYP' GROUP BY lineitem.l_comment HAVING COUNT(*) > 684 ORDER BY lineitem.l_comment

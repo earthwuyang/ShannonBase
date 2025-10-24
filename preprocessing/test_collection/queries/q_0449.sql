@@ -1,1 +1,0 @@
-SELECT nation.n_regionkey, SUM(nation.n_nationkey) AS sum_n_nationkey FROM nation WHERE nation.n_nationkey < 263 AND nation.n_name = 'OFQJN' GROUP BY nation.n_regionkey HAVING COUNT(*) > 129 ORDER BY nation.n_regionkey

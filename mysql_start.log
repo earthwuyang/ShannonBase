@@ -1,0 +1,1984 @@
+warning: Currently logging to db/gdb_crash.log.  Turn the logging off and on to make the new setting effective.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[New Thread 0x7fffe93f8600 (LWP 494619)]
+[New Thread 0x7fffe3fff600 (LWP 494620)]
+[New Thread 0x7fffe37fe600 (LWP 494621)]
+[New Thread 0x7fffe2ffd600 (LWP 494622)]
+[New Thread 0x7fffe27fc600 (LWP 494623)]
+[New Thread 0x7fffe1ffb600 (LWP 494624)]
+[New Thread 0x7fffe17fa600 (LWP 494625)]
+[New Thread 0x7fffe0ff9600 (LWP 494626)]
+[New Thread 0x7fffd3d1e600 (LWP 494627)]
+[Thread 0x7fffd3d1e600 (LWP 494627) exited]
+[Thread 0x7fffe2ffd600 (LWP 494622) exited]
+[Thread 0x7fffe3fff600 (LWP 494620) exited]
+[Thread 0x7fffe0ff9600 (LWP 494626) exited]
+[Thread 0x7fffe1ffb600 (LWP 494624) exited]
+[Thread 0x7fffe37fe600 (LWP 494621) exited]
+[Thread 0x7fffe17fa600 (LWP 494625) exited]
+[Thread 0x7fffe27fc600 (LWP 494623) exited]
+[New Thread 0x7fffd3d1e600 (LWP 494628)]
+[New Thread 0x7fffe0ff9600 (LWP 494629)]
+[New Thread 0x7fffe17fa600 (LWP 494630)]
+[New Thread 0x7fffe1ffb600 (LWP 494631)]
+[New Thread 0x7fffd1ce1600 (LWP 494632)]
+[New Thread 0x7fffd14e0600 (LWP 494633)]
+[New Thread 0x7fffd0cdf600 (LWP 494634)]
+[New Thread 0x7fffc3d1e600 (LWP 494635)]
+[New Thread 0x7fffc351d600 (LWP 494636)]
+[New Thread 0x7fffc2d1c600 (LWP 494637)]
+[New Thread 0x7fffc251b600 (LWP 494638)]
+[New Thread 0x7fffc1d1a600 (LWP 494639)]
+[New Thread 0x7fffc1519600 (LWP 494640)]
+[New Thread 0x7fffc0d18600 (LWP 494641)]
+[New Thread 0x7fffb3d1e600 (LWP 494642)]
+[New Thread 0x7fffb351d600 (LWP 494643)]
+[New Thread 0x7fffb2d1c600 (LWP 494644)]
+[New Thread 0x7fffb251b600 (LWP 494645)]
+[New Thread 0x7fffb1d1a600 (LWP 494647)]
+[New Thread 0x7fffb1519600 (LWP 494648)]
+[New Thread 0x7fffb0d18600 (LWP 494649)]
+[New Thread 0x7fffa3d1e600 (LWP 494650)]
+[New Thread 0x7fffa351d600 (LWP 494651)]
+[New Thread 0x7fffa2d1c600 (LWP 494652)]
+[New Thread 0x7fffa251b600 (LWP 494653)]
+[New Thread 0x7fff93d1e600 (LWP 494654)]
+[New Thread 0x7fff9351d600 (LWP 494655)]
+[New Thread 0x7fff92d1c600 (LWP 494656)]
+[New Thread 0x7fff9251b600 (LWP 494657)]
+[New Thread 0x7fff91d1a600 (LWP 494658)]
+[New Thread 0x7fff91519600 (LWP 494659)]
+[New Thread 0x7fff90d18600 (LWP 494660)]
+[Thread 0x7fff93d1e600 (LWP 494654) exited]
+[New Thread 0x7fff93d1e600 (LWP 494661)]
+[New Thread 0x7fff83d1e600 (LWP 494662)]
+[New Thread 0x7fff8351d600 (LWP 494663)]
+[New Thread 0x7fff82d1c600 (LWP 494664)]
+[Thread 0x7fff8351d600 (LWP 494663) exited]
+[Thread 0x7fff93d1e600 (LWP 494661) exited]
+[Thread 0x7fff83d1e600 (LWP 494662) exited]
+[Thread 0x7fff82d1c600 (LWP 494664) exited]
+[New Thread 0x7fff82d1c600 (LWP 494670)]
+[New Thread 0x7fff83d1e600 (LWP 494671)]
+[New Thread 0x7fff8351d600 (LWP 494672)]
+[New Thread 0x7fff93d1e600 (LWP 494674)]
+[New Thread 0x7fff8251b600 (LWP 494675)]
+[New Thread 0x7fff81d1a600 (LWP 494676)]
+[New Thread 0x7fff81519600 (LWP 494677)]
+[Thread 0x7fffe93f8600 (LWP 494619) exited]
+[New Thread 0x7fffe93f8600 (LWP 494678)]
+[New Thread 0x7fff80d18600 (LWP 494679)]
+[New Thread 0x7fff26334600 (LWP 494680)]
+[New Thread 0x7fff25b33600 (LWP 494681)]
+[New Thread 0x7fff25332600 (LWP 494682)]
+[New Thread 0x7fff24b31600 (LWP 494683)]
+[New Thread 0x7fff24330600 (LWP 494684)]
+[New Thread 0x7fff23b2f600 (LWP 494685)]
+[New Thread 0x7fff2332e600 (LWP 494686)]
+[New Thread 0x7fff22b2d600 (LWP 494687)]
+[New Thread 0x7fff2232c600 (LWP 494688)]
+[New Thread 0x7fff21b2b600 (LWP 494689)]
+[New Thread 0x7fff2132a600 (LWP 494690)]
+[New Thread 0x7fff20b29600 (LWP 494691)]
+[New Thread 0x7fff20328600 (LWP 494692)]
+[New Thread 0x7fff1fb27600 (LWP 494693)]
+[New Thread 0x7fff1f326600 (LWP 494694)]
+[New Thread 0x7fff1eb25600 (LWP 494695)]
+[New Thread 0x7fff1e324600 (LWP 494696)]
+[New Thread 0x7fff1db23600 (LWP 494697)]
+[New Thread 0x7fff1d322600 (LWP 494698)]
+[New Thread 0x7fff1cb21600 (LWP 494699)]
+[New Thread 0x7fff1c320600 (LWP 494700)]
+[New Thread 0x7fff1bb1f600 (LWP 494701)]
+[New Thread 0x7fff1b31e600 (LWP 494702)]
+[New Thread 0x7fff1ab1d600 (LWP 494703)]
+[New Thread 0x7fff1a31c600 (LWP 494704)]
+[New Thread 0x7fff19b1b600 (LWP 494705)]
+[New Thread 0x7fff1931a600 (LWP 494706)]
+[New Thread 0x7fff18b19600 (LWP 494707)]
+[New Thread 0x7fff18318600 (LWP 494708)]
+[New Thread 0x7fff17b17600 (LWP 494709)]
+[New Thread 0x7fff17316600 (LWP 494710)]
+[New Thread 0x7fff16b15600 (LWP 494711)]
+[New Thread 0x7fff16314600 (LWP 494712)]
+[New Thread 0x7fff15b13600 (LWP 494713)]
+[New Thread 0x7fff15312600 (LWP 494714)]
+[New Thread 0x7fff14b11600 (LWP 494715)]
+[New Thread 0x7fff14310600 (LWP 494716)]
+[New Thread 0x7fff13b0f600 (LWP 494717)]
+[New Thread 0x7fff1330e600 (LWP 494718)]
+[New Thread 0x7fff12b0d600 (LWP 494719)]
+[New Thread 0x7fff1230c600 (LWP 494720)]
+[New Thread 0x7fff11b0b600 (LWP 494721)]
+[New Thread 0x7fff1130a600 (LWP 494722)]
+[New Thread 0x7fff10b09600 (LWP 494723)]
+[New Thread 0x7fff10308600 (LWP 494724)]
+[New Thread 0x7fff0fb07600 (LWP 494725)]
+[New Thread 0x7fff0f306600 (LWP 494726)]
+[New Thread 0x7fff0eb05600 (LWP 494727)]
+[New Thread 0x7fff0e304600 (LWP 494728)]
+[New Thread 0x7fff0db03600 (LWP 494729)]
+[New Thread 0x7fff0d302600 (LWP 494730)]
+[New Thread 0x7fff0cb01600 (LWP 494731)]
+[New Thread 0x7fff0c300600 (LWP 494732)]
+[New Thread 0x7fff0baff600 (LWP 494733)]
+[New Thread 0x7fff0b2fe600 (LWP 494734)]
+[New Thread 0x7fff0aafd600 (LWP 494735)]
+[New Thread 0x7fff0a2fc600 (LWP 494736)]
+[New Thread 0x7fff09afb600 (LWP 494737)]
+[New Thread 0x7fff092fa600 (LWP 494738)]
+[New Thread 0x7fff08af9600 (LWP 494739)]
+[New Thread 0x7fff082f8600 (LWP 494740)]
+[New Thread 0x7fff07af7600 (LWP 494741)]
+[New Thread 0x7fff072f6600 (LWP 494742)]
+[New Thread 0x7fff06af5600 (LWP 494743)]
+[New Thread 0x7fff062f4600 (LWP 494744)]
+[New Thread 0x7fff05af3600 (LWP 494745)]
+[New Thread 0x7fff052f2600 (LWP 494746)]
+[New Thread 0x7fff04af1600 (LWP 494747)]
+[New Thread 0x7fff042f0600 (LWP 494748)]
+[New Thread 0x7fff03aef600 (LWP 494749)]
+[New Thread 0x7fff032ee600 (LWP 494750)]
+[New Thread 0x7fff02aed600 (LWP 494751)]
+[New Thread 0x7fff022ec600 (LWP 494752)]
+[New Thread 0x7fff01aeb600 (LWP 494753)]
+[New Thread 0x7fff012ea600 (LWP 494754)]
+[New Thread 0x7fff00ae9600 (LWP 494755)]
+[New Thread 0x7fff002e8600 (LWP 494756)]
+[New Thread 0x7ffeffae7600 (LWP 494757)]
+[New Thread 0x7fffe2270600 (LWP 494758)]
+[New Thread 0x7fffb0116600 (LWP 494759)]
+[New Thread 0x7fffa0518600 (LWP 494760)]
+[New Thread 0x7ffeff2e6600 (LWP 494771)]
+[Thread 0x7ffeff2e6600 (LWP 494771) exited]
+[New Thread 0x7ffeff2e6600 (LWP 494772)]
+[Thread 0x7ffeff2e6600 (LWP 494772) exited]
+[New Thread 0x7ffeff2e6600 (LWP 494773)]
+[Thread 0x7ffeff2e6600 (LWP 494773) exited]
+[New Thread 0x7ffeff2e6600 (LWP 494774)]
+[New Thread 0x7ffefeae5600 (LWP 494775)]
+[New Thread 0x7ffefe2e4600 (LWP 494776)]
+[New Thread 0x7ffefdae3600 (LWP 494777)]
+[New Thread 0x7ffefd2e2600 (LWP 494778)]
+[New Thread 0x7ffefcae1600 (LWP 494779)]
+[New Thread 0x7fffa0417600 (LWP 494780)]
+[New Thread 0x7fffa0315600 (LWP 494781)]
+[New Thread 0x7fffa0213600 (LWP 494782)]
+[New Thread 0x7fffa0112600 (LWP 494783)]
+[New Thread 0x7ffefc2e0600 (LWP 494784)]
+[New Thread 0x7fff90517600 (LWP 494785)]
+[New Thread 0x7fffe802a680 (LWP 494786)]
+[New Thread 0x7fff90314600 (LWP 495297)]
+[Thread 0x7fffa0518600 (LWP 494760) exited]
+[New Thread 0x7ffefbadf600 (LWP 499070)]
+[New Thread 0x7ffefb2de600 (LWP 499072)]
+[New Thread 0x7ffefaadd600 (LWP 499521)]
+[New Thread 0x7ffefa2dc600 (LWP 499522)]
+[New Thread 0x7ffef9adb600 (LWP 499523)]
+[New Thread 0x7ffef92da600 (LWP 499524)]
+[New Thread 0x7ffef8ad9600 (LWP 499525)]
+[New Thread 0x7ffef82d8600 (LWP 499526)]
+[New Thread 0x7ffef7ad7600 (LWP 499527)]
+[New Thread 0x7ffef72d6600 (LWP 499528)]
+[New Thread 0x7ffef6ad5600 (LWP 499529)]
+[New Thread 0x7ffef62d4600 (LWP 499530)]
+[Thread 0x7ffefa2dc600 (LWP 499522) exited]
+[Thread 0x7ffef7ad7600 (LWP 499527) exited]
+[Thread 0x7ffef82d8600 (LWP 499526) exited]
+[Thread 0x7ffef92da600 (LWP 499524) exited]
+[Thread 0x7ffef8ad9600 (LWP 499525) exited]
+[Thread 0x7ffefaadd600 (LWP 499521) exited]
+[Thread 0x7ffef62d4600 (LWP 499530) exited]
+[Thread 0x7ffef72d6600 (LWP 499528) exited]
+[Thread 0x7ffef6ad5600 (LWP 499529) exited]
+[Thread 0x7ffef9adb600 (LWP 499523) exited]
+
+Thread 153 "connection" received signal SIGSEGV, Segmentation fault.
+[Switching to Thread 0x7fff90314600 (LWP 495297)]
+0x0000555558467134 in ShannonBase::Optimizer::PathGenerator::CreateIteratorFromAccessPath(THD*, MEM_ROOT*, ShannonBase::Optimizer::OptimizeContext*, AccessPath*, JOIN*, bool) ()
+#0  0x0000555558467134 in ShannonBase::Optimizer::PathGenerator::CreateIteratorFromAccessPath(THD*, MEM_ROOT*, ShannonBase::Optimizer::OptimizeContext*, AccessPath*, JOIN*, bool) ()
+No symbol table info available.
+#1  0x000055555846bfeb in ShannonBase::Optimizer::PathGenerator::CreateIteratorFromAccessPath(THD*, ShannonBase::Optimizer::OptimizeContext*, AccessPath*, JOIN*, bool) ()
+No symbol table info available.
+#2  0x00005555583ff1a4 in OptimizeSecondaryEngine(THD*, LEX*) ()
+No symbol table info available.
+#3  0x000055555693ee71 in Sql_cmd_dml::execute_inner(THD*) ()
+No symbol table info available.
+#4  0x0000555556949d71 in Sql_cmd_dml::execute(THD*) ()
+No symbol table info available.
+#5  0x00005555568ddf7a in mysql_execute_command(THD*, bool) ()
+No symbol table info available.
+#6  0x00005555568e2040 in dispatch_sql_command(THD*, Parser_state*) ()
+No symbol table info available.
+#7  0x00005555568e4949 in dispatch_command(THD*, COM_DATA const*, enum_server_command) ()
+No symbol table info available.
+#8  0x00005555568e55be in do_command(THD*) ()
+No symbol table info available.
+#9  0x0000555556a668e8 in handle_connection ()
+No symbol table info available.
+#10 0x00005555587b8d89 in pfs_spawn_thread ()
+No symbol table info available.
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+        ret = <optimized out>
+        pd = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140735612536320, 5614951882727492807, 140737488340014, 140737488340015, 0, 140735611482112, -5615020483580654393, -5614936877979267897}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+No locals.
+rax            0x555558467100      93825041592576
+rbx            0x7ffface29698      140736093918872
+rcx            0x7ffface2aad0      140736093924048
+rdx            0x24                36
+rsi            0x555559f07dd4      93825069514196
+rdi            0x7fff90310550      140735612519760
+rbp            0x7fff90310870      0x7fff90310870
+rsp            0x7fff90310330      0x7fff90310330
+r8             0x7ffface02898      140736093759640
+r9             0x7fffad3e8188      140736099942792
+r10            0x7ffface29dc8      140736093920712
+r11            0x8d590b0b28e728b0  -8261559898875680592
+r12            0x1                 1
+r13            0x7fff90310550      140735612519760
+r14            0x7ffface29ca0      140736093920416
+r15            0x0                 0
+rip            0x555558467134      0x555558467134 <ShannonBase::Optimizer::PathGenerator::CreateIteratorFromAccessPath(THD*, MEM_ROOT*, ShannonBase::Optimizer::OptimizeContext*, AccessPath*, JOIN*, bool)+3924>
+eflags         0x10206             [ PF IF RF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+k0             0xd00080            13631616
+k1             0x200100            2097408
+k2             0xf8                248
+k3             0x0                 0
+k4             0xfffdff7f          4294836095
+k5             0x0                 0
+k6             0x0                 0
+k7             0xfef8feff          4277731071
+
+Thread 155 (Thread 0x7ffefb2de600 (LWP 499072)):
+#0  0x000055555845dafa in ShannonBase::Populate::parse_log_func_main(log_t*) ()
+#1  0x0000555557fd18b6 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(log_t*), log_t*> > >::_M_run() ()
+#2  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#4  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 154 (Thread 0x7ffefbadf600 (LWP 499070)):
+#0  0x00007ffff62f3a68 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=0x7ffefbaddd30, rem=0x7ffefbaddd30) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+#1  0x00007ffff62f8977 in __GI___nanosleep (req=<optimized out>, rem=<optimized out>) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
+#2  0x0000555558436f6f in ShannonBase::Purge::purge_coordinator_main() ()
+#3  0x0000555557fe0ad2 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)()> > >::_M_run() ()
+#4  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#6  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 153 (Thread 0x7fff90314600 (LWP 495297)):
+#0  0x0000555558467134 in ShannonBase::Optimizer::PathGenerator::CreateIteratorFromAccessPath(THD*, MEM_ROOT*, ShannonBase::Optimizer::OptimizeContext*, AccessPath*, JOIN*, bool) ()
+#1  0x000055555846bfeb in ShannonBase::Optimizer::PathGenerator::CreateIteratorFromAccessPath(THD*, ShannonBase::Optimizer::OptimizeContext*, AccessPath*, JOIN*, bool) ()
+#2  0x00005555583ff1a4 in OptimizeSecondaryEngine(THD*, LEX*) ()
+#3  0x000055555693ee71 in Sql_cmd_dml::execute_inner(THD*) ()
+#4  0x0000555556949d71 in Sql_cmd_dml::execute(THD*) ()
+#5  0x00005555568ddf7a in mysql_execute_command(THD*, bool) ()
+#6  0x00005555568e2040 in dispatch_sql_command(THD*, Parser_state*) ()
+#7  0x00005555568e4949 in dispatch_command(THD*, COM_DATA const*, enum_server_command) ()
+#8  0x00005555568e55be in do_command(THD*) ()
+#9  0x0000555556a668e8 in handle_connection ()
+#10 0x00005555587b8d89 in pfs_spawn_thread ()
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 152 (Thread 0x7fffe802a680 (LWP 494786)):
+#0  0x00007ffff625223a in __GI___sigtimedwait (set=set@entry=0x7ffff63e0f00 <sigtimer_set>, info=info@entry=0x7fffe8028e60, timeout=timeout@entry=0x0) at ../sysdeps/unix/sysv/linux/sigtimedwait.c:31
+#1  0x00007ffff62522bb in __GI___sigwaitinfo (set=set@entry=0x7ffff63e0f00 <sigtimer_set>, info=info@entry=0x7fffe8028e60) at ../sysdeps/unix/sysv/linux/sigwaitinfo.c:25
+#2  0x00007ffff62af893 in timer_helper_thread (arg=<optimized out>) at ../sysdeps/unix/sysv/linux/timer_routines.c:71
+#3  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#4  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 151 (Thread 0x7fff90517600 (LWP 494785)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555b0aed48 <Per_thread_connection_handler::COND_thread_cache+40>) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555b0aed48 <Per_thread_connection_handler::COND_thread_cache+40>) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555b0aed48 <Per_thread_connection_handler::COND_thread_cache+40>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555b0aed60 <Per_thread_connection_handler::LOCK_thread_cache>, cond=0x55555b0aed20 <Per_thread_connection_handler::COND_thread_cache>) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555b0aed20 <Per_thread_connection_handler::COND_thread_cache>, mutex=0x55555b0aed60 <Per_thread_connection_handler::LOCK_thread_cache>) at pthread_cond_wait.c:628
+#5  0x0000555556a66477 in Per_thread_connection_handler::block_until_new_connection() ()
+#6  0x0000555556a6672c in handle_connection ()
+#7  0x00005555587b8d89 in pfs_spawn_thread ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 150 (Thread 0x7ffefc2e0600 (LWP 494784)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555b00bf28 <COND_compress_gtid_table+40>) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555b00bf28 <COND_compress_gtid_table+40>) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555b00bf28 <COND_compress_gtid_table+40>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555b00bf40 <LOCK_compress_gtid_table>, cond=0x55555b00bf00 <COND_compress_gtid_table>) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555b00bf00 <COND_compress_gtid_table>, mutex=0x55555b00bf40 <LOCK_compress_gtid_table>) at pthread_cond_wait.c:628
+#5  0x0000555557a12443 in compress_gtid_table ()
+#6  0x00005555587b8d89 in pfs_spawn_thread ()
+#7  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#8  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 149 (Thread 0x7fffa0112600 (LWP 494783)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555db7b9d8) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555db7b9d8) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555db7b9d8, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555db7b980, cond=0x55555db7b9b0) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555db7b9b0, mutex=0x55555db7b980) at pthread_cond_wait.c:628
+#5  0x00005555588da83c in xpl::Broker_task::wait_for_data_and_swap_queues(std::queue<ngs::Notice_descriptor, std::__cxx11::list<ngs::Notice_descriptor, std::allocator<ngs::Notice_descriptor> > >*) ()
+#6  0x00005555588db056 in xpl::Broker_task::loop() ()
+#7  0x000055555886e472 in ngs::Server::run_task(std::shared_ptr<xpl::iface::Server_task>) ()
+#8  0x000055555886ed3d in std::_Function_handler<void (), ngs::Server::start_tasks()::{lambda()#1}>::_M_invoke(std::_Any_data const&) ()
+#9  0x00005555588f1758 in ngs::Scheduler_dynamic::worker() ()
+#10 0x00005555587b8d89 in pfs_spawn_thread ()
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 148 (Thread 0x7fffa0213600 (LWP 494782)):
+#0  0x00007ffff6333d8e in epoll_wait (epfd=14, events=0x7fffa01f9a10, maxevents=8192, timeout=1000) at ../sysdeps/unix/sysv/linux/epoll_wait.c:30
+#1  0x00005555588fce76 in net::linux_epoll_io_service::update_fd_events(std::chrono::duration<long, std::ratio<1l, 1000l> >) ()
+#2  0x00005555588fddec in net::linux_epoll_io_service::poll_one(std::chrono::duration<long, std::ratio<1l, 1000l> >) ()
+#3  0x00005555588fb8fe in ngs::Socket_events::loop() ()
+#4  0x000055555886e472 in ngs::Server::run_task(std::shared_ptr<xpl::iface::Server_task>) ()
+#5  0x000055555886ed3d in std::_Function_handler<void (), ngs::Server::start_tasks()::{lambda()#1}>::_M_invoke(std::_Any_data const&) ()
+#6  0x00005555588f1758 in ngs::Scheduler_dynamic::worker() ()
+#7  0x00005555587b8d89 in pfs_spawn_thread ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 147 (Thread 0x7fffa0315600 (LWP 494781)):
+#0  0x00007ffff625223a in __GI___sigtimedwait (set=0x7fffa0313d20, info=0x7fffa0313da0, timeout=0x0) at ../sysdeps/unix/sysv/linux/sigtimedwait.c:31
+#1  0x000055555678aa8b in signal_hand ()
+#2  0x00005555587b8d89 in pfs_spawn_thread ()
+#3  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#4  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 146 (Thread 0x7fffa0417600 (LWP 494780)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555db7af38) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555db7af38) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555db7af38, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555db7aee0, cond=0x55555db7af10) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555db7af10, mutex=0x55555db7aee0) at pthread_cond_wait.c:628
+#5  0x0000555556eabe11 in Event_queue::cond_wait(THD*, timespec*, PSI_stage_info_v1 const*, char const*, char const*, unsigned int) ()
+#6  0x0000555556eac2af in Event_queue::get_top_for_execution_if_time(THD*, Event_queue_element_for_exec**) ()
+#7  0x0000555556eaf1db in Event_scheduler::run(THD*) ()
+#8  0x0000555556eaf898 in event_scheduler_thread ()
+#9  0x00005555587b8d89 in pfs_spawn_thread ()
+#10 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#11 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 145 (Thread 0x7ffefcae1600 (LWP 494779)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe401f530) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe401f530) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe401f530, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe401f4e0, cond=0x7fffe401f508) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe401f508, mutex=0x7fffe401f4e0) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x00005555580f55a6 in srv_worker_thread() ()
+#7  0x0000555557fe0ad2 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)()> > >::_M_run() ()
+#8  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#9  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#10 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 144 (Thread 0x7ffefd2e2600 (LWP 494778)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe401f4a0) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe401f4a0) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe401f4a0, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe401f450, cond=0x7fffe401f478) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe401f478, mutex=0x7fffe401f450) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x00005555580f55a6 in srv_worker_thread() ()
+#7  0x0000555557fe0ad2 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)()> > >::_M_run() ()
+#8  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#9  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#10 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 143 (Thread 0x7ffefdae3600 (LWP 494777)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe401f414) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe401f414) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe401f414, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe401f3c0, cond=0x7fffe401f3e8) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe401f3e8, mutex=0x7fffe401f3c0) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x00005555580f55a6 in srv_worker_thread() ()
+#7  0x0000555557fe0ad2 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)()> > >::_M_run() ()
+#8  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#9  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#10 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 142 (Thread 0x7ffefe2e4600 (LWP 494776)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe401f380) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe401f380) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe401f380, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe401f330, cond=0x7fffe401f358) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe401f358, mutex=0x7fffe401f330) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x00005555580f6b69 in srv_purge_coordinator_thread() ()
+#7  0x0000555557fe0ad2 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)()> > >::_M_run() ()
+#8  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#9  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#10 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 141 (Thread 0x7ffefeae5600 (LWP 494775)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x7ffefeae3b30, op=137, expected=0, futex_word=0x7fffe42ce9c0) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x7ffefeae3b30, clockid=0, expected=0, futex_word=0x7fffe42ce9c0) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe42ce9c0, expected=expected@entry=0, clockid=clockid@entry=1, abstime=abstime@entry=0x7ffefeae3b30, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2d9e in __pthread_cond_wait_common (abstime=0x7ffefeae3b30, clockid=1, mutex=0x7fffe42ce970, cond=0x7fffe42ce998) at pthread_cond_wait.c:504
+#4  ___pthread_cond_timedwait64 (cond=0x7fffe42ce998, mutex=0x7fffe42ce970, abstime=0x7ffefeae3b30) at pthread_cond_wait.c:653
+#5  0x000055555803103a in os_event::timed_wait(timespec const*) ()
+#6  0x0000555558031ec9 in os_event::wait_time_low(std::chrono::duration<long, std::ratio<1l, 1000000l> >, long) ()
+#7  0x00005555582863d9 in Clone_persist_gtid::periodic_write() ()
+#8  0x0000555558282dc6 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(Clone_persist_gtid*), Clone_persist_gtid*> > >::_M_run() ()
+#9  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#10 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#11 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 140 (Thread 0x7ffeff2e6600 (LWP 494774)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe401f6e0) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe401f6e0) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe401f6e0, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe401f690, cond=0x7fffe401f6b8) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe401f6b8, mutex=0x7fffe401f690) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558204f33 in buf_dump_thread() ()
+#7  0x0000555557fe0ad2 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)()> > >::_M_run() ()
+#8  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#9  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#10 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 135 (Thread 0x7fffb0116600 (LWP 494759)):
+#0  __futex_abstimed_wait_common64 (private=-1341043984, cancel=true, abstime=0x7fffb0114c50, op=393, expected=0, futex_word=0x55555e2e12d0) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=-1341043984, abstime=0x7fffb0114c50, clockid=32767, expected=0, futex_word=0x55555e2e12d0) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e2e12d0, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x7fffb0114c50, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2d9e in __pthread_cond_wait_common (abstime=0x7fffb0114c50, clockid=0, mutex=0x55555e2e1278, cond=0x55555e2e12a8) at pthread_cond_wait.c:504
+#4  ___pthread_cond_timedwait64 (cond=0x55555e2e12a8, mutex=0x55555e2e1278, abstime=0x7fffb0114c50) at pthread_cond_wait.c:653
+#5  0x00005555588c3d05 in xpl::Cond::timed_wait(xpl::Mutex&, unsigned long long) ()
+#6  0x00005555588efe7d in ngs::Scheduler_dynamic::wait_if_idle_then_delete_worker(unsigned long long&) ()
+#7  0x00005555588f1454 in ngs::Scheduler_dynamic::worker() ()
+#8  0x00005555587b8d89 in pfs_spawn_thread ()
+#9  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#10 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 134 (Thread 0x7fffe2270600 (LWP 494758)):
+#0  __futex_abstimed_wait_common64 (private=-500765968, cancel=true, abstime=0x7fffe226ec50, op=393, expected=0, futex_word=0x55555e2e12d0) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=-500765968, abstime=0x7fffe226ec50, clockid=32767, expected=0, futex_word=0x55555e2e12d0) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e2e12d0, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x7fffe226ec50, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2d9e in __pthread_cond_wait_common (abstime=0x7fffe226ec50, clockid=0, mutex=0x55555e2e1278, cond=0x55555e2e12a8) at pthread_cond_wait.c:504
+#4  ___pthread_cond_timedwait64 (cond=0x55555e2e12a8, mutex=0x55555e2e1278, abstime=0x7fffe226ec50) at pthread_cond_wait.c:653
+#5  0x00005555588c3d05 in xpl::Cond::timed_wait(xpl::Mutex&, unsigned long long) ()
+#6  0x00005555588efe7d in ngs::Scheduler_dynamic::wait_if_idle_then_delete_worker(unsigned long long&) ()
+#7  0x00005555588f1454 in ngs::Scheduler_dynamic::worker() ()
+#8  0x00005555587b8d89 in pfs_spawn_thread ()
+#9  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#10 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 133 (Thread 0x7ffeffae7600 (LWP 494757)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 132 (Thread 0x7fff002e8600 (LWP 494756)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 131 (Thread 0x7fff00ae9600 (LWP 494755)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 130 (Thread 0x7fff012ea600 (LWP 494754)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 129 (Thread 0x7fff01aeb600 (LWP 494753)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 128 (Thread 0x7fff022ec600 (LWP 494752)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 127 (Thread 0x7fff02aed600 (LWP 494751)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 126 (Thread 0x7fff032ee600 (LWP 494750)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 125 (Thread 0x7fff03aef600 (LWP 494749)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 124 (Thread 0x7fff042f0600 (LWP 494748)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 123 (Thread 0x7fff04af1600 (LWP 494747)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 122 (Thread 0x7fff052f2600 (LWP 494746)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 121 (Thread 0x7fff05af3600 (LWP 494745)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 120 (Thread 0x7fff062f4600 (LWP 494744)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 119 (Thread 0x7fff06af5600 (LWP 494743)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 118 (Thread 0x7fff072f6600 (LWP 494742)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 117 (Thread 0x7fff07af7600 (LWP 494741)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 116 (Thread 0x7fff082f8600 (LWP 494740)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 115 (Thread 0x7fff08af9600 (LWP 494739)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 114 (Thread 0x7fff092fa600 (LWP 494738)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 113 (Thread 0x7fff09afb600 (LWP 494737)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 112 (Thread 0x7fff0a2fc600 (LWP 494736)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 111 (Thread 0x7fff0aafd600 (LWP 494735)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 110 (Thread 0x7fff0b2fe600 (LWP 494734)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 109 (Thread 0x7fff0baff600 (LWP 494733)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 108 (Thread 0x7fff0c300600 (LWP 494732)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 107 (Thread 0x7fff0cb01600 (LWP 494731)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 106 (Thread 0x7fff0d302600 (LWP 494730)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 105 (Thread 0x7fff0db03600 (LWP 494729)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 104 (Thread 0x7fff0e304600 (LWP 494728)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 103 (Thread 0x7fff0eb05600 (LWP 494727)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 102 (Thread 0x7fff0f306600 (LWP 494726)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 101 (Thread 0x7fff0fb07600 (LWP 494725)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 100 (Thread 0x7fff10308600 (LWP 494724)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 99 (Thread 0x7fff10b09600 (LWP 494723)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 98 (Thread 0x7fff1130a600 (LWP 494722)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 97 (Thread 0x7fff11b0b600 (LWP 494721)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 96 (Thread 0x7fff1230c600 (LWP 494720)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 95 (Thread 0x7fff12b0d600 (LWP 494719)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 94 (Thread 0x7fff1330e600 (LWP 494718)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 93 (Thread 0x7fff13b0f600 (LWP 494717)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 92 (Thread 0x7fff14310600 (LWP 494716)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 91 (Thread 0x7fff14b11600 (LWP 494715)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 90 (Thread 0x7fff15312600 (LWP 494714)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 89 (Thread 0x7fff15b13600 (LWP 494713)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 88 (Thread 0x7fff16314600 (LWP 494712)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 87 (Thread 0x7fff16b15600 (LWP 494711)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 86 (Thread 0x7fff17316600 (LWP 494710)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 85 (Thread 0x7fff17b17600 (LWP 494709)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 84 (Thread 0x7fff18318600 (LWP 494708)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 83 (Thread 0x7fff18b19600 (LWP 494707)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 82 (Thread 0x7fff1931a600 (LWP 494706)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 81 (Thread 0x7fff19b1b600 (LWP 494705)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 80 (Thread 0x7fff1a31c600 (LWP 494704)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 79 (Thread 0x7fff1ab1d600 (LWP 494703)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 78 (Thread 0x7fff1b31e600 (LWP 494702)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 77 (Thread 0x7fff1bb1f600 (LWP 494701)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 76 (Thread 0x7fff1c320600 (LWP 494700)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 75 (Thread 0x7fff1cb21600 (LWP 494699)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 74 (Thread 0x7fff1d322600 (LWP 494698)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 73 (Thread 0x7fff1db23600 (LWP 494697)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 72 (Thread 0x7fff1e324600 (LWP 494696)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 71 (Thread 0x7fff1eb25600 (LWP 494695)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 70 (Thread 0x7fff1f326600 (LWP 494694)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 69 (Thread 0x7fff1fb27600 (LWP 494693)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 68 (Thread 0x7fff20328600 (LWP 494692)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 67 (Thread 0x7fff20b29600 (LWP 494691)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 66 (Thread 0x7fff2132a600 (LWP 494690)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 65 (Thread 0x7fff21b2b600 (LWP 494689)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 64 (Thread 0x7fff2232c600 (LWP 494688)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 63 (Thread 0x7fff22b2d600 (LWP 494687)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 62 (Thread 0x7fff2332e600 (LWP 494686)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 61 (Thread 0x7fff23b2f600 (LWP 494685)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 60 (Thread 0x7fff24330600 (LWP 494684)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 59 (Thread 0x7fff24b31600 (LWP 494683)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 58 (Thread 0x7fff25332600 (LWP 494682)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 57 (Thread 0x7fff25b33600 (LWP 494681)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 56 (Thread 0x7fff26334600 (LWP 494680)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 55 (Thread 0x7fff80d18600 (LWP 494679)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 54 (Thread 0x7fffe93f8600 (LWP 494678)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555e280948) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555e280948) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555e280948, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555e2808e8, cond=0x55555e280920) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x55555e280920, mutex=0x55555e2808e8) at pthread_cond_wait.c:628
+#5  0x000055555840270e in boost::asio::detail::scheduler::run(boost::system::error_code&) ()
+#6  0x000055555841ccbe in boost::asio::detail::posix_thread::func<boost::asio::thread_pool::thread_function>::run() ()
+#7  0x00005555583f9175 in boost_asio_detail_posix_thread_function ()
+#8  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#9  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 53 (Thread 0x7fff81519600 (LWP 494677)):
+#0  __futex_abstimed_wait_common64 (private=1, cancel=true, abstime=0x7fff815179d0, op=137, expected=0, futex_word=0x7fffe46fd3a0) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=1, abstime=0x7fff815179d0, clockid=0, expected=0, futex_word=0x7fffe46fd3a0) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe46fd3a0, expected=expected@entry=0, clockid=clockid@entry=1, abstime=abstime@entry=0x7fff815179d0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2d9e in __pthread_cond_wait_common (abstime=0x7fff815179d0, clockid=1, mutex=0x7fffe46fd350, cond=0x7fffe46fd378) at pthread_cond_wait.c:504
+#4  ___pthread_cond_timedwait64 (cond=0x7fffe46fd378, mutex=0x7fffe46fd350, abstime=0x7fff815179d0) at pthread_cond_wait.c:653
+#5  0x000055555803103a in os_event::timed_wait(timespec const*) ()
+#6  0x0000555558031ec9 in os_event::wait_time_low(std::chrono::duration<long, std::ratio<1l, 1000000l> >, long) ()
+#7  0x000055555817213b in ib_wqueue_timedwait(ib_wqueue_t*, std::chrono::duration<long, std::ratio<1l, 1000000l> >) ()
+#8  0x00005555583919c7 in fts_optimize_thread(ib_wqueue_t*) ()
+#9  0x0000555558387f66 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(ib_wqueue_t*), ib_wqueue_t*> > >::_M_run() ()
+#10 0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 52 (Thread 0x7fff81d1a600 (LWP 494676)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x7fff81d18bb0, op=137, expected=0, futex_word=0x7fffe4758000) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x7fff81d18bb0, clockid=0, expected=0, futex_word=0x7fffe4758000) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe4758000, expected=expected@entry=0, clockid=clockid@entry=1, abstime=abstime@entry=0x7fff81d18bb0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2d9e in __pthread_cond_wait_common (abstime=0x7fff81d18bb0, clockid=1, mutex=0x7fffe4757fb0, cond=0x7fffe4757fd8) at pthread_cond_wait.c:504
+#4  ___pthread_cond_timedwait64 (cond=0x7fffe4757fd8, mutex=0x7fffe4757fb0, abstime=0x7fff81d18bb0) at pthread_cond_wait.c:653
+#5  0x000055555803103a in os_event::timed_wait(timespec const*) ()
+#6  0x0000555558031ec9 in os_event::wait_time_low(std::chrono::duration<long, std::ratio<1l, 1000000l> >, long) ()
+#7  0x00005555582fb21e in dict_stats_thread() ()
+#8  0x0000555557fe0ad2 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)()> > >::_M_run() ()
+#9  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#10 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#11 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 51 (Thread 0x7fff8251b600 (LWP 494675)):
+#0  0x00007ffff62f3a68 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=0x7fff82519d10, rem=0x7fff82519d10) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+#1  0x00007ffff62f8977 in __GI___nanosleep (req=<optimized out>, rem=<optimized out>) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
+#2  0x00005555580f4065 in srv_master_thread() ()
+#3  0x0000555557fe0ad2 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)()> > >::_M_run() ()
+#4  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#6  0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 50 (Thread 0x7fff93d1e600 (LWP 494674)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe401f890) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe401f890) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe401f890, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe401f840, cond=0x7fffe401f868) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe401f868, mutex=0x7fffe401f840) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x00005555581ecb55 in buf_resize_thread() ()
+#7  0x0000555557fe0ad2 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)()> > >::_M_run() ()
+#8  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#9  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#10 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 49 (Thread 0x7fff8351d600 (LWP 494672)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x7fff8351bc40, op=137, expected=0, futex_word=0x7fffe401f650) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x7fff8351bc40, clockid=0, expected=0, futex_word=0x7fffe401f650) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe401f650, expected=expected@entry=0, clockid=clockid@entry=1, abstime=abstime@entry=0x7fff8351bc40, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2d9e in __pthread_cond_wait_common (abstime=0x7fff8351bc40, clockid=1, mutex=0x7fffe401f600, cond=0x7fffe401f628) at pthread_cond_wait.c:504
+#4  ___pthread_cond_timedwait64 (cond=0x7fffe401f628, mutex=0x7fffe401f600, abstime=0x7fff8351bc40) at pthread_cond_wait.c:653
+#5  0x000055555803103a in os_event::timed_wait(timespec const*) ()
+#6  0x0000555558031ec9 in os_event::wait_time_low(std::chrono::duration<long, std::ratio<1l, 1000000l> >, long) ()
+#7  0x00005555580f8706 in srv_monitor_thread() ()
+#8  0x0000555557fe0ad2 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)()> > >::_M_run() ()
+#9  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#10 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#11 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 48 (Thread 0x7fff83d1e600 (LWP 494671)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x7fff83d1aac0, op=137, expected=0, futex_word=0x7fffe401f5c0) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x7fff83d1aac0, clockid=0, expected=0, futex_word=0x7fffe401f5c0) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe401f5c0, expected=expected@entry=0, clockid=clockid@entry=1, abstime=abstime@entry=0x7fff83d1aac0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2d9e in __pthread_cond_wait_common (abstime=0x7fff83d1aac0, clockid=1, mutex=0x7fffe401f570, cond=0x7fffe401f598) at pthread_cond_wait.c:504
+#4  ___pthread_cond_timedwait64 (cond=0x7fffe401f598, mutex=0x7fffe401f570, abstime=0x7fff83d1aac0) at pthread_cond_wait.c:653
+#5  0x000055555803103a in os_event::timed_wait(timespec const*) ()
+#6  0x0000555558031ec9 in os_event::wait_time_low(std::chrono::duration<long, std::ratio<1l, 1000000l> >, long) ()
+#7  0x00005555580ef61b in srv_error_monitor_thread() ()
+#8  0x0000555557fe0ad2 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)()> > >::_M_run() ()
+#9  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#10 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#11 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 47 (Thread 0x7fff82d1c600 (LWP 494670)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x7fff82d1ab50, op=137, expected=0, futex_word=0x7fffe43f78a0) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x7fff82d1ab50, clockid=0, expected=0, futex_word=0x7fffe43f78a0) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe43f78a0, expected=expected@entry=0, clockid=clockid@entry=1, abstime=abstime@entry=0x7fff82d1ab50, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2d9e in __pthread_cond_wait_common (abstime=0x7fff82d1ab50, clockid=1, mutex=0x7fffe43f7850, cond=0x7fffe43f7878) at pthread_cond_wait.c:504
+#4  ___pthread_cond_timedwait64 (cond=0x7fffe43f7878, mutex=0x7fffe43f7850, abstime=0x7fff82d1ab50) at pthread_cond_wait.c:653
+#5  0x000055555803103a in os_event::timed_wait(timespec const*) ()
+#6  0x0000555558031ec9 in os_event::wait_time_low(std::chrono::duration<long, std::ratio<1l, 1000000l> >, long) ()
+#7  0x0000555557f9baf2 in lock_wait_timeout_thread() ()
+#8  0x0000555557fe0ad2 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)()> > >::_M_run() ()
+#9  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#10 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#11 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 42 (Thread 0x7fff90d18600 (LWP 494660)):
+#0  __futex_abstimed_wait_common64 (private=-160147760, cancel=true, abstime=0x7fff90d16c20, op=137, expected=0, futex_word=0x7fffe4413f80) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=-160147760, abstime=0x7fff90d16c20, clockid=32767, expected=0, futex_word=0x7fffe4413f80) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe4413f80, expected=expected@entry=0, clockid=clockid@entry=1, abstime=abstime@entry=0x7fff90d16c20, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2d9e in __pthread_cond_wait_common (abstime=0x7fff90d16c20, clockid=1, mutex=0x7fffe4413f30, cond=0x7fffe4413f58) at pthread_cond_wait.c:504
+#4  ___pthread_cond_timedwait64 (cond=0x7fffe4413f58, mutex=0x7fffe4413f30, abstime=0x7fff90d16c20) at pthread_cond_wait.c:653
+#5  0x000055555803103a in os_event::timed_wait(timespec const*) ()
+#6  0x0000555558031ec9 in os_event::wait_time_low(std::chrono::duration<long, std::ratio<1l, 1000000l> >, long) ()
+#7  0x0000555557fc7aad in log_files_governor(log_t*) ()
+#8  0x0000555557fd18b6 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(log_t*), log_t*> > >::_M_run() ()
+#9  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#10 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#11 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 41 (Thread 0x7fff91519600 (LWP 494659)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x7fff91517b10, op=137, expected=0, futex_word=0x7fffe4413cb0) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x7fff91517b10, clockid=0, expected=0, futex_word=0x7fffe4413cb0) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe4413cb0, expected=expected@entry=0, clockid=clockid@entry=1, abstime=abstime@entry=0x7fff91517b10, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2d9e in __pthread_cond_wait_common (abstime=0x7fff91517b10, clockid=1, mutex=0x7fffe4413c60, cond=0x7fffe4413c88) at pthread_cond_wait.c:504
+#4  ___pthread_cond_timedwait64 (cond=0x7fffe4413c88, mutex=0x7fffe4413c60, abstime=0x7fff91517b10) at pthread_cond_wait.c:653
+#5  0x000055555803103a in os_event::timed_wait(timespec const*) ()
+#6  0x0000555558031ec9 in os_event::wait_time_low(std::chrono::duration<long, std::ratio<1l, 1000000l> >, long) ()
+#7  0x0000555558012ccf in log_writer(log_t*) ()
+#8  0x0000555557fd18b6 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(log_t*), log_t*> > >::_M_run() ()
+#9  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#10 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#11 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 40 (Thread 0x7fff91d1a600 (LWP 494658)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x7fff91d18b70, op=137, expected=0, futex_word=0x7fffe4413b90) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x7fff91d18b70, clockid=0, expected=0, futex_word=0x7fffe4413b90) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe4413b90, expected=expected@entry=0, clockid=clockid@entry=1, abstime=abstime@entry=0x7fff91d18b70, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2d9e in __pthread_cond_wait_common (abstime=0x7fff91d18b70, clockid=1, mutex=0x7fffe4413b40, cond=0x7fffe4413b68) at pthread_cond_wait.c:504
+#4  ___pthread_cond_timedwait64 (cond=0x7fffe4413b68, mutex=0x7fffe4413b40, abstime=0x7fff91d18b70) at pthread_cond_wait.c:653
+#5  0x000055555803103a in os_event::timed_wait(timespec const*) ()
+#6  0x0000555558031ec9 in os_event::wait_time_low(std::chrono::duration<long, std::ratio<1l, 1000000l> >, long) ()
+#7  0x0000555558007ec2 in log_write_notifier(log_t*) ()
+#8  0x0000555557fd18b6 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(log_t*), log_t*> > >::_M_run() ()
+#9  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#10 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#11 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 39 (Thread 0x7fff9251b600 (LWP 494657)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x7fff92519b30, op=137, expected=0, futex_word=0x7fffe4413d40) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x7fff92519b30, clockid=0, expected=0, futex_word=0x7fffe4413d40) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe4413d40, expected=expected@entry=0, clockid=clockid@entry=1, abstime=abstime@entry=0x7fff92519b30, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2d9e in __pthread_cond_wait_common (abstime=0x7fff92519b30, clockid=1, mutex=0x7fffe4413cf0, cond=0x7fffe4413d18) at pthread_cond_wait.c:504
+#4  ___pthread_cond_timedwait64 (cond=0x7fffe4413d18, mutex=0x7fffe4413cf0, abstime=0x7fff92519b30) at pthread_cond_wait.c:653
+#5  0x000055555803103a in os_event::timed_wait(timespec const*) ()
+#6  0x0000555558031ec9 in os_event::wait_time_low(std::chrono::duration<long, std::ratio<1l, 1000000l> >, long) ()
+#7  0x000055555800cb9f in log_flusher(log_t*) ()
+#8  0x0000555557fd18b6 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(log_t*), log_t*> > >::_M_run() ()
+#9  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#10 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#11 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 38 (Thread 0x7fff92d1c600 (LWP 494656)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x7fff92d1ab70, op=137, expected=0, futex_word=0x7fffe4413c24) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x7fff92d1ab70, clockid=0, expected=0, futex_word=0x7fffe4413c24) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe4413c24, expected=expected@entry=0, clockid=clockid@entry=1, abstime=abstime@entry=0x7fff92d1ab70, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2d9e in __pthread_cond_wait_common (abstime=0x7fff92d1ab70, clockid=1, mutex=0x7fffe4413bd0, cond=0x7fffe4413bf8) at pthread_cond_wait.c:504
+#4  ___pthread_cond_timedwait64 (cond=0x7fffe4413bf8, mutex=0x7fffe4413bd0, abstime=0x7fff92d1ab70) at pthread_cond_wait.c:653
+#5  0x000055555803103a in os_event::timed_wait(timespec const*) ()
+#6  0x0000555558031ec9 in os_event::wait_time_low(std::chrono::duration<long, std::ratio<1l, 1000000l> >, long) ()
+#7  0x00005555580098a2 in log_flush_notifier(log_t*) ()
+#8  0x0000555557fd18b6 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(log_t*), log_t*> > >::_M_run() ()
+#9  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#10 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#11 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 37 (Thread 0x7fff9351d600 (LWP 494655)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x7fff9351bb70, op=137, expected=0, futex_word=0x7fffe4413a70) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x7fff9351bb70, clockid=0, expected=0, futex_word=0x7fffe4413a70) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe4413a70, expected=expected@entry=0, clockid=clockid@entry=1, abstime=abstime@entry=0x7fff9351bb70, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2d9e in __pthread_cond_wait_common (abstime=0x7fff9351bb70, clockid=1, mutex=0x7fffe4413a20, cond=0x7fffe4413a48) at pthread_cond_wait.c:504
+#4  ___pthread_cond_timedwait64 (cond=0x7fffe4413a48, mutex=0x7fffe4413a20, abstime=0x7fff9351bb70) at pthread_cond_wait.c:653
+#5  0x000055555803103a in os_event::timed_wait(timespec const*) ()
+#6  0x0000555558031ec9 in os_event::wait_time_low(std::chrono::duration<long, std::ratio<1l, 1000000l> >, long) ()
+#7  0x0000555557fa7f76 in log_checkpointer(log_t*) ()
+#8  0x0000555557fd18b6 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(log_t*), log_t*> > >::_M_run() ()
+#9  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#10 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#11 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 35 (Thread 0x7fffa251b600 (LWP 494653)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe43f9ba4) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe43f9ba4) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe43f9ba4, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe43f9b50, cond=0x7fffe43f9b78) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe43f9b78, mutex=0x7fffe43f9b50) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558211a23 in buf_flush_page_cleaner_thread() ()
+#7  0x0000555557fe0ad2 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)()> > >::_M_run() ()
+#8  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#9  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#10 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 34 (Thread 0x7fffa2d1c600 (LWP 494652)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe43f9ba4) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe43f9ba4) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe43f9ba4, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe43f9b50, cond=0x7fffe43f9b78) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe43f9b78, mutex=0x7fffe43f9b50) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558211a23 in buf_flush_page_cleaner_thread() ()
+#7  0x0000555557fe0ad2 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)()> > >::_M_run() ()
+#8  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#9  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#10 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 33 (Thread 0x7fffa351d600 (LWP 494651)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe43f9ba4) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe43f9ba4) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe43f9ba4, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe43f9b50, cond=0x7fffe43f9b78) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe43f9b78, mutex=0x7fffe43f9b50) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558211a23 in buf_flush_page_cleaner_thread() ()
+#7  0x0000555557fe0ad2 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)()> > >::_M_run() ()
+#8  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#9  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#10 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 32 (Thread 0x7fffa3d1e600 (LWP 494650)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe43f9ba4) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe43f9ba4) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe43f9ba4, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe43f9b50, cond=0x7fffe43f9b78) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe43f9b78, mutex=0x7fffe43f9b50) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558211a23 in buf_flush_page_cleaner_thread() ()
+#7  0x0000555557fe0ad2 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)()> > >::_M_run() ()
+#8  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#9  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#10 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 31 (Thread 0x7fffb0d18600 (LWP 494649)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe43f9ba4) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe43f9ba4) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe43f9ba4, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe43f9b50, cond=0x7fffe43f9b78) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe43f9b78, mutex=0x7fffe43f9b50) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558211a23 in buf_flush_page_cleaner_thread() ()
+#7  0x0000555557fe0ad2 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)()> > >::_M_run() ()
+#8  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#9  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#10 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 30 (Thread 0x7fffb1519600 (LWP 494648)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe43f9ba4) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe43f9ba4) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe43f9ba4, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe43f9b50, cond=0x7fffe43f9b78) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe43f9b78, mutex=0x7fffe43f9b50) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558211a23 in buf_flush_page_cleaner_thread() ()
+#7  0x0000555557fe0ad2 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)()> > >::_M_run() ()
+#8  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#9  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#10 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 29 (Thread 0x7fffb1d1a600 (LWP 494647)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe43f9ba4) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe43f9ba4) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe43f9ba4, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe43f9b50, cond=0x7fffe43f9b78) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe43f9b78, mutex=0x7fffe43f9b50) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558211a23 in buf_flush_page_cleaner_thread() ()
+#7  0x0000555557fe0ad2 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)()> > >::_M_run() ()
+#8  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#9  0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#10 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 28 (Thread 0x7fffb251b600 (LWP 494645)):
+#0  __futex_abstimed_wait_common64 (private=-466680112, cancel=true, abstime=0x7fffb2519ac0, op=137, expected=0, futex_word=0x7fffe401f774) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=-466680112, abstime=0x7fffb2519ac0, clockid=32767, expected=0, futex_word=0x7fffe401f774) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe401f774, expected=expected@entry=0, clockid=clockid@entry=1, abstime=abstime@entry=0x7fffb2519ac0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2d9e in __pthread_cond_wait_common (abstime=0x7fffb2519ac0, clockid=1, mutex=0x7fffe401f720, cond=0x7fffe401f748) at pthread_cond_wait.c:504
+#4  ___pthread_cond_timedwait64 (cond=0x7fffe401f748, mutex=0x7fffe401f720, abstime=0x7fffb2519ac0) at pthread_cond_wait.c:653
+#5  0x000055555803103a in os_event::timed_wait(timespec const*) ()
+#6  0x0000555558031ec9 in os_event::wait_time_low(std::chrono::duration<long, std::ratio<1l, 1000000l> >, long) ()
+#7  0x0000555558210f9b in buf_flush_page_coordinator_thread() ()
+#8  0x0000555557fe0ad2 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)()> > >::_M_run() ()
+#9  0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#10 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#11 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 27 (Thread 0x7fffb2d1c600 (LWP 494644)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe42d5514) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe42d5514) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe42d5514, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe42d54c0, cond=0x7fffe42d54e8) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe42d54e8, mutex=0x7fffe42d54c0) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558029c61 in os_aio_simulated_handler(unsigned long, fil_node_t**, void**, IORequest*) ()
+#7  0x000055555834034d in fil_aio_wait(unsigned long) ()
+#8  0x000055555801ee48 in io_handler_thread(unsigned long) ()
+#9  0x000055555801c806 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(unsigned long), unsigned long> > >::_M_run() ()
+#10 0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 26 (Thread 0x7fffb351d600 (LWP 494643)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe42d5484) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe42d5484) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe42d5484, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe42d5430, cond=0x7fffe42d5458) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe42d5458, mutex=0x7fffe42d5430) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558029c61 in os_aio_simulated_handler(unsigned long, fil_node_t**, void**, IORequest*) ()
+#7  0x000055555834034d in fil_aio_wait(unsigned long) ()
+#8  0x000055555801ee48 in io_handler_thread(unsigned long) ()
+#9  0x000055555801c806 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(unsigned long), unsigned long> > >::_M_run() ()
+#10 0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 25 (Thread 0x7fffb3d1e600 (LWP 494642)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe42d53f0) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe42d53f0) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe42d53f0, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe42d53a0, cond=0x7fffe42d53c8) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe42d53c8, mutex=0x7fffe42d53a0) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558029c61 in os_aio_simulated_handler(unsigned long, fil_node_t**, void**, IORequest*) ()
+#7  0x000055555834034d in fil_aio_wait(unsigned long) ()
+#8  0x000055555801ee48 in io_handler_thread(unsigned long) ()
+#9  0x000055555801c806 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(unsigned long), unsigned long> > >::_M_run() ()
+#10 0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 24 (Thread 0x7fffc0d18600 (LWP 494641)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe42d5360) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe42d5360) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe42d5360, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe42d5310, cond=0x7fffe42d5338) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe42d5338, mutex=0x7fffe42d5310) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558029c61 in os_aio_simulated_handler(unsigned long, fil_node_t**, void**, IORequest*) ()
+#7  0x000055555834034d in fil_aio_wait(unsigned long) ()
+#8  0x000055555801ee48 in io_handler_thread(unsigned long) ()
+#9  0x000055555801c806 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(unsigned long), unsigned long> > >::_M_run() ()
+#10 0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 23 (Thread 0x7fffc1519600 (LWP 494640)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe42d52d0) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe42d52d0) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe42d52d0, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe42d5280, cond=0x7fffe42d52a8) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe42d52a8, mutex=0x7fffe42d5280) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558029c61 in os_aio_simulated_handler(unsigned long, fil_node_t**, void**, IORequest*) ()
+#7  0x000055555834034d in fil_aio_wait(unsigned long) ()
+#8  0x000055555801ee48 in io_handler_thread(unsigned long) ()
+#9  0x000055555801c806 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(unsigned long), unsigned long> > >::_M_run() ()
+#10 0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 22 (Thread 0x7fffc1d1a600 (LWP 494639)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe42d5240) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe42d5240) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe42d5240, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe42d51f0, cond=0x7fffe42d5218) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe42d5218, mutex=0x7fffe42d51f0) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558029c61 in os_aio_simulated_handler(unsigned long, fil_node_t**, void**, IORequest*) ()
+#7  0x000055555834034d in fil_aio_wait(unsigned long) ()
+#8  0x000055555801ee48 in io_handler_thread(unsigned long) ()
+#9  0x000055555801c806 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(unsigned long), unsigned long> > >::_M_run() ()
+#10 0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 21 (Thread 0x7fffc251b600 (LWP 494638)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe42d51b0) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe42d51b0) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe42d51b0, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe42d5160, cond=0x7fffe42d5188) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe42d5188, mutex=0x7fffe42d5160) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558029c61 in os_aio_simulated_handler(unsigned long, fil_node_t**, void**, IORequest*) ()
+#7  0x000055555834034d in fil_aio_wait(unsigned long) ()
+#8  0x000055555801ee48 in io_handler_thread(unsigned long) ()
+#9  0x000055555801c806 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(unsigned long), unsigned long> > >::_M_run() ()
+#10 0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 20 (Thread 0x7fffc2d1c600 (LWP 494637)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe42d8770) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe42d8770) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe42d8770, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe42d8720, cond=0x7fffe42d8748) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe42d8748, mutex=0x7fffe42d8720) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558029c61 in os_aio_simulated_handler(unsigned long, fil_node_t**, void**, IORequest*) ()
+#7  0x000055555834034d in fil_aio_wait(unsigned long) ()
+#8  0x000055555801ee48 in io_handler_thread(unsigned long) ()
+#9  0x000055555801c806 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(unsigned long), unsigned long> > >::_M_run() ()
+#10 0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 19 (Thread 0x7fffc351d600 (LWP 494636)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe42d86e4) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe42d86e4) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe42d86e4, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe42d8690, cond=0x7fffe42d86b8) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe42d86b8, mutex=0x7fffe42d8690) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558029c61 in os_aio_simulated_handler(unsigned long, fil_node_t**, void**, IORequest*) ()
+#7  0x000055555834034d in fil_aio_wait(unsigned long) ()
+#8  0x000055555801ee48 in io_handler_thread(unsigned long) ()
+#9  0x000055555801c806 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(unsigned long), unsigned long> > >::_M_run() ()
+#10 0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 18 (Thread 0x7fffc3d1e600 (LWP 494635)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe42d8650) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe42d8650) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe42d8650, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe42d8600, cond=0x7fffe42d8628) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe42d8628, mutex=0x7fffe42d8600) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558029c61 in os_aio_simulated_handler(unsigned long, fil_node_t**, void**, IORequest*) ()
+#7  0x000055555834034d in fil_aio_wait(unsigned long) ()
+#8  0x000055555801ee48 in io_handler_thread(unsigned long) ()
+#9  0x000055555801c806 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(unsigned long), unsigned long> > >::_M_run() ()
+#10 0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 17 (Thread 0x7fffd0cdf600 (LWP 494634)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe42d85c4) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe42d85c4) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe42d85c4, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe42d8570, cond=0x7fffe42d8598) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe42d8598, mutex=0x7fffe42d8570) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558029c61 in os_aio_simulated_handler(unsigned long, fil_node_t**, void**, IORequest*) ()
+#7  0x000055555834034d in fil_aio_wait(unsigned long) ()
+#8  0x000055555801ee48 in io_handler_thread(unsigned long) ()
+#9  0x000055555801c806 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(unsigned long), unsigned long> > >::_M_run() ()
+#10 0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 16 (Thread 0x7fffd14e0600 (LWP 494633)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe42d8534) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe42d8534) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe42d8534, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe42d84e0, cond=0x7fffe42d8508) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe42d8508, mutex=0x7fffe42d84e0) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558029c61 in os_aio_simulated_handler(unsigned long, fil_node_t**, void**, IORequest*) ()
+#7  0x000055555834034d in fil_aio_wait(unsigned long) ()
+#8  0x000055555801ee48 in io_handler_thread(unsigned long) ()
+#9  0x000055555801c806 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(unsigned long), unsigned long> > >::_M_run() ()
+#10 0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 15 (Thread 0x7fffd1ce1600 (LWP 494632)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe42d84a0) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe42d84a0) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe42d84a0, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe42d8450, cond=0x7fffe42d8478) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe42d8478, mutex=0x7fffe42d8450) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558029c61 in os_aio_simulated_handler(unsigned long, fil_node_t**, void**, IORequest*) ()
+#7  0x000055555834034d in fil_aio_wait(unsigned long) ()
+#8  0x000055555801ee48 in io_handler_thread(unsigned long) ()
+#9  0x000055555801c806 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(unsigned long), unsigned long> > >::_M_run() ()
+#10 0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 14 (Thread 0x7fffe1ffb600 (LWP 494631)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe42d8414) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe42d8414) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe42d8414, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe42d83c0, cond=0x7fffe42d83e8) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe42d83e8, mutex=0x7fffe42d83c0) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558029c61 in os_aio_simulated_handler(unsigned long, fil_node_t**, void**, IORequest*) ()
+#7  0x000055555834034d in fil_aio_wait(unsigned long) ()
+#8  0x000055555801ee48 in io_handler_thread(unsigned long) ()
+#9  0x000055555801c806 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(unsigned long), unsigned long> > >::_M_run() ()
+#10 0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 13 (Thread 0x7fffe17fa600 (LWP 494630)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe42d8384) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe42d8384) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe42d8384, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe42d8330, cond=0x7fffe42d8358) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe42d8358, mutex=0x7fffe42d8330) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558029c61 in os_aio_simulated_handler(unsigned long, fil_node_t**, void**, IORequest*) ()
+#7  0x000055555834034d in fil_aio_wait(unsigned long) ()
+#8  0x000055555801ee48 in io_handler_thread(unsigned long) ()
+#9  0x000055555801c806 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(unsigned long), unsigned long> > >::_M_run() ()
+#10 0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 12 (Thread 0x7fffe0ff9600 (LWP 494629)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe42d82f0) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe42d82f0) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe42d82f0, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe42d82a0, cond=0x7fffe42d82c8) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe42d82c8, mutex=0x7fffe42d82a0) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558029c61 in os_aio_simulated_handler(unsigned long, fil_node_t**, void**, IORequest*) ()
+#7  0x000055555834034d in fil_aio_wait(unsigned long) ()
+#8  0x000055555801ee48 in io_handler_thread(unsigned long) ()
+#9  0x000055555801c806 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(unsigned long), unsigned long> > >::_M_run() ()
+#10 0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 11 (Thread 0x7fffd3d1e600 (LWP 494628)):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x7fffe42d8260) at futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x7fffe42d8260) at futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7fffe42d8260, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at futex-internal.c:139
+#3  0x00007ffff62a2940 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7fffe42d8210, cond=0x7fffe42d8238) at pthread_cond_wait.c:504
+#4  ___pthread_cond_wait (cond=0x7fffe42d8238, mutex=0x7fffe42d8210) at pthread_cond_wait.c:628
+#5  0x0000555558030bd6 in os_event::wait_low(long) ()
+#6  0x0000555558029c61 in os_aio_simulated_handler(unsigned long, fil_node_t**, void**, IORequest*) ()
+#7  0x000055555834034d in fil_aio_wait(unsigned long) ()
+#8  0x000055555801ee48 in io_handler_thread(unsigned long) ()
+#9  0x000055555801c806 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<Detached_thread, void (*)(unsigned long), unsigned long> > >::_M_run() ()
+#10 0x00007ffff660f694 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#11 0x00007ffff62a3947 in start_thread (arg=<optimized out>) at pthread_create.c:435
+#12 0x00007ffff6333a44 in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:100
+
+Thread 1 (Thread 0x7ffff6054680 (LWP 494562)):
+#0  0x00007ffff6326d3f in __GI___poll (fds=0x55555db7e920, nfds=2, timeout=-1) at ../sysdeps/unix/sysv/linux/poll.c:29
+#1  0x0000555556a6e6cb in Mysqld_socket_listener::listen_for_connection_event() ()
+#2  0x00005555567a7160 in mysqld_main(int, char**) ()
+#3  0x00007ffff6238fd0 in __libc_start_call_main (main=main@entry=0x55555673c480 <main>, argc=argc@entry=3, argv=argv@entry=0x7fffffffd0c8) at ../sysdeps/nptl/libc_start_call_main.h:58
+#4  0x00007ffff623907d in __libc_start_main_impl (main=0x55555673c480 <main>, argc=3, argv=0x7fffffffd0c8, init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7fffffffd0b8) at ../csu/libc-start.c:409
+#5  0x0000555556784545 in _start ()
+A debugging session is active.
+
+	Inferior 1 [process 494562] will be killed.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]

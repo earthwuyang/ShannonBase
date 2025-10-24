@@ -1,1 +1,0 @@
-SELECT lineitem.l_tax, MAX(lineitem.l_linenumber) AS max_l_linenumber FROM lineitem WHERE lineitem.l_returnflag LIKE '%C' AND lineitem.l_commitdate >= '2006-03-05' AND lineitem.l_shipdate >= '2024-02-19' AND lineitem.l_orderkey > 791 GROUP BY lineitem.l_tax HAVING COUNT(*) > 514

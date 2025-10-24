@@ -1,1 +1,0 @@
-SELECT supplier.s_phone, COUNT(supplier.s_suppkey) AS count_s_suppkey, COUNT(supplier.s_nationkey) AS count_s_nationkey, MIN(supplier.s_nationkey) AS min_s_nationkey FROM supplier WHERE supplier.s_address = 'OJHVN' AND supplier.s_address LIKE '%C' GROUP BY supplier.s_phone HAVING COUNT(*) > 796 ORDER BY supplier.s_phone

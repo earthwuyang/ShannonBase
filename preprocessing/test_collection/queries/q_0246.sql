@@ -1,1 +1,0 @@
-SELECT supplier.s_name, supplier.s_phone, supplier.s_address, STDDEV(supplier.s_suppkey) AS stddev_supplier_s_suppkey, SUM(supplier.s_acctbal) AS sum_supplier_s_acctbal, STDDEV(supplier.s_acctbal) AS stddev_supplier_s_acctbal FROM supplier WHERE supplier.s_name = 'VJCNO' GROUP BY supplier.s_name, supplier.s_phone, supplier.s_address ORDER BY supplier.s_phone, supplier.s_name

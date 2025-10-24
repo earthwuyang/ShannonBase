@@ -1,1 +1,0 @@
-SELECT * FROM orders WHERE orders.o_clerk IN (SELECT orders.o_shippriority FROM orders) LIMIT 100

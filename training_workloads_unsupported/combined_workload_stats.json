@@ -1,0 +1,419 @@
+{
+  "successful_datasets": [
+    "tpcds_sf1",
+    "tpch_sf1",
+    "Airline",
+    "Credit",
+    "Carcinogenesis",
+    "Hepatitis_std",
+    "employee",
+    "financial",
+    "geneea"
+  ],
+  "failed_datasets": [],
+  "per_database_stats": [
+    {
+      "total_queries": 10000,
+      "database": "tpcds_sf1",
+      "categories": {
+        "AP": 5000,
+        "TP": 5000
+      },
+      "category_percentages": {
+        "AP": 50.0,
+        "TP": 50.0
+      },
+      "query_types": {
+        "ap_aggregation": 1803,
+        "ap_complex_join": 1750,
+        "tp_range_scan": 1465,
+        "tp_point_lookup": 1947,
+        "ap_window": 913,
+        "ap_cte_recursive": 534,
+        "tp_simple_filter": 1588
+      },
+      "query_type_percentages": {
+        "ap_aggregation": 18.029999999999998,
+        "ap_complex_join": 17.5,
+        "tp_range_scan": 14.649999999999999,
+        "tp_point_lookup": 19.470000000000002,
+        "ap_window": 9.13,
+        "ap_cte_recursive": 5.34,
+        "tp_simple_filter": 15.879999999999999
+      },
+      "category_breakdown": {
+        "AP": {
+          "ap_aggregation": 1803,
+          "ap_complex_join": 1750,
+          "ap_window": 913,
+          "ap_cte_recursive": 534
+        },
+        "TP": {
+          "tp_range_scan": 1465,
+          "tp_point_lookup": 1947,
+          "tp_simple_filter": 1588
+        }
+      },
+      "sql_file": "../training_workloads/training_workload_tpcds_sf1.sql"
+    },
+    {
+      "total_queries": 10000,
+      "database": "tpch_sf1",
+      "categories": {
+        "AP": 5000,
+        "TP": 5000
+      },
+      "category_percentages": {
+        "AP": 50.0,
+        "TP": 50.0
+      },
+      "query_types": {
+        "ap_cte_recursive": 499,
+        "tp_simple_filter": 1469,
+        "tp_point_lookup": 1988,
+        "tp_range_scan": 1543,
+        "ap_window": 977,
+        "ap_aggregation": 1755,
+        "ap_complex_join": 1769
+      },
+      "query_type_percentages": {
+        "ap_cte_recursive": 4.99,
+        "tp_simple_filter": 14.69,
+        "tp_point_lookup": 19.88,
+        "tp_range_scan": 15.43,
+        "ap_window": 9.77,
+        "ap_aggregation": 17.549999999999997,
+        "ap_complex_join": 17.69
+      },
+      "category_breakdown": {
+        "AP": {
+          "ap_cte_recursive": 499,
+          "ap_window": 977,
+          "ap_aggregation": 1755,
+          "ap_complex_join": 1769
+        },
+        "TP": {
+          "tp_simple_filter": 1469,
+          "tp_point_lookup": 1988,
+          "tp_range_scan": 1543
+        }
+      },
+      "sql_file": "../training_workloads/training_workload_tpch_sf1.sql"
+    },
+    {
+      "total_queries": 10000,
+      "database": "Airline",
+      "categories": {
+        "AP": 5000,
+        "TP": 5000
+      },
+      "category_percentages": {
+        "AP": 50.0,
+        "TP": 50.0
+      },
+      "query_types": {
+        "ap_aggregation": 2015,
+        "tp_range_scan": 1100,
+        "ap_complex_join": 1761,
+        "tp_simple_filter": 1939,
+        "ap_cte_recursive": 507,
+        "ap_window": 717,
+        "tp_point_lookup": 1961
+      },
+      "query_type_percentages": {
+        "ap_aggregation": 20.150000000000002,
+        "tp_range_scan": 11.0,
+        "ap_complex_join": 17.61,
+        "tp_simple_filter": 19.39,
+        "ap_cte_recursive": 5.07,
+        "ap_window": 7.17,
+        "tp_point_lookup": 19.61
+      },
+      "category_breakdown": {
+        "AP": {
+          "ap_aggregation": 2015,
+          "ap_complex_join": 1761,
+          "ap_cte_recursive": 507,
+          "ap_window": 717
+        },
+        "TP": {
+          "tp_range_scan": 1100,
+          "tp_simple_filter": 1939,
+          "tp_point_lookup": 1961
+        }
+      },
+      "sql_file": "../training_workloads/training_workload_Airline.sql"
+    },
+    {
+      "total_queries": 10000,
+      "database": "Credit",
+      "categories": {
+        "TP": 5000,
+        "AP": 5000
+      },
+      "category_percentages": {
+        "TP": 50.0,
+        "AP": 50.0
+      },
+      "query_types": {
+        "tp_range_scan": 1501,
+        "ap_complex_join": 1700,
+        "tp_point_lookup": 1993,
+        "ap_window": 999,
+        "ap_aggregation": 1788,
+        "ap_cte_recursive": 513,
+        "tp_simple_filter": 1506
+      },
+      "query_type_percentages": {
+        "tp_range_scan": 15.010000000000002,
+        "ap_complex_join": 17.0,
+        "tp_point_lookup": 19.93,
+        "ap_window": 9.99,
+        "ap_aggregation": 17.88,
+        "ap_cte_recursive": 5.13,
+        "tp_simple_filter": 15.06
+      },
+      "category_breakdown": {
+        "TP": {
+          "tp_range_scan": 1501,
+          "tp_point_lookup": 1993,
+          "tp_simple_filter": 1506
+        },
+        "AP": {
+          "ap_complex_join": 1700,
+          "ap_window": 999,
+          "ap_aggregation": 1788,
+          "ap_cte_recursive": 513
+        }
+      },
+      "sql_file": "../training_workloads/training_workload_Credit.sql"
+    },
+    {
+      "total_queries": 10000,
+      "database": "Carcinogenesis",
+      "categories": {
+        "TP": 5000,
+        "AP": 5000
+      },
+      "category_percentages": {
+        "TP": 50.0,
+        "AP": 50.0
+      },
+      "query_types": {
+        "tp_simple_filter": 2019,
+        "tp_point_lookup": 1967,
+        "ap_complex_join": 1783,
+        "ap_aggregation": 2039,
+        "ap_cte_recursive": 500,
+        "ap_window": 678,
+        "tp_range_scan": 1014
+      },
+      "query_type_percentages": {
+        "tp_simple_filter": 20.19,
+        "tp_point_lookup": 19.67,
+        "ap_complex_join": 17.83,
+        "ap_aggregation": 20.39,
+        "ap_cte_recursive": 5.0,
+        "ap_window": 6.78,
+        "tp_range_scan": 10.14
+      },
+      "category_breakdown": {
+        "TP": {
+          "tp_simple_filter": 2019,
+          "tp_point_lookup": 1967,
+          "tp_range_scan": 1014
+        },
+        "AP": {
+          "ap_complex_join": 1783,
+          "ap_aggregation": 2039,
+          "ap_cte_recursive": 500,
+          "ap_window": 678
+        }
+      },
+      "sql_file": "../training_workloads/training_workload_Carcinogenesis.sql"
+    },
+    {
+      "total_queries": 10000,
+      "database": "Hepatitis_std",
+      "categories": {
+        "TP": 5000,
+        "AP": 5000
+      },
+      "category_percentages": {
+        "TP": 50.0,
+        "AP": 50.0
+      },
+      "query_types": {
+        "tp_point_lookup": 2029,
+        "ap_complex_join": 1795,
+        "tp_range_scan": 1460,
+        "ap_aggregation": 1707,
+        "ap_cte_recursive": 498,
+        "ap_window": 1000,
+        "tp_simple_filter": 1511
+      },
+      "query_type_percentages": {
+        "tp_point_lookup": 20.29,
+        "ap_complex_join": 17.95,
+        "tp_range_scan": 14.6,
+        "ap_aggregation": 17.07,
+        "ap_cte_recursive": 4.9799999999999995,
+        "ap_window": 10.0,
+        "tp_simple_filter": 15.110000000000001
+      },
+      "category_breakdown": {
+        "TP": {
+          "tp_point_lookup": 2029,
+          "tp_range_scan": 1460,
+          "tp_simple_filter": 1511
+        },
+        "AP": {
+          "ap_complex_join": 1795,
+          "ap_aggregation": 1707,
+          "ap_cte_recursive": 498,
+          "ap_window": 1000
+        }
+      },
+      "sql_file": "../training_workloads/training_workload_Hepatitis_std.sql"
+    },
+    {
+      "total_queries": 10000,
+      "database": "employee",
+      "categories": {
+        "AP": 5000,
+        "TP": 5000
+      },
+      "category_percentages": {
+        "AP": 50.0,
+        "TP": 50.0
+      },
+      "query_types": {
+        "ap_cte_recursive": 516,
+        "tp_simple_filter": 1739,
+        "tp_point_lookup": 2004,
+        "ap_complex_join": 1735,
+        "ap_window": 901,
+        "ap_aggregation": 1848,
+        "tp_range_scan": 1257
+      },
+      "query_type_percentages": {
+        "ap_cte_recursive": 5.16,
+        "tp_simple_filter": 17.39,
+        "tp_point_lookup": 20.04,
+        "ap_complex_join": 17.349999999999998,
+        "ap_window": 9.01,
+        "ap_aggregation": 18.48,
+        "tp_range_scan": 12.57
+      },
+      "category_breakdown": {
+        "AP": {
+          "ap_cte_recursive": 516,
+          "ap_complex_join": 1735,
+          "ap_window": 901,
+          "ap_aggregation": 1848
+        },
+        "TP": {
+          "tp_simple_filter": 1739,
+          "tp_point_lookup": 2004,
+          "tp_range_scan": 1257
+        }
+      },
+      "sql_file": "../training_workloads/training_workload_employee.sql"
+    },
+    {
+      "total_queries": 10000,
+      "database": "financial",
+      "categories": {
+        "AP": 5000,
+        "TP": 5000
+      },
+      "category_percentages": {
+        "AP": 50.0,
+        "TP": 50.0
+      },
+      "query_types": {
+        "ap_cte_recursive": 489,
+        "ap_window": 1024,
+        "tp_point_lookup": 2013,
+        "tp_simple_filter": 1478,
+        "tp_range_scan": 1509,
+        "ap_complex_join": 1733,
+        "ap_aggregation": 1754
+      },
+      "query_type_percentages": {
+        "ap_cte_recursive": 4.89,
+        "ap_window": 10.24,
+        "tp_point_lookup": 20.13,
+        "tp_simple_filter": 14.78,
+        "tp_range_scan": 15.09,
+        "ap_complex_join": 17.330000000000002,
+        "ap_aggregation": 17.54
+      },
+      "category_breakdown": {
+        "AP": {
+          "ap_cte_recursive": 489,
+          "ap_window": 1024,
+          "ap_complex_join": 1733,
+          "ap_aggregation": 1754
+        },
+        "TP": {
+          "tp_point_lookup": 2013,
+          "tp_simple_filter": 1478,
+          "tp_range_scan": 1509
+        }
+      },
+      "sql_file": "../training_workloads/training_workload_financial.sql"
+    },
+    {
+      "total_queries": 10000,
+      "database": "geneea",
+      "categories": {
+        "AP": 5000,
+        "TP": 5000
+      },
+      "category_percentages": {
+        "AP": 50.0,
+        "TP": 50.0
+      },
+      "query_types": {
+        "ap_complex_join": 1736,
+        "tp_point_lookup": 2042,
+        "ap_cte_recursive": 484,
+        "ap_window": 1031,
+        "ap_aggregation": 1749,
+        "tp_simple_filter": 1478,
+        "tp_range_scan": 1480
+      },
+      "query_type_percentages": {
+        "ap_complex_join": 17.36,
+        "tp_point_lookup": 20.419999999999998,
+        "ap_cte_recursive": 4.84,
+        "ap_window": 10.31,
+        "ap_aggregation": 17.49,
+        "tp_simple_filter": 14.78,
+        "tp_range_scan": 14.799999999999999
+      },
+      "category_breakdown": {
+        "AP": {
+          "ap_complex_join": 1736,
+          "ap_cte_recursive": 484,
+          "ap_window": 1031,
+          "ap_aggregation": 1749
+        },
+        "TP": {
+          "tp_point_lookup": 2042,
+          "tp_simple_filter": 1478,
+          "tp_range_scan": 1480
+        }
+      },
+      "sql_file": "../training_workloads/training_workload_geneea.sql"
+    }
+  ],
+  "aggregate": {
+    "total_queries": 90000,
+    "total_tp": 45000,
+    "total_ap": 45000,
+    "tp_percentage": 50.0,
+    "ap_percentage": 50.0
+  }
+}

@@ -1,1 +1,0 @@
-SELECT part.p_brand, part.p_container, part.p_mfgr FROM part WHERE part.p_size = 754 LIMIT 10

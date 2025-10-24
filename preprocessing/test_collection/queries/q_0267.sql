@@ -1,1 +1,0 @@
-SELECT partsupp.ps_comment, MIN(partsupp.ps_availqty) AS min_partsupp_ps_availqty, MAX(partsupp.ps_suppkey) AS max_partsupp_ps_suppkey, MIN(partsupp.ps_suppkey) AS min_partsupp_ps_suppkey FROM partsupp WHERE ((partsupp.ps_partkey < 882) OR (partsupp.ps_comment LIKE '%B%')) OR (partsupp.ps_partkey BETWEEN 270 AND 532) GROUP BY partsupp.ps_comment ORDER BY partsupp.ps_comment

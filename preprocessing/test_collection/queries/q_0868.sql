@@ -1,1 +1,0 @@
-SELECT partsupp.ps_supplycost, SUM(partsupp.ps_partkey) AS sum_ps_partkey, MAX(partsupp.ps_partkey) AS max_ps_partkey FROM partsupp WHERE partsupp.ps_partkey < 383 AND partsupp.ps_comment LIKE 'A%' GROUP BY partsupp.ps_supplycost ORDER BY partsupp.ps_supplycost

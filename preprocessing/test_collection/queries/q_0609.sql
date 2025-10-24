@@ -1,1 +1,0 @@
-SELECT * FROM orders WHERE orders.o_shippriority > (SELECT AVG(nation.n_regionkey) FROM nation) LIMIT 100

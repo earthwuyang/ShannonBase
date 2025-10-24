@@ -1,1 +1,0 @@
-SELECT orders.o_orderpriority, orders.o_totalprice, RANK() OVER (PARTITION BY orders.o_clerk ORDER BY orders.o_clerk) AS window_result FROM orders LIMIT 1000

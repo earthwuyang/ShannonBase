@@ -27,6 +27,7 @@
 #include <NdbMutex.h>
 #include <ndb_global.h>
 #include <cassert>
+#include <sys/time.h>
 #include "NdbTick.h"
 #include "ndb_config.h"
 

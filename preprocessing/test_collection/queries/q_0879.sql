@@ -1,1 +1,0 @@
-SELECT part.p_partkey, part.p_container, part.p_brand FROM part WHERE part.p_comment LIKE '%B%' UNION SELECT nation.n_regionkey, nation.n_comment, nation.n_name FROM nation LIMIT 100

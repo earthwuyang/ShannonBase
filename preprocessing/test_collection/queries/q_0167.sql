@@ -1,1 +1,0 @@
-SELECT supplier.s_comment, supplier.s_suppkey, AVG(supplier.s_nationkey) OVER (PARTITION BY supplier.s_acctbal ORDER BY supplier.s_address) AS window_result FROM supplier LIMIT 100

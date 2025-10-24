@@ -1,1 +1,0 @@
-SELECT * FROM lineitem WHERE lineitem.l_suppkey BETWEEN 1460 AND 1482 LIMIT 100

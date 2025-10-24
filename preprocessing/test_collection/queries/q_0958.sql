@@ -1,1 +1,0 @@
-SELECT supplier.s_address, supplier.s_comment, supplier.s_name FROM supplier WHERE supplier.s_comment = 'VALUE_1' LIMIT 10

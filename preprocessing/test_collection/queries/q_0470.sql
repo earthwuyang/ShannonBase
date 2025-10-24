@@ -1,1 +1,0 @@
-SELECT customer.c_custkey, customer.c_mktsegment, SUM(customer.c_acctbal) OVER (PARTITION BY customer.c_custkey ORDER BY customer.c_name) AS window_result FROM customer WHERE customer.c_comment LIKE '%B%' LIMIT 100

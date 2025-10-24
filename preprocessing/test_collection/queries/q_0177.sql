@@ -1,1 +1,0 @@
-SELECT customer.c_name, COUNT(customer.c_nationkey) AS count_c_nationkey FROM customer WHERE customer.c_address LIKE '%C' AND customer.c_mktsegment = 'GJTAX' AND customer.c_nationkey BETWEEN 137 AND 326 GROUP BY customer.c_name HAVING COUNT(*) > 922 ORDER BY customer.c_name

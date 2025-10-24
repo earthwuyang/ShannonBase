@@ -639,6 +639,7 @@ SET(SQL_SHARED_SOURCES
   tztime.cc
   uniques.cc
   xa.cc
+  hybrid_opt/feature_extractor.cc
   xa/recovery.cc
   xa/sql_xa_second_phase.cc
   xa/sql_xa_commit.cc

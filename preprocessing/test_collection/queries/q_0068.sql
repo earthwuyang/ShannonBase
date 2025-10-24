@@ -1,1 +1,0 @@
-SELECT * FROM customer WHERE customer.c_address IN (SELECT partsupp.ps_supplycost FROM partsupp) LIMIT 100

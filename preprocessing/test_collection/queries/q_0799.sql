@@ -1,1 +1,0 @@
-SELECT supplier.s_name, supplier.s_acctbal, RANK() OVER (PARTITION BY supplier.s_phone ORDER BY supplier.s_phone) AS window_result FROM supplier WHERE supplier.s_suppkey > 373 LIMIT 1000

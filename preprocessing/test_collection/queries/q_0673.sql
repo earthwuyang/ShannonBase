@@ -1,1 +1,0 @@
-WITH cte AS (SELECT lineitem.l_quantity, lineitem.l_returnflag, lineitem.l_linestatus FROM lineitem) SELECT * FROM cte LIMIT 100

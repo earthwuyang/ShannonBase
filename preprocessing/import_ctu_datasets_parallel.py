@@ -365,7 +365,10 @@ def load_tables_to_rapid(database, tables):
     return True
 
 def import_table_load_data(args):
-    """Import table data using LOAD DATA LOCAL INFILE (much faster and less memory)"""
+    """Import table data using LOAD DATA LOCAL INFILE (much faster and less memory)
+    
+    Now handles empty strings in numeric/decimal columns by converting them to NULL.
+    """
     database, table, csv_path = args
     
     try:
@@ -376,20 +379,64 @@ def import_table_load_data(args):
         conn = connect_local_mysql(database)
         cursor = conn.cursor()
         
+        # Get column information to identify decimal/numeric columns
+        cursor.execute(f"""
+            SELECT COLUMN_NAME, DATA_TYPE, IS_NULLABLE
+            FROM information_schema.COLUMNS
+            WHERE TABLE_SCHEMA = %s AND TABLE_NAME = %s
+            ORDER BY ORDINAL_POSITION
+        """, (database, table))
+        
+        columns_info = cursor.fetchall()
+        column_names = [col[0] for col in columns_info]
+        
+        # Identify decimal/numeric nullable columns that need NULLIF treatment
+        decimal_columns = []
+        for col_name, data_type, is_nullable in columns_info:
+            if is_nullable == 'YES' and data_type.lower() in ('decimal', 'numeric', 'float', 'double', 'int', 'bigint', 'smallint', 'tinyint'):
+                decimal_columns.append(col_name)
+        
         # Disable keys for faster bulk insert
         cursor.execute(f"ALTER TABLE `{table}` DISABLE KEYS")
         
-        # Use LOAD DATA LOCAL INFILE - much faster and uses almost no memory
-        # REPLACE handles duplicates (updates existing rows)
+        # Build LOAD DATA statement with NULLIF for empty strings
         csv_path_abs = str(Path(csv_path).absolute())
-        load_sql = f"""
-            LOAD DATA LOCAL INFILE '{csv_path_abs}'
-            REPLACE INTO TABLE `{table}`
-            FIELDS TERMINATED BY ','
-            ENCLOSED BY '"'
-            LINES TERMINATED BY '\\n'
-            IGNORE 1 LINES
-        """
+        
+        if decimal_columns:
+            # Use variable assignment with NULLIF for decimal columns
+            var_list = ', '.join([f'@var_{col}' for col in column_names])
+            
+            set_clauses = []
+            for col in column_names:
+                if col in decimal_columns:
+                    set_clauses.append(f"`{col}` = NULLIF(@var_{col}, '')")
+                else:
+                    set_clauses.append(f"`{col}` = @var_{col}")
+            
+            # Join with proper newline and indentation
+            set_clause = (',\n' + ' ' * 16).join(set_clauses)
+            
+            load_sql = f"""
+                LOAD DATA LOCAL INFILE '{csv_path_abs}'
+                REPLACE INTO TABLE `{table}`
+                FIELDS TERMINATED BY ','
+                OPTIONALLY ENCLOSED BY '"'
+                LINES TERMINATED BY '\\n'
+                IGNORE 1 LINES
+                ({var_list})
+                SET 
+                {set_clause}
+            """
+        else:
+            # Simple LOAD DATA without NULLIF (for tables without decimal columns)
+            load_sql = f"""
+                LOAD DATA LOCAL INFILE '{csv_path_abs}'
+                REPLACE INTO TABLE `{table}`
+                FIELDS TERMINATED BY ','
+                OPTIONALLY ENCLOSED BY '"'
+                LINES TERMINATED BY '\\n'
+                IGNORE 1 LINES
+            """
         
         cursor.execute(load_sql)
         conn.commit()
@@ -414,6 +461,7 @@ def process_database(database, force=False, workers=MAX_WORKERS):
     """Process a single database with parallel table handling"""
     print(f"\n📦 Processing dataset: {database}")
     
+    failed_tables = []  # Track tables that fail during import
     # Check if database exists on source
     try:
         conn = connect_source_mysql()
@@ -478,6 +526,7 @@ def process_database(database, force=False, workers=MAX_WORKERS):
             try:
                 # Check if SECONDARY_ENGINE is set
                 cursor.execute(f"""
+    failed_tables = []  # Track tables that fail during import
                     SELECT CREATE_OPTIONS 
                     FROM information_schema.tables 
                     WHERE table_schema = %s AND table_name = %s
@@ -497,10 +546,7 @@ def process_database(database, force=False, workers=MAX_WORKERS):
         conn.close()
         
         # Now proceed to SECONDARY_LOAD (will be handled at the end)
-        print(f"\n  🚀 Phase 4: Loading tables into Rapid engine (with retry)...")
-        
-        # Jump to SECONDARY_LOAD step directly
-        return load_tables_to_rapid(database, tables)
+
     
     # If force=True or data incomplete, proceed with full load
     if force:
@@ -647,9 +693,17 @@ def process_database(database, force=False, workers=MAX_WORKERS):
                 total_rows += result['rows']
             elif result['status'] == 'error':
                 print(f" ✗ {result['error']}")
+                failed_tables.append(table)
         except Exception as e:
             print(f" ✗ {e}")
+            failed_tables.append(table)
     
+    if failed_tables:
+        print(f"\n  ⚠ Warning: {len(failed_tables)} table(s) failed to import: {', '.join(failed_tables)}")
+        print(f"  ✓ Successfully imported {database}: {total_rows:,} total rows (excluding failed tables)")
+    else:
+        print(f"\n  ✅ Successfully imported {database}: {total_rows:,} total rows")
+
     print(f"\n  ✅ Successfully imported {database}: {total_rows:,} total rows")
     
     # Phase 4: Load data into Rapid engine with retry logic

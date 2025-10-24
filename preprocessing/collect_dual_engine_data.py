@@ -72,6 +72,7 @@ class DualEngineCollector:
             dir.mkdir(parents=True, exist_ok=True)
             
         self.logger = self._setup_logging()
+        self.logger.setLevel(logging.DEBUG)  # Enable debug logging
         
     def _setup_logging(self):
         logging.basicConfig(
@@ -80,6 +81,18 @@ class DualEngineCollector:
         )
         return logging.getLogger(__name__)
     
+    def get_or_create_mysql_connection(self, database=None):
+        """Get existing MySQL connection or create new one (connection pooling)"""
+        # Don't pool for now - just create fresh connection
+        # TODO: Add proper pooling if needed
+        return self.connect_mysql(database)
+    
+    def get_or_create_shannon_connection(self, database=None):
+        """Get existing Shannon connection or create new one (connection pooling)"""
+        # Don't pool for now - just create fresh connection
+        # TODO: Add proper pooling if needed  
+        return self.connect_shannonbase(database)
+    
     def connect_mysql(self, database=None):
         """Connect to MySQL row store (primary engine - InnoDB)"""
         try:
@@ -87,14 +100,23 @@ class DualEngineCollector:
             if database:
                 config['database'] = database
             conn = mysql.connector.connect(**config)
+            
+            # CRITICAL: Enable autocommit - Rapid engine doesn't support transactions!
+            # Without this, ALL queries will be rejected with error 3889
+            conn.autocommit = True
+            
             cursor = conn.cursor(buffered=True)  # Use buffered cursor to avoid "Unread result"
             
             # Force use of primary engine (InnoDB) - disable secondary engine
             cursor.execute("SET SESSION use_secondary_engine = OFF")
             
+            # Set query timeout to 1 minute (60 seconds)
+            cursor.execute("SET SESSION max_execution_time = 60000")  # milliseconds
+            
             # Enable optimizer trace (simplified - no need to set all options)
             cursor.execute("SET optimizer_trace='enabled=on'")
             cursor.execute("SET optimizer_trace_max_mem_size=1048576")
+            cursor.execute("SET hybrid_optimizer_features=1")  # Enable feature extraction
             
             return conn, cursor
         except Exception as e:
@@ -108,15 +130,24 @@ class DualEngineCollector:
             if database:
                 config['database'] = database
             conn = mysql.connector.connect(**config)
+            
+            # CRITICAL: Enable autocommit - Rapid engine doesn't support transactions!
+            # Without this, ALL queries will be rejected with error 3889
+            conn.autocommit = True
+            
             cursor = conn.cursor(buffered=True)  # Use buffered cursor to avoid "Unread result"
             
             # Force use of secondary engine (Rapid/Column Store)
             # FORCED mode now works after removing the assertion in ha_shannon_rapid.cc line 907
             cursor.execute("SET SESSION use_secondary_engine = FORCED")
             
+            # Set query timeout to 1 minute (60 seconds)
+            cursor.execute("SET SESSION max_execution_time = 60000")  # milliseconds
+            
             # Enable optimizer trace (simplified)
             cursor.execute("SET optimizer_trace='enabled=on'")
             cursor.execute("SET optimizer_trace_max_mem_size=1048576")
+            cursor.execute("SET hybrid_optimizer_features=1")  # Enable feature extraction
             
             return conn, cursor
         except Exception as e:
@@ -174,14 +205,17 @@ class DualEngineCollector:
         """Extract optimizer features from trace"""
         cursor.execute("SELECT TRACE FROM information_schema.OPTIMIZER_TRACE")
         trace = cursor.fetchone()
-        
+
         if not trace:
             return None
-            
+
         try:
             trace_json = json.loads(trace[0])
+            self.logger.debug(f"Trace keys: {list(trace_json.keys())}")
+
             # Look for hybrid_optimizer_features in trace
             for step in trace_json.get('steps', []):
+                self.logger.debug(f"Step keys: {list(step.keys())}")
                 if 'hybrid_optimizer_features' in step:
                     return step['hybrid_optimizer_features']['features']
                 # Also check in join_optimization
@@ -189,11 +223,21 @@ class DualEngineCollector:
                     join_opt = step['join_optimization']
                     if 'steps' in join_opt:
                         for substep in join_opt['steps']:
+                            self.logger.debug(f"Substep keys: {list(substep.keys())}")
                             if 'hybrid_optimizer_features' in substep:
                                 return substep['hybrid_optimizer_features']['features']
+                            # Check for join_plan_features (our new trace node)
+                            if 'join_plan_features' in substep:
+                                features_data = substep['join_plan_features']
+                                self.logger.debug(f"Found join_plan_features: {features_data}")
+                                # Extract features from the trace structure
+                                if 'hybrid_optimizer_selected_features' in substep:
+                                    selected_features = substep['hybrid_optimizer_selected_features']
+                                    if 'features' in selected_features:
+                                        return [f['value'] for f in selected_features['features']]
         except Exception as e:
             self.logger.warning(f"Failed to parse trace: {e}")
-            
+
         return None
     
     def collect_query_data(self, query, query_id, database=None):
@@ -206,9 +250,13 @@ class DualEngineCollector:
             'query_text': query[:100]  # Store first 100 chars for debugging
         }
         
+        # CRITICAL FIX: Reuse connections instead of creating new ones for each query
+        # Rapid open/close connection cycles cause crashes in Rapid engine
+        # Use cached connections if available
+        
         # Collect from MySQL (row store - primary engine)
         try:
-            mysql_conn, mysql_cursor = self.connect_mysql(database)
+            mysql_conn, mysql_cursor = self.get_or_create_mysql_connection(database)
             
             # Verify engine setting
             engine_mode = self.verify_engine_used(mysql_cursor)
@@ -256,7 +304,7 @@ class DualEngineCollector:
         
         # Collect from ShannonBase (column store - secondary engine)
         try:
-            shannon_conn, shannon_cursor = self.connect_shannonbase(database)
+            shannon_conn, shannon_cursor = self.get_or_create_shannon_connection(database)
             
             # Verify engine setting
             engine_mode = self.verify_engine_used(shannon_cursor)
@@ -362,9 +410,13 @@ class DualEngineCollector:
         queries = []
         
         # Extract database name from filename (e.g., training_workload_tpch_sf1.sql -> tpch_sf1)
+        # Also handles Rapid-compatible files: training_workload_rapid_Airline.sql -> Airline
         database_name = None
         if 'training_workload_' in workload_path.name:
             parts = workload_path.stem.replace('training_workload_', '')
+            # Remove 'rapid_' prefix if present (for Rapid-compatible workloads)
+            if parts.startswith('rapid_'):
+                parts = parts.replace('rapid_', '', 1)
             database_name = parts
             self.logger.info(f"Detected database from filename: {database_name}")
         
@@ -632,8 +684,8 @@ class DualEngineCollector:
             self.logger.info(f"Class distribution: Column better: {col_better}, Row better: {row_better}")
 
 
-def discover_workload_files(workload_dir='../training_workloads', pattern='training_workload_*.sql'):
-    """Discover all generated workload files"""
+def discover_workload_files(workload_dir='../training_workloads', pattern='training_workload_rapid_*.sql'):
+    """Discover all generated workload files (defaults to Rapid-compatible)"""
     workload_path = Path(__file__).parent / workload_dir
     if not workload_path.exists():
         return []
@@ -644,24 +696,29 @@ def discover_workload_files(workload_dir='../training_workloads', pattern='train
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Collect dual engine execution data for AP and TP queries',
+        description='Collect dual engine execution data (optimized for Rapid-compatible queries)',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  # Auto-discover and process all workloads
+  # Auto-discover and process all Rapid-compatible workloads (DEFAULT)
   python3 collect_dual_engine_data.py --workload auto
   
-  # Process specific workload
-  python3 collect_dual_engine_data.py --workload ../training_workloads/training_workload_tpch_sf1.sql
+  # Process specific Rapid-compatible workload
+  python3 collect_dual_engine_data.py --workload ../training_workloads/training_workload_rapid_tpch_sf1.sql
   
-  # Process multiple workloads
-  python3 collect_dual_engine_data.py --workload ../training_workloads/training_workload_tpch*.sql
+  # Process multiple Rapid-compatible workloads
+  python3 collect_dual_engine_data.py --workload ../training_workloads/training_workload_rapid_*.sql
   
   # Auto-discover with dataset generation
   python3 collect_dual_engine_data.py --workload auto --generate-dataset
+  
+  # Use original workloads (many queries will be rejected by Rapid)
+  python3 collect_dual_engine_data.py --workload-pattern 'training_workload_*.sql'
         """)
     parser.add_argument('--workload', type=str, default='auto',
-                       help='Path to workload file, glob pattern, or "auto" to discover all workloads (default: auto)')
+                       help='Path to workload file, glob pattern, or "auto" to discover Rapid-compatible workloads (default: auto)')
+    parser.add_argument('--workload-pattern', type=str, default='training_workload_rapid_*.sql',
+                       help='Pattern for auto-discovery (default: training_workload_rapid_*.sql)')
     parser.add_argument('--output', type=str, default='./training_data',
                        help='Output directory for collected data (default: ./training_data)')
     parser.add_argument('--generate-dataset', action='store_true',
@@ -676,8 +733,8 @@ Examples:
     
     if args.workload == 'auto':
         # Auto-discover workload files
-        print("Auto-discovering workload files...")
-        workload_files = discover_workload_files()
+        print(f"Auto-discovering workload files (pattern: {args.workload_pattern})...")
+        workload_files = discover_workload_files(pattern=args.workload_pattern)
         
         # Filter by database if specified
         if args.database:
@@ -685,8 +742,12 @@ Examples:
             print(f"Filtered to database: {args.database}")
         
         if not workload_files:
-            print("No workload files found. Please generate workloads first using:")
-            print("  python3 generate_training_workload_advanced.py --all-datasets")
+            print(f"No workload files found matching pattern: {args.workload_pattern}")
+            print("Please generate workloads first using:")
+            print("  python3 generate_training_workload_rapid_compatible.py --all-datasets")
+            print("")
+            print("Or use original workloads (many queries will be rejected):")
+            print("  python3 collect_dual_engine_data.py --workload-pattern 'training_workload_*.sql'")
             return
         
         print(f"Found {len(workload_files)} workload files:")

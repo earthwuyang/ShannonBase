@@ -1,1 +1,0 @@
-SELECT customer.c_custkey, customer.c_address, AVG(customer.c_nationkey) OVER (PARTITION BY customer.c_phone ORDER BY customer.c_acctbal) AS window_result FROM customer WHERE customer.c_nationkey = 570 LIMIT 100

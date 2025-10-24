@@ -1,1 +1,0 @@
-SELECT part.p_container, part.p_brand, part.p_retailprice FROM part WHERE part.p_container = 'VALUE_1' LIMIT 10

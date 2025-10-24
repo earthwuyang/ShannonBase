@@ -1,1 +1,0 @@
-SELECT partsupp.ps_suppkey, partsupp.ps_partkey, SUM(partsupp.ps_suppkey) OVER (PARTITION BY partsupp.ps_partkey ORDER BY partsupp.ps_partkey) AS window_result FROM partsupp WHERE partsupp.ps_comment LIKE 'A%' LIMIT 100

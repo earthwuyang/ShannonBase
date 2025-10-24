@@ -1,1 +1,0 @@
-SELECT part.p_name, part.p_type, MAX(part.p_size) AS max_part_p_size, STDDEV(part.p_partkey) AS stddev_part_p_partkey FROM part WHERE part.p_size > 301 AND part.p_container = 'UWRFL' GROUP BY part.p_name, part.p_type ORDER BY part.p_name, part.p_type

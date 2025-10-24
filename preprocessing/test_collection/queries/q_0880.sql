@@ -1,1 +1,0 @@
-SELECT nation.n_comment, MIN(nation.n_regionkey) AS min_n_regionkey, SUM(nation.n_nationkey) AS sum_n_nationkey, MAX(nation.n_nationkey) AS max_n_nationkey FROM nation WHERE nation.n_comment = 'XCHDI' AND nation.n_nationkey = 962 AND nation.n_comment LIKE 'A%' AND nation.n_name = 'FGIRN' GROUP BY nation.n_comment ORDER BY nation.n_comment

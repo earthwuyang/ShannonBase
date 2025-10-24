@@ -1,0 +1,7 @@
+#! /bin/bash
+diff -u /home/wuy/ShannonBase/extra/boost/boost_1_84_0/boost/geometry/policies/relate/direction.hpp /home/wuy/ShannonBase/include/boost_1_84_0/patches/boost/geometry/policies/relate/direction.hpp
+diff -u /home/wuy/ShannonBase/extra/boost/boost_1_84_0/boost/geometry/policies/relate/intersection_points.hpp /home/wuy/ShannonBase/include/boost_1_84_0/patches/boost/geometry/policies/relate/intersection_points.hpp
+diff -u /home/wuy/ShannonBase/extra/boost/boost_1_84_0/boost/geometry/policies/relate/intersection_policy.hpp /home/wuy/ShannonBase/include/boost_1_84_0/patches/boost/geometry/policies/relate/intersection_policy.hpp
+diff -u /home/wuy/ShannonBase/extra/boost/boost_1_84_0/boost/geometry/policies/relate/intersection_ratios.hpp /home/wuy/ShannonBase/include/boost_1_84_0/patches/boost/geometry/policies/relate/intersection_ratios.hpp
+diff -u /home/wuy/ShannonBase/extra/boost/boost_1_84_0/boost/geometry/strategies/cartesian/intersection.hpp /home/wuy/ShannonBase/include/boost_1_84_0/patches/boost/geometry/strategies/cartesian/intersection.hpp
+true

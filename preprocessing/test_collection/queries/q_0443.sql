@@ -1,1 +1,0 @@
-SELECT lineitem.l_shipdate, MIN(lineitem.l_linenumber) AS min_l_linenumber, COUNT(lineitem.l_linenumber) AS count_l_linenumber FROM lineitem WHERE lineitem.l_receiptdate >= '2010-06-25' AND lineitem.l_comment LIKE 'A%' AND lineitem.l_returnflag LIKE '%B%' AND lineitem.l_orderkey = 54 GROUP BY lineitem.l_shipdate ORDER BY lineitem.l_shipdate

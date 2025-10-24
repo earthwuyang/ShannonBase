@@ -1,1 +1,0 @@
-SELECT nation.n_nationkey, AVG(nation.n_regionkey) AS avg_n_regionkey, MIN(nation.n_nationkey) AS min_n_nationkey FROM nation WHERE nation.n_regionkey BETWEEN 343 AND 773 AND nation.n_regionkey < 90 GROUP BY nation.n_nationkey ORDER BY nation.n_nationkey

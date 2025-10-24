@@ -1,1 +1,0 @@
-SELECT part.p_container, STDDEV(part.p_size) AS stddev_part_p_size, AVG(part.p_size) AS avg_part_p_size FROM part WHERE part.p_brand LIKE '%C' GROUP BY part.p_container ORDER BY part.p_container

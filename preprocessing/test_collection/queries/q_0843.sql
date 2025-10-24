@@ -1,1 +1,0 @@
-SELECT part.p_type, part.p_name, COUNT(part.p_partkey) AS count_part_p_partkey, SUM(part.p_retailprice) AS sum_part_p_retailprice, SUM(part.p_size) AS sum_part_p_size, VARIANCE(part.p_size) AS variance_part_p_size FROM part WHERE part.p_comment LIKE '%C' GROUP BY part.p_type, part.p_name ORDER BY part.p_type, part.p_name

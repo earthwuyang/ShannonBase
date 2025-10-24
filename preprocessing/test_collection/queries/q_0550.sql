@@ -1,1 +1,0 @@
-SELECT orders.o_orderpriority, orders.o_clerk, SUM(orders.o_totalprice) AS sum_orders_o_totalprice, MIN(orders.o_totalprice) AS min_orders_o_totalprice FROM orders WHERE orders.o_orderpriority LIKE 'A%' AND orders.o_shippriority = 467 GROUP BY orders.o_orderpriority, orders.o_clerk ORDER BY orders.o_orderpriority, orders.o_clerk

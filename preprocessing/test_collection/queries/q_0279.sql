@@ -1,1 +1,0 @@
-SELECT nation.n_comment, AVG(nation.n_nationkey) AS avg_nation_n_nationkey, AVG(nation.n_regionkey) AS avg_nation_n_regionkey FROM nation WHERE nation.n_name LIKE '%C' AND nation.n_name = 'SEQMC' GROUP BY nation.n_comment HAVING COUNT(*) > 6178 AND AVG(nation.n_regionkey) > 55927 ORDER BY nation.n_comment

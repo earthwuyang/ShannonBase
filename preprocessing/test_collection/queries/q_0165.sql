@@ -1,1 +1,0 @@
-WITH cte AS (SELECT orders.o_orderpriority, SUM(orders.o_orderkey) as total FROM orders GROUP BY orders.o_orderpriority) SELECT * FROM cte LIMIT 100

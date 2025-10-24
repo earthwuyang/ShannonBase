@@ -1,1 +1,0 @@
-SELECT part.p_retailprice, part.p_comment, DENSE_RANK() OVER (PARTITION BY part.p_partkey ORDER BY part.p_name) AS window_result FROM part LIMIT 1000

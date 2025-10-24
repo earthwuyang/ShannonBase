@@ -1,1 +1,0 @@
-SELECT * FROM part WHERE part.p_size > (SELECT AVG(orders.o_shippriority) FROM orders) LIMIT 100

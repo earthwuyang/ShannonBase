@@ -1,1 +1,0 @@
-WITH cte AS (SELECT nation.n_comment, nation.n_nationkey, nation.n_regionkey FROM nation) SELECT * FROM cte CROSS JOIN partsupp LIMIT 1000

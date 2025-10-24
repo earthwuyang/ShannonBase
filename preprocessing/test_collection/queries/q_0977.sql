@@ -1,1 +1,0 @@
-SELECT region.r_name, region.r_comment, region.r_regionkey FROM region UNION SELECT customer.c_comment, customer.c_custkey, customer.c_nationkey FROM customer WHERE customer.c_custkey < 388 LIMIT 100

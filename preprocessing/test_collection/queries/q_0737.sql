@@ -1,1 +1,0 @@
-SELECT lineitem.l_linestatus, lineitem.l_shipmode, lineitem.l_quantity FROM lineitem WHERE lineitem.l_linenumber = 358 LIMIT 10

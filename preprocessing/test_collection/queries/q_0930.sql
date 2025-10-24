@@ -1,1 +1,0 @@
-SELECT lineitem.l_orderkey, lineitem.l_shipdate, lineitem.l_extendedprice FROM lineitem UNION ALL SELECT supplier.s_phone, supplier.s_suppkey, supplier.s_nationkey FROM supplier LIMIT 100

@@ -1,1 +1,0 @@
-SELECT supplier.s_comment, MAX(supplier.s_suppkey) AS max_s_suppkey FROM supplier GROUP BY supplier.s_comment HAVING COUNT(*) > 652

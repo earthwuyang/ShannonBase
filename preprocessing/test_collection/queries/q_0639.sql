@@ -1,1 +1,0 @@
-SELECT supplier.s_name, AVG(supplier.s_nationkey) AS avg_s_nationkey FROM supplier WHERE supplier.s_address = 'EBSQH' AND supplier.s_phone LIKE '%B%' GROUP BY supplier.s_name

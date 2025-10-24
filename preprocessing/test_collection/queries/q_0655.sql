@@ -1,1 +1,0 @@
-SELECT supplier.s_address, supplier.s_comment, supplier.s_name FROM supplier UNION ALL SELECT lineitem.l_linestatus, lineitem.l_shipmode, lineitem.l_returnflag FROM lineitem LIMIT 100

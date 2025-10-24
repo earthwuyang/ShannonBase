@@ -1,1 +1,0 @@
-SELECT nation.n_comment, nation.n_name, AVG(nation.n_regionkey) OVER (PARTITION BY nation.n_comment ORDER BY nation.n_comment) AS window_result FROM nation LIMIT 100

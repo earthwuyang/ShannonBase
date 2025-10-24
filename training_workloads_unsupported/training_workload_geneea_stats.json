@@ -1,0 +1,43 @@
+{
+  "total_queries": 10000,
+  "database": "geneea",
+  "categories": {
+    "AP": 5000,
+    "TP": 5000
+  },
+  "category_percentages": {
+    "AP": 50.0,
+    "TP": 50.0
+  },
+  "query_types": {
+    "ap_complex_join": 1736,
+    "tp_point_lookup": 2042,
+    "ap_cte_recursive": 484,
+    "ap_window": 1031,
+    "ap_aggregation": 1749,
+    "tp_simple_filter": 1478,
+    "tp_range_scan": 1480
+  },
+  "query_type_percentages": {
+    "ap_complex_join": 17.36,
+    "tp_point_lookup": 20.419999999999998,
+    "ap_cte_recursive": 4.84,
+    "ap_window": 10.31,
+    "ap_aggregation": 17.49,
+    "tp_simple_filter": 14.78,
+    "tp_range_scan": 14.799999999999999
+  },
+  "category_breakdown": {
+    "AP": {
+      "ap_complex_join": 1736,
+      "ap_cte_recursive": 484,
+      "ap_window": 1031,
+      "ap_aggregation": 1749
+    },
+    "TP": {
+      "tp_point_lookup": 2042,
+      "tp_simple_filter": 1478,
+      "tp_range_scan": 1480
+    }
+  }
+}

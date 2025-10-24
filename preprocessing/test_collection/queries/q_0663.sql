@@ -1,1 +1,0 @@
-SELECT supplier.s_name, COUNT(supplier.s_nationkey) AS count_s_nationkey FROM supplier WHERE supplier.s_nationkey BETWEEN 126 AND 953 AND supplier.s_nationkey = 373 GROUP BY supplier.s_name

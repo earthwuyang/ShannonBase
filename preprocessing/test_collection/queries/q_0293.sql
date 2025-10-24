@@ -1,1 +1,0 @@
-SELECT nation.n_nationkey, MAX(nation.n_nationkey) AS max_n_nationkey, MAX(nation.n_regionkey) AS max_n_regionkey FROM nation WHERE nation.n_comment = 'WLWTX' AND nation.n_comment = 'LUXRY' GROUP BY nation.n_nationkey

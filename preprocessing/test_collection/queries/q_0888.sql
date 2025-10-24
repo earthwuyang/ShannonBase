@@ -1,1 +1,0 @@
-SELECT orders.o_custkey, orders.o_orderpriority, ROW_NUMBER() OVER (PARTITION BY orders.o_clerk ORDER BY orders.o_orderdate) AS window_result FROM orders WHERE orders.o_orderstatus = 'IFLBM' LIMIT 100

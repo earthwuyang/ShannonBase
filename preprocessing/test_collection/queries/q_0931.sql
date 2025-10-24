@@ -1,1 +1,0 @@
-SELECT orders.o_orderkey, orders.o_orderpriority, orders.o_orderstatus FROM orders WHERE orders.o_shippriority = 576 LIMIT 10

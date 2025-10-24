@@ -1,1 +1,0 @@
-SELECT * FROM orders WHERE orders.o_custkey BETWEEN 4082 AND 4154 LIMIT 100

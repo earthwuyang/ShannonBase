@@ -1,0 +1,2 @@
+/usr/bin/ar qc librapid_compress.a CMakeFiles/rapid_compress.dir/compress/algorithms.cpp.o CMakeFiles/rapid_compress.dir/compress/dictionary/dictionary.cpp.o
+/usr/bin/ranlib librapid_compress.a

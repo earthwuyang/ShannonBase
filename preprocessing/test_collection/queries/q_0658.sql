@@ -1,1 +1,0 @@
-SELECT customer.c_acctbal, AVG(customer.c_custkey) AS avg_c_custkey, COUNT(customer.c_nationkey) AS count_c_nationkey FROM customer WHERE customer.c_custkey = 409 AND customer.c_address LIKE '%B%' AND customer.c_nationkey BETWEEN 574 AND 680 AND customer.c_phone = 'DFAHM' GROUP BY customer.c_acctbal ORDER BY customer.c_acctbal

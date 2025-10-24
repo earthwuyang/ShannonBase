@@ -1,1 +1,0 @@
-SELECT partsupp.ps_suppkey, partsupp.ps_partkey, SUM(partsupp.ps_availqty) OVER (PARTITION BY partsupp.ps_partkey ORDER BY partsupp.ps_partkey) AS window_result FROM partsupp LIMIT 1000

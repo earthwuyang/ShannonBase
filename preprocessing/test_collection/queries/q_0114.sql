@@ -1,1 +1,0 @@
-SELECT customer.c_custkey, customer.c_phone, customer.c_comment FROM customer WHERE customer.c_custkey = 970 LIMIT 10

@@ -1,1 +1,0 @@
-SELECT customer.c_nationkey, COUNT(customer.c_custkey) AS count_c_custkey, MIN(customer.c_nationkey) AS min_c_nationkey, SUM(customer.c_custkey) AS sum_c_custkey FROM customer WHERE customer.c_mktsegment LIKE 'A%' AND customer.c_address = 'QVLAG' AND customer.c_phone = 'ONURG' AND customer.c_address = 'MOKNY' GROUP BY customer.c_nationkey ORDER BY customer.c_nationkey
