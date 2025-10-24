@@ -1,0 +1,13 @@
+{
+  "total_samples": 3,
+  "feature_count": 32,
+  "class_distribution": {
+    "shannonbase_better": 1,
+    "mysql_better": 2
+  },
+  "latency_stats": {
+    "mysql_mean_ms": 44.47909270723661,
+    "shannonbase_mean_ms": 55.80423896511396,
+    "median_speedup": 0.6512556986493452
+  }
+}

@@ -213,24 +213,39 @@ class DualEngineCollector:
             trace_json = json.loads(trace[0])
             self.logger.debug(f"Trace keys: {list(trace_json.keys())}")
 
-            # Look for hybrid_optimizer_features in trace
+            # Look for features in the join_optimization steps
             for step in trace_json.get('steps', []):
                 self.logger.debug(f"Step keys: {list(step.keys())}")
-                if 'hybrid_optimizer_features' in step:
-                    return step['hybrid_optimizer_features']['features']
-                # Also check in join_optimization
                 if 'join_optimization' in step:
                     join_opt = step['join_optimization']
                     if 'steps' in join_opt:
                         for substep in join_opt['steps']:
                             self.logger.debug(f"Substep keys: {list(substep.keys())}")
+
+                            # Look for the full 140 features under "feature_count" and "features" (prefer this)
+                            if 'feature_count' in substep and 'features' in substep:
+                                features_data = substep['features']
+                                self.logger.debug(f"Found feature_count: {substep['feature_count']}, extracting {len(features_data)} features")
+                                # Extract feature values
+                                feature_values = [f['value'] for f in features_data]
+                                return feature_values
+
+                            # Also check for the initial 32 features under "num_selected" and "features" (fallback)
+                            if 'num_selected' in substep and 'features' in substep:
+                                features_data = substep['features']
+                                self.logger.debug(f"Found num_selected: {substep['num_selected']}, extracting {len(features_data)} features")
+                                # Extract feature values
+                                feature_values = [f['value'] for f in features_data]
+                                return feature_values
+
+                            # Legacy: Check for hybrid_optimizer_features
                             if 'hybrid_optimizer_features' in substep:
                                 return substep['hybrid_optimizer_features']['features']
-                            # Check for join_plan_features (our new trace node)
+
+                            # Legacy: Check for join_plan_features
                             if 'join_plan_features' in substep:
                                 features_data = substep['join_plan_features']
                                 self.logger.debug(f"Found join_plan_features: {features_data}")
-                                # Extract features from the trace structure
                                 if 'hybrid_optimizer_selected_features' in substep:
                                     selected_features = substep['hybrid_optimizer_selected_features']
                                     if 'features' in selected_features:
@@ -688,6 +703,7 @@ def discover_workload_files(workload_dir='../training_workloads', pattern='train
     """Discover all generated workload files (defaults to Rapid-compatible)"""
     workload_path = Path(__file__).parent / workload_dir
     if not workload_path.exists():
+
         return []
     
     workload_files = list(workload_path.glob(pattern))
@@ -719,8 +735,8 @@ Examples:
                        help='Path to workload file, glob pattern, or "auto" to discover Rapid-compatible workloads (default: auto)')
     parser.add_argument('--workload-pattern', type=str, default='training_workload_rapid_*.sql',
                        help='Pattern for auto-discovery (default: training_workload_rapid_*.sql)')
-    parser.add_argument('--output', type=str, default='./training_data',
-                       help='Output directory for collected data (default: ./training_data)')
+    parser.add_argument('--output', type=str, default='../training_data',
+                       help='Output directory for collected data (default: ../training_data)')
     parser.add_argument('--generate-dataset', action='store_true',
                        help='Generate LightGBM dataset after collection')
     parser.add_argument('--database', type=str, default=None,

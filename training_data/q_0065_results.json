@@ -1,0 +1,62 @@
+{
+  "query_id": "q_0065",
+  "query_hash": "c3d56a8cdf483d7e6fdd3a6770c314dd",
+  "timestamp": "2025-10-24T16:22:21.997618",
+  "database": "Airline",
+  "query_text": "SELECT On_Time_On_Time_Performance_2016_1.DestStateName, L_AIRPORT_SEQ_ID.Description, AVG(On_Time_O",
+  "mysql": {
+    "features": [
+      0,
+      0,
+      0,
+      69.0776,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0.693147,
+      0,
+      4294970000.0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      1,
+      10,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "latency": {
+      "mean_ms": 558.5270151495934,
+      "median_ms": 557.8468888998032,
+      "std_ms": 2.103583945940383,
+      "p95_ms": 561.6150356829166,
+      "p99_ms": 562.1115328371525,
+      "all_runs": [
+        556.0248270630836,
+        557.8468888998032,
+        557.3951527476311,
+        559.1325499117374,
+        562.2356571257114
+      ]
+    },
+    "engine_mode": "OFF",
+    "engine_type": "InnoDB (Primary/Row Store)"
+  },
+  "shannonbase": {
+    "error": "3024 (HY000): Query execution was interrupted, maximum statement execution time exceeded"
+  }
+}

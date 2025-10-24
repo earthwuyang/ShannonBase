@@ -48,7 +48,7 @@ class LightGBMTrainer:
         self.logger = self._setup_logging()
 
         # Load query metadata if available (for query type analysis)
-        self.metadata_dir = Path(metadata_dir) if metadata_dir else self.data_path.parent / 'training_data'
+        self.metadata_dir = Path(metadata_dir) if metadata_dir else self.data_path.parent / '../training_data'
         self.query_metadata = self._load_query_metadata()
 
     def _setup_logging(self):
@@ -592,7 +592,7 @@ Data Format:
   - Latencies: Execution times in milliseconds for both engines
   - Query ID (optional): For linking to query type metadata
         """)
-    parser.add_argument('--data', type=str, required=True,
+    parser.add_argument('--data', type=str, default=''
                        help='Path to training data CSV (lightgbm_dataset.csv)')
     parser.add_argument('--output', type=str, default='./models',
                        help='Output directory for trained models (default: ./models)')

@@ -1,0 +1,42 @@
+{
+  "total_queries": 1,
+  "databases": [
+    "Airline"
+  ],
+  "successful_mysql": 1,
+  "successful_shannon": 1,
+  "errors": {
+    "table_not_found": 0,
+    "rapid_not_supported": 0,
+    "total_errors": 0
+  },
+  "timestamp": "2025-10-24T15:08:11.563311",
+  "category_breakdown": {
+    "AP": 1
+  },
+  "type_breakdown": {
+    "ap_aggregation": 1
+  },
+  "mysql_latency_stats": {
+    "mean": 40.580134093761444,
+    "median": 40.580134093761444,
+    "p95": 40.580134093761444,
+    "p99": 40.580134093761444
+  },
+  "shannon_latency_stats": {
+    "mean": 0.42542964220046997,
+    "median": 0.42542964220046997,
+    "p95": 0.42542964220046997,
+    "p99": 0.42542964220046997
+  },
+  "mysql_AP_latency": {
+    "mean": 40.580134093761444,
+    "median": 40.580134093761444,
+    "count": 1
+  },
+  "shannon_AP_latency": {
+    "mean": 0.42542964220046997,
+    "median": 0.42542964220046997,
+    "count": 1
+  }
+}
